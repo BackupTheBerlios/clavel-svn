@@ -8,7 +8,7 @@
         
         run("invite:init");
         templates_page_setup();        
-        $title = sprintf(__gettext("Join %s"), sitename);
+        $title = sprintf(__gettext("Sign Up"));
 
         $body = run("content:invite:join");
         $body .= run("join:no_invite");

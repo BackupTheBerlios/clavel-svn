@@ -68,9 +68,11 @@ switch ($action) {
          break;
          // Join using an invitation
      case "invite_join":
-         $name = trim(optional_param('join_name'));
+         $name = trim(optional_param('join_firstname'));
+		 $lastname = trim(optional_param('join_lastname'));
+		 $mail = trim(optional_param('join_email'));
          $code = trim(optional_param('invitecode'));
-         $over13 = optional_param('over13');
+         $accept = trim(optional_param('accept'));
          $username = trim(optional_param('join_username'));
          $password1 = trim(optional_param('join_password1'));
          $password2 = trim(optional_param('join_password2'));
@@ -79,15 +81,28 @@ switch ($action) {
                  $messages[] = __gettext("Unfortunately this community has reached its account limit and you are unable to join at this time.");
                  break;
              }
-             if (empty($over13)) {
-                 $messages[] = __gettext("You must indicate that you are at least 13 years old to join.");
+			 if (empty($name)){
+		 		$messages[] = __gettext("You must write your First Name");
+                 break;
+	     	 }
+			 if (empty($lastname)){
+		 		$messages[] = __gettext("You must write your Last Name");
+                 break;
+	     	 }
+             if (empty($mail)){
+		 		$messages[] = __gettext("You must write an email account.");
+                 break;
+	     	 }
+			 if (empty($username)){
+		 		$messages[] = __gettext("You must write an Username.");
+                 break;
+	     	 }
+			 $username = strtolower($username);
+             if (record_exists('users','username',$username)) {
+                 $messages[] = __gettext("The username '$username' is already taken by another user. You will need to pick a different one.");
                  break;
              }
-             if (!$details = get_record('invitations','code',$code)) {
-                 $messages[] = __gettext("Error! Invalid invite code.");
-                 break;
-             } 
-             if ($password1 != $password2 || strlen($password1) < 6 || strlen($password2) > 16) {
+			 if ($password1 != $password2 || strlen($password1) < 6 || strlen($password2) > 16) {
                  $messages[] = __gettext("Error! Invalid password. Your passwords must match and be between 6 and 16 characters in length.");
                  break;
              }
@@ -95,18 +110,24 @@ switch ($action) {
                  $messages[] = __gettext("Error! Your username must contain letters and numbers only, cannot be blank, and must be between 3 and 12 characters in length.");
                  break;
              }
-             $username = strtolower($username);
-             if (record_exists('users','username',$username)) {
-                 $messages[] = __gettext("The username '$username' is already taken by another user. You will need to pick a different one.");
+             if (empty($accept)) {
+                 $messages[] = __gettext("You must accept the Terms and Conditios to join.");
                  break;
              }
+             /*if (!$details = get_record('invitations','code',$code)) {
+                 $messages[] = __gettext("Error! Invalid invite code.");
+                 break;
+             } */
+             
+             
              $displaypassword = $password1;
              $u = new StdClass;
              $u->name = $name;
+			 $u->lastname = $lastname;
+			 $u->email = $mail;
+			 $u->username = $username;
              $u->password = md5($password1);
-             $u->email = $details->email;
-             $u->username = $username;
-             $u = plugin_hook("user","create",$u);
+             //$u = plugin_hook("user","create",$u);
              
              if (!empty($u)) {
                  $ident = insert_record('users',$u);
@@ -129,18 +150,18 @@ switch ($action) {
                      insert_record('friends',$f);
                  }
                  // make them friend the news user
-                 $f = new StdClass;
+                 /*$f = new StdClass;
                  $f->owner = $ident;
                  $f->friend = 1;
-                 insert_record('friends',$f);
+                 insert_record('friends',$f);*/
                  
-                 $u = plugin_hook("user","publish",$u);
+                 //$u = plugin_hook("user","publish",$u);
                  
                  $rssresult = run("weblogs:rss:publish", array($ident, false));
                  $rssresult = run("files:rss:publish", array($ident, false));
                  $rssresult = run("profile:rss:publish", array($ident, false));
                  $_SESSION['messages'][] = __gettext("Your account was created! You can now log in using the username and password you supplied. You have been sent an email containing these details for reference purposes.");
-                 delete_records('invitations','code',$code);
+                 //delete_records('invitations','code',$code);
                  email_to_user($u,null,sprintf(__gettext("Your %s account"),$sitename), 
                       sprintf(__gettext("Thanks for joining %s!\n\nFor your records, your %s username and password are:\n\n\t")
                                       .__gettext("Username: %s\n\tPassword: %s\n\nYou can log in at any time by visiting %s and entering these details into the login form.\n\n")
