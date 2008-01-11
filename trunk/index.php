@@ -14,6 +14,11 @@
                                         'context' => 'frontpage_loggedout'
                                 )   
                                 );
+								
+								        $register = templates_draw(array(
+                                        'context' => 'register_loggedout'
+                                )
+                                );
     }
     
     echo templates_page_draw( array(

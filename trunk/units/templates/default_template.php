@@ -25,6 +25,7 @@
                                                             '{{menu}}' => __gettext("Menu"),
                                                             '{{topmenu}}' => __gettext("Status menu"),
                                                             '{{mainbody}}' => __gettext("Main body"),
+															'{{register}}' => __gettext("Main body"),
                                                             '{{sidebar}}' => __gettext("Sidebar")
                                                         )
                                     );

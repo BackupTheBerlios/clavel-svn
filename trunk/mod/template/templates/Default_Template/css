@@ -7,18 +7,18 @@
 */
 
 body {
-	background:#fff url({{url}}mod/template/templates/Default_Template/images/header.gif) repeat-x; /* #d9e2f2  */
+	background:#white url({{url}}mod/template/templates/Default_Template/images/header.gif) repeat-x; /* #d9e2f2  */
 	color:#697C83;
 	font-family:'Trebuchet MS','Lucida Grande', Arial, sans-serif;
 	text-align:left;
 	margin:0 auto;
 	padding:0;
-	font-size: 80%;
+	font-size: 100%;
 	line-height:1.6em;
 }
 
 p {
-	color:#555;
+	color:black;
 	margin:0 0 10px 0;
 }
 
@@ -28,11 +28,11 @@ a {
 }
 
 ol, ul {
-	color:#697C83;
+	color:black;
 }
 
 h1 {
-	font-size:130%;
+	font-size:black;
 }
 
 h2, h3, h4, h5 {
@@ -40,7 +40,7 @@ h2, h3, h4, h5 {
 }
 
 blockquote{
-	background: #EEE url({{url}}mod/template/templates/Default_Template/images/blockquote.png) no-repeat bottom left;
+	background: white url({{url}}mod/template/templates/Default_Template/images/blockquote.png) no-repeat bottom left;
 	padding: 10px;
 	padding-bottom: 40px;
 	margin: 1em;
@@ -51,7 +51,7 @@ blockquote{
 */
 
 td {
-	border:1px solid #eee;
+	border:1px solid white;
 	padding:0;
 	margin:0;
 }
@@ -69,6 +69,8 @@ div#container {
 	width:970px;
 	margin:0 auto;
 	padding:0;
+		background:white;
+color:black;
 }
 
 /*
@@ -83,6 +85,7 @@ div#header {
 	background:transparent;
 	width:100%;
 	height:110px;
+	color:black;
 }
 
 /*
@@ -99,10 +102,11 @@ div#header #logo h1 {
 	font-size:30px;
 	padding:0;
 	margin:10px 0 6px 0;
+	        color:black;
 }
 
 div#header #logo h1 a{
-	color:#fff;
+	color:black;
 	font-family:Helvetica, "Myriad Web", Arial, sans-serif;
 }
 
@@ -118,7 +122,7 @@ div#header #logo h2{
 */
 
 div#header #search-header {
-	float:right;
+	float:center;
 	width:330px;
 	margin:0;
 	padding:0;
@@ -134,10 +138,11 @@ div#header #search-header img {
 div#header #search-header p {
 	padding:0 0 0 15px;
 	margin:0;
+	color:black;
 }
 
 div#header #search-header span a {
-	color:#fff;
+	color:black;
 }
 
 /*
@@ -152,10 +157,13 @@ div#header #search-header span a {
 	min-height:500px;
 	position:relative;
 	clear:both;
+	background: white;
 }
 
 div#content-holder a:hover {
 	text-decoration:underline;
+		background: white;
+	
 }
 
 div#content-holder h1 {
@@ -163,6 +171,8 @@ div#content-holder h1 {
 	border-bottom:1px solid #ccc;
 	margin:0;
 	padding:0;
+		background: white;
+	
 }
 
 div#content-holder h2 {
@@ -172,6 +182,8 @@ div#content-holder h2 {
 	margin:0 0 10px 0;
 	color:#666;
 	font-size:1.1em;
+    background: white;
+	
 }
 
 /*
@@ -188,7 +200,28 @@ div#single-page {
 	width:900px;
 	text-align: left;
 	border:1px solid #eee;
+
 }
+
+	#splitpane-register {
+	margin-right: 170em;
+	padding:0 100px 0 0;
+heigth: 250px;
+        color:red;
+
+	}
+
+        #splitpane-register-inner {
+	position: relative;
+	float: left;
+        height:5620%;
+	width: 90%;
+	margin-right: -40em;
+	padding-right: 10em;
+        color:black;
+        background:red;
+
+	}
 
 /*
 	THE MAIN CONTENT AREA WHEN THE SIDEBAR IS IN PLACE
@@ -202,6 +235,7 @@ div#splitpane-content {
 	color:#000;
 	overflow:hidden;
 	min-height:500px;
+	background: white;
 }
 
 /*
@@ -213,7 +247,7 @@ div#splitpane-sidebar {
 	margin:20px 10px 20px 0;
 	padding:0;
 	float: right;
-	background:#efefef url({{url}}mod/template/templates/Default_Template/images/sidebar-top.gif) no-repeat top;
+	background:white;
 }
 
 div#sidebar-contents {
@@ -221,7 +255,7 @@ div#sidebar-contents {
 }
 
 div#sidebar-bottom {
-   background:url({{url}}mod/template/templates/Default_Template/images/sidebar-bottom.gif) no-repeat bottom;
+   background:white;
    height:9px;
    width:250px;
    margin:0;
@@ -266,7 +300,7 @@ div#splitpane-sidebar h2 {
 #content-holder-toolbar {
    float:left;
    margin:0;
-   background:#fff;
+   background:white;
    border:1px solid #ccc;
    width:150px;
 }
@@ -281,11 +315,11 @@ div#footer {
 	font-size:1em;
 	height:26px;
 	margin:20px 0 0 0;
-	color:#174764;
+	color:black;
 	font-weight:bold;
 	width:100%;
 	padding:3px 0 0 0;
-	background:url({{url}}mod/template/templates/Default_Template/images/footer.gif) repeat-x;
+	background:white;
 }
 
 div#footer img {
@@ -298,7 +332,7 @@ div#footer p {
 }
 
 div#footer a {
-	color:#fff;
+	color:black;
 	padding:0 5px 0 5px;
 }
 
@@ -316,8 +350,8 @@ div#footer a:link, div#footer a:visited {
 
 div#system-message{
 	border:1px solid #D3322A;
-	background:#F7DAD8;
-	color:#000;
+	background:white;
+	color:black;
 	padding:3px 50px;
 	margin:20px 20px 0 20px;
 }

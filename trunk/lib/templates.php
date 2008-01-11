@@ -58,7 +58,8 @@ function default_template () {
                                                        '{{title}}' => __gettext("Page title"),
                                                        '{{menu}}' => __gettext("Menu"),
                                                        '{{topmenu}}' => __gettext("Status menu"),
-                                                       '{{mainbody}}' => __gettext("Main body"),
+                                                       '{{mainbody}}' => __gettext("Main body"),  
+                                                       '{{register}}' => __gettext("Register"),
                                                        '{{sidebar}}' => __gettext("Sidebar")
                                                        )
                                    );
@@ -69,8 +70,10 @@ function default_template () {
 
     $template['frontpage_loggedout'] = file_get_contents($CFG->templatesroot . "Default_Template/frontpage_loggedout");
     $template['frontpage_loggedin'] = file_get_contents($CFG->templatesroot . "Default_Template/frontpage_loggedin");
+    $template['register_loggedout'] = file_get_contents($CFG->templatesroot . "Default_Template/register_loggedout");    
     
-    // REMOVED stylesheet (was old version and should not have been here)
+
+	// REMOVED stylesheet (was old version and should not have been here)
     // TODO: extract all Default_Template stuff from lib/templates.php
 
 $template_definition[] = array(
@@ -533,7 +536,10 @@ function templates_page_draw ($param) {
     $title = $param[0];
     $mainbody = $param[1];
 
+    $register = $param[3];
+	echo "Mostrando" . $register;
     $run_result = '';
+
 
     global $messages;
 
@@ -563,12 +569,27 @@ function templates_page_draw ($param) {
 
     // If $parameter[2] is set, we'll substitute it for the
     // sidebar
-    if (isset($param[2])) {
+  /*  if (isset($param[2])) {
         $sidebarhtml = $param[2];
     } else {
         $sidebarhtml = run("display:sidebar");
     }    
-    
+    */
+    if (isset($param[2])) {
+
+        if($param[2] == '_sidebar')
+        {
+        $sidebarhtml = run("display:sidebar");	  
+	}
+        else
+        {
+        $sidebarhtml = $param[2];
+        }
+    } else {
+        $sidebarhtml = run("display:sidebar");
+    }   	
+	
+	
     $run_result .=  templates_draw(array(
                             'context'      => 'pageshell',
                             'title'        => htmlspecialchars($title, ENT_COMPAT, 'utf-8'),
@@ -577,6 +598,7 @@ function templates_page_draw ($param) {
                             'top'          => displaymenu_top(),
                             'sidebar'      => $sidebarhtml,
                             'mainbody'     => $mainbody,
+                            'register'     => $register,
                             'messageshell' => $messageshell
                             ));
             
