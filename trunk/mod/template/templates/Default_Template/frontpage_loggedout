@@ -1,4 +1,4 @@
-<h1>Welcome {{name}}</h1>
+<h1>BIENVENIDO !!!!!!!1 {{name}}</h1>
 <p style="margin-top:20px;">
     This is {{sitename}}, a social network. Why not check out <a href="{{url}}_weblog/everyone.php">what people are saying</a> right now?
 </p>

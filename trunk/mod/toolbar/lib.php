@@ -21,7 +21,7 @@
         if (isloggedin()) {
             $toolbar = file_get_contents($CFG->dirroot . "mod/toolbar/toolbar.inc");
         } else {
-            $toolbar = file_get_contents($CFG->dirroot . "mod/toolbar/toolbarloggedout.inc");
+            //$toolbar = file_get_contents($CFG->dirroot . "mod/toolbar/toolbarloggedout.inc");
         }
         $toolbar = str_replace("{{url}}", $CFG->wwwroot, $toolbar);
         $toolbar = str_replace("{{menu}}", templates_variables_substitute(array(array(),"menu")), $toolbar);
@@ -34,7 +34,7 @@
         if (isloggedin()) {
             $toolbar =  str_replace("{{usericon}}", "<a href=\"{$CFG->wwwroot}{$_SESSION['username']}\">" . user_icon_html($_SESSION['userid'], 50) . "</a>", $toolbar);
         } else {
-            $toolbar = str_replace("{{usericon}}", user_icon_html(-1, 50), $toolbar);
+            //$toolbar = str_replace("{{usericon}}", user_icon_html(-1, 50), $toolbar);
         }
         
         return $toolbar;
