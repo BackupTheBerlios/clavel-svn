@@ -16,6 +16,9 @@
         
     // Allow a new user to sign up
         $function['join:no_invite'][] = $CFG->dirroot . "units/invite/join_noinvite.php";
+		
+	//To activate the acount
+		$function['join:activate'][] = $CFG->dirroot . "units/invite/activate.php";
 
     // Allow the user to request a new password
         $function['invite:password:request'][] = $CFG->dirroot . "units/invite/password_request.php";

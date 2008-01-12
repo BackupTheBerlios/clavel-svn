@@ -27,8 +27,8 @@ switch ($action) {
                                  $invite->code = 'i' . substr(base_convert(md5(time() . $USER->username), 16, 36), 0, 7);
                                  $invite->added = time();
                                  $invite->owner = $USER->ident;
-                                 insert_record('invitations',$invite);
-                                 $url = url . "_invite/join.php?invitecode=" . $invite->code;
+                                 //insert_record('invitations',$invite);
+                                 $url = url . "_invite/register.php";
                                  if (!logged_on) {
                                      $invitetext = '';
                                      $greetingstext = sprintf(__gettext("Thank you for registering with %s."),$sitename);
@@ -43,9 +43,9 @@ switch ($action) {
                                      $subjectline = $USER->name . " " . __gettext("has invited you to join") ." $sitename";
                                      $from_email = $USER->email;
                                  }
-                                 $emailmessage = sprintf(__gettext("Dear %s,\n\n%s %s\n\nTo join, visit the following URL:\n\n\t%s\n\nYour email address has not been passed onto any third parties, and will be removed from our system within seven days.\n\nRegards,\n\nThe %s team."),$strippedname,$greetingstext,$invitetext,$url, $sitename);
+                                 $emailmessage = sprintf(__gettext("Dear %s,\n\n%s %s\n\nTo join, visit the following URL:\n\n\t%s\n\nYour email address has not been passed onto any third parties.\n\nRegards,\n\nThe %s team."),$strippedname,$greetingstext,$invitetext,$url, $sitename);
                                  $emailmessage = wordwrap($emailmessage);
-                                 $messages[] = sprintf(__gettext("Your invitation was sent to %s at %s. It will be valid for seven days."),$strippedname,$invite->email);
+                                 $messages[] = sprintf(__gettext("Your invitation was sent to %s at %s."),$strippedname,$invite->email);
                                  email_to_user($invite,null,$subjectline,$emailmessage);
                              } else {
                                  $messages[] = sprintf(__gettext("User %s already has that email address. Invitation not sent."),$account->username);
@@ -93,6 +93,11 @@ switch ($action) {
 		 		$messages[] = __gettext("You must write an email account.");
                  break;
 	     	 }
+			 $mail = strtolower($mail);
+             if (record_exists('users','email',$mail)) {
+                 $messages[] = __gettext("The email '$mail' is already taken by another user. You will need to pick a different one.");
+                 break;
+             }
 			 if (empty($username)){
 		 		$messages[] = __gettext("You must write an Username.");
                  break;
@@ -118,17 +123,29 @@ switch ($action) {
                  $messages[] = __gettext("Error! Invalid invite code.");
                  break;
              } */
-             
-             
+             $code = 'i' . substr(base_convert(md5(time() . $USER->username), 16, 36), 0, 7);
+			 
+             $no = "no"; //Para que por defecto el usuario no quede activado
              $displaypassword = $password1;
              $u = new StdClass;
              $u->name = $name;
 			 $u->lastname = $lastname;
 			 $u->email = $mail;
 			 $u->username = $username;
+			 $u->active = $no;
+			 $u->code = $code;
              $u->password = md5($password1);
-             //$u = plugin_hook("user","create",$u);
+             $u = plugin_hook("user","create",$u);
              
+			 //Ingreso de la base de datos para la activación
+			 $invite->name = $name;
+			 $invite->email = $mail;
+			 $invite->code = $code;
+             $invite->added = time();
+             $invite->owner = $USER->ident;
+             insert_record('invitations',$invite);
+             $url = url . "_invite/join.php?invitecode=" . $invite->code;
+			 
              if (!empty($u)) {
                  $ident = insert_record('users',$u);
                  $u->ident = $ident;
@@ -155,18 +172,20 @@ switch ($action) {
                  $f->friend = 1;
                  insert_record('friends',$f);*/
                  
-                 //$u = plugin_hook("user","publish",$u);
+                 $u = plugin_hook("user","publish",$u);
                  
                  $rssresult = run("weblogs:rss:publish", array($ident, false));
                  $rssresult = run("files:rss:publish", array($ident, false));
                  $rssresult = run("profile:rss:publish", array($ident, false));
-                 $_SESSION['messages'][] = __gettext("Your account was created! You can now log in using the username and password you supplied. You have been sent an email containing these details for reference purposes.");
+                 $_SESSION['messages'][] = __gettext("Your account was created! You have been sent an email containing these details for reference purposes and a link to activate the acount.");
                  //delete_records('invitations','code',$code);
                  email_to_user($u,null,sprintf(__gettext("Your %s account"),$sitename), 
                       sprintf(__gettext("Thanks for joining %s!\n\nFor your records, your %s username and password are:\n\n\t")
-                                      .__gettext("Username: %s\n\tPassword: %s\n\nYou can log in at any time by visiting %s and entering these details into the login form.\n\n")
+                                      .__gettext("Username: %s\n\tPassword: %s\n\n")
+									  .__gettext("To active your acount, please visit the following url: %s")
+									  .__gettext("\n\nYou can log in at any time by visiting %s and entering these details into the login form.\n\n")
                                       .__gettext("We hope you enjoy using the system.\n\nRegards,\n\nThe %s Team")
-                              ,$sitename,$sitename,$username,$displaypassword,url,$sitename));
+                              ,$sitename,$sitename,$username,$displaypassword,$url,url,$sitename));
                  header("Location: " . $CFG->wwwroot);
                  exit();
              
