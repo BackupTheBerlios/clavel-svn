@@ -24,7 +24,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <label><input type="checkbox" name="remember" checked="checked" /> __gettext("Remember Login")</label>
+                <label><input type="checkbox" name="remember" /> __gettext("Remember Login")</label>
             </td>
         </tr>
         <tr>
