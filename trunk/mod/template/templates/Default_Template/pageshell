@@ -17,6 +17,8 @@
 </div><!-- close div header -->
 {{toolbar}}
 <div id="content-holder"><!-- open content-holder div -->
+
+
     <div id="content-holder-inner" class="fixed">
 	<div id="splitpane-sidebar"><!-- open splitpane-sidebar div -->
 	<div id="splitpane-sidebar-inner">
@@ -34,18 +36,20 @@
 	</div><!-- close open splitpane-content div -->
 <br>
 
-	<div id="otro" align="left">
-
+	<div id="tabla_registro" align="left">
             <table>
                     <td width=660 align="center">
                         {{register}}
+
                     </td>
 
             </table>
-       </div>
-
     </div>
+    
+    
 </div><!-- close content-holder div --> 
+
+
 <br>
 <div id="footer" class="fixed"><!-- start footer -->
 	<span style="color:#FF934B">{{sitename}}</span> <a href="{{url}}content/terms.php">Términos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Póliza de Privacidad</a><br />

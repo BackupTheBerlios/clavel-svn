@@ -203,11 +203,52 @@ div#single-page {
 
 }
 
+
+
+/*
+	THE MAIN CONTENT AREA WHEN THE SIDEBAR IS IN PLACE
+*/
+
+div#splitpane-content {
+	text-align: left;
+	position: relative;
+	margin-right: 17em;
+	padding:0 10px 0 0;
+        heigth: 450px;
+color:black;
+
+}
+
+	/* Secondary Content */
+	
+	#splitpane-sidebar {
+	   float: right;
+	height:200%;
+        color:black;
+
+	}
+	
+    #tabla_registro {
+       background:white;
+	}
+	#splitpane-content-inner{
+       background:white;
+	}
+	
+	#splitpane-sidebar-inner {
+	width: 15.0em;
+	float: left;
+	padding: 0em 0em 0.5em 2em;
+	border-left: dotted 1px white;
+        height:420%;
+     color:black;
+	}
+
 	#splitpane-register {
 	margin-right: 170em;
 	padding:0 100px 0 0;
 heigth: 250px;
-        color:red;
+        color:black;
 
 	}
 
@@ -219,24 +260,16 @@ heigth: 250px;
 	margin-right: -40em;
 	padding-right: 10em;
         color:black;
-        background:red;
+        background:white;
 
 	}
 
-/*
-	THE MAIN CONTENT AREA WHEN THE SIDEBAR IS IN PLACE
-*/
 
-div#splitpane-content {
-	margin: 0;
-	padding: 10px;
-	width:680px;
-	text-align: left;
-	color:#000;
-	overflow:hidden;
-	min-height:500px;
-	background: white;
-}
+
+
+
+
+
 
 /*
 	SIDEBAR: THIS IS ONLY PRESENT WHEN SPLITPANE-CONTENT IS IN USE
@@ -247,7 +280,7 @@ div#splitpane-sidebar {
 	margin:20px 10px 20px 0;
 	padding:0;
 	float: right;
-	background:white;
+	background:white ;
 }
 
 div#sidebar-contents {

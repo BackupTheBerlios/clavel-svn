@@ -537,7 +537,7 @@ function templates_page_draw ($param) {
     $mainbody = $param[1];
 
     $register = $param[3];
-	echo "Mostrando" . $register;
+	//echo "Mostrando" . $register;
     $run_result = '';
 
 
