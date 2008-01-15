@@ -9,6 +9,8 @@ delete_records_select('invitations',"added < ?",array(time() - (86400 * 7)));
 $sitename = $CFG->sitename;
 
 $action = optional_param('action');
+$ident = optional_param('id');
+$mailaddress = optional_param('email');
 switch ($action) {
     
     // Add a new invite code
@@ -195,11 +197,12 @@ switch ($action) {
 
      // Request a new password
      case "invite_password_request":
-         $username = optional_param('password_request_name');
-         if (!empty($username)) {
-             if ($user = get_record('users','username',trim($username),'user_type','person')) {
+         $mail = optional_param('password_request_mail');
+		 
+         if (!empty($mail)) {
+             if ($user = get_record('users','email',trim($mail),'user_type','person')) {
                  $pwreq = new StdClass;
-                 $pwreq->code = 'i' . substr(base_convert(md5(time() . $username), 16, 36), 0, 7);
+                 $pwreq->code = 'i' . substr(base_convert(md5(time() . $mail), 16, 36), 0, 7);
                  $pwreq->owner = $user->ident;
                  insert_record('password_requests',$pwreq);
                  $url = url . "_invite/new_password.php?passwordcode=" . $pwreq->code;
@@ -212,6 +215,34 @@ switch ($action) {
              } else {
                  $messages[] = __gettext("No user with that username was found.");
              }
+         }
+         break;
+		 
+	// Create a new password
+     case "invite_create_password":
+         $password1 = trim(optional_param('join_password1'));
+         $password2 = trim(optional_param('join_password2'));
+
+		 
+         if (isset($password1) && isset($password2)) {
+             
+			 if ($password1 != $password2 || strlen($password1) < 6 || strlen($password2) > 16) {
+                 $messages[] = __gettext("Error! Invalid password. Your passwords must match and be between 6 and 16 characters in length.");
+                 break;
+             }
+			 
+			 $newpassword = strtolower($password1);
+          	 $sitename = sitename;
+			 $user = new StdClass;
+             $user->ident = $ident;
+			 $user->email = $mailaddress;
+        
+        	 email_to_user($user, null, sprintf(__gettext("Your %s password"), $sitename), sprintf(__gettext("Your %s password has been reset.\n\nFor your records, your new password is:\n\n\tPassword: %s\n\nPlease consider changing your password as soon as you have logged in for security reasons.\n\nWe hope you continue to enjoy using the system.\n\nRegards,\n\nThe %s Team"),$sitename, $newpassword, $sitename));
+        	 $newpassword = md5($newpassword);
+        	 set_field('users','password',$newpassword,'ident',$ident);
+        	 //delete_records('password_requests','owner',$ident);
+             $messages[] = __gettext("Your have a new password. Please, chech your email.");
+            
          }
          break;
 }

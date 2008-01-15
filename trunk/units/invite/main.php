@@ -23,5 +23,6 @@
     // Allow the user to request a new password
         $function['invite:password:request'][] = $CFG->dirroot . "units/invite/password_request.php";
         $function['invite:password:new'][] = $CFG->dirroot . "units/invite/new_password.php";
+		$function['invite:password:createnew'][] = $CFG->dirroot. "units/invite/create_new_password.php";
          
 ?>

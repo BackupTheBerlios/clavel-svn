@@ -19,8 +19,7 @@
     <p>
         $partOne
     </p>
-    <p>
-    </p>
+
     <form action="" method="post">
                 
 END;

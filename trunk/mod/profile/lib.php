@@ -29,7 +29,7 @@ function profile_pagesetup() {
                 $PAGE->menu_sub[] = array( 'name' => 'profile:picedit', 
                                            'html' => '<a href="'.$CFG->wwwroot.'_icons/?context=profile&amp;profile_id='.$pgowner.'">'
                                            . __gettext("Change site picture") . '</a>');
-                if (!empty($CFG->uses_YUI)) {
+                /*if (!empty($CFG->uses_YUI)) {
                     $PAGE->menu_sub[] = array( 'name' => 'profile:widget:manage',
                         'html' => '<a href="'.$CFG->wwwroot.'mod/widget/manage_widgets.php">'
                         . __gettext("Manage widgets") . '</a>');
@@ -37,7 +37,7 @@ function profile_pagesetup() {
                     $PAGE->menu_sub[] = array( 'name' => 'profile:widget:add',
                         'html' => '<a href="'.$CFG->wwwroot.'mod/profile/add.php?owner='.$pgowner.'">'
                         . __gettext("Add widget") . '</a>');
-                }                   
+                }*/
             }
         }
     }

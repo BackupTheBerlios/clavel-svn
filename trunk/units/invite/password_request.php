@@ -28,8 +28,8 @@ END;
     
     $run_result .= templates_draw(array(
                                     'context' => 'databoxvertical',
-                                    'name' => __gettext("Your username"),
-                                    'contents' => display_input_field(array("password_request_name","","text"))
+                                    'name' => __gettext("Your email"),
+                                    'contents' => display_input_field(array("password_request_mail","","text"))
         )
         );
     $request = __gettext("Request new password"); // gettext variable
