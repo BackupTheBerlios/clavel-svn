@@ -54,8 +54,8 @@ function contenttoolbar_widget_edit($widget) {
   $video_width = widget_get_data("video_width",$widget->ident);
   $video_height = widget_get_data("video_height",$widget->ident);
 
-  $video_width = ($video_width==null || $video_width==0 || $video_width=="")?"200":$video_width;
-  $video_height = ($video_height==null || $video_height==0 || $video_height=="")?"240":$video_height;
+  $video_width = ($video_width==null || $video_width==0 || $video_width=="")?"425":$video_width;
+  $video_height = ($video_height==null || $video_height==0 || $video_height=="")?"355":$video_height;
 
   $body = "<h2>" . __gettext("Video widget") . "</h2>";
   $explanation = __gettext("To embed videos from popular sites like Google Video and Youtube, obtain the embed HTML, paste it in the following form and configure your preferred size:");

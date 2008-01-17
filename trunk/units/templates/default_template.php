@@ -90,6 +90,7 @@ END;
     $tags = __gettext("Tags");
     $resources = __gettext("Resources");
     $template['ownerbox'] = <<< END
+
     
      <div id="me">
         <div id="icon"><a href="{{profileurl}}">{{usericon}}</a></div>

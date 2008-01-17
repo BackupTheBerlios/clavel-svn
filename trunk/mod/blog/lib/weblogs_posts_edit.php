@@ -33,7 +33,12 @@ if(array_key_exists($extensionContext,$CFG->weblog_extensions)){
   if ($tags = get_records_select('tags',"tagtype = ? and ref = ? and owner = ?",array('weblog',$post->ident,$_SESSION['userid']),'tag ASC')) {
     $first = true;
     foreach($tags as $key => $tag) {
-      if(!in_array($tag->tag,$extraValue) && trim($tag->tag)!=$extraType){
+    
+	//NOTE: 
+	//I change this line
+	//if(!in_array($tag->tag,$extraValue) && trim($tag->tag)!=$extraType){
+	//for this:		
+      if(trim($tag->tag)!=$extraType){
         if (empty($first)) {
           $keywords .= ", ";
         }
