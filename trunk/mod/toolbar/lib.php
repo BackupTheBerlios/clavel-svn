@@ -56,12 +56,8 @@
         <div id="search-header"><!-- open search-header div -->
         <form id="searchform" action="{$CFG->wwwroot}search/index.php" method="get">
             <p><input type="text" size="20" name="tag" value="{$searchdefault}" onclick="if (this.value=='{$searchdefault}') { this.value='' }" />
-            <select name="user_type">
-                <option value="">-- {$all} --</option>
-                <option value="person">{$people}</option>
-                <option value="community">{$communities}</option>
-            </select>
-            <input type="submit" value="Go" /><span><br />[<a href="{$CFG->wwwroot}mod/browser/"><b>{$browse}</b></a>] [<a href="{$CFG->wwwroot}search/tags.php"><b>{$tagcloud}</b></a>]</span></p>
+
+            <input type="submit" value="Go" />
         </form>
         </div><!-- close search-header div -->
         
