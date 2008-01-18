@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: O2o v0.1\n"
+"POT-Creation-Date: 2007-01-06 02:52+0000\n"
+"PO-Revision-Date: 2007-02-17 16:14+0000\n"
+"Last-Translator: Nicolás Martín <nicolas@somosmas.org>\n"
+"Language-Team: Spanish (O2O) <nicolas@somosmas.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Rosetta-Export-Date: 2007-01-08 16:18+0000\n"
+
+#: compose.php:16
+msgid "Messages"
+msgstr "Mensajes"
+
+#: default_template.php:11
+msgid "Sent by"
+msgstr "Enviado por"
+
+#: default_template.php:12
+msgid "Date"
+msgstr "Fecha"
+
+#: default_template.php:13
+msgid "Subject"
+msgstr "Asunto"
+
+#: default_template.php:15
+msgid "Action:"
+msgstr "Acción:"
+
+#: default_template.php:16
+msgid "Select an action"
+msgstr "Seleccione una acción"
+
+#: default_template.php:17
+msgid "Are you sure you want to permanently delete this message(s)?"
+msgstr "¿Está seguro que quiere borrar permanentemente el(los) mensaje(s)?"
+
+#: default_template.php:24
+msgid "Message List"
+msgstr "Lista de Mensajes"
+
+#: default_template.php:25
+msgid "A template for the message list"
+msgstr "Plantilla para el listado de mensajes"
+
+#: default_template.php:26
+msgid "The list of messages themselves"
+msgstr "La lista de mensajes"
+
+#: default_template.php:27
+msgid "The list of page links when there are lots of messages"
+msgstr "La lista de vínculos de páginas cuando hay muchos mensajes"
+
+#: default_template.php:27
+msgid "From | To Label for the message list"
+msgstr "Etiqueta De | Para para el listado de mensajes"
+
+#: default_template.php:31
+msgid "Message"
+msgstr "Mensaje"
+
+#: default_template.php:32
+msgid "A template for each message"
+msgstr "Plantilla para cada mensaje"
+
+#: default_template.php:33
+msgid "The time and date of the message"
+msgstr "La hora y fecha del mensaje"
+
+#: default_template.php:34
+msgid "Message title"
+msgstr "Título del mensaje"
+
+#: default_template.php:34
+msgid "The username from the sender"
+msgstr "el nombre de usuario del remitente"
+
+#: default_template.php:34
+msgid "The full name from the sender"
+msgstr "El nombre completo del remitente"
+
+#: default_template.php:34
+msgid "The icon from the sender"
+msgstr "El ícono del remitente"
+
+#: default_template.php:34
+msgid "The message status style (read|unread)"
+msgstr "El estilo del estado del mensaje (leído|no leído)"
+
+#: default_template.php:41
+msgid "The message body text"
+msgstr "El cuerpo del mensaje"
+
+#: default_template.php:41
+msgid "Links related with the message (delete|reply)"
+msgstr "Vínculos relacionados con el mensaje (borrar|responder)"
+
+#: lib.php:26
+msgid "Your Messages"
+msgstr "Mis Mensajes"
+
+#: lib.php:40
+msgid "View Messages"
+msgstr "Ver Mensajes"
+
+#: lib.php:45
+msgid "Compose"
+msgstr "Componer"
+
+#: lib.php:50
+msgid "Sent Messages"
+msgstr "Mensajes Enviados"
+
+#: messages_actions.php:65
+msgid "The selected message was deleted."
+msgstr "El mensaje seleccionado fue borrado."
+
+#: messages_actions.php:67
+msgid "The message ID its not valid!."
+msgstr "¡El ID del mensaje no es válido!."
+
+#: messages_actions.php:148
+msgid "You have received a message from %s."
+msgstr "Has recibido un mensaje de %s."
+
+#: messages_actions.php:150
+msgid "To reply, click here: %s"
+msgstr "Para responder, presiona aquí: %s"
+
+#: messages_actions.php:155
+msgid "You cannot reply to this message by email."
+msgstr "No puedes responder este mensaje por email."
+
+#: messages_actions.php:156
+msgid "Failed to send email. An unknown error occurred."
+msgstr "Falló el envío de correo. Ocurrió un error desconocido."
+
+#: messages_actions.php:163
+msgid "Your message was sent"
+msgstr "Tu mensaje ha sido enviado"
+
+#: messages_actions.php:168
+msgid "You can't send an empty message!"
+msgstr "¡No puedes enviar un mensaje vacío!"
+
+#: messages_actions.php:171
+msgid "You must specify the sender a recipient!"
+msgstr "¡Debes especificar un destinatario!"
+
+#: messages_init.php:26
+msgid "You may view only your own messages"
+msgstr "Sólo puedes ver tus propios mensajes"
+
+#: messages_message_detailedview.php:42
+msgid "Reply"
+msgstr "Responder"
+
+#: messages_message_detailedview.php:43
+msgid "Are you sure you want to permanently delete this message?"
+msgstr "¿Estás seguro que quieres borrar permanentemente este mensaje?"
+
+#: messages_message_detailedview.php:44
+msgid "Delete"
+msgstr "Borrar"
+
+#: messages_new.php:32
+msgid "(Community)"
+msgstr "(Grupo)"
+
+#: messages_new.php:38
+msgid "No friends on your friends list to send to!"
+msgstr "¡No hay conexiones en tu listado de conexiones para enviarles!"
+
+#: messages_new.php:63
+msgid "New message"
+msgstr "Nuevo mensaje"
+
+#: messages_new.php:64
+msgid "From:"
+msgstr "De:"
+
+#: messages_new.php:65
+msgid "To:"
+msgstr "Para:"
+
+#: messages_new.php:66
+msgid "Subject:"
+msgstr "Asunto:"
+
+#: messages_new.php:67
+msgid "Message:"
+msgstr "Mensaje:"
+
+#: messages_view.php:27
+msgid "Mark as unread"
+msgstr "Marcar como no leído"
+
+#: messages_view.php:28
+msgid "Mark as read"
+msgstr "Marcar como leído"
+
+#: messages_view.php:30
+msgid "Inbox"
+msgstr "Bandeja de entrada"
+
+#: messages_view.php:38
+msgid "Sent to"
+msgstr "Enviado a"
+
+#: messages_view.php:39
+msgid "Sent messages"
+msgstr "Mensajes enviados"
+
+#: messages_view.php:59
+msgid "Back"
+msgstr "Atrás"
+
+#: messages_view.php:71
+msgid "Next"
+msgstr "Siguiente"
+
+#: messages_sidebar_link.php:71
+msgid "Send Message"
+msgstr "Enviar mensaje"
