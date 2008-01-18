@@ -5,7 +5,7 @@
 {{metatags}}
 </head>
 <body>
-{{toolbar}}
+
 <div id="container"><!-- open container which wraps the header, maincontent and sidebar -->
 <div id="header"><!-- open div header -->
 	<div id="header-inner">
@@ -16,6 +16,7 @@
 		{{searchbox}}
 	</div>
 </div><!-- close div header -->
+{{toolbar}}
 <div id="content-holder"><!-- open content-holder div -->
 	<div id="content-holder-inner">   
 		<div id="splitpane-sidebar"><!-- open splitpane-sidebar div -->

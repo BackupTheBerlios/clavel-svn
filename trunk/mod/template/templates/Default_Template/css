@@ -7,18 +7,18 @@
 */
 
 body {
-	background:#fff url({{url}}mod/template/templates/Default_Template/images/header.gif) repeat-x; /* #d9e2f2  */
+	background:white 
 	color:#697C83;
 	font-family:'Trebuchet MS','Lucida Grande', Arial, sans-serif;
 	text-align:left;
 	margin:0 auto;
 	padding:0;
-	font-size: 80%;
+	font-size: 100%;
 	line-height:1.6em;
 }
 
 p {
-	color:#555;
+	color:black;
 	margin:0 0 10px 0;
 }
 
@@ -28,19 +28,21 @@ a {
 }
 
 ol, ul {
-	color:#697C83;
+	color:black;
 }
 
 h1 {
 	font-size:130%;
+	color:black;
 }
 
 h2, h3, h4, h5 {
 	font-size:100%;
+	color:black;
 }
 
 blockquote{
-	background: #EEE url({{url}}mod/template/templates/Default_Template/images/blockquote.png) no-repeat bottom left;
+	background: white 
 	padding: 10px;
 	padding-bottom: 40px;
 	margin: 1em;
@@ -102,7 +104,7 @@ div#header #logo h1 {
 }
 
 div#header #logo h1 a{
-	color:#fff;
+	color:black;
 	font-family:Helvetica, "Myriad Web", Arial, sans-serif;
 }
 
@@ -137,7 +139,7 @@ div#header #search-header p {
 }
 
 div#header #search-header span a {
-	color:#fff;
+	color:black;
 }
 
 /*
@@ -213,7 +215,7 @@ div#splitpane-sidebar {
 	margin:20px 10px 20px 0;
 	padding:0;
 	float: right;
-	background:#efefef url({{url}}mod/template/templates/Default_Template/images/sidebar-top.gif) no-repeat top;
+	background:white;
 }
 
 div#sidebar-contents {
@@ -221,8 +223,7 @@ div#sidebar-contents {
 }
 
 div#sidebar-bottom {
-   background:url({{url}}mod/template/templates/Default_Template/images/sidebar-bottom.gif) no-repeat bottom;
-   height:9px;
+   background:white
    width:250px;
    margin:0;
 }
@@ -285,7 +286,7 @@ div#footer {
 	font-weight:bold;
 	width:100%;
 	padding:3px 0 0 0;
-	background:url({{url}}mod/template/templates/Default_Template/images/footer.gif) repeat-x;
+	background:white;
 }
 
 div#footer img {
@@ -298,7 +299,7 @@ div#footer p {
 }
 
 div#footer a {
-	color:#fff;
+	color:black;
 	padding:0 5px 0 5px;
 }
 
