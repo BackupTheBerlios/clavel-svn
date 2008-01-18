@@ -1,13 +1,35 @@
-<h1>Welcome {{name}}</h1>
-<p style="margin-top:20px;">
-    This is {{sitename}}, a social network. Why not check out <a href="{{url}}weblog/everyone">what people are saying</a> right now?
-</p>
-<p>
-    <a href="{{url}}search/tags.php">Find others</a> with similar interests and goals.
-</p>
-<p>
-    Here are some example users: {{randomusers}}
-</p>
-<p>
-    If you like what you see, why not <a href="{{url}}mod/invite/register.php">register for an account</a>?
-</p>
+Contenido
+<br> 
+-----
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+-----
+
+<br>
+<br>
+<br>
+
+
+
+    <div id="content-holder-inner-down">   
+    
+		<div id="tabla_registro" align="left">
+            <table>
+                    <td width=660 align="center">
+						<br>
+						<h1>Registrate Ahora !!!!</h1>
+							<p>
+    							Lo invitamos a que pertenezca a esta Red Social: 
+    							<a href="{{url}}mod/invite/register.php">BOTON AQUI<a>
+							</p>
+
+                    </td>
+            </table>
+    	</div><!-- close tabla_registro div -->
+
+	</div><!-- close content-holder-inner-down div -->

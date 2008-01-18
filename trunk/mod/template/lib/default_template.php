@@ -25,6 +25,7 @@
                                                             '{{menu}}' => __gettext("Menu"),
                                                             '{{topmenu}}' => __gettext("Status menu"),
                                                             '{{mainbody}}' => __gettext("Main body"),
+															'{{register}}' => __gettext("Register"),
                                                             '{{sidebar}}' => __gettext("Sidebar")
                                                         )
                                     );
@@ -33,7 +34,7 @@
     
     templates_add_context('frontpage_loggedout', $CFG->templatesroot . 'Default_Template/frontpage_loggedout');
     templates_add_context('frontpage_loggedin', $CFG->templatesroot . 'Default_Template/frontpage_loggedin');
-
+    templates_add_context('register_loggedout', $CFG->templatesroot . 'Default_Template/register_loggedout');
     $template_definition[] = array(
                                     'id' => 'contentholder',
                                     'name' => __gettext("Content holder"),
@@ -92,7 +93,7 @@ END;
         <div id="icon"><a href="{{profileurl}}">{{usericon}}</a></div>
         <div id="contents" >
           <p>
-            <span class="userdetails">{{name}}<br /><a href="{{profileurl}}rss/"><img src="{{url}}mod/template/icons/rss.png" alt="RSS" border="0" /></a> | <a href="{{profileurl}}tags/">$tags</a> | <a href="{{profileurl}}newsclient/">$resources</a></span></p>
+            <span class="userdetails">{{name}}
             <p>{{tagline}}</p>
             <p>{{lmshosts}}</p>
             <p class="usermenu">{{usermenu}}</p>

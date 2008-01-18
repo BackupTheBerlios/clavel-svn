@@ -151,10 +151,23 @@ div#header #search-header span a {
 	padding:5px;
 	margin:0;
 	width:974px;
-	min-height:500px;
+	min-height:400px;
 	position:relative;
 	clear:both;
+
 }
+
+#content-holder-inner {
+	height:300px;
+
+}
+
+#content-holder-inner-down {
+
+	background:blue;
+}
+
+
 
 div#content-holder a:hover {
 	text-decoration:underline;

@@ -174,6 +174,7 @@ function templates_page_draw ($param) {
                             'top'          => displaymenu_top(),
                             'sidebar'      => $sidebarhtml,
                             'mainbody'     => $mainbody,
+							'mainbody'     => $mainbody,
                             'messageshell' => $messageshell
                             ));
             
