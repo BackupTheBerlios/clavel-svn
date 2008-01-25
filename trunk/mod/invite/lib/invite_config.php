@@ -17,7 +17,7 @@
   * Defines if in the confirmation message it sends the user and password
   * Type: boolean
   */
- define('INVITE_MAIL_CLEAR_PASSWORD',false);
+ define('INVITE_MAIL_CLEAR_PASSWORD',true);
 
  /**
   * Defines if auto log in after the registration process

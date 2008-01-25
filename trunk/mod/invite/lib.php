@@ -22,6 +22,9 @@
 
   // Allow a new user to sign up
       $function['join:no_invite'][] = $CFG->dirroot . "mod/invite/lib/join_noinvite.php";
+	  
+  // Allow activate the acount 
+  	  $function['join:activate'][] = $CFG->dirroot . "mod/invite/lib/activate.php";
 
   // Allow the user to request a new password
       $function['invite:password:request'][] = $CFG->dirroot . "mod/invite/lib/password_request.php";

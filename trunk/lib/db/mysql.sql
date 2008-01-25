@@ -290,6 +290,7 @@ CREATE TABLE `prefix_users` (
   `password` varchar(32) NOT NULL default '',
   `email` varchar(128) NOT NULL default '',
   `name` varchar(128) NOT NULL default '' COMMENT 'descriptive name',
+  `lastname` varchar(128) NOT NULL default '' COMMENT 'descriptive lastname',
   `icon` int(11) NOT NULL default '-1' COMMENT '-> icons.ident',
   `active` enum('yes','no') NOT NULL default 'yes',
   `alias` varchar(128) NOT NULL default '',

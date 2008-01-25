@@ -35,7 +35,7 @@
              $pingvars .= "&name=" . urlencode($CFG->sitename);
              $pingvars .= "&rssurl=" . urlencode($CFG->wwwroot . "%username%/rss");
              $pingvars .= "&foafurl=" . urlencode($CFG->wwwroot . "%username%/foaf");
-             $pingresponse = file_get_contents("http://ex.plode.us/mod/searchping/elggping.php?{$pingvars}");
+             //$pingresponse = file_get_contents("http://ex.plode.us/mod/searchping/elggping.php?{$pingvars}");
              
              if (user_flag_get("admin",$_SESSION['userid'])) {
                  $messages[] = str_replace("&","<br />",$pingvars);
@@ -84,7 +84,7 @@
                              $pingvars .= "&crypt=" . urlencode($crypt_reping);
                              $pingvars .= "&username=" . urlencode($username);
                              
-                             $response = file_get_contents("http://ex.plode.us/mod/searchping/elggping.php?{$pingvars}");
+                             //$response = file_get_contents("http://ex.plode.us/mod/searchping/elggping.php?{$pingvars}");
                         }
                         
                      }

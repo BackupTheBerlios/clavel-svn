@@ -72,12 +72,16 @@ switch ($action) {
 
          // Join using an invitation
      case "invite_join":
-         $name = trim(optional_param('join_name'));
          $code = trim(optional_param('invitecode'));
-         $over13 = optional_param('over13');
+		 $name = trim(optional_param('join_firstname'));
+		 $lastname = trim(optional_param('join_lastname'));
+		 $mail = trim(optional_param('join_email'));
          $username = trim(strtolower(optional_param('join_username')));
          $password1 = trim(optional_param('join_password1'));
          $password2 = trim(optional_param('join_password2'));
+		 $accept = trim(optional_param('accept'));
+
+echo $mail;
 
          if (isset($name) && isset($code)) {
              if (maxusers_limit()) {
@@ -85,36 +89,69 @@ switch ($action) {
                  break;
              }
              if (empty($name)) {
-                $messages[] = __gettext('Error! You must provide a name.');
+                $messages[] = __gettext('You must provide a first name.');
                 break;
              }
-             if (empty($over13)) {
-                 $messages[] = __gettext("You must indicate that you are at least 13 years old to join.");
+			 if (empty($lastname)) {
+                $messages[] = __gettext('You must provide a lastname.');
+                break;
+             }
+			 if (empty($mail)) {
+                $messages[] = __gettext('You must provide an email.');
+                break;
+             }
+			 $mail = strtolower($mail);
+             if (record_exists('users','email',$mail)) {
+                 $messages[] = __gettext("The email '$mail' is already taken by another user. You will need to pick a different one.");
                  break;
              }
-             if (!$details = get_record('invitations','code',$code)) {
-                 $messages[] = __gettext("Error! Invalid invite code.");
-                 break;
-             }
-             if (!validate_password($password1, $password2)) {
-                 $messages[] = __gettext("Error! Invalid password. Your passwords must match and be between 6 and 16 characters in length.");
-                 break;
-             }
-             if (!validate_username($username)) {
-                 $messages[] = __gettext("Error! Your username must contain letters and numbers only, cannot be blank, and must be between 3 and 12 characters in length.");
+			 if (!validate_username($username)) {
+                 $messages[] = __gettext("Your username must contain letters and numbers only, cannot be blank, and must be between 3 and 12 characters in length.");
                  break;
              }
              if (!username_is_available($username)) {
                  $messages[] = __gettext("The username '$username' is already taken by another user. You will need to pick a different one.");
                  break;
              }
+			 if ($password1 != $password2 || strlen($password1) < 6 || strlen($password2) > 16) {
+                 $messages[] = __gettext("Invalid password. Your passwords must match and be between 6 and 16 characters in length.");
+                 break;
+             }
+			 /*if (!validate_password($password1, $password2)) {
+                 $messages[] = __gettext("Invalid password. Your passwords must match and be between 6 and 16 characters in length.");
+                 break;
+             }*/ //Se comentó porque no hacia la comparación entre la contraseña y la verificación de la contraseña
+             if (empty($accept)) {
+                 $messages[] = __gettext("You must accept the Terms and Conditios to join.");
+                 break;
+             }
+             /*if (!$details = get_record('invitations','code',$code)) {
+                 $messages[] = __gettext("Error! Invalid invite code.");
+                 break;
+             }*/
+             
+			 $code = 'i' . substr(base_convert(md5(time() . $USER->username), 16, 36), 0, 7);
+			 
+			 $no = "no"; //Para que por defecto el usuario no quede activado
              $displaypassword = $password1;
              $u = new StdClass;
              $u->name = $name;
+			 $u->lastname = $lastname;
+			 $u->email = $mail;
+			 $u->username = $username;
+			 $u->active = $no;
+			 $u->code = $code;
              $u->password = md5($password1);
-             $u->email = $details->email;
-             $u->username = $username;
              $u = plugin_hook("user","create",$u);
+			 
+			 //Ingreso de la base de datos para la activación
+			 $invite->name = $name;
+			 $invite->email = $mail;
+			 $invite->code = $code;
+             $invite->added = time();
+             $invite->owner = $USER->ident;
+             insert_record('invitations',$invite);
+             $url = url . "mod/invite/join.php?invitecode=" . $invite->code;
 
              if (!empty($u)) {
                  $ident = insert_record('users',$u);
@@ -138,12 +175,12 @@ switch ($action) {
                  }
                  // make them friend the news user
 
-                 if(INVITE_AUTOADD_NEWS_FRIEND){
+                 /*if(INVITE_AUTOADD_NEWS_FRIEND){
                    $f = new StdClass;
                    $f->owner = $ident;
                    $f->friend = 1;
                    insert_record('friends',$f);
-                 }
+                 }*/
 
                  $u = plugin_hook("user","publish",$u);
 
@@ -151,10 +188,11 @@ switch ($action) {
                  $rssresult = run("files:rss:publish", array($ident, false));
                  $rssresult = run("profile:rss:publish", array($ident, false));
                  $_SESSION['messages'][] = __gettext("Your account was created! You can now log in using the username and password you supplied. You have been sent an email containing these details for reference purposes.");
-                 delete_records('invitations','code',$code);
+                 //delete_records('invitations','code',$code);
 
                  if(INVITE_MAIL_CLEAR_PASSWORD===true){
-                   $msg=run("invite:join:default:mailwithpass",array($sitename,$username,$displaypassword,url));
+				 echo "entra a este if";
+                   $msg=run("invite:join:default:mailwithpass",array($sitename,$username,$displaypassword,url,$url));
                    if(array_key_exists("invite:join:mailwithpass",$function)){
                       $msg=run("invite:join:mailwithpass",array($sitename,$username,$displaypassword,url));
                     }
