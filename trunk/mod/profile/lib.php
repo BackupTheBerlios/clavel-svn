@@ -34,11 +34,11 @@ function profile_pagesetup() {
 					$PAGE->menu_sub[] = array (
 						'name' => 'profile:widget:manage',
 						'html' => '<a href="' . $CFG->wwwroot . 'mod/widget/manage_widgets.php">' . __gettext("Manage widgets") . '</a>');
-				} else {
+				} /*else {
 					$PAGE->menu_sub[] = array (
 						'name' => 'profile:widget:add',
 						'html' => '<a href="' . $CFG->wwwroot . 'mod/profile/add.php?owner=' . $pgowner . '">' . __gettext("Add widget") . '</a>');
-				}
+				}*/
 			}
 		}
 	}

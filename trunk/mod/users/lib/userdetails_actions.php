@@ -63,7 +63,32 @@ if (logged_on && !empty($action)
                     $USER->name = $name;
                     $_SESSION['name'] = $name;
                 }
-                $messages[] = __gettext("Name updated.");
+                $messages[] = __gettext("First Name updated.");
+            }
+        }
+		
+		$lastname = trim(optional_param('lastname'));
+        if (!empty($lastname)) {
+            if (strlen($lastname) > 64) {
+                $messages[] = __gettext("Your suggested lastname was too long. Please try something shorter.");
+            } elseif ($lastname != $USER->lastname) {
+                $u = new StdClass;
+                $u->lastname = $lastname;
+                $u->ident = $id;
+                
+                // Add a callback
+	            $u = plugin_hook('userdetails', 'republish', $u);
+	            if (empty($u)) {
+	                trigger_error("The callback didn't receive a return value.", E_USER_ERROR);
+	            }
+                
+                update_record('users',$u);
+                
+                if ($USER->ident == $page_owner) {
+                    $USER->lastname = $lastname;
+                    $_SESSION['lastname'] = $lastname;
+                }
+                $messages[] = __gettext("Last Name updated.");
             }
         }
         

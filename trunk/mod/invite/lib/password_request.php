@@ -11,7 +11,7 @@ if (!empty($CFG->disable_passwordchanging)) {
 
     // Join
     $sitename = sitename;
-    $desc = sprintf(__gettext("To generate a new password at %s!, enter your username or email below. We will send the address of a unique verification page to you via email click on the link in the body of the message and a new password will be sent to you."), $sitename); // gettext variable
+    $desc = sprintf(__gettext("To generate a new password at %s!, enter your email or email below. We will send the address of a unique verification page to you via email click on the link in the body of the message and a new password will be sent to you."), $sitename); // gettext variable
     $thismethod = __gettext("This method reduces the chance of a mistakenly reset password.");
 
     $run_result .= <<< END
@@ -28,8 +28,8 @@ END;
 
     $run_result .= templates_draw(array(
                                     'context' => 'databoxvertical',
-                                    'name' => __gettext("Your username"),
-                                    'contents' => display_input_field(array("password_request_name","","text"))
+                                    'name' => __gettext("Your email"),
+                                    'contents' => display_input_field(array("password_request_email","","text"))
         )
         );
     $request = __gettext("Request new password"); // gettext variable

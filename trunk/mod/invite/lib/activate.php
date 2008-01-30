@@ -1,5 +1,11 @@
 <?php
-
+/*
+ * activate.php
+ *
+ * Created on Jan 25, 2008
+ *
+ * @author Andrea Ximena Bocanegra Soto <sistemas@treszero.com>
+ */
 global $CFG, $metatags;
 // Join
 
@@ -37,6 +43,7 @@ if ($details = get_record('invitations','code',$code)) {
 		
         //$invite_id = (int) $details->ident;
         $thankYou = sprintf(__gettext("Thank you for check your Email Address. Now your acount is active.\n\nYou can loged in %s"),$sitename);
+	
         $run_result .= <<< END
         
     <p>

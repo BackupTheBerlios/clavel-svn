@@ -27,8 +27,8 @@ switch ($action) {
                               $invite->code = 'i' . substr(base_convert(md5(time() . $USER->username), 16, 36), 0, 7);
                               $invite->added = time();
                               $invite->owner = $USER->ident;
-                              insert_record('invitations',$invite);
-                              $url = url . "invite/join/" . $invite->code;
+                              //insert_record('invitations',$invite);
+                              $url = url . "mod/invite/register.php";
                               if (!logged_on) {
                                 $invitetext = '';
                                 $greetingstext = sprintf(__gettext("Thank you for registering with %s."),$sitename);
@@ -43,9 +43,9 @@ switch ($action) {
                                 $subjectline = $USER->name . " " . __gettext("has invited you to join") ." $sitename";
                                 $from_email = $USER->email;
                               }
-                              $emailmessage = sprintf(__gettext("Dear %s,\n\n%s %s\n\nTo join, visit the following URL:\n\n\t%s\n\nYour email address has not been passed onto any third parties, and will be removed from our system within seven days.\n\nRegards,\n\nThe %s team."),$strippedname,$greetingstext,$invitetext,$url, $sitename);
+                              $emailmessage = sprintf(__gettext("Dear %s,\n\n%s %s\n\nTo join, visit the following URL:\n\n\t%s\n\nYour email address has not been passed onto any third parties.\n\nRegards,\n\nThe %s team."),$strippedname,$greetingstext,$invitetext,$url, $sitename);
                               $emailmessage = wordwrap($emailmessage);
-                              $messages[] = sprintf(__gettext("Your invitation was sent to %s at %s. It will be valid for seven days."),$strippedname,$invite->email);
+                              $messages[] = sprintf(__gettext("Your invitation was sent to %s at %s."),$strippedname,$invite->email);
                               email_to_user($invite,null,$subjectline,$emailmessage);
                               if(INVITE_NO_RETURN_TO_REGISTER_PAGE){
                                 $messages['invitation_success'] = "";
@@ -81,7 +81,6 @@ switch ($action) {
          $password2 = trim(optional_param('join_password2'));
 		 $accept = trim(optional_param('accept'));
 
-echo $mail;
 
          if (isset($name) && isset($code)) {
              if (maxusers_limit()) {
@@ -240,17 +239,17 @@ echo $mail;
 
      // Request a new password
      case "invite_password_request":
-         $username = optional_param('password_request_name');
-         if(INVITE_ALLOW_EMAIL_BY_USERNAME){
+         $email = optional_param('password_request_email');
+         /*if(INVITE_ALLOW_EMAIL_BY_USERNAME){
            require_once $CFG->dirroot . "lib/validateurlsyntax.php";
            if(validateEmailSyntax($username)){
              if ($_username= get_field('users', 'username', 'email', $username)) {
                $username = $_username;
              }
            }
-         }
-         if (!empty($username)) {
-             if ($user = get_record('users','username',trim($username),'user_type','person')) {
+         }*/
+         if (!empty($email)) {
+             if ($user = get_record('users','email',trim($email),'user_type','person')) {
                  $pwreq = new StdClass;
                  $pwreq->code = 'i' . substr(base_convert(md5(time() . $username), 16, 36), 0, 7);
                  $pwreq->owner = $user->ident;
@@ -263,9 +262,40 @@ echo $mail;
                                        ,$sitename,$url,$sitename));
                  $messages[] = __gettext("Your verification email was sent. Please check your inbox.");
              } else {
-                 $messages[] = __gettext("No user with that username was found.");
+                 $messages[] = __gettext("No user with that email was found.");
              }
          }
+         break;
+		 
+	// Request a new password
+     case "invite_create_password":
+         $password1 = trim(optional_param('join_password1'));
+         $password2 = trim(optional_param('join_password2'));
+		 $ident = trim(optional_param('id'));
+		 
+         if (isset($password1) && isset($password2)) {
+             
+			 if ($password1 != $password2 || strlen($password1) < 6 || strlen($password2) > 16) {
+                 $messages[] = __gettext("Error! Invalid password. Your passwords must match and be between 6 and 16 characters in length.");
+                 break;
+             }
+			 
+			 $newpassword = strtolower($password1);
+          	 $sitename = sitename;
+			 $user = new StdClass;
+             $user->ident = $ident;
+			 $user->email = $mailaddress;
+			 
+			 $mailuser = get_record('users','ident',trim($ident),'user_type','person');
+        
+        	 email_to_user($mailuser, null, sprintf(__gettext("Your %s password"), $sitename), sprintf(__gettext("Your %s password has been reset.\n\nFor your records, your new password is:\n\n\tPassword: %s\n\nPlease consider changing your password as soon as you have logged in for security reasons.\n\nWe hope you continue to enjoy using the system.\n\nRegards,\n\nThe %s Team"),$sitename, $newpassword, $sitename));
+        	 $newpassword = md5($newpassword);
+        	 set_field('users','password',$newpassword,'ident',$ident);
+        	 //delete_records('password_requests','owner',$ident);
+             $messages[] = __gettext("Your password has been changed. Check your email.");
+            
+         }
+
          break;
 }
 

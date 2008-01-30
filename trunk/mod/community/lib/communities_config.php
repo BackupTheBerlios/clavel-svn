@@ -26,7 +26,7 @@ define('COMMUNITY_ICON_SIZE', 70);
  *        - network  (default)
  *        - community
  */
-define('COMMUNITY_CONTEXT', 'network');
+define('COMMUNITY_CONTEXT', 'community');
 
 /**
  * Defines if you want to show the communities in a compact view

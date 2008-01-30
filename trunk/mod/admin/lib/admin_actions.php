@@ -99,10 +99,12 @@ if (!empty($action) && isloggedin()) {
             // these are ARRAYS 
             $new_username = optional_param('new_username');
             $new_name = optional_param('new_name');
+			$new_lastname = optional_param('new_lastname');
             $new_email = optional_param('new_email');
             if (is_array($new_username) && count($new_username) > 1
                 && is_array($new_name) && count($new_name) > 1
-                && is_array($new_email) && count($new_email) > 1) {
+                && is_array($new_email) && count($new_email) > 1
+				&& is_array($new_lastname) && count($new_lastname) > 1) {
                 
                 global $admin_add_users;
                 $admin_add_users = array();
@@ -112,14 +114,16 @@ if (!empty($action) && isloggedin()) {
                     
                     if ((!array_key_exists($i,$new_username) || empty($new_username[$i]))
                         || !array_key_exists($i,$new_name) || empty($new_name[$i])
-                        || !array_key_exists($i,$new_email) || empty($new_email[$i])) {
+                        || !array_key_exists($i,$new_email) || empty($new_email[$i])
+						|| !array_key_exists($i,$new_lastname) || empty($new_lastname[$i])) {
                         continue;
                     }
                         
                     $new_username[$i] = trim(strtolower($new_username[$i]));
                     $new_name[$i] = trim($new_name[$i]);
                     $new_email[$i] = trim($new_email[$i]);
-                    if (empty($new_username[$i]) || empty($new_name[$i]) || empty($new_email[$i])) {
+					$new_lastname[$i] = trim($new_lastname[$i]);
+                    if (empty($new_username[$i]) || empty($new_name[$i]) || empty($new_email[$i]) || empty($new_lastname[$i])) {
                         $messages[] = sprintf(__gettext("User addition %d failed: at least one field was blank. Username: %s, name: %s, email: %s"),($i + 1),$new_username[$i],$new_name[$i],$new_email[$i]);
                         continue;
                     }
@@ -135,7 +139,10 @@ if (!empty($action) && isloggedin()) {
                     if (!validate_email($new_email[$i])) {
                         $messages[] = sprintf(__gettext("User addition %d failed: email address %s appears to be invalid."),($i + 1),$new_email[$i]);
                         continue;
-                    }
+                    } elseif (record_exists('users','email',$new_lastname[$i])) {
+                 		$messages[] = sprintf(__gettext("User addition %d failed: email address %s appears to be invalid."),($i + 1),$new_lastname[$i]);
+                		continue;
+             		}
                     
                     $password = "";
                     // reset $j
@@ -157,6 +164,7 @@ if (!empty($action) && isloggedin()) {
                     $u = new StdClass;
                     $u->username = $new_username[$i];
                     $u->name = $new_name[$i];
+					$u->lastname = $new_lastname[$i];
                     $u->email = $new_email[$i];
                     $u->password = $md5password;
                     $u->active = 'yes';

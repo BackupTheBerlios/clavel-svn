@@ -52,7 +52,7 @@
         $data['vcard:profile:adr'][] = array("streetaddress","vCard:Street","collated");
         */
 
-        $data['profile:details'][] = (object)(array(
+        /*$data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Profile photo"),
                                                                     "internal_name" => "profilephoto",
                                                                     "field_type" => "profile_photo",
@@ -62,7 +62,7 @@
                                                                     "invisible" => false,
                                                                     "required" => false,
                                                                     "user_type" => "",
-                                                                    ));
+                                                                    ));*/
         
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Who am I?"),

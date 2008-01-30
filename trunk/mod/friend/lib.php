@@ -18,10 +18,10 @@ function friend_pagesetup() {
         if (defined("context") && context == "network" && $page_owner == $_SESSION['userid']) {
 
             $PAGE->menu[] = array( 'name' => 'friends',
-                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/friends/\" class=\"selected\" >" .__gettext("Your Network").'</a></li>');
+                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/friends/\" class=\"selected\" >" .__gettext("Your Contacts").'</a></li>');
             } else {
                 $PAGE->menu[] = array( 'name' => 'friends',
-                                       'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/friends/\" >" .__gettext("Your Network").'</a></li>');
+                                       'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/friends/\" >" .__gettext("Your Contacts").'</a></li>');
             }
     }
 

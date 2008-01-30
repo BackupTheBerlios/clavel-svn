@@ -6,6 +6,7 @@ if (user_type($page_owner) == 'person' && run("permissions:check",array("userdet
     
     $info = get_record('users','ident',$page_owner);
     $name = htmlspecialchars(stripslashes(user_name($info->ident)), ENT_COMPAT, 'utf-8');
+	$lastname = htmlspecialchars(stripslashes($info->lastname), ENT_COMPAT, 'utf-8');
     $email = htmlspecialchars(stripslashes($info->email), ENT_COMPAT, 'utf-8');
     
     $changeName = __gettext("Change your full name:"); // gettext variable
@@ -25,8 +26,15 @@ END;
 
     $body .= templates_draw(array(
             'context' => 'databox',
-            'name' => __gettext("Your full name "),
+            'name' => __gettext("Your first name "),
             'column1' => "<input type=\"text\" name=\"name\" value=\"$name\" />"
+        )
+        );
+		
+    $body .= templates_draw(array(
+            'context' => 'databox',
+            'name' => __gettext("Your last name "),
+            'column1' => "<input type=\"text\" name=\"lastname\" value=\"$lastname\" />"
         )
         );
     

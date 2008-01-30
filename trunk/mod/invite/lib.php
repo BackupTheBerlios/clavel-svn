@@ -29,6 +29,7 @@
   // Allow the user to request a new password
       $function['invite:password:request'][] = $CFG->dirroot . "mod/invite/lib/password_request.php";
       $function['invite:password:new'][] = $CFG->dirroot . "mod/invite/lib/new_password.php";
+	  $function['invite:password:createnew'][] = $CFG->dirroot . "mod/invite/lib/create_new_password.php";
 
   // Default pages messages
     $function['invite:register:default:welcome'][] = $CFG->dirroot . "mod/invite/lib/invite_register_welcome.php";

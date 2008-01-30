@@ -299,6 +299,7 @@ $template_definition[] = array(
                                     'glossary' => array(
                                                             '{{name}}' => __gettext("Column One"),
                                                             '{{column1}}' => __gettext("Column Two"),
+															'{{column3}}' => __gettext("Column Four"),
                                                             '{{column2}}' => __gettext("Column Three")
                                                         )
                                     );
@@ -311,10 +312,13 @@ $template_definition[] = array(
         <td width="25%" valign="top">
             {{name}}
         </td>
-        <td width="45%" valign="top">
+        <td width="25%" valign="top">
             {{column1}}
         </td>
-        <td width="30%" valign="top">
+		<td width="25%" valign="top">
+            {{column3}}
+        </td>
+        <td width="25%" valign="top">
             {{column2}}
         </td>
     </tr>

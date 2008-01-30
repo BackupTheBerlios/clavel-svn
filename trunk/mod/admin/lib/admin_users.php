@@ -64,8 +64,9 @@ if (logged_on && user_flag_get("admin", $_SESSION['userid'])) {
         
         $run_result .= templates_draw(array(
                                             'context' => 'adminTable',
-                                            'name' => "<h3>" . __gettext("Full name") . "</h3>",
-                                            'column1' => "<h3>" . __gettext("Username") . "</h3>",
+                                            'name' => "<h3>" . __gettext("First Name") . "</h3>",
+                                            'column1' => "<h3>" . __gettext("Last Name") . "</h3>",
+											'column3' => "<h3>" . __gettext("Username") . "</h3>",
                                             'column2' => "<h3>" . __gettext("Extra info") . "</h3>"
                                             )
                                       );

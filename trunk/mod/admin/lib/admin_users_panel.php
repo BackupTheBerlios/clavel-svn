@@ -10,7 +10,8 @@
         $run_result .= templates_draw(array(
                         'context' => 'adminTable',
                         'name' => "<a href=\"" . url . "profile/index.php?profile_id=" .$parameter->ident . "\" >" . stripslashes($parameter->name) . "</a>",
-                        'column1' => "<p><strong>" . $parameter->username . '</strong>'. $profile_link . "</p>",
+                        'column1' => "<a href=\"" . url . "profile/index.php?profile_id=" .$parameter->ident . "\" >" . stripslashes($parameter->lastname) . "</a>",
+						'column3' => "<p><strong>" . $parameter->username . '</strong>'. $profile_link . "</p>",
                         'column2' => "<a href=\"mailto:" . $parameter->email. "\" >" . $parameter->email . "</a>"
                     )
                     );

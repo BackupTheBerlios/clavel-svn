@@ -8,9 +8,9 @@
         
         run("invite:init");
         templates_page_setup();
-        $title = sprintf(__gettext("Get new %s password"), sitename);
+        $title = sprintf(__gettext("Create new password"));
         
-        $body = run("invite:password:new");
+        $body = run("invite:password:createnew");
         
         templates_page_output($title, $body);
 

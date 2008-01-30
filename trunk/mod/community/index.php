@@ -11,7 +11,7 @@
         run("friends:init");
         run("communities:init");
 
-        $context = (defined('COMMUNITY_CONTEXT'))?COMMUNITY_CONTEXT:"network";
+        $context = (defined('COMMUNITY_CONTEXT'))?COMMUNITY_CONTEXT:"community";
 
         define("context", $context);
         templates_page_setup();
