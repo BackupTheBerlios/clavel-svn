@@ -35,9 +35,9 @@ function friend_pagesetup() {
                                        'html' => a_href("{$CFG->wwwroot}{$friends_username}/friends/" ,
                                                           __gettext("Friends")));
 
-            $PAGE->menu_sub[] = array( 'name' => 'friend:of',
+            /*$PAGE->menu_sub[] = array( 'name' => 'friend:of',
                                        'html' => a_href( "{$CFG->wwwroot}{$friends_username}/friendsof/",
-                                                          __gettext("Friend of")));
+                                                          __gettext("Friend of")));*/
 
             if(isloggedin() && $page_owner == $_SESSION['userid']){
               $PAGE->menu_sub[] = array( 'name' => 'friend:requests',
@@ -77,6 +77,7 @@ function friend_pagesetup() {
         // Friends full view / edit section
             $function['friends:editpage'][] = $CFG->dirroot . "mod/friend/lib/friends_edit_wrapper.php";
             $function['friends:edit'][] = $CFG->dirroot . "mod/friend/lib/friends_edit.php";
+			$function['allfriends:edit'][] = $CFG->dirroot . "mod/friend/lib/allfriends.php";
 
         // Friendship requests
             $function['friends:requests:view'][] = $CFG->dirroot . "mod/friend/lib/user_friendship_requests.php";

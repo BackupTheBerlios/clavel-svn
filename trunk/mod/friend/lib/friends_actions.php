@@ -13,8 +13,9 @@ switch ($action) {
     case "friend":
         if (!empty($friend) && logged_on) {
             $friendalready = record_exists('friends','owner',$USER->ident,'friend',$friend_id);
+			$friendalready_inverse = record_exists('friends','owner',$friend_id,'friend',$USER->ident);
             $requestedalready = record_exists('friends_requests','owner',$USER->ident,'friend',$friend_id);
-            if (empty($friendalready) && empty($requestedalready)) {
+            if (empty($friendalready) && empty($requestedalready) && empty($friendalready_inverse)) {
                 $f = new StdClass;
                 $f->owner = $USER->ident;
                 $f->friend = $friend_id;

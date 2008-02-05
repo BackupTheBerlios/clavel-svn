@@ -58,8 +58,8 @@ END;
         )
         );
 
-    $friendAddress = __gettext("Friendship moderation:"); // gettext variable
-    $friendRules = __gettext("This allows you to choose who can list you as a friend."); // gettext variable
+    //$friendAddress = __gettext("Friendship moderation:"); // gettext variable
+    //$friendRules = __gettext("This allows you to choose who can list you as a friend."); // gettext variable
     $body .= <<< END
         
         <h2>
@@ -71,12 +71,12 @@ END;
         
 END;
 
-    $friendlevel = "<select name=\"moderation\">";
+    /*$friendlevel = "<select name=\"moderation\">";
     $friendlevel .= "<option value=\"no\" ";
     if ($info->moderation == "no") {
         $friendlevel .= "selected=\"selected\"";
     }
-    $friendlevel .= ">" . __gettext("No moderation: anyone can list you as a friend. (Recommended)") . "</option>";
+    $friendlevel .= ">" . __gettext("No moderation: anyone can list you as a friend.") . "</option>";
     $friendlevel .= "<option value=\"yes\" ";
     if ($info->moderation == "yes") {
         $friendlevel .= "selected=\"selected\"";
@@ -94,7 +94,7 @@ END;
             'name' => __gettext("Friendship moderation"),
             'column1' => $friendlevel
             )
-            );
+            );*/
     
     if (!$CFG->disable_publiccomments) {
         $emailReplies = __gettext("Make comments public");

@@ -300,7 +300,7 @@ CREATE TABLE `prefix_users` (
   `template_id` int(11) NOT NULL default '-1' COMMENT '-> templates.ident',
   `owner` int(11) NOT NULL default '-1' COMMENT '-> users.ident, community owner',
   `user_type` varchar(128) NOT NULL default 'person' COMMENT 'person, community, etc',
-  `moderation` varchar(4) NOT NULL default 'no' COMMENT 'friendship moderation setting',
+  `moderation` varchar(4) NOT NULL default 'yes' COMMENT 'friendship moderation setting',
   `last_action` int(10) unsigned NOT NULL default '0' COMMENT 'unix timestamp',
   `template_name` varchar(128) NOT NULL default 'Default_Template' COMMENT '-> templates.shortname',
   PRIMARY KEY (`ident`),
@@ -318,7 +318,7 @@ CREATE TABLE `prefix_users` (
   FULLTEXT KEY `name` (`name`)
 ) TYPE=MyISAM;
 
-INSERT INTO `prefix_users` VALUES (0, 'news', '5f4dcc3b5aa765d61d8327deb882cf99', '', 'News', -1, 'yes', '', '', 10, 10000000, -1, -1, 'person', 'no', 0, 'Default_Template');
+INSERT INTO `prefix_users` VALUES (0, 'news', '5f4dcc3b5aa765d61d8327deb882cf99', '', 'News', '', -1, 'yes', '', '', 10, 10000000, -1, -1, 'person', 'yes', 0, 'Default_Template');
 
 -- --------------------------------------------------------
 

@@ -23,10 +23,19 @@ if ($usertype == "community") {
 
 } else {
 
-    $run_result = get_records_sql('SELECT f.friend AS user_id,u.name FROM '.$CFG->prefix.'friends f
+    $friends = get_records_sql('SELECT f.friend AS user_id,u.name FROM '.$CFG->prefix.'friends f
                                    JOIN '.$CFG->prefix.'users u ON u.ident = f.friend
                                    WHERE f.owner = ? ORDER BY u.name',array($ident));
-
+								   
+	
+	$friendsof = get_records_sql('SELECT f.owner AS user_id,u.name FROM '.$CFG->prefix.'friends f
+                                     JOIN '.$CFG->prefix.'users u ON u.ident = f.owner
+                                     WHERE f.friend = ? ORDER BY u.name',array($ident));
+	
+	
+	
+	$run_result = $friends;
+	
 }
 
 ?>

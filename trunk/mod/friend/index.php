@@ -18,7 +18,7 @@
     // You must be logged on to view this!
     //    protect(1);
         templates_page_setup();
-        $title = run("profile:display:name") . " :: ". __gettext("Friends I have linked to");
+        $title = run("profile:display:name") . " :: ". __gettext("Contacts");
         $body = run('friends:editpage');
 
         templates_page_output($title, $body);
