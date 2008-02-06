@@ -8,13 +8,13 @@ function groups_pagesetup() {
 	global $PAGE,$CFG,$profile_id;
     $page_owner = $profile_id;
 	
-	if (defined("context") && context == "network") {
+	/*if (defined("context") && context == "network") {
 		if (isloggedin() && $page_owner == $_SESSION['userid']) {
 			$PAGE->menu_sub[] = array (
 				'name' => 'friend:accesscontrols',
 				'html' => a_href("{$CFG->wwwroot}mod/groups/",__gettext("Access controls")));
 		}
-	}
+	}*/
 }
 
 function groups_init() {

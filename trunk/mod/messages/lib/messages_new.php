@@ -27,11 +27,26 @@ if ($to_param_id == -1) {
     foreach ($friends as $friend) {
       $friend = get_record("users", "ident", $friend->friend);
       if ($friend) {
-        if ($friend->user_type == "community" && MESSAGES_COMMUNITY_MESSAGES) {
+        /*if ($friend->user_type == "community" && MESSAGES_COMMUNITY_MESSAGES) {
           $to_param[$friend->ident] = $friend->name." " . __gettext("(Community)");
         }
         else if($friend->user_type != "community"){
           $to_param[$friend->ident] = $friend->name;
+        }*/
+		if($friend->user_type != "community"){
+          $to_param[$friend->ident] = $friend->name . " " . $friend->lastname;
+        }
+      }
+    }
+  }
+  $friends1 = get_records_select('friends', "friend=$profile_id", null, '', 'owner');
+  if (is_array($friends1)) {
+    foreach ($friends1 as $friend1) {
+      $friend1 = get_record("users", "ident", $friend1->owner);
+      if ($friend1) {
+
+		if($friend1->user_type != "community"){
+          $to_param[$friend1->ident] = $friend1->name . " " . $friend1->lastname;;
         }
       }
     }

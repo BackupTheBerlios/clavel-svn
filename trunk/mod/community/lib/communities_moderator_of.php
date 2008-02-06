@@ -17,8 +17,9 @@ if (isset($parameter[0])) {
             $friends_name = user_name($info->ident);
             $info->icon = run("icons:get",$info->ident);
             $friends_menu = run("community:infobox:menu",array($info));
+			$deletecommunity = __gettext("Delete community");
             if (run("permissions:check",array("userdetails:change", $info->ident))) {
-                $friends_menu .= "<a href=\"{$CFG->wwwroot}mod/community/index.php?community_id=".$info->ident."&amp;action=community:delete\">Delete community</a>";
+                $friends_menu .= "<a href=\"{$CFG->wwwroot}mod/community/index.php?community_id=".$info->ident."&amp;action=community:delete\">$deletecommunity</a>";
             }
             $friends_icon = user_icon_html($info->ident,COMMUNITY_ICON_SIZE);
             $link = $CFG->wwwroot.$info->username."/";

@@ -24,13 +24,14 @@ if (isset($parameter[0])) {
         foreach($result as $key => $info) {
             $link = $CFG->wwwroot.$info->username."/";
             $friends_name = run("profile:display:name", $info->ident);
+			$friends_lastname = $info->lastname;
             $info->icon = run("icons:get",$info->ident);
             $friends_menu = run("users:infobox:menu",array($info->ident));
 			$friends_menu = run("users:infobox:delete",array($info->ident));
             $friends_icon = user_icon_html($info->ident,FRIENDS_ICON_SIZE);
             $friends .= templates_draw(array(
                                         'context' => 'friends_friend',
-                                        'name' => $friends_name,
+                                        'name' => $friends_name . " " . $friends_lastname,
                                         'icon' => $friends_icon,
                                         'link' => $link,
                                         'friend_menu' => $friends_menu
@@ -46,13 +47,15 @@ if (isset($parameter[0])) {
 		foreach($result1 as $key => $info) {
             $link = $CFG->wwwroot.$info->username."/";
             $friends_name = run("profile:display:name", $info->ident);
+			$friends_lastname = $info->lastname;
+			echo $info->lastname;
             $info->icon = run("icons:get",$info->ident);
             $friends_menu = run("users:infobox:menu",array($info->ident));
             $friends_menu = run("users:infobox:delete",array($info->ident));
             $friends_icon = user_icon_html($info->ident,FRIENDS_ICON_SIZE);
             $friends1 .= templates_draw(array(
                                         'context' => 'friends_friend',
-                                        'name' => $friends_name,
+                                        'name' => $friends_name . " " . $friends_lastname,
                                         'icon' => $friends_icon,
                                         'link' => $link,
                                         'friend_menu' => $friends_menu
