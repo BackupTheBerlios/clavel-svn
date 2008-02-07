@@ -130,6 +130,7 @@ function templates_page_draw ($param) {
     $title = $param[0];
     $mainbody = $param[1];
 
+
     $run_result = '';
 
     global $messages;
@@ -166,7 +167,7 @@ function templates_page_draw ($param) {
         $sidebarhtml = run("display:sidebar");
     }
  
-    
+
     $run_result .=  templates_draw(array(
                             'context'      => 'pageshell',
                             'title'        => htmlspecialchars($title, ENT_COMPAT, 'utf-8'),

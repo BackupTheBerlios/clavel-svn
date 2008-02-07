@@ -518,7 +518,7 @@ function main () {
             
     // Log on pane
     $function['display:log_on_pane'][] = path . "units/display/function_log_on_pane.php";
-    $function['display:sidebar'][] = path . "units/display/function_log_on_pane.php";
+    //$function['display:sidebar'][] = path . "units/display/function_log_on_pane.php";
 
     // Form elements
     $function['display:input_field'][] = path . "units/display/function_input_field_display.php";

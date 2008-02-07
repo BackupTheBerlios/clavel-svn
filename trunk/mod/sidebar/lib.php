@@ -106,7 +106,7 @@ function sidebar_pagesetup() {
     }
 
     // replace old code
-    $function['display:sidebar'] = array(dirname(__FILE__) . '/lib/sidebar_display.php');
+    //$function['display:sidebar'] = array(dirname(__FILE__) . '/lib/sidebar_display.php');
 }
 
 /**
