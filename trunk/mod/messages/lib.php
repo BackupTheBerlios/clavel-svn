@@ -20,11 +20,11 @@ function messages_pagesetup() {
       $PAGE->menu[]= array (
         'name' => 'messages',
         'html' => '<li><a href="' . $CFG->wwwroot . $_SESSION['username'] . '/messages/" class="selected">' .
-                  __gettext("Your Messages") . " ($messages)".'</a></li>');
+                  __gettext("Messages") . " ($messages)".'</a></li>');
     } else {
       $PAGE->menu[]= array (
         'name' => 'messages',
-        'html' => '<li><a href="' . $CFG->wwwroot . $_SESSION['username'] . '/messages/">' . __gettext("Your Messages") .
+        'html' => '<li><a href="' . $CFG->wwwroot . $_SESSION['username'] . '/messages/">' . __gettext("Messages") .
                   " ($messages)". '</a></li>');
     }
 

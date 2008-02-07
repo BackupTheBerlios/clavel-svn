@@ -39,10 +39,10 @@ function community_pagesetup() {
         if(COMMUNITY_CONTEXT!="network"){
           if (defined("context") && context == COMMUNITY_CONTEXT /*&& $page_owner == $_SESSION['userid']*/) {
             $PAGE->menu[] = array( 'name' => 'community',
-                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/communities\" class=\"selected\" >" .__gettext("Your Communities").'</a></li>');
+                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/communities\" class=\"selected\" >" .__gettext("Communities").'</a></li>');
           } else{
                 $PAGE->menu[] = array( 'name' => 'community',
-                                       'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/communities\" >" .__gettext("Your Communities").'</a></li>');
+                                       'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/communities\" >" .__gettext("Communities").'</a></li>');
           }
         }
     }

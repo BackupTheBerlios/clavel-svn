@@ -61,12 +61,12 @@ function blog_pagesetup() {
 
       $PAGE->menu[]= array (
         'name' => 'weblog',
-        'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/weblog\" class=\"selected\" >" . __gettext("Your Blog") . '</a></li>');
+        'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/weblog\" class=\"selected\" >" . __gettext("Blog") . '</a></li>');
 
     } else {
       $PAGE->menu[]= array (
         'name' => 'weblog',
-        'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/weblog\" >" . __gettext("Your Blog") . '</a></li>');
+        'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/weblog\" >" . __gettext("Blog") . '</a></li>');
     };
   }
 
