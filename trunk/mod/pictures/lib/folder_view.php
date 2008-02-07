@@ -11,10 +11,10 @@
         $folder_object = new stdClass();
         $folder_object->ident = -1;
         $folder_object->handler = "elgg";
-        $folder_object->name = __gettext("Root Folder =P");
+        $folder_object->name = __gettext("Root Folder");
     }
     
-    //$run_result .= file_folder_view($folder_object);
+    $run_result .= file_folder_view($folder_object);
 
 
         

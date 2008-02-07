@@ -4,7 +4,7 @@
  */
 
 // Get owner and current folder
-
+    
 global $owner, $folder, $CFG,$page_owner;
 
 // Get folder
@@ -23,17 +23,17 @@ if ($folder != -1) {
     $folder_object = new stdClass();
     $folder_object->ident = -1;
     $folder_object->handler = "elgg";
-    $folder_object->name = __gettext("Root Folder =P");
+    $folder_object->name = __gettext("Root Folder");
 }
 
-if (!isset($folder_object->handler)
+if (!isset($folder_object->handler) 
     || !@is_callable($CFG->folders->handler[$folder_object->handler]['view'])) {
     $folder_object->handler = "elgg";
 }
 
-if ($folder_object->ident != -1) {
+if ($folder_object->ident != -1) {            
     $parent = (int) $folder_object->parent;
-
+    
     if ($parent != -1) {
         $parent_details = get_record('file_folders','ident',$parent,'files_owner',$owner);
         $display_parent = $parent;
@@ -42,12 +42,12 @@ if ($folder_object->ident != -1) {
         $parent_details->ident = -1;
         $display_parent = "";
     }
-
+    
     $run_result .= "<p><a href=\"".url.user_info("username",$owner)."/files/$display_parent\">";
     $run_result .= "". __gettext("Return to") ." " . stripslashes($parent_details->name);
     $run_result .= "</a></p>";
 }
-
+        
 // If we're in the root or an accessible folder, view it
 if ($accessible) {
     if (!isset($folder_object->handler) || !isset($CFG->folders->handler[$folder_object->handler])) {
@@ -56,11 +56,11 @@ if ($accessible) {
         $run_result .= $CFG->folders->handler[$folder_object->handler]['view']($folder_object);
     }
 }
-
+        
 // If this is the user's own file repository, allow him or her to edit it
 
 if (permissions_check("files",$page_owner)) {
     $run_result .= run("files:folder:edit",$folder);
 
-}
+}    
 ?>

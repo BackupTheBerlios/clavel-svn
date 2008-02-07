@@ -2,7 +2,7 @@
 
 require_once($CFG->dirroot.'lib/filelib.php');
 
-function file_pagesetup() {
+function pictures_pagesetup() {
     // register links -- 
     global $profile_id;
     global $PAGE;
@@ -13,30 +13,30 @@ function file_pagesetup() {
     $page_owner = $profile_id;
     
     if (isloggedin()) {
-        if (defined("context") && context == "files" && $page_owner == $_SESSION['userid']) {
-            $PAGE->menu[] = array( 'name' => 'files',
-                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/files/\" class=\"selected\" >" .__gettext("Files").'</a></li>');
+        if (defined("context") && context == "pictures" && $page_owner == $_SESSION['userid']) {
+            $PAGE->menu[] = array( 'name' => 'pictures',
+                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/pictures/\" class=\"selected\" >" .__gettext("Pictures").'</a></li>');
         } else {
-            $PAGE->menu[] = array( 'name' => 'files',
-                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/files/\" >" .__gettext("Files").'</a></li>');
+            $PAGE->menu[] = array( 'name' => 'pictures',
+                                   'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/pictures/\" >" .__gettext("Pictures").'</a></li>');
         }
     }
 
-    if (defined("context") && context == "files") {
+    if (defined("context") && context == "pictures") {
         
-        $files_username = user_info('username', $page_owner);
+        $pictures_username = user_info('username', $page_owner);
                 
         if ($page_owner != -1) {
             if ($page_owner == $_SESSION['userid'] && $page_owner != -1) {
                 $PAGE->menu_sub[] = array( 'name' => 'file:rss', 
-			'html' => '<a href="' . $CFG->wwwroot . $_SESSION['username'] . '/files/rss/"><img src="' . $CFG->wwwroot . 'mod/template/icons/rss.png" border="0" alt="rss" /></a>');
+			'html' => '<a href="' . $CFG->wwwroot . $_SESSION['username'] . '/pictures/rss/"><img src="' . $CFG->wwwroot . 'mod/template/icons/rss.png" border="0" alt="rss" /></a>');
             }
         }
 
         if ($page_owner == $_SESSION['userid'] && $page_owner != -1) {
             $PAGE->menu_sub[] = array( 'name' => 'file:add',
                                        'html' => a_href( "#addFile",
-                                                          __gettext("Add a file or a folder")));
+                                                          __gettext("Add a Picture")));
 	}
     }
 
@@ -44,12 +44,12 @@ function file_pagesetup() {
   $options = array('options'=> 'width=600,height=300,left=20,top=20,scrollbars=yes,resizable=yes',
                    'name'=> 'mediapopup',
                    // 'url' => $CFG->wwwroot."mod/file/file_include_wizard.php?owner=".$_SESSION['userid']);
-                   'url' => $CFG->wwwroot."mod/file/file_include_wizard.php?owner=".page_owner());
+                   'url' => $CFG->wwwroot."mod/pictures/file_include_wizard.php?owner=".page_owner());
   add_content_tool_button("mediapopup",__gettext("Add File"), "image.png", "f", $options);
 
 }
 
-function file_init() {
+function pictures_init() {
     global $CFG;
     global $function;
     global $metatags;
@@ -60,71 +60,71 @@ function file_init() {
         $metatags .= "</style>";
         
     // Functions to perform upon initialisation
-        $function['files:init'][] = $CFG->dirroot . "mod/file/lib/files_init.php";
-        $function['files:init'][] = $CFG->dirroot . "mod/file/lib/metadata_defaults.php";
-        $function['files:init'][] = $CFG->dirroot . "mod/file/lib/inline_mimetypes.php";
-        $function['init'][] = $CFG->dirroot . "mod/file/default_templates.php";
+        $function['pictures:init'][] = $CFG->dirroot . "mod/pictures/lib/files_init.php";
+        //$function['pictures:init'][] = $CFG->dirroot . "mod/pictures/lib/metadata_defaults.php";
+        $function['pictures:init'][] = $CFG->dirroot . "mod/pictures/lib/inline_mimetypes.php";
+        $function['init'][] = $CFG->dirroot . "mod/pictures/default_templates.php";
     
     // Mime-type init
-        $function['files:metadata:init'][] = $CFG->dirroot . "mod/file/lib/inline_mimetypes.php";
+        $function['files:metadata:init'][] = $CFG->dirroot . "mod/pictures/lib/inline_mimetypes.php";
         
     // Actions to perform
-        $function['files:init'][] = $CFG->dirroot . "mod/file/lib/files_actions.php";
+        $function['files:init'][] = $CFG->dirroot . "mod/pictures/lib/files_actions.php";
 
     // Init for search
-        $function['search:init'][] = $CFG->dirroot . "mod/file/lib/files_init.php";
-        $function['search:all:tagtypes'][] = $CFG->dirroot . "mod/file/lib/function_search_all_tagtypes.php";
+        $function['search:init'][] = $CFG->dirroot . "mod/pictures/lib/files_init.php";
+        $function['search:all:tagtypes'][] = $CFG->dirroot . "mod/pictures/lib/function_search_all_tagtypes.php";
         
     // Function to search through weblog posts
-        $function['search:display_results'][] = $CFG->dirroot . "mod/file/lib/function_search.php";
-        $function['search:display_results:rss'][] = $CFG->dirroot . "mod/file/lib/function_search_rss.php";
+        $function['search:display_results'][] = $CFG->dirroot . "mod/pictures/lib/function_search.php";
+        $function['search:display_results:rss'][] = $CFG->dirroot . "mod/pictures/lib/function_search_rss.php";
         
     // Determines whether or not a file should be displayed in the browser
-        $function['files:mimetype:inline'][] = $CFG->dirroot . "mod/file/lib/files_mimetype_inline.php";
+        $function['files:mimetype:inline'][] = $CFG->dirroot . "mod/pictures/lib/files_mimetype_inline.php";
         
     // View files
-        $function['files:view'][] = $CFG->dirroot . "mod/file/lib/files_view.php";
+        $function['files:view'][] = $CFG->dirroot . "mod/pictures/lib/files_view.php";
 
     // View the contents of a specific folder
-        $function['files:folder:view'][] = $CFG->dirroot . "mod/file/lib/folder_view.php";
+        $function['files:folder:view'][] = $CFG->dirroot . "mod/pictures/lib/folder_view.php";
         
     // Edit the contents of a specific folder
-        $function['files:folder:edit'][] = $CFG->dirroot . "mod/file/lib/edit_folder.php";
+        $function['files:folder:edit'][] = $CFG->dirroot . "mod/pictures/lib/edit_folder.php";
 
     // Add files through the wizard
-        $function['files:wizard:add:file'][] = $CFG->dirroot . "mod/file/lib/add_file.php";
+        $function['files:wizard:add:file'][] = $CFG->dirroot . "mod/pictures/lib/add_file.php";
         
     // Edit the metadata for a specific file
-        $function['files:edit'][] = $CFG->dirroot . "mod/file/lib/edit_file.php";
-        $function['folder:select'][] = $CFG->dirroot . "mod/file/lib/select_folder.php";
+        $function['files:edit'][] = $CFG->dirroot . "mod/pictures/lib/edit_file.php";
+        $function['folder:select'][] = $CFG->dirroot . "mod/pictures/lib/select_folder.php";
     
     // Edit metadata
-        $function['metadata:edit'][] = $CFG->dirroot . "mod/file/lib/metadata_edit.php";
+        $function['metadata:edit'][] = $CFG->dirroot . "mod/pictures/lib/metadata_edit.php";
         
     // Turn file ID into a link
-        $function['files:links:make'][] = $CFG->dirroot . "mod/file/lib/files_links_make.php";
+        $function['files:links:make'][] = $CFG->dirroot . "mod/pictures/lib/files_links_make.php";
         
     // Allow users to embed files in weblog posts
-        $function['weblogs:text:process'][] = $CFG->dirroot . "mod/file/lib/weblogs_text_process.php";
+        $function['weblogs:text:process'][] = $CFG->dirroot . "mod/pictures/lib/weblogs_text_process.php";
 
-        $function['weblogs:posts:add:fields'][] = $CFG->dirroot . "mod/file/lib/weblogs_posts_add_fields.php";
-        $function['weblogs:posts:edit:fields'][] = $CFG->dirroot . "mod/file/lib/weblogs_posts_add_fields.php";
+        $function['weblogs:posts:add:fields'][] = $CFG->dirroot . "mod/pictures/lib/weblogs_posts_add_fields.php";
+        $function['weblogs:posts:edit:fields'][] = $CFG->dirroot . "mod/pictures/lib/weblogs_posts_add_fields.php";
                     
     // Log on bar down the right hand side
-        $function['display:sidebar'][] = $CFG->dirroot . "mod/file/lib/files_user_info_menu.php";
+        $function['display:sidebar'][] = $CFG->dirroot . "mod/pictures/lib/files_user_info_menu.php";
         
     // Template preview
-        $function['templates:preview'][] = $CFG->dirroot . "mod/file/lib/templates_preview.php";
+        $function['templates:preview'][] = $CFG->dirroot . "mod/pictures/lib/templates_preview.php";
 
     // Establish permissions
-        $function['permissions:check'][] = $CFG->dirroot . "mod/file/lib/permissions_check.php";
+        $function['permissions:check'][] = $CFG->dirroot . "mod/pictures/lib/permissions_check.php";
 
     // Actions to perform when an access group is deleted
-        $function['groups:delete'][] = $CFG->dirroot . "mod/file/lib/groups_delete.php";
+        $function['groups:delete'][] = $CFG->dirroot . "mod/pictures/lib/groups_delete.php";
 
     // Publish static RSS file of files
-        $function['files:rss:getitems'][] = $CFG->dirroot . "mod/file/lib/function_rss_getitems.php";
-        $function['files:rss:publish'][] = $CFG->dirroot . "mod/file/lib/function_rss_publish.php";
+        $function['files:rss:getitems'][] = $CFG->dirroot . "mod/pictures/lib/function_rss_getitems.php";
+        $function['files:rss:publish'][] = $CFG->dirroot . "mod/pictures/lib/function_rss_publish.php";
     
     // Has the $CFG->files->default_handler been set? If not, set it to local
         if (empty($CFG->files->default_handler)) {
@@ -159,7 +159,7 @@ function file_init() {
 	}
 }
 
-function file_permissions_check($objecttype, $owner){
+/*function file_permissions_check($objecttype, $owner){
     $run_result = null;
 
 	if ($objecttype == "files" || $objecttype == "files:edit") {
@@ -203,9 +203,9 @@ function file_river_hook( $object_type, $event, $object)
 		river_save_event($userid, $object_id, $object_owner, $object_type, "<a href=\"" . river_get_userurl($userid) . "\">$username</a> deleted '$name'", $object->access);
 
 	return $object;
-}
+}*/
 	
-function file_displayobject($object_id,$object_type)
+/*function file_displayobject($object_id,$object_type)
 {
 	global $page_owner, $CFG;
         $owner_username = user_info('username', $page_owner);
@@ -228,7 +228,7 @@ function file_displayobject($object_id,$object_type)
 				$filetitle = urlencode($title);
 				$originalname = stripslashes($file->originalname);
 				$filemenu = round(($file->size / 1048576),4) . "MB ";
-				$icon = $CFG->wwwroot . "_icon/file/" . $file->ident;
+				$icon = $CFG->wwwroot . "_icon/pictures/" . $file->ident;
 				$filepath = $CFG->wwwroot . "$username/files/$folder->ident/$ident/" . urlencode($originalname);
 				
 				$mimetype = mimeinfo('type',$file->originalname);
@@ -274,9 +274,9 @@ END;
 	
 	return $return;
 
-}
+}*/
 
-    function file_user_delete($object_type, $event, $object) {
+    /*function file_user_delete($object_type, $event, $object) {
         global $CFG;
         if (!empty($object->ident) && $object_type == "user" && $event == "delete") {
             if ($files = get_records_sql("select * from {$CFG->prefix}files where owner = {$object->ident} or files_owner = {$object->ident}")) {
@@ -304,9 +304,9 @@ END;
         }
 
         return $object;
-    }
+    }*/
 
-function file_widget_display($widget) {
+/*function file_widget_display($widget) {
     global $CFG;
     $latest_files = clean_param(widget_get_data("latest_files",$widget->ident),PARAM_INT);
     $html = "<p>" . __gettext("No files found.") . "</p>";
@@ -337,22 +337,22 @@ function file_widget_display($widget) {
         }
     }
     return array("title" => __gettext("Latest files") , "content" => $html);
-}
+}*/
 
-function file_widget_edit($widget) {
+/*function file_widget_edit($widget) {
     $latest_files = clean_param(widget_get_data("latest_files",$widget->ident),PARAM_INT);
     $body = "";
     $body = "<h2>" . __gettext("Files widget") . "</h2>";
     $body .= "<p>" . __gettext("This widget displays the last couple of files from this account. Simply select the number of latest files below:") . "</p>";
     $body .= "<p><input type=\"text\" name=\"widget_data[latest_files]\" value=\"" . $latest_files . "\" /></p>";
     return $body;
-}
+}*/
 
 
 
-    function file_folder_view($folder) {
+    //function file_folder_view($folder) {
         
-        global $CFG;
+        //global $CFG;
         /*
          *    View a specific folder
          *    (Access rights are presumed)
@@ -360,8 +360,8 @@ function file_widget_edit($widget) {
         
         // Find out who's the owner
             
-        global $page_owner;
-        $owner_username = user_info('username', $page_owner);
+        //global $page_owner;
+        //$owner_username = user_info('username', $page_owner);
         
         // If we're not in the parent folder, provide a link to return to the parent
         
@@ -371,11 +371,11 @@ function file_widget_edit($widget) {
         }
         */
                 
-        $body = "<h2>" . $folder->name . "</h2>";
+        //$body = "<h2>" . $folder->name . "</h2>";
         
         // Firstly, get a list of folders
         // Display folders we actually have access to
-        if ($folder->idents = get_records_select('file_folders',"parent = $folder->ident AND (". run("users:access_level_sql_where") . ") and files_owner = $page_owner")) {
+        /*if ($folder->idents = get_records_select('file_folders',"parent = $folder->ident AND (". run("users:access_level_sql_where") . ") and files_owner = $page_owner")) {
             $subFolders = __gettext("Subfolders"); // gettext variable
             $body .= <<< END
                 
@@ -412,11 +412,11 @@ END;
                 }
                 
             }
-        }
+        }*/
             
         // Then get a list of files
         // View files we actually have access to
-        if ($files = get_records_select('files',"folder = ? AND files_owner = ?",array($folder->ident,$page_owner))) {
+        /*if ($files = get_records_select('files',"folder = ? AND files_owner = ?",array($folder->ident,$page_owner))) {
             foreach($files as $file) {
                 
                 if (run("users:access_level_check",$file->access) == true || $file->owner == $_SESSION['userid']) {
@@ -496,8 +496,8 @@ END;
                         $delete = __gettext("Delete"); // gettext variable
                         $edit = __gettext("Edit"); // gettext variable
                         $filemenu .= <<< END
-            [<a href="{$CFG->wwwroot}mod/file/edit_file.php?edit_file_id={$file->ident}&amp;owner=$page_owner">$edit</a>]
-            [<a href="{$CFG->wwwroot}mod/file/action_redirection.php?action=delete_file&amp;delete_file_id={$file->ident}">$delete</a>]
+            [<a href="{$CFG->wwwroot}mod/pictures/edit_file.php?edit_file_id={$file->ident}&amp;owner=$page_owner">$edit</a>]
+            [<a href="{$CFG->wwwroot}mod/pictures/action_redirection.php?action=delete_file&amp;delete_file_id={$file->ident}">$delete</a>]
 END;
         }
         return $filemenu;
@@ -513,8 +513,8 @@ END;
             $delete = __gettext("Delete"); // gettext variable
             $edit = __gettext("Edit"); // gettext variable
             $foldermenu = <<< END
-            [<a href="{$CFG->wwwroot}mod/file/edit_folder.php?edit_folder_id={$folder->ident}&amp;owner=$page_owner&amp;return_type=parent">$edit</a>]
-            [<a href="{$CFG->wwwroot}mod/file/action_redirection.php?action=delete_folder&amp;delete_folder_id={$folder->ident}">$delete</a>]
+            [<a href="{$CFG->wwwroot}mod/pictures/edit_folder.php?edit_folder_id={$folder->ident}&amp;owner=$page_owner&amp;return_type=parent">$edit</a>]
+            [<a href="{$CFG->wwwroot}mod/pictures/action_redirection.php?action=delete_folder&amp;delete_folder_id={$folder->ident}">$delete</a>]
 END;
         }
         return $foldermenu;
@@ -559,7 +559,7 @@ END;
             return $owner;
         }
 
-    }
+    }*/
     
 
 ?>
