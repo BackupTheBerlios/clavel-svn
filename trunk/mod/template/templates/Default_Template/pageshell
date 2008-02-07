@@ -40,12 +40,14 @@
 
 </div><!-- close container div -->
 
+
 <div id="footer"><!-- start footer -->
 	<div id="footer-inner">
-		<p><a href="http://elgg.org/"><img src="{{url}}mod/template/icons/elgg_powered.png" title="Elgg powered" border="0" alt="Elgg powered" align="left"/></a>
 		 <a href="{{url}}content/terms.php">Terms and conditions</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Privacy Policy</a>
 		{{perf}}
 	</div>
 </div><!-- end footer -->
+
+
 </body>
 </html>

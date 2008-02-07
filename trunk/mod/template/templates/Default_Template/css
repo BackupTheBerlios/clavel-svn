@@ -7,14 +7,15 @@
 */
 
 body {
-	background:white 
-	color:#697C83;
+	background:white;
+	color:black;
 	font-family:'Trebuchet MS','Lucida Grande', Arial, sans-serif;
 	text-align:left;
 	margin:0 auto;
 	padding:0;
 	font-size: 100%;
 	line-height:1.6em;
+
 }
 
 p {
@@ -24,7 +25,7 @@ p {
 
 a {
 	text-decoration:none;
-	color:#336699;
+	color:black;
 }
 
 ol, ul {
@@ -33,16 +34,14 @@ ol, ul {
 
 h1 {
 	font-size:130%;
-	color:black;
 }
 
 h2, h3, h4, h5 {
 	font-size:100%;
-	color:black;
 }
 
 blockquote{
-	background: white 
+	background: white;
 	padding: 10px;
 	padding-bottom: 40px;
 	margin: 1em;
@@ -85,6 +84,7 @@ div#header {
 	background:transparent;
 	width:100%;
 	height:110px;
+	color:black;
 }
 
 /*
@@ -101,6 +101,7 @@ div#header #logo h1 {
 	font-size:30px;
 	padding:0;
 	margin:10px 0 6px 0;
+	color:black;
 }
 
 div#header #logo h1 a{
@@ -139,7 +140,7 @@ div#header #search-header p {
 }
 
 div#header #search-header span a {
-	color:black;
+	color:#fff;
 }
 
 /*
@@ -151,23 +152,10 @@ div#header #search-header span a {
 	padding:5px;
 	margin:0;
 	width:974px;
-	min-height:400px;
+	min-height:500px;
 	position:relative;
 	clear:both;
-
 }
-
-#content-holder-inner {
-	height:300px;
-
-}
-
-#content-holder-inner-down {
-
-	background:white;
-}
-
-
 
 div#content-holder a:hover {
 	text-decoration:underline;
@@ -228,7 +216,7 @@ div#splitpane-sidebar {
 	margin:20px 10px 20px 0;
 	padding:0;
 	float: right;
-	background:white;
+	background:#efefef url({{url}}mod/template/templates/Default_Template/images/sidebar-top.gif) no-repeat top;
 }
 
 div#sidebar-contents {
@@ -236,7 +224,8 @@ div#sidebar-contents {
 }
 
 div#sidebar-bottom {
-   background:white
+   background:url({{url}}mod/template/templates/Default_Template/images/sidebar-bottom.gif) no-repeat bottom;
+   height:9px;
    width:250px;
    margin:0;
 }
@@ -295,7 +284,7 @@ div#footer {
 	font-size:1em;
 	height:26px;
 	margin:20px 0 0 0;
-	color:#174764;
+	color:black;
 	font-weight:bold;
 	width:100%;
 	padding:3px 0 0 0;
@@ -472,7 +461,7 @@ div#sub-menu a {
 	background: #f5f5f5;
 	line-height:2.9em;
 }
-	
+
 #tagcloud a {
 	text-decoration: none;
 }
