@@ -164,7 +164,8 @@ function templates_page_draw ($param) {
         $sidebarhtml = $param[2];
     } else {
         $sidebarhtml = run("display:sidebar");
-    }    
+    }
+ 
     
     $run_result .=  templates_draw(array(
                             'context'      => 'pageshell',
@@ -174,7 +175,6 @@ function templates_page_draw ($param) {
                             'top'          => displaymenu_top(),
                             'sidebar'      => $sidebarhtml,
                             'mainbody'     => $mainbody,
-							'mainbody'     => $mainbody,
                             'messageshell' => $messageshell
                             ));
             

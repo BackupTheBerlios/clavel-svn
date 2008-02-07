@@ -164,7 +164,7 @@ div#header #search-header span a {
 
 #content-holder-inner-down {
 
-	background:blue;
+	background:white;
 }
 
 

@@ -11,7 +11,7 @@ if ((!logged_on) && $page_owner == -1) {
     $result = count_users('person',time() - 600);
     $body .= sprintf(__gettext("(%d logged on.)"), $result) . "</p>";
     $run_result .= "<li>";       
-    $run_result .= templates_draw(array(
+    /*$run_result .= templates_draw(array(
                                         'template' => -1,
                                         'context' => 'sidebarholder',
                                         'title' => __gettext("User Statistics"),
@@ -19,7 +19,7 @@ if ((!logged_on) && $page_owner == -1) {
                                         'submenu' => ''
                                         )
                                   );
-    $run_result .= "</li>";
+    $run_result .= "</li>";*/
 }
 
 ?>
