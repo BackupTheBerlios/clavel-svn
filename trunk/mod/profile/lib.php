@@ -1,11 +1,11 @@
 <?php
 function profile_pagesetup() {
-	// register links -- 
+	// register links --
 	global $profile_id;
 	global $PAGE;
 	global $CFG;
 
-	// don't clobber $page_owner, use a 
+	// don't clobber $page_owner, use a
 	// local $pgowner instead for clarity
 	$pgowner = $profile_id;
 
@@ -13,11 +13,11 @@ function profile_pagesetup() {
 		if (defined("context") && context == "profile" && $pgowner == $_SESSION['userid']) {
 			$PAGE->menu[] = array (
 				'name' => 'profile',
-				'html' => '<li><a href="' . $CFG->wwwroot . $_SESSION['username'] . '/profile/" class="selected">' . __gettext("Your Profile") . '</a></li>');
+				'html' => '<li><a href="' . $CFG->wwwroot . $_SESSION['username'] . '/profile/" class="selected">' . __gettext("Profile") . '</a></li>');
 		} else {
 			$PAGE->menu[] = array (
 				'name' => 'profile',
-				'html' => '<li><a href="' . $CFG->wwwroot . $_SESSION['username'] . '/profile/">' . __gettext("Your Profile") . '</a></li>');
+				'html' => '<li><a href="' . $CFG->wwwroot . $_SESSION['username'] . '/profile/">' . __gettext("Profile") . '</a></li>');
 		}
 
 		if (profile_permissions_check("profile") && defined("context") && context == "profile") {
@@ -69,52 +69,52 @@ function profile_init() {
 	$css = str_replace("{{url}}", $CFG->wwwroot, $css);
 	$metatags .= $css;
 
-    
+
     // Profile initialisation
     $function['profile:init'][] = dirname(__FILE__) . "/lib/function_init.php";
     // $function['profile:init'][] = $CFG->dirroot . "units/profile/function_editfield_defaults.php";
     $function['profile:init'][] = dirname(__FILE__) . "/lib/function_upload_foaf.php";
     $function['profile:init'][] = $CFG->profilelocation . "profile.config.php";
-    
+
     // Initialisation for the search function
     $function['search:init'][] = dirname(__FILE__) . "/lib/function_init.php";
 	$function['search:init'][] = $CFG->profilelocation . "profile.config.php";
 
     $function['search:all:tagtypes'][] = dirname(__FILE__) . "/lib/function_search_all_tagtypes.php";
     $function['search:all:tagtypes:rss'][] = dirname(__FILE__) . "/lib/function_search_all_tagtypes_rss.php";
-        
+
     // Function to search through profiles
     $function['search:display_results'][] = dirname(__FILE__) . "/lib/function_search.php";
     $function['search:display_results:rss'][] = dirname(__FILE__) . "/lib/function_search_rss.php";
-        
-    // Functions to view and edit individual profile fields        
+
+    // Functions to view and edit individual profile fields
     $function['profile:editfield:display'][] = dirname(__FILE__) . "/lib/function_editfield_display.php";
     $function['profile:field:display'][] = dirname(__FILE__) . "/lib/function_field_display.php";
-    
+
     // Function to edit all profile fields
     $function['profile:edit'][] = dirname(__FILE__) . "/lib/function_edit.php";
-        
+
     // Function to view all profile fields
     $function['profile:view'][] = dirname(__FILE__) . "/lib/function_view.php";
-        
+
     // Function to display user's name
     $function['profile:display:name'][] = dirname(__FILE__) . "/lib/function_display_name.php";
-        
+
     $function['profile:user:info'][] = dirname(__FILE__) . "/lib/profile_user_info.php";
-    
+
     // Descriptive text
     $function['content:profile:edit'][] = dirname(__FILE__) . "/lib/content_edit.php";
 
     // Establish permissions
     $function['permissions:check'][] = dirname(__FILE__) . "/lib/permissions_check.php";
-        
+
     // FOAF
     $function['foaf:generate:fields'][] = dirname(__FILE__) . "/lib/generate_foaf_fields.php";
     $function['vcard:generate:fields:adr'][] = dirname(__FILE__) . "/lib/generate_vcard_adr_fields.php";
-                
+
     // Actions to perform when an access group is deleted
     $function['groups:delete'][] = dirname(__FILE__) . "/lib/groups_delete.php";
-        
+
     // Publish static RSS file of posts and files
     $function['profile:rss:publish'][] = dirname(__FILE__) . "/lib/function_rss_publish.php";
 
@@ -125,13 +125,13 @@ function profile_init() {
 	//$CFG->widgets->display['profile'] = "profile_widget_display";
 	//$CFG->widgets->edit['profile'] = "profile_widget_edit";
 	$CFG->widgets->list[] = array (
-		'name' => __gettext("Profile widget"), 
-		'description' => __gettext("Displays the contents of a profile field."), 
+		'name' => __gettext("Profile widget"),
+		'description' => __gettext("Displays the contents of a profile field."),
 		'type' => "profile::profile");
-		
+
 	$CFG->widgets->list[] = array (
-		'name' => __gettext("Friends widget"), 
-		'description' => __gettext("Displays the icons of your most recently logged-in friends."), 
+		'name' => __gettext("Friends widget"),
+		'description' => __gettext("Displays the icons of your most recently logged-in friends."),
 		'type' => "profile::friends");
 	/*
 	$CFG->widgets->list[] = array(
