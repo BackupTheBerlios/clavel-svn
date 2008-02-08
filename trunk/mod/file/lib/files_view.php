@@ -61,6 +61,6 @@ if ($accessible) {
 
 if (permissions_check("files",$page_owner)) {
     $run_result .= run("files:folder:edit",$folder);
-
+    $run_result .= run("files:file:upload",$folder);
 }
 ?>
