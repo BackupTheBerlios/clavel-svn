@@ -35,12 +35,12 @@ function file_pagesetup() {
 
         if ($page_owner == $_SESSION['userid'] && $page_owner != -1) {
             $PAGE->menu_sub[] = array( 'name' => 'file:add',
-                                       'html' => a_href( "#addFile",
-                                                          __gettext("Add a file")));
+                                       'html' => a_href( "{$CFG->wwwroot}{$_SESSION['username']}/files/addphoto",
+                                                          __gettext("Add a Photo")));
 	}
 	        if ($page_owner == $_SESSION['userid'] && $page_owner != -1) {
             $PAGE->menu_sub[] = array( 'name' => 'file:add',
-                                       'html' => a_href( "#addPhoto",
+                                       'html' => a_href( "{$CFG->wwwroot}{$_SESSION['username']}/files/addfolder",
                                                           __gettext("Add a folder")));
 	}
     }
@@ -58,6 +58,15 @@ function file_init() {
     global $CFG;
     global $function;
     global $metatags;
+
+	//Add new Photo
+		$function['photo:add'][] = $CFG->dirroot . "mod/file/lib/upload_file.php";
+
+	//Add new Folder
+		$function['folder:add'][] = $CFG->dirroot . "mod/file/lib/addfolder.php";
+
+	//View Photo Folders
+		$function['folder:photo'][] = $CFG->dirroot . "mod/file/lib/photo_folder_view.php";
 
     // Styles for file icons
         $metatags .= "<style type=\"text/css\">";

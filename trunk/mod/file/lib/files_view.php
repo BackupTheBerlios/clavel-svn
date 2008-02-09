@@ -23,7 +23,7 @@ if ($folder != -1) {
     $folder_object = new stdClass();
     $folder_object->ident = -1;
     $folder_object->handler = "elgg";
-    $folder_object->name = __gettext("Root Folder =P");
+    //$folder_object->name = __gettext("Root Folder");
 }
 
 if (!isset($folder_object->handler)
@@ -38,7 +38,7 @@ if ($folder_object->ident != -1) {
         $parent_details = get_record('file_folders','ident',$parent,'files_owner',$owner);
         $display_parent = $parent;
     } else {
-      $parent_details->name = __gettext("Root Folder");
+      //$parent_details->name = __gettext("Root Folder");
         $parent_details->ident = -1;
         $display_parent = "";
     }
@@ -61,6 +61,6 @@ if ($accessible) {
 
 if (permissions_check("files",$page_owner)) {
     $run_result .= run("files:folder:edit",$folder);
-    $run_result .= run("files:file:upload",$folder);
+    //$run_result .= run("files:file:upload",$folder);
 }
 ?>

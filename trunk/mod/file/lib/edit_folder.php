@@ -107,7 +107,7 @@ END;
     }
 }
 
-$header = __gettext("Upload files and folders");//gettext variable
+/*$header = __gettext("Upload files and folders");//gettext variable
 $run_result .= <<< END
     <h4>
         <a name="addFile"></a>$header
@@ -189,6 +189,6 @@ $run_result .= templates_draw(array(
 
 $run_result .= <<< END
     </form>
-END;
+END;*/
 
 ?>
