@@ -22,5 +22,5 @@ END;
     }
 
     $run_result .= "</select>";
-    
+
 ?>

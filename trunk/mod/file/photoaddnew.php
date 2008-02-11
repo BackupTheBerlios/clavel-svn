@@ -7,14 +7,8 @@
         run("profile:init");
         run("files:init");
 
-        define("context", "files");
-        templates_page_setup();
-
-    // Whose friends are we looking at?
-        global $page_owner;
-
-    // You must be logged on to view this!
-    //    protect(1);
+        define("context", "file");
+		templates_page_setup();
 
         $title = user_info("name", page_owner()) . " :: ". __gettext("Add new Photo");
         $body = run('photo:add');

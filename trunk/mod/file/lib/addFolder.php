@@ -117,8 +117,9 @@ END;
 $title = __gettext("Create a new folder");
 $createLabel = __gettext("Folder Name:"); //gettext variable
 $accessLabel = __gettext("Access restrictions:"); //gettext variable
-$folderType = __gettext("Folder type:"); // gettext variable
-$folderTypePicker = file_folder_type_switcher(null, "edit_folder_type");
+$folderType = "photogallery";
+//$folderType = __gettext("Folder type:"); // gettext variable
+//$folderTypePicker = file_folder_type_switcher(null, "edit_folder_type");
 
 $body = <<< END
         <table>
@@ -133,14 +134,7 @@ $body = <<< END
                     </p>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p><label for="new_folder_type">$folderType</label></p>
-                </td>
-                <td>
-                    <p>$folderTypePicker</p>
-                </td>
-            </tr>
+
             <tr>
                 <td><p>
                     <label for="new_folder_access">
@@ -173,6 +167,7 @@ $body .= <<< END
                     <input type="hidden" name="folder" value="{$folder}" />
                     <input type="hidden" name="files_owner" value="{$page_owner}" />
                     <input type="hidden" name="action" value="files:createfolder" />
+                    <input type="hidden" name="new_folder_type" value= $folderType />
                     <input type="submit" value=$create /></p>
                 </td>
             </tr>

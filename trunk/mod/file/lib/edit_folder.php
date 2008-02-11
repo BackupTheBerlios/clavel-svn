@@ -107,7 +107,7 @@ END;
     }
 }
 
-//$header = __gettext("Upload files and folders");//gettext variable
+/*$header = __gettext("Upload files and folders");//gettext variable
 $run_result .= <<< END
     <h4>
         <a name="addFile"></a>$header
@@ -134,14 +134,7 @@ $body = <<< END
                     </p>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p><label for="new_folder_type">$folderType</label></p>
-                </td>
-                <td>
-                    <p>$folderTypePicker</p>
-                </td>
-            </tr>
+
             <tr>
                 <td><p>
                     <label for="new_folder_access">

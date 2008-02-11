@@ -10,7 +10,7 @@ $textlib = textlib_get_instance();
 $action = optional_param('action');
 if (logged_on) {
     switch ($action) {
-        
+
     // Create a new folder
     case "files:createfolder":
         $f = new StdClass;
@@ -20,7 +20,7 @@ if (logged_on) {
             $f->parent = $folder;
             $f->files_owner = $page_owner;
             $f->owner = $USER->ident;
-            $f->handler = trim(optional_param('edit_folder_type'));
+            $f->handler = trim(optional_param('new_folder_type'));
             $f = plugin_hook("folder","create",$f);
             if (!empty($f)) {
                 $insert_id = insert_record('file_folders',$f);
@@ -34,7 +34,7 @@ if (logged_on) {
             $messages[] = __gettext("Could not create folder. Perhaps the folder name was blank?");
         }
         break;
-                
+
         // Upload a new file
     case "files:uploadfile":
         $description = trim(optional_param('new_file_description'));
@@ -42,7 +42,7 @@ if (logged_on) {
         $access = trim(optional_param('new_file_access'));
         $folderid = optional_param('folder',0,PARAM_INT);
         $copyright = optional_param('copyright');
-        
+
         if (isloggedin() && !empty($access) && !empty($folderid) && permissions_check("files",$page_owner)) {
             $ul_username = user_info('username', $page_owner);
             if (empty($copyright)) {
@@ -61,7 +61,7 @@ if (logged_on) {
             $maxbytes = $max_quota - $total_quota;
             // $um = new upload_manager('new_file',false,true,true,$maxbytes,true);
             $um = new upload_manager('',false,true,true,$maxbytes,true);
-            $reldir =  "files/" . $upload_folder . "/" . $ul_username . "/"; 
+            $reldir =  "files/" . $upload_folder . "/" . $ul_username . "/";
             $dir = $CFG->dataroot .$reldir;
             if ($um->process_file_uploads($dir)) {
                 foreach($um->files as $file) {
@@ -103,7 +103,7 @@ if (logged_on) {
             } else {
                 $messages[] = $um->get_errors();
             }
-            
+
             $redirect_url = $CFG->wwwroot . $ul_username . "/files/";
             if ($folderid > -1) {
                 $redirect_url .= $folderid;
@@ -111,7 +111,7 @@ if (logged_on) {
             define('redirect_url', $redirect_url);
         }
         break;
-        
+
         // Edit a file
     case "files:editfile":
         $f = new stdClass;
@@ -144,7 +144,7 @@ if (logged_on) {
             }
         }
         break;
-        
+
         // Edit a folder
     case "edit_folder":
         $f = new StdClass;
@@ -209,7 +209,7 @@ if (logged_on) {
             }
         }
         break;
-    
+
         // Delete a file
     case "delete_file":
         $id = optional_param('delete_file_id',0,PARAM_INT);
@@ -239,8 +239,8 @@ if (logged_on) {
         }
         break;
     }
-    
-    
+
+
 }
 
 ?>

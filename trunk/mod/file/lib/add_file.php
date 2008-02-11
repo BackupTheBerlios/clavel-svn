@@ -8,7 +8,7 @@
  global $CFG;
  global $page_owner;
  global $folder;
- 
+
  $run_result .= <<< END
     <form action="{$CFG->wwwroot}mod/file/action_redirection.php" method="post" enctype="multipart/form-data">
 END;
@@ -16,7 +16,7 @@ END;
 $title = __gettext("Upload a file");
 
 $body = <<< END
-    
+
         <table>
             <tr>
                 <td colspan="2"><p>
@@ -116,11 +116,11 @@ END;
 $body .= run("metadata:edit");
 
 }
-            
+
 $copyright = __gettext("By checking this box, you are asserting that you have the legal right to share this file, and that you understand you are sharing it with other users of the system."); //gettext variable
 $upload = __gettext("Upload"); //gettext variable
 $body .= <<< END
-            
+
             <tr>
                 <td colspan="2"><p><label for="copyrightokcheckbox">
                     <input type="checkbox" id="copyrightokcheckbox" name="copyright" value="ok" />
@@ -147,9 +147,9 @@ $run_result .= templates_draw(array(
                                     'contents' => $body
                                     )
                               );
-                              
+
 $run_result .= <<< END
     </form>
 END;
- 
+
 ?>

@@ -7114,3 +7114,7 @@ msgstr "Usuarios y comunidades"
 #: search/tags.php:12
 msgid "Some Tags"
 msgstr "Algunas etiquetas"
+
+#: mod/a_home/lib.php:17
+msgid "Home"
+msgstr "Inicio"
