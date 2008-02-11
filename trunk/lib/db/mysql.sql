@@ -8,9 +8,9 @@
 
 /*!40101 ALTER DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 
--- 
+--
 -- Table structure for table `content_flags`
--- 
+--
 
 CREATE TABLE `prefix_content_flags` (
   `ident` int(11) NOT NULL auto_increment,
@@ -21,9 +21,9 @@ CREATE TABLE `prefix_content_flags` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `file_folders`
--- 
+--
 
 CREATE TABLE `prefix_file_folders` (
   `ident` int(11) NOT NULL auto_increment,
@@ -42,9 +42,9 @@ CREATE TABLE `prefix_file_folders` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `file_metadata`
--- 
+--
 
 CREATE TABLE `prefix_file_metadata` (
   `ident` int(11) NOT NULL auto_increment,
@@ -57,9 +57,9 @@ CREATE TABLE `prefix_file_metadata` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `files`
--- 
+--
 
 CREATE TABLE `prefix_files` (
   `ident` int(11) NOT NULL auto_increment,
@@ -86,9 +86,9 @@ CREATE TABLE `prefix_files` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `friends`
--- 
+--
 
 CREATE TABLE `prefix_friends` (
   `ident` int(11) NOT NULL auto_increment,
@@ -103,9 +103,9 @@ CREATE TABLE `prefix_friends` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `friends_requests`
--- 
+--
 
 CREATE TABLE `prefix_friends_requests` (
   `ident` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
@@ -117,9 +117,9 @@ CREATE TABLE `prefix_friends_requests` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `group_membership`
--- 
+--
 
 CREATE TABLE `prefix_group_membership` (
   `ident` int(11) NOT NULL auto_increment,
@@ -131,9 +131,9 @@ CREATE TABLE `prefix_group_membership` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `groups`
--- 
+--
 
 CREATE TABLE `prefix_groups` (
   `ident` int(11) NOT NULL auto_increment,
@@ -147,9 +147,9 @@ CREATE TABLE `prefix_groups` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `icons`
--- 
+--
 
 CREATE TABLE `prefix_icons` (
   `ident` int(11) NOT NULL auto_increment,
@@ -162,9 +162,9 @@ CREATE TABLE `prefix_icons` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `invitations`
--- 
+--
 
 CREATE TABLE `prefix_invitations` (
   `ident` int(11) NOT NULL auto_increment,
@@ -181,9 +181,9 @@ CREATE TABLE `prefix_invitations` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `password_requests`
--- 
+--
 
 CREATE TABLE `prefix_password_requests` (
   `ident` int(11) NOT NULL auto_increment,
@@ -195,9 +195,9 @@ CREATE TABLE `prefix_password_requests` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `profile_data`
--- 
+--
 
 CREATE TABLE `prefix_profile_data` (
   `ident` int(10) unsigned NOT NULL auto_increment,
@@ -211,9 +211,9 @@ CREATE TABLE `prefix_profile_data` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `tags`
--- 
+--
 
 CREATE TABLE `prefix_tags` (
   `ident` int(11) NOT NULL auto_increment,
@@ -232,9 +232,9 @@ CREATE TABLE `prefix_tags` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `template_elements`
--- 
+--
 
 CREATE TABLE `prefix_template_elements` (
   `ident` int(11) NOT NULL auto_increment,
@@ -247,9 +247,9 @@ CREATE TABLE `prefix_template_elements` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `templates`
--- 
+--
 
 CREATE TABLE `prefix_templates` (
   `ident` int(11) NOT NULL auto_increment,
@@ -263,9 +263,9 @@ CREATE TABLE `prefix_templates` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `user_flags`
--- 
+--
 
 CREATE TABLE `prefix_user_flags` (
   `ident` int(11) NOT NULL auto_increment,
@@ -280,9 +280,9 @@ INSERT INTO `prefix_user_flags` VALUES (0,1,'admin','1');
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `users`
--- 
+--
 
 CREATE TABLE `prefix_users` (
   `ident` int(10) unsigned NOT NULL auto_increment,
@@ -296,7 +296,7 @@ CREATE TABLE `prefix_users` (
   `alias` varchar(128) NOT NULL default '',
   `code` varchar(32) NOT NULL default '' COMMENT 'auth value for cookied login',
   `icon_quota` int(11) NOT NULL default '10' COMMENT 'number of icons',
-  `file_quota` int(11) NOT NULL default '1000000000' COMMENT 'bytes',
+  `file_quota` int(11) NOT NULL default '10000000' COMMENT 'bytes',
   `template_id` int(11) NOT NULL default '-1' COMMENT '-> templates.ident',
   `owner` int(11) NOT NULL default '-1' COMMENT '-> users.ident, community owner',
   `user_type` varchar(128) NOT NULL default 'person' COMMENT 'person, community, etc',
@@ -322,9 +322,9 @@ INSERT INTO `prefix_users` VALUES (0, 'news', '5f4dcc3b5aa765d61d8327deb882cf99'
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `weblog_comments`
--- 
+--
 
 CREATE TABLE `prefix_weblog_comments` (
   `ident` int(11) NOT NULL auto_increment,
@@ -342,9 +342,9 @@ CREATE TABLE `prefix_weblog_comments` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `weblog_posts`
--- 
+--
 
 CREATE TABLE `prefix_weblog_posts` (
   `ident` int(11) NOT NULL auto_increment,
@@ -435,7 +435,7 @@ CREATE TABLE `prefix_files_incoming` (
 
 --
 -- Table structure for table `feed_posts`
--- 
+--
 
 CREATE TABLE `prefix_feed_posts` (
   `ident` int(11) NOT NULL auto_increment,
@@ -453,9 +453,9 @@ CREATE TABLE `prefix_feed_posts` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `feed_subscriptions`
--- 
+--
 
 CREATE TABLE `prefix_feed_subscriptions` (
   `ident` int(10) unsigned NOT NULL auto_increment,
@@ -471,9 +471,9 @@ CREATE TABLE `prefix_feed_subscriptions` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `feeds`
--- 
+--
 
 CREATE TABLE `prefix_feeds` (
   `ident` int(10) unsigned NOT NULL auto_increment,
@@ -491,9 +491,9 @@ CREATE TABLE `prefix_feeds` (
 ) ;
 
 
--- 
+--
 -- Table structure for table `messages`
--- 
+--
 
 CREATE TABLE `prefix_messages` (
   `ident` int(11) NOT NULL auto_increment,

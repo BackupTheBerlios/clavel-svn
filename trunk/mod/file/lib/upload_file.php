@@ -12,7 +12,7 @@ global $folder_name;
 $folder_name = htmlspecialchars($folder_name, ENT_COMPAT, 'utf-8');
 $this_folder = optional_param('edit_folder_id',0,PARAM_INT);
 
-$title = __gettext("Upload PHOTICOS!!! ESTE ES EL QUE QUEDA");
+$title = __gettext("Upload Photos");
 $run_result .= <<< END
     <h4>
         <a name="addPhoto"></a>
@@ -41,9 +41,9 @@ if ($page_owner == $_SESSION['userid']) {
 } else {
     $body .= sprintf(__gettext("Used space: %s Mb."),round(($usedquota / 1000000),4));
 }
-$fileLabel = __gettext("Files to upload:"); //gettext variable
-$fileTitle = __gettext("Title for files:"); //gettext variable
-$fileDesc = __gettext("File description:"); //gettext variable
+$fileLabel = __gettext("Photos to upload:"); //gettext variable
+$fileTitle = __gettext("Title for Photo:"); //gettext variable
+$fileDesc = __gettext("Photo description:"); //gettext variable
 $fileAccess = __gettext("Access restrictions:"); //gettext variable
 $body .= <<< END
                 </p></td>

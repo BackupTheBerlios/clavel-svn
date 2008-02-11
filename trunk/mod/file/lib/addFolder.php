@@ -106,7 +106,7 @@ END;
     }
 }
 
-$header = __gettext("Upload files and folders");//gettext variable
+//$header = __gettext("Upload files and folders");//gettext variable
 $run_result .= <<< END
     <h4>
         <a name="addFile"></a>$header
@@ -115,7 +115,7 @@ $run_result .= <<< END
 END;
 
 $title = __gettext("Create a new folder");
-$createLabel = __gettext("To create a new folder, enter its name:"); //gettext variable
+$createLabel = __gettext("Folder Name:"); //gettext variable
 $accessLabel = __gettext("Access restrictions:"); //gettext variable
 $folderType = __gettext("Folder type:"); // gettext variable
 $folderTypePicker = file_folder_type_switcher(null, "edit_folder_type");
