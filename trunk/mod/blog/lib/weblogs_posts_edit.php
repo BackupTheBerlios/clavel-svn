@@ -28,7 +28,7 @@ $extraTypes = blog_get_extension($extensionContext, 'extra_type', array());
 $extraSelected = "";
 
 if(is_array($CFG->weblog_extensions) && array_key_exists($extensionContext,$CFG->weblog_extensions) && is_array($CFG->weblog_extensions[$extensionContext])){
- 
+
   if ($tags = get_records_select('tags',"tagtype = ? and ref = ?",array('weblog',$post->ident),'ident ASC')) {
     $first = true;
     foreach($tags as $key => $tag) {
@@ -50,7 +50,7 @@ if(is_array($CFG->weblog_extensions) && array_key_exists($extensionContext,$CFG-
 $editPost = sprintf(__gettext("Edit a %s"),$contentType);
 $postTitle = sprintf(__gettext("%s title:"),$contentType);
 $postBody = sprintf(__gettext("%s body:"),$contentType);
-$Keywords = __gettext("Keywords (Separated by commas):"); 
+$Keywords = __gettext("Keywords (Separated by commas):");
 $keywordDesc = __gettext("Keywords commonly referred to as 'Tags' are words that represent the weblog post you have just made. This will make it easier for others to search and find your posting.");
 $accessRes = __gettext("Access restrictions:"); // gettext variable
 $postButton = __gettext("Publish");
@@ -122,7 +122,7 @@ END;
 
     //$body .= run("weblogs:posts:edit:fields",array($_SESSION['userid'], $post->ident));
     $body .= <<< END
-    <p>
+    <p align="center">
         <input type="hidden" name="action" value="weblogs:post:edit" />
         <input type="hidden" name="edit_weblog_post_id" value="{$post->ident}" />
         <input type="hidden" name="extension" value="{$extensionContext}" />

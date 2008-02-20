@@ -24,11 +24,11 @@
                                    'column1' => "<input type=\"text\" name=\"comm_name\" value=\"$comm_name\" size=\"50\"/>"
                                    )
                             );
-    $fields.= templates_draw(array('context' => 'databox1',
+    /*$fields.= templates_draw(array('context' => 'databox1',
                                    'name' => $communityUsername,
                                    'column1' => "<input type=\"text\" name=\"comm_username\" value=\"$comm_username\" maxlength=\"12\"/>"
                                    )
-                            );
+                            );*/
     $run_result .= templates_draw(array('context'=>"community_create",
                                         'title'=> $title,
                                         'form_fields'=> $fields,

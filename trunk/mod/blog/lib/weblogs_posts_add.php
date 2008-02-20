@@ -37,9 +37,9 @@
     $username = $_SESSION['username'];
     $addPost = sprintf(__gettext("Add a new %s"),$contentType);
     $postTitle = sprintf(__gettext("%s title:"),$contentType);
-    $postBody = sprintf(__gettext("%s body:"),$contentType); 
-    $Keywords = __gettext("Keywords (Separated by commas):"); 
-    $keywordDesc = __gettext("Keywords commonly referred to as 'Tags' are words that represent the weblog post you have just made. This will make it easier for others to search and find your posting."); 
+    $postBody = sprintf(__gettext("%s body:"),$contentType);
+    $Keywords = __gettext("Keywords (Separated by commas):");
+    $keywordDesc = __gettext("Keywords commonly referred to as 'Tags' are words that represent the weblog post you have just made. This will make it easier for others to search and find your posting.");
     $accessRes = __gettext("Access restrictions:"); // gettext variable
     $postButton = __gettext("Publish"); // gettext variable
 
@@ -52,11 +52,11 @@
     <h2>$addPost</h2>
 
 END;
-    
+
     if(isset($CFG->assign_field) && $CFG->assign_field){
       $body .= run("weblogs:assign:field");
     }
-                           
+
     $body .= templates_draw(array(
                                 'context' => 'databoxvertical',
                                 'name' => $postTitle,
@@ -106,7 +106,7 @@ END;
                             );
 
     $body .= <<< END
-    <p>
+    <p align="center">
         <input type="hidden" name="action" value="weblogs:post:add" />
         <input type="hidden" name="extension" value="{$extensionContext}" />
         <input type="submit" value="$postButton" />

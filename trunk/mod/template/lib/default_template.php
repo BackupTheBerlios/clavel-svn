@@ -3,7 +3,7 @@
     global $template;
     global $template_definition;
     $sitename = $CFG->sitename;
-    
+
     $template_definition[] = array(
                                     'id' => 'css',
                                     'name' => __gettext("Stylesheet"),
@@ -29,9 +29,9 @@
                                                             '{{sidebar}}' => __gettext("Sidebar")
                                                         )
                                     );
-    
+
     templates_add_context('pageshell', $CFG->templatesroot . 'Default_Template/pageshell');
-    
+
     templates_add_context('frontpage_loggedout', $CFG->templatesroot . 'Default_Template/frontpage_loggedout');
     templates_add_context('frontpage_loggedin', $CFG->templatesroot . 'Default_Template/frontpage_loggedin');
     templates_add_context('register_loggedout', $CFG->templatesroot . 'Default_Template/register_loggedout');
@@ -44,13 +44,13 @@
                                                             '{{submenu}}' => __gettext("The page submenu"),
                                                             '{{body}}' => __gettext("The body of the page")
                                                         )
-                                    );    
+                                    );
 
     $template['contentholder'] = <<< END
     <h1>{{title}}</h1>
 	{{submenu}}
     {{body}}
-    
+
 END;
 
 $template_definition[] = array(
@@ -60,7 +60,7 @@ $template_definition[] = array(
                                     'glossary' => array(
                                                             '{{title}}' => __gettext("The header"),
                                                                                                        '{{body}}' => __gettext("The body of the page")
-                                                            
+
                                                         )
                                     );
 
@@ -88,7 +88,7 @@ END;
     $tags = __gettext("Tags");
     $resources = __gettext("Resources");
     $template['ownerbox'] = <<< END
-    
+
      <div id="me">
         <div id="icon"><a href="{{profileurl}}">{{usericon}}</a></div>
         <div id="contents" >
@@ -101,7 +101,7 @@ END;
        </div>
 
 END;
-                                    
+
     $template_definition[] = array(
                                     'id' => 'messageshell',
                                     'name' => __gettext("System message shell"),
@@ -112,9 +112,9 @@ END;
                                     );
 
     $template['messageshell'] = <<< END
-    
+
     <div id="system-message">{{messages}}</div><br />
-    
+
 END;
 
     $template_definition[] = array(
@@ -130,10 +130,10 @@ END;
 
     <p>
         {{message}}
-    </p>    
-    
+    </p>
+
 END;
-    
+
 
     $template_definition[] = array(
                                     'id' => 'menu',
@@ -145,7 +145,7 @@ END;
                                     );
 
     $template['menu'] = <<< END
-    
+
         {{menuitems}}
 END;
 
@@ -160,9 +160,9 @@ END;
                                     );
 
     $template['menuitem'] = <<< END
-    
+
     <li><a href="{{location}}">{{name}}</a></li>
-    
+
 END;
 
 $template_definition[] = array(
@@ -176,9 +176,9 @@ $template_definition[] = array(
                                     );
 
     $template['selectedmenuitem'] = <<< END
-    
+
     <li><a class="current" href="{{location}}">{{name}}</a></li>
-    
+
 END;
 
     $template_definition[] = array(
@@ -191,7 +191,7 @@ END;
                                     );
 
     $template['submenu'] = <<< END
-    
+
         <div id="sub-menu">
         <p>
             {{submenuitems}}
@@ -210,9 +210,9 @@ END;
                                     );
 
     $template['submenuitem'] = <<< END
-    
+
     <a href="{{location}}">{{name}}</a>&nbsp;|
-    
+
 END;
 
     $template_definition[] = array(
@@ -225,7 +225,7 @@ END;
                                     );
 
     $template['topmenu'] = <<< END
-    
+
         <ul>
             {{topmenuitems}}
         </ul>
@@ -243,9 +243,9 @@ $template_definition[] = array(
                                     );
 
     $template['topmenuitem'] = <<< END
-    
+
     <li><a href="{{location}}">[{{name}}]</a></li>
-    
+
 END;
 
     $template_definition[] = array(
@@ -268,7 +268,7 @@ END;
         <p>{{column1}}</p>
         <p>{{column2}}</p>
     </div>
-        
+
 END;
 
     $template_definition[] = array(
@@ -289,7 +289,7 @@ END;
         </div>
         <p>{{column1}}</p>
     </div>
-        
+
 END;
 
 $template_definition[] = array(
@@ -365,7 +365,7 @@ END;
         </div>
         <p>{{contents}}</p>
     </div>
-        
+
 END;
 
 ?>

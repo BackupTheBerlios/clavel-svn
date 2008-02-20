@@ -52,7 +52,7 @@ function pages_pagesetup() {
 
 function pages_php_allowed() {
     if (page_owner() == -1
-        || PAGES_ALLOW_PHP_USER 
+        || PAGES_ALLOW_PHP_USER
         || (PAGES_ALLOW_PHP_ADMIN && user_flag_get('admin', page_owner())))
     {
         return true;
@@ -103,6 +103,13 @@ function pages_dbsetup() {
             $page->title = __gettext('About') . " {{sitename}}";
             $page->content = @file_get_contents(dirname(__FILE__).'/legacy/content_about.html');
 
+            //About in spanish
+
+            $page = new StdClass;
+            $page->name = __gettext('acercade');
+            $page->title = __gettext('Acerca de') . " {{sitename}}";
+            $page->content = @file_get_contents(dirname(__FILE__).'/legacy/content_about_es.html');
+
             $page = pages_create_page($page);
 
             if ($page) {
@@ -121,6 +128,24 @@ function pages_dbsetup() {
                 $_page->name = 'terms.php'; //backward compatibility
                 $_page->title = __gettext('Terms and Conditions');
                 $_page->content = @file_get_contents(dirname(__FILE__).'/legacy/content_terms.html');
+                $_page->parent = $page->ident;
+                $_page = pages_create_page($_page);
+
+                //Terms and Conditions and Privacy Policy in spanish
+
+                $_page = new StdClass;
+                $_page->uri = 'privacy_es.php'; //backward compatibility
+                $_page->name = 'privacy_es.php'; //backward compatibility
+                $_page->title = __gettext('Política de Privacidad');
+                $_page->content = @file_get_contents(dirname(__FILE__).'/legacy/content_privacy_es.html');
+                $_page->parent = $page->ident;
+                $_page = pages_create_page($_page);
+
+                $_page = new StdClass;
+                $_page->uri = 'terms_es.php'; //backward compatibility
+                $_page->name = 'terms_es.php'; //backward compatibility
+                $_page->title = __gettext('Terminos y Condiciones');
+                $_page->content = @file_get_contents(dirname(__FILE__).'/legacy/content_terms_es.html');
                 $_page->parent = $page->ident;
                 $_page = pages_create_page($_page);
             }
@@ -266,7 +291,7 @@ function pages_frontpage($logged=false) {
     require_once(dirname(__FILE__) . '/lib/pages.inc.php');
     if ($logged) {
         $context = 'frontpage_loggedin';
-        
+
         if (isadmin()) {
             pages_submenu_add('pages:edit_in', __gettext('Edit frontpage_loggedin'), pages_url('frontpage_loggedin', 'pages::edit', -1));
             pages_submenu_add('pages:edit_out', __gettext('Edit frontpage_loggedout'), pages_url('frontpage_loggedout', 'pages::edit', -1));
@@ -294,7 +319,7 @@ function pages_sidebar() {
     } else {
         $title = $CFG->sitename;
     }
-    
+
     $body = templates_draw(array(
         'context' => 'sidebarholder',
         'title' => $title,
@@ -337,7 +362,7 @@ function pages_get_mainmenu($owner=-1) {
             } else {
                 if (!isset($menu[$e->parent][1])) {
                     $menu[$e->parent][1] = array();
-                } 
+                }
                 $menu[$e->parent][1][] = $e;
             }
         }
@@ -531,7 +556,7 @@ function pages_menu_add($name, $title, $url, $weight=10) {
 
     $clean_name = 'menu_'.clean_filename($name);
     $link = pages_html_a($url, $title);
-    
+
     $menu = array(
         'name' => $name,
         'html' => pages_html_wrap('li', $link, array('class'=>$clean_name)),
@@ -545,7 +570,7 @@ function pages_submenu_add($name, $title, $url, $weight=10) {
 
     $clean_name = 'submenu_'.clean_filename($name);
     $link = pages_html_a($url, $title, array('class' => $clean_name));
-    
+
     $menu_sub  = array(
         'name' => $name,
         'html' => $link,
@@ -678,7 +703,7 @@ function pages_remove_accents($string) {
     chr(197).chr(190) => 'z', chr(197).chr(191) => 's',
     // Euro Sign
     chr(226).chr(130).chr(172) => 'E');
-    
+
     $string = strtr($string, $chars);
     return $string;
 }
@@ -696,7 +721,7 @@ if (!function_exists('array_insert')) {
                             $i++;
                         }
             }
-    
+
         $first_array = array_splice($array, 0, $pos);
         $array = array_merge($first_array, $insert_array, $array);
     }

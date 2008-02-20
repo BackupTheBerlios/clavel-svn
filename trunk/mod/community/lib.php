@@ -90,11 +90,11 @@ function community_pagesetup() {
                                                            __gettext("Invite people")));
               }
         }
-        
+
         if (defined("context") && context == "profile") {
 
             if (run("permissions:check", "profile")) {
-                
+
                 if (!empty($CFG->uses_YUI)) {
                     $PAGE->menu_sub[] = array( 'name' => 'profile:widget:manage',
                         'html' => '<a href="'.$CFG->wwwroot.'mod/widget/manage_widgets.php?owner='.$page_owner.'">'
@@ -103,9 +103,9 @@ function community_pagesetup() {
                     $PAGE->menu_sub[] = array( 'name' => 'profile:widget:add',
                         'html' => '<a href="'.$CFG->wwwroot.'mod/profile/add.php?owner='.$page_owner.'">'
                         . __gettext("Add widget") . '</a>');
-                
+
             }
-    
+
             }
         }
     } else if ($usertype == "person") {
@@ -141,7 +141,7 @@ function community_pagesetup() {
                                   'user_type' => 'community');
 
     // Add membership requests to the personal network page
-    if (defined("context") && context == "network" && isloggedin() && $page_owner == $_SESSION['userid']) {
+    if (defined("context") && context == "community" && isloggedin() && $page_owner == $_SESSION['userid']) {
           $PAGE->menu_sub[] = array( 'name' => 'membership:invites',
                                    'html' => a_href( "{$CFG->wwwroot}{$username}/communities/invitations",
                                                       __gettext("Community invitations")));
@@ -209,13 +209,13 @@ function community_init() {
 
     // Delete users
         listen_for_event("user","delete","community_user_delete");
-        
+
     // Register file river hook (if there)
     	if (function_exists('river_save_event'))
     	{
     		listen_for_event('community','publish', 'community_river_hook');
     		listen_for_event('community','delete', 'community_river_hook');
-    
+
     		river_register_friendlyname_hook('community::community', 'community_get_friendly_name');
     	}
 
@@ -234,7 +234,7 @@ function community_get_friendly_name($object_type, $object_id)
 		{
 			$community = user_info("name", $record->ident);
 			$url = river_get_userurl($record->ident);
-			
+
 			return sprintf(__gettext("the community <a href=\"$url\">%s</a>"), $community);
 		}
 	}
@@ -256,7 +256,7 @@ function community_river_hook( $object_type, $event, $object)
 	if ($userid == $object_owner) $weblogname = __gettext("their");
 
 	if ($username == false) $username = __gettext("Anonymous user");
-	
+
 	if ($event == "publish")
 		river_save_event($userid, $object_id, $object_owner, $object_type, "<a href=\"" .  river_get_userurl($userid) . "\">$username</a> created the community <a href=\"{$CFG->wwwroot}{$object->username}\">{$object->name}</a>.");
 

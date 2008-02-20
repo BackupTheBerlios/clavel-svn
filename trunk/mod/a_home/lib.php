@@ -1,16 +1,17 @@
 <?php
 
 function a_home_pagesetup() {
-    // register links -- 
+    // register links --
     global $profile_id;
     global $PAGE;
     global $CFG;
 
     $page_owner = $profile_id;
     $rss_username = user_info('username', $page_owner);
+    define("home", $context);
 
     if (isloggedin()) {
-    	if (defined("context") && context == "weblog" && $page_owner == $_SESSION['userid']) {
+    	if (defined("context") && context == "home" && $page_owner == $_SESSION['userid']) {
 
       		$PAGE->menu[]= array (
         		'name' => 'home',
@@ -25,19 +26,19 @@ function a_home_pagesetup() {
 
 }
 
- 
+
 
 
 
 function a_home_init() {
-    
+
     global $CFG;
-    
+
     // Delete users
     listen_for_event("user","delete","newsclient_user_delete");
-    
- 
-    
+
+
+
 }
 
 

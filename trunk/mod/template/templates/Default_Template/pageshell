@@ -21,7 +21,7 @@
 
 {{toolbar}}
 	<div id="content-holder"><!-- open content-holder div -->
-		<div id="content-holder-inner">   
+		<div id="content-holder-inner">
 			<div id="splitpane-sidebar"><!-- open splitpane-sidebar div -->
 		    		<div id="sidebar-contents">
 						{{sidebar}}
@@ -29,7 +29,7 @@
 					<div id="sidebar-bottom">
 					</div><!-- used to provide the rounded bottom -->
 			</div><!-- close splitpane-sidebar div -->
-			
+
 			<div id="splitpane-content"><!-- open splitpane-content div -->
 				{{messageshell}}
 				{{mainbody}}
@@ -43,7 +43,7 @@
 
 <div id="footer"><!-- start footer -->
 	<div id="footer-inner">
-		 <a href="{{url}}content/terms.php">Terms and conditions</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Privacy Policy</a>
+		 <a href="{{url}}content/terms.php">Terminos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Politica de Privacidad</a>&nbsp;|&nbsp;<a href="{{url}}content/About">Acerca de {{sitename}}</a>
 		{{perf}}
 	</div>
 </div><!-- end footer -->

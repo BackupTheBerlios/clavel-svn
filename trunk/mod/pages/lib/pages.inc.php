@@ -43,8 +43,8 @@ function pages_actions() {
             if (empty($messages)) {
                 if ($page->name == 'New page' || $page->title == 'New page') {
                     $messages[] = __gettext('You cannot use "New page" as page title or menu title.');
-                } 
-                
+                }
+
                 // name record exists?
                 if ($test = get_record_sql("SELECT ident FROM {$CFG->prefix}pages WHERE name = ? AND owner=?", array($page->name, $owner))) {
                     if (empty($page->ident) || $test->ident != $page->ident) {
@@ -107,7 +107,7 @@ function pages_actions() {
                             $messages[] = __gettext('Page updated successfully');
 
                             // check parent menu changes
-                            // If it's top menu, update childs 
+                            // If it's top menu, update childs
                             if ($page->parent != $oldparent && $oldparent == 0) {
                                 // set childs' parent to 0 (top menu)
                                 execute_sql("UPDATE {$CFG->prefix}pages SET parent=0 WHERE parent={$page->ident} AND owner={$owner}", false);
@@ -257,7 +257,7 @@ function pages_create_page($page) {
         $page->ident = $rs;
         return $page;
     } else {
-        return false; 
+        return false;
     }
 }
 
@@ -421,7 +421,7 @@ function pages_edit_page($page_name, $owner=-1) {
             $page->name = $page_name;
             $page->parent = -1; //hidden
             $page->access = 'PUBLIC'; //force public
-        } 
+        }
 
         $title_enc = htmlspecialchars($page->title, ENT_QUOTES, 'utf-8');
         //$page->content = htmlspecialchars(stripslashes($page->content), ENT_COMPAT, 'utf-8');
@@ -567,7 +567,7 @@ function pages_edit_page($page_name, $owner=-1) {
                 function confirm_delete() {
                     return confirm('{$confirm_delete}');
                 }
-                --> 
+                -->
                 ", array('type' => 'text/javascript'
                     )
                 );
@@ -591,17 +591,17 @@ function pages_edit_page($page_name, $owner=-1) {
                                             )
                                         );
 
-        // check for preview action 
+        // check for preview action
         if (optional_param('submit') == __gettext('Preview')) {
             $content = pages_preview_page($page) . $content;
         }
 
-        // override content 
+        // override content
         $page->content = $content;
     } else {
         $page = pages_page_denied();
     }
-    
+
     if (empty($page)) {
         $page = pages_page_not_found();
     }

@@ -8,7 +8,7 @@ $friend_id = optional_param('friend_id',0,PARAM_INT);
 $friend = get_record('users','ident',$friend_id);
 
 switch ($action) {
-    
+
     // Friend someone
     case "friend":
         if (!empty($friend) && logged_on) {
@@ -38,7 +38,7 @@ switch ($action) {
                         if (user_info("user_type",$friend_id) == "person") {
                             $messages[] = sprintf(__gettext("%s has elected to moderate friendship requests. Your request has been added to their moderation queue."),$friend->name);
                             $u = get_record('users','ident',$friend_id);
-                            $message_body = sprintf(__gettext("%s has requested to add you as a friend!\n\nTo visit this user's profile, click on the following link:\n\n\t%s\n\nTo view all your friends requests and approve or deny this user, click here:\n\n\t%s\n\nRegards,\n\nThe %s team."),$_SESSION['name'], $CFG->wwwroot . user_info("username",$USER->ident) . "/", $CFG->wwwroot . "_friends/requests.php?owner=" . $friend_id,$CFG->sitename);
+                            $message_body = sprintf(__gettext("%s has requested to add you as a friend!\n\nTo visit this user's profile, click on the following link:\n\n\t%s\n\nTo view all your friends requests and approve or deny this user, click here:\n\n\t%s\n\nRegards,\n\nThe %s team."),$_SESSION['name'], $CFG->wwwroot . user_info("username",$USER->ident) . "/", $CFG->wwwroot . $friend->username ."/friends/requests",$CFG->sitename);
                             $title = sprintf(__gettext("New %s friend request"), $CFG->sitename);
                             notify_user($u,$title,$message_body);
                         }
@@ -57,7 +57,7 @@ switch ($action) {
         }
         break;
         // Unfriend someone
-     case "unfriend":        
+     case "unfriend":
          if (!empty($friend) && logged_on) {
              if (delete_records('friends','owner',$USER->ident,'friend',$friend_id)) {
                  if (user_info("user_type",$friend_id) == "person") {
@@ -73,9 +73,9 @@ switch ($action) {
                 // Approve a friendship request
      case "friends:approve:request":
          $request_id = optional_param('request_id',0,PARAM_INT);
-         if (!empty($request_id) && logged_on && user_type($page_owner) == "person") { 
+         if (!empty($request_id) && logged_on && user_type($page_owner) == "person") {
              if ($request = get_record_sql('SELECT u.name, fr.owner, fr.friend FROM '.$CFG->prefix.'friends_requests fr
-                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner 
+                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner
                                     WHERE fr.ident = ?',array($request_id))) {
                  if (run("permissions:check",array("userdetails:change", $page_owner))) {
                      $f = new StdClass;
@@ -96,7 +96,7 @@ switch ($action) {
              } else {
                  $messages[] = __gettext("An error occurred: the friendship request could not be found.");
              }
-             
+
          }
          break;
          // Reject a friendship request
@@ -104,7 +104,7 @@ switch ($action) {
          $request_id = optional_param('request_id',0,PARAM_INT);
          if (!empty($request_id) && logged_on && user_type($page_owner) == "person") {
              if ($request = get_record_sql('SELECT u.name, fr.owner, fr.friend FROM '.$CFG->prefix.'friends_requests fr
-                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner 
+                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner
                                     WHERE fr.ident = ?',array($request_id))) {
                  if (run("permissions:check",array("userdetails:change", $page_owner))) {
                      delete_records('friends_requests','ident',$request_id);
@@ -118,9 +118,9 @@ switch ($action) {
              } else {
                  $messages[] = __gettext("An error occurred: the friendship request could not be found.");
              }
-             
+
          }
          break;
-}         
+}
 
 ?>

@@ -52,7 +52,7 @@ if ($profile_new = data_submitted()) {
     $body = profile_update($profile_new);
 } else {
     $body = $profile->display_form();
-}   
+}
 
 templates_page_output($title, $body);
 
@@ -63,18 +63,18 @@ function profile_update($profile_new) {
     global $messages;
     global $page_owner;
     global $profile_name;
-        
+
     $profiledetails = optional_param('profiledetails',array());
     if (count($profiledetails) > 0) {
         // delete_records('profile_data','owner',$page_owner);
-        
+
         $insertvalues = array();
         $requiredmissing = array();
-        
+
         foreach($profiledetails as $field => $value) {
             $field = trim($field);
             $value = trim($value);
-          
+
             if (!empty($value)) {
                 //TODO get rid of variable duplication here. (Penny)
                 if (!empty($data['profile:details'][$field]->invisible)) {
@@ -91,7 +91,7 @@ function profile_update($profile_new) {
 
                 // $insert_id  = insert_record('profile_data',$pd);
                 $insertvalues[] = $pd;
-                
+
             } else {
                 foreach($data['profile:details'] as $datatype) {
                     if (is_array($datatype)) {
@@ -121,9 +121,9 @@ function profile_update($profile_new) {
             }
         }
         if (sizeof($requiredmissing) == 0) {
-            
+
             $updatedok = true;
-            
+
             foreach($insertvalues as $insertvalue) {
                 delete_records('profile_data','owner',$page_owner,'name',$insertvalue->name);
                 $insertvalue = plugin_hook("profile_data","create",$insertvalue);
@@ -153,9 +153,9 @@ function profile_update($profile_new) {
             }
             $messages[] = __gettext("Profile updated.");
         } else {
-            
+
             $savedata = array();
-            
+
             foreach($insertvalues as $insertvalue) {
                 $savedata['profile:preload'][$insertvalue->name] = $insertvalue->value;
                 $savedata['profile:preload:access'][$insertvalue->name] = $insertvalue->access;
@@ -167,9 +167,9 @@ function profile_update($profile_new) {
                 }
                 $message .= $missinglabel;
             }
-            
+
             $messages[] = sprintf(__gettext("You need to fill in the following required fields: %s"),$message);
-            
+
             $updatedok = false;
             $_SESSION['profile:preload'] = $savedata['profile:preload'];
             $_SESSION['profile:preload:access'] = $savedata['profile:preload:access'];
@@ -177,11 +177,11 @@ function profile_update($profile_new) {
     }
 
     // Changes saved successfully, update RSS feeds
-    $rssresult = run("weblogs:rss:publish", array(1, false)); 
+    $rssresult = run("weblogs:rss:publish", array(1, false));
     $rssresult = run("profile:rss:publish", array(1, false));
 
     $_SESSION['messages'] = $messages;
-    
+
     // redirect("{$CFG->wwwroot}{$profile_name}", get_string("changessaved"));
     if ($updatedok) {
         redirect("{$CFG->wwwroot}{$profile_name}/profile/", "");

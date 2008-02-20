@@ -13,17 +13,17 @@
                         'name' => 'blog:export:html',
                         'html' => "<a href=\"{$CFG->wwwroot}mod/export/blogashtml.php/export.html\">". __gettext("Download blog as HTML") ."</a>"
                     );
-                    $PAGE->menu_sub[]= array (
+                    /*$PAGE->menu_sub[]= array (
                         'name' => 'blog:export:rss',
                         'html' => "<a href=\"{$CFG->wwwroot}mod/export/blog.php/export.rss\">". __gettext("Download blog as RSS") ."</a>"
-                    );
+                    );*/
                 }
             }
         }
-        
+
         function export_init() {
         }
-        
+
         /**
          * Exports a weblog as RSS
          *
@@ -31,14 +31,14 @@
          * @return string The RSS feed
          */
         function export_blog_as_rss($blog_id = -1) {
-        	
+
         	global $CFG;
-        	
+
         	if ($blog_id < 0) {
         		$blog_id = $_SESSION['id'];
         	}
         	$blog_id = (int) $blog_id;
-        	
+
         	$name = user_info("name", $blog_id);
         	$username = user_info("username", $blog_id);
 
@@ -67,7 +67,7 @@ END;
 	                        }
 	                    }
 	                    $output .= <<< END
-        
+
         <item>
             <title><![CDATA[$title]]></title>
             <link>$link</link>
@@ -75,7 +75,7 @@ END;
             <pubDate>$pubdate</pubDate>$keywordtags
             <description><![CDATA[$body]]></description>
         </item>
-        
+
 END;
                     }
                 }
@@ -89,7 +89,7 @@ END;
 END;
         	return $output;
         }
-        
+
         /**
          * Exports a blog as HTML
          *
@@ -97,14 +97,14 @@ END;
          * @return string The HTML file
          */
         function export_blog_as_html($blog_id = -1) {
-            
+
             global $CFG;
-            
+
             if ($blog_id < 0) {
                 $blog_id = $_SESSION['id'];
             }
             $blog_id = (int) $blog_id;
-            
+
             $name = user_info("name", $blog_id);
             $username = user_info("username", $blog_id);
 
@@ -161,7 +161,7 @@ END;
 
                 </body>
             </html>
-    
+
 END;
             return $output;
         }

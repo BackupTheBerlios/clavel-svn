@@ -16,10 +16,10 @@ if (isloggedin()) {
         // Create a new community
         case "community:create":
             $comm_name = optional_param('comm_name');
-            $comm_username = optional_param('comm_username');
-            if (logged_on && !empty($comm_name) && !empty($comm_username) &&
+            //$comm_username = optional_param('comm_username');
+            if (logged_on && !empty($comm_name) &&
                 ($CFG->community_create_flag == "" || user_flag_get($CFG->community_create_flag, $USER->ident))) {
-                if (!validate_username($comm_username)) {
+                /*if (!validate_username($comm_username)) {
                     $messages[] = __gettext("Error! The community username must contain letters and numbers only, cannot be blank, and must be between 3 and 12 characters in length.");
                 } else if (trim($comm_name) == "") {
                     $messages[] = __gettext("Error! The community name cannot be blank.");
@@ -27,11 +27,11 @@ if (isloggedin()) {
                     $comm_username = strtolower(trim($comm_username));
                     if (!username_is_available($comm_username)) {
                         $messages[] = sprintf(__gettext("The username %s is already taken by another user. You will need to pick a different one."), $comm_username);
-                    } else {
+                    } else {*/
                         $name = trim($comm_name);
                         $c = new StdClass;
                         $c->name = $name;
-                        $c->username = $comm_username;
+                        $c->username = 'community'.substr(base_convert(md5(time() . $comm_name), 16, 36), 0, 7);;
                         $c->user_type = 'community';
                         $c->owner = $USER->ident;
                         $cid = insert_record('users',$c);
@@ -46,8 +46,8 @@ if (isloggedin()) {
                         $_SESSION['messages'] = $messages;
                         header("Location: " . $CFG->wwwroot."profile/edit.php?profile_id=".$cid);
                         exit;
-                    }
-                }
+                    //}
+                //}
             }
 
             // There is deliberately not a break here - creating a community should automatically make you a member.
@@ -142,9 +142,9 @@ if (isloggedin()) {
 
          case "community:approve:invitation":
          $request_id = optional_param('request_id',0,PARAM_INT);
-         if (!empty($request_id) && logged_on && user_type($page_owner) == "person") { 
+         if (!empty($request_id) && logged_on && user_type($page_owner) == "person") {
              if ($request = get_record_sql('SELECT u.name, fr.owner, fr.friend FROM '.$CFG->prefix.'friends_requests fr
-                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner 
+                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner
                                     WHERE fr.ident = ?',array($request_id))) {
                  if (run("permissions:check",array("userdetails:change", $page_owner))) {
                      $f = new StdClass;
@@ -165,14 +165,14 @@ if (isloggedin()) {
              } else {
                  $messages[] = __gettext("An error occurred: the community membership invitation could not be found.");
              }
-             
+
          }
          break;
      case "community:decline:invitation":
          $request_id = optional_param('request_id',0,PARAM_INT);
          if (!empty($request_id) && logged_on && user_type($page_owner) == "person") {
              if ($request = get_record_sql('SELECT u.name, fr.owner, fr.friend FROM '.$CFG->prefix.'friends_requests fr
-                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner 
+                                    LEFT JOIN '.$CFG->prefix.'users u ON u.ident = fr.owner
                                     WHERE fr.ident = ?',array($request_id))) {
                  if (run("permissions:check",array("userdetails:change", $page_owner))) {
                      delete_records('friends_requests','ident',$request_id);
@@ -186,7 +186,7 @@ if (isloggedin()) {
              } else {
                  $messages[] = __gettext("An error occurred: the community membership invitation could not be found.");
              }
-             
+
          }
          break;
     }

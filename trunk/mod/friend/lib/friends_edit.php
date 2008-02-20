@@ -11,16 +11,16 @@ if (isset($parameter[0])) {
     $result = get_records_sql('SELECT u.*,f.ident AS friendident FROM '.$CFG->prefix.'friends f
                               JOIN '.$CFG->prefix.'users u ON u.ident = f.friend
                               WHERE f.owner = ? AND u.user_type = ? order by u.last_action desc',array($user_id,'person'));
-	
 
-	$result1 = get_records_sql('SELECT u.ident, u.username FROM '.$CFG->prefix.'friends f
+
+	$result1 = get_records_sql('SELECT u.* FROM '.$CFG->prefix.'friends f
                                JOIN '.$CFG->prefix.'users u ON u.ident = f.owner
                                WHERE friend = ? AND u.user_type = ? order by u.last_action desc',array($user_id,'person'));
 
     $i = 1;
 	$j = 1;
     if (!empty($result) || !empty($result1)) {
-	
+
         foreach($result as $key => $info) {
             $link = $CFG->wwwroot.$info->username."/";
             $friends_name = run("profile:display:name", $info->ident);
@@ -37,8 +37,8 @@ if (isset($parameter[0])) {
                                         'friend_menu' => $friends_menu
                                       )
                         );
-			
-			
+
+
             if ($i % FRIENDS_PER_ROW == 0) {
                 $friends .= "</tr><tr>";
             }
@@ -48,26 +48,25 @@ if (isset($parameter[0])) {
             $link = $CFG->wwwroot.$info->username."/";
             $friends_name = run("profile:display:name", $info->ident);
 			$friends_lastname = $info->lastname;
-			echo $info->lastname;
             $info->icon = run("icons:get",$info->ident);
             $friends_menu = run("users:infobox:menu",array($info->ident));
             $friends_menu = run("users:infobox:delete",array($info->ident));
             $friends_icon = user_icon_html($info->ident,FRIENDS_ICON_SIZE);
             $friends1 .= templates_draw(array(
                                         'context' => 'friends_friend',
-                                        'name' => $friends_name . " " . $friends_lastname,
+                                        'name' => $friends_name . " " .$friends_lastname,
                                         'icon' => $friends_icon,
                                         'link' => $link,
                                         'friend_menu' => $friends_menu
                                       )
                         );
-						
+
 			if ($j % FRIENDS_PER_ROW == 0) {
                 $friends1 .= "</tr><tr>";
             }
             $j++;
 		}
-	
+
     } else {
         if ($user_id == $_SESSION['userid']) {
             $friends .= "<td><p>" . __gettext("You don't have any friends listed! To add a user as a friend, click the 'friend' button underneath a user's icon.") . "</p></td>";
