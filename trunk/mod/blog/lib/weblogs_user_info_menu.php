@@ -6,9 +6,9 @@ $profile_id = $page_owner;
 $sitename = sitename;
 
 if (logged_on && $page_owner == $_SESSION['userid']) {
-    
+
     $title = __gettext("Recent Activity");
-    $body = "<ul><li>"; 
+    $body = "<ul><li>";
     $body .= "<a href=\"".url."_activity/\">".__gettext("View your activity") . "</a></li></ul>";
 
             $run_result .= "<li id=\"recent_activity\">";
@@ -23,11 +23,11 @@ if (logged_on && $page_owner == $_SESSION['userid']) {
 } else {
 
     $posts = count_records_select('weblog_posts','('.run("users:access_level_sql_where",$profile_id).") and owner = $profile_id");
-    
+
     if (logged_on || (isset($page_owner) && $page_owner != -1)) {
-        
+
         $title = __gettext("Blog");
-        
+
         $weblog_username = user_info('username', $profile_id);
         $body = <<< END
             <ul>
@@ -49,7 +49,7 @@ END;
                 <li><a href="{$CFG->wwwroot}{$weblog_username}/weblog/archive/">$blogArchive</a></li>
                 <li><a href="{$CFG->wwwroot}{$weblog_username}/weblog/friends/">$friendWeblog</a></li>
 END;
-        
+
         $run_result .= "<li id=\"sidebar_weblog\">";
         $run_result .= templates_draw(array(
                                             'context' => 'sidebarholder',
