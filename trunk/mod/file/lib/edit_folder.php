@@ -36,14 +36,14 @@ END;
                     <p><input type="text" name="edit_folder_name" id="edit_folder_name" value="{$folder_details->name}" /></p>
                 </td>
             </tr>
-            <tr>
+            <!--tr>
                 <td>
-                    <p><label for="new_folder_type">$folderType</label></p>
+                    <!--p><label for="new_folder_type">$folderType</label></p-->
                 </td>
                 <td>
-                    <p>$folderTypePicker</p>
+                    <!--p>$folderTypePicker</p-->
                 </td>
-            </tr>
+            </tr-->
             <tr>
                 <td>
                     <p><label for="edit_folder_parent">

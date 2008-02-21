@@ -20,7 +20,7 @@ if (logged_on && !empty($action) && user_info("user_type",$id) == "community" &&
                         
                         $info->owner = $new_owner;
                         update_record('users',$info);
-                        $messages[] = sprintf(__gettext("Community ownership transferred to %s."),$community_owner);
+                        //$messages[] = sprintf(__gettext("Community ownership transferred to %s."),$community_owner);
                         
                     } else {
                         $messages[] = __gettext("Could not retrieve community details.");
@@ -30,6 +30,7 @@ if (logged_on && !empty($action) && user_info("user_type",$id) == "community" &&
                 }
             }
         }
+	$messages[] = sprintf(__gettext("Changes succesfully."));
         break;
         
     }

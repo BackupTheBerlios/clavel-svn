@@ -109,6 +109,6 @@ END;
 }
 else{
   $type =(isset($extraType))?$extraType:$extensionContext;
-  $run_result = "<p>".sprintf(__gettext("You haven't marked any %s as interesting "), strtolower($type))."</p>";  
+  $run_result = "<p>".sprintf(__gettext("You haven't marked any Blog as interesting"))."</p>";  
 }
 ?>

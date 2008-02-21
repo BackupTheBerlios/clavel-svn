@@ -12,12 +12,12 @@
             // Get the current value, will also create an initial entry if not yet set
             $current = run('userdetails:editor', $id);
             if ($current == $value) {
-                $messages[] .= __gettext("Your editor preferences have been saved");
+                //$messages[] .= __gettext("Your editor preferences have been saved");
             } else {
                 if (user_flag_set('visualeditor', $value, $id)) {
-                    $messages[] .= __gettext("Your editor preferences have been changed");
+                    //$messages[] .= __gettext("Your editor preferences have been changed");
                 } else {
-                    $messages[] .= __gettext("Your editor preferences could not be changed");
+                    //$messages[] .= __gettext("Your editor preferences could not be changed");
                 }
             }
         }

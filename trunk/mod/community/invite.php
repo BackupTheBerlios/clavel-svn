@@ -22,16 +22,22 @@
     //    protect(1);
 
     $title = run("profile:display:name") . " :: " . __gettext("Invite people");
-    
-    $body  = '<h3>Invite people</h3>';
-	$body .= '<p>Invite people to this community.</p>';
+    $invitetocommunity = __gettext("Invite people to this community.");
+    $invitepeople =  __gettext("Invite people");
+    $invite = <<< END
+	<h3>$invitepeople</h3>
+	<p>$invitetocommunity</p>
+END;
+
+    $body  = $invite;
     $body .= '<form action="" method="post">';
     
     $submit_search_label = __gettext("Search");
+    $nameorusername = __gettext("Name or username: ");
     
     $invite_search = <<< END
 	<p>
-		Name or username: <input type="text" name="invite_name"/><br/>
+		$nameorusername <input type="text" name="invite_name"/><br/>
 		<input type="submit" name="submit" value="{$submit_search_label}"/>
 	</p>
 END;

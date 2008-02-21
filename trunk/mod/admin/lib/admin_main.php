@@ -35,9 +35,9 @@ if (logged_on && user_flag_get("admin", $USER->ident)) {
                                         'context' => 'adminTable',
                                         'name' => "<h3>" . __gettext("Weblog statistics") . "</h3> ",
                                         'column1' => "<h4>" . __gettext("All-time:") . "</h4><p>" 
-                                        . sprintf(__gettext("%u weblog posts, %u comments"),$weblog_posts, $weblog_comments) 
+                                        . sprintf(__gettext("%u weblog posts,\n %u comments"),$weblog_posts, $weblog_comments) 
                                         . "</p><h4>" . __gettext("Last 7 days:") . "</h4><p>" 
-                                        . sprintf(__gettext("%u weblog posts, %u comments"),$weblog_posts_7days, $weblog_comments_7days) . "</p>",
+                                        . sprintf(__gettext("%u weblog posts,\n %u comments"),$weblog_posts_7days, $weblog_comments_7days) . "</p>",
                                         'column2' => "&nbsp;"
                                         )
                                   );

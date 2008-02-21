@@ -77,7 +77,7 @@ if (!empty($action) && isloggedin()) {
                     $flag = trim($flag);
                     $value = trim($value);
                     user_flag_set($flag, $value, $id);
-                    $messages[] = sprintf(__gettext("User flag '%s' set to '%s'"), $flag, $value);
+                    //$messages[] = sprintf(__gettext("User flag '%s' set to '%s'"), $flag, $value);
                 }
             }
             break;

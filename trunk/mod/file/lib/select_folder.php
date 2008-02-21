@@ -14,7 +14,8 @@ function viewfolder($folderid, $userid, $level, $selected = -1) {
         if ($selected == -1) {
             $body .= "selected = \"selected\"";
         }
-        $body .= ">Root</option>";
+	$root = __gettext("Root");
+        $body .= ">$root</option>";
     } else {
         $current_folder = get_record('file_folders','files_owner',$userid,'ident',$folderid);
         $name = (stripslashes($current_folder->name));

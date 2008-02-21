@@ -63,7 +63,7 @@ if (logged_on && !empty($action)
                     $USER->name = $name;
                     $_SESSION['name'] = $name;
                 }
-                $messages[] = __gettext("First Name updated.");
+                //$messages[] = __gettext("First Name updated.");
             }
         }
 		
@@ -88,7 +88,7 @@ if (logged_on && !empty($action)
                     $USER->lastname = $lastname;
                     $_SESSION['lastname'] = $lastname;
                 }
-                $messages[] = __gettext("Last Name updated.");
+                //$messages[] = __gettext("Last Name updated.");
             }
         }
         
@@ -114,14 +114,14 @@ if (logged_on && !empty($action)
                     $USER->email = $email;
                     $_SESSION['email'] = $email;
                 }
-                $messages[] = __gettext("Email address updated.");
+                //$messages[] = __gettext("Email address updated.");
             }
         }
         
         $moderation = optional_param('moderation');
         if (!empty($moderation) && in_array($moderation,array('yes','no','priv'))) {
             set_field('users','moderation',$moderation,'ident',$id);
-            $messages[] = __gettext("Your moderation preferences have been changed.");
+            //$messages[] = __gettext("Your moderation preferences have been changed.");
         }
         
         if (!$CFG->disable_publiccomments) {
@@ -129,10 +129,10 @@ if (logged_on && !empty($action)
             if ($usertype == 'person' && !empty($publiccomments)) {
                 if ($publiccomments == "yes") {
                     user_flag_set("publiccomments", "1", $id);
-                    $messages[] = __gettext("Public comments and discussion set to 'on'.");
+                    //$messages[] = __gettext("Public comments and discussion set to 'on'.");
                 } else {
                     user_flag_unset("publiccomments",$id);
-                    $messages[] = __gettext("Public comments and discussion set to 'off'.");
+                    //$messages[] = __gettext("Public comments and discussion set to 'off'.");
                 }
             }
         }
@@ -141,10 +141,10 @@ if (logged_on && !empty($action)
         if ($usertype == 'person' && isset($receiveemails)) {
             if ($receiveemails == "yes") {
                 user_flag_set("emailreplies", "1", $id);
-                $messages[] = __gettext("Email comments and discussion set to 'on'.");
+                //$messages[] = __gettext("Email comments and discussion set to 'on'.");
             } else {
                 user_flag_unset("emailreplies",$id);
-                $messages[] = __gettext("Email comments and discussion set to 'off'.");
+                //$messages[] = __gettext("Email comments and discussion set to 'off'.");
             }
         }
         
@@ -152,10 +152,10 @@ if (logged_on && !empty($action)
         if ($usertype == 'person' && isset($receiveemails)) {
             if ($receiveemails == "yes") {
                 user_flag_set("emailnotifications", "1", $id);
-                $messages[] = __gettext("Email notifications set to 'on'.");
+                //$messages[] = __gettext("Email notifications set to 'on'.");
             } else {
                 user_flag_unset("emailnotifications",$id);
-                $messages[] = __gettext("Email notifications set to 'off'.");
+                //$messages[] = __gettext("Email notifications set to 'off'.");
             }
         }
         
@@ -211,7 +211,7 @@ if (logged_on && !empty($action)
                 $messages[] = sprintf(__gettext("User flag '%s' set to '%s'"), $flag, $value);
             }
         }
-        
+        $messages[] = __gettext("Changes succesfully.");
         break;
     }
     

@@ -61,13 +61,18 @@ switch ($action) {
          if (!empty($friend) && logged_on) {
              if (delete_records('friends','owner',$USER->ident,'friend',$friend_id)) {
                  if (user_info("user_type",$friend_id) == "person") {
-                     $messages[] = $friend->name . __gettext(" was removed from your friends.");
+                     //$messages[] = $friend->name . __gettext(" was removed from your friends.");
+                 }
+             }if (delete_records('friends','owner',$friend_id,'friend',$USER->ident)) {
+                 if (user_info("user_type",$friend_id) == "person") {
+                     //$messages[] = $friend->name . __gettext(" was removed from your friends.");
                  }
              } else {
                  if (user_info("user_type",$friend_id) == "person") {
                      $messages[] = $friend->name . __gettext(" couldn't be removed from your friends.");
                  }
              }
+	     $messages[] = $friend->name . __gettext(" was removed from your friends.");
          }
          break;
                 // Approve a friendship request

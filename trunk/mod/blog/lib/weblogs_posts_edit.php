@@ -47,9 +47,9 @@ if(is_array($CFG->weblog_extensions) && array_key_exists($extensionContext,$CFG-
 }
 
 
-$editPost = sprintf(__gettext("Edit a %s"),$contentType);
-$postTitle = sprintf(__gettext("%s title:"),$contentType);
-$postBody = sprintf(__gettext("%s body:"),$contentType);
+$editPost = sprintf(__gettext("Edit a post"));
+$postTitle = sprintf(__gettext("Title:"));
+$postBody = sprintf(__gettext("Body:"));
 $Keywords = __gettext("Keywords (Separated by commas):");
 $keywordDesc = __gettext("Keywords commonly referred to as 'Tags' are words that represent the weblog post you have just made. This will make it easier for others to search and find your posting.");
 $accessRes = __gettext("Access restrictions:"); // gettext variable

@@ -32,7 +32,7 @@ global $CFG;
                     $col1 .= "<p>";
                     $col1 .= "<a href=\"" . url . $pending_user->username . "/\">" . __gettext("Profile") . "</a> | ";
                     $col1 .= "<a href=\"" . url . $pending_user->username . "/weblog/\">" . __gettext("Blog") . "</a></p>";
-                    $col2 = "<p><a href=\"" .url. "mod/friend/requests.php?action=friends:approve:request&amp;request_id=$request_id\">".__gettext("Approve")."</a> | <a href=\"" .url. "mod/friend/requests.php?action=friends:decline:request&amp;request_id=$request_id\">Decline</a></p>";
+                    $col2 = "<p><a href=\"" .url. "mod/friend/requests.php?action=friends:approve:request&amp;request_id=$request_id\">".__gettext("Approve")."</a> | <a href=\"" .url. "mod/friend/requests.php?action=friends:decline:request&amp;request_id=$request_id\">".__gettext("Decline")."</a></p>";
                     $ident = $pending_user->ident;
 
                     $pending_user->icon = run("icons:get",$pending_user->ident);

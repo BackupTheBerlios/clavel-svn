@@ -62,7 +62,7 @@ if ($action == "icons:edit" && logged_on && run("permissions:check", "uploadicon
 if ($action == "icons:add" && logged_on && run("permissions:check", "uploadicons")) {
     $description = optional_param('icondescription');
     $icondefault = optional_param('icondefault');
-	echo $icondefault;
+	//echo $icondefault;
     // if (!empty($description)) {
         $ok = true;
         if ($ok == true) {

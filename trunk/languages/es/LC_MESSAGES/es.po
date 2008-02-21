@@ -318,9 +318,6 @@ msgstr ""
 #~ msgid "Post body:"
 #~ msgstr "Enviar cuerpo:"
 
-#~ msgid "Edit a post"
-#~ msgstr "Editar un post"
-
 #~ msgid "Save Post"
 #~ msgstr "Guardar post"
 
@@ -515,7 +512,7 @@ msgstr "Se necesita actualizar la base de datos"
 msgid "Register"
 msgstr "Registrarse"
 
-#: lib/displaylib.php:281 mod/display/lib/function_log_on_pane.php:28
+#: mod/display/lib/function_log_on_pane.php:28
 #: mod/invite/wrongpassword.php:57
 msgid "Log On"
 msgstr "Entrar"
@@ -532,7 +529,7 @@ msgstr "Nombre de usuario"
 msgid "Password"
 msgstr "Contraseña"
 
-#: lib/displaylib.php:295 mod/display/lib/function_log_on_pane.php:44
+#: mod/display/lib/function_log_on_pane.php:44
 msgid "Log on"
 msgstr "Entrar"
 
@@ -1513,8 +1510,8 @@ msgid ""
 "below."
 msgstr ""
 "Para visualizar las páginas en cuestión, haga click en los siguientes enlaces. Para "
-"quitar las banderas, por ejemplo si la bandera es un falso positivo o si has "
-"borrado el contenido ofensivo, señala el recuadro correspondiente y pincha "
+"quitar las banderas, por ejemplo si la bandera es un falso positivo o si ha "
+"borrado el contenido ofensivo, señale el recuadro correspondiente y haga click en "
 "el botón 'borrar' abajo."
 
 #: mod/admin/lib/admin_contentflags.php:18
@@ -1543,7 +1540,7 @@ msgstr "Cuentas por tipo"
 
 #: mod/admin/lib/admin_main.php:36
 msgid "Weblog statistics"
-msgstr "Estadísticas de weblog"
+msgstr "Estadísticas de Blog"
 
 #: mod/admin/lib/admin_main.php:37 mod/admin/lib/admin_main.php:51
 msgid "All-time:"
@@ -1551,8 +1548,8 @@ msgstr "Siempre:"
 
 #: mod/admin/lib/admin_main.php:38 mod/admin/lib/admin_main.php:40
 #, php-format
-msgid "%u weblog posts, %u comments"
-msgstr "%u publicaciones weblog, %u comentarios"
+msgid "%u weblog posts,\n %u comments"
+msgstr "%u artículos,\n %u comentarios"
 
 #: mod/admin/lib/admin_main.php:39 mod/admin/lib/admin_main.php:52
 msgid "Last 7 days:"
@@ -1565,7 +1562,7 @@ msgstr "Archivar estadísticas"
 #: mod/admin/lib/admin_main.php:51 mod/admin/lib/admin_main.php:52
 #, php-format
 msgid "%u files (%s)"
-msgstr ""
+msgstr "%u archivos (%s)"
 
 #: mod/admin/lib/admin_main.php:70
 msgid "Database statistics"
@@ -1682,8 +1679,8 @@ msgid ""
 "If you know the username of the user you would like to edit, you can also "
 "enter it below."
 msgstr ""
-"Si sabes el nombre de usuario del usuario que te gustaría editar, lo puedes "
-"introducir abajo."
+"Si sabe el nombre de usuario del usuario que desea editar, puede "
+"introducirlo abajo."
 
 #: mod/admin/lib/admin_users.php:16
 msgid "Filter user type"
@@ -1737,7 +1734,7 @@ msgstr "Bandera"
 
 #: mod/admin/lib.php:22 mod/users/index.php:18
 msgid "Edit user details"
-msgstr "Editar información del usuario"
+msgstr "Editar información"
 
 #: mod/admin/lib.php:25
 msgid "Your site picture"
@@ -1778,7 +1775,7 @@ msgstr "Todo"
 
 #: mod/blog/everyone.php:23
 msgid "You can filter this page to certain types of posts:"
-msgstr "Puedes limitar esta página a algunos tipos de Artículos:"
+msgstr "Puede limitar esta página a algunos tipos de Artículos:"
 
 #: mod/blog/everyone.php:26
 msgid "Personal blog posts"
@@ -1981,7 +1978,7 @@ msgstr ""
 
 #: mod/blog/lib/weblogs_actions.php:95
 msgid "The weblog post has been modified."
-msgstr "Ha sido modificado el post de weblog."
+msgstr "El artículo ha sido modificado."
 
 #: mod/blog/lib/weblogs_actions.php:110
 msgid "This weblog post has now been added to your 'interesting' list."
@@ -1994,11 +1991,11 @@ msgstr "Ya no estas monitorizando este post de weblog."
 #: mod/blog/lib/weblogs_actions.php:130
 msgid "Are you sure you want to permanently delete this weblog post?"
 msgstr ""
-"¿Estás seguro de que quieres borrar  este post de weblog definitivamente?"
+"¿Está seguro de que quiere borrar este artículo definitivamente?"
 
 #: mod/blog/lib/weblogs_actions.php:143
 msgid "The selected weblog post was deleted."
-msgstr "Se borró el post de weblog seleccionado."
+msgstr "Se borró el artículo seleccionado."
 
 #: mod/blog/lib/weblogs_actions.php:146
 msgid ""
@@ -2011,7 +2008,7 @@ msgstr ""
 #: mod/blog/lib/weblogs_actions.php:176
 #: mod/generic_comments/comments_actions.php:35
 msgid "Your comment has been added."
-msgstr "Tu comentario ha sido añadido."
+msgstr "El comentario ha sido añadido."
 
 #: mod/blog/lib/weblogs_actions.php:189
 #, php-format
@@ -2056,27 +2053,27 @@ msgstr "Quitar filtro"
 
 #: mod/blog/lib/weblogs_all_users_view.php:63
 msgid "Filtered: Showing personal blog posts"
-msgstr "Filtrado: mostrando posts del blog personal"
+msgstr "Filtro: Artículos del Blog Personal"
 
 #: mod/blog/lib/weblogs_all_users_view.php:67
 msgid "Filtered: Showing community blog posts"
-msgstr "Filtrado: Mostrando los post del blog de la comunidad."
+msgstr "Filtro: Artículos del Blog de la Comunidad."
 
 #: mod/blog/lib/weblogs_all_users_view.php:72
 msgid "Filtered: Showing posts with comments"
-msgstr "Filtrado: Mostrando los post con comentarios"
+msgstr "Filtro: Artículos con comentarios"
 
 #: mod/blog/lib/weblogs_all_users_view.php:76
 msgid "Filtered: Showing posts with no comments"
-msgstr "Filtrado: Mostrando posts sin comentarios"
+msgstr "Filtro: Artículos sin comentarios"
 
 #: mod/blog/lib/weblogs_all_users_view.php:91
 msgid "Filtered: Showing posts from "
-msgstr "Filtrado: Mostrando posts desde "
+msgstr "Filtro: Artículos desde "
 
 #: mod/blog/lib/weblogs_all_users_view.php:101
 msgid "Filtered: Showing posts tagged with "
-msgstr "Filtrado: Mostrando posts etiquetados con "
+msgstr "Filtro: Artículos etiquetados con "
 
 #: mod/blog/lib/weblogs_assign_field.php:13
 msgid "Assign to:"
@@ -2116,8 +2113,7 @@ msgstr "Añadir comentario"
 msgid "Your contacts currently don't have any Blog"
 msgstr "Sus contactos actualmente no tienen ningun Blog"
 
-#: mod/blog/lib/weblogs_interesting_view.php:112
-#, php-format
+#: mod/blog/lib/weblogs_interesting_view.php
 msgid "You haven't marked any Blog as interesting"
 msgstr "No tiene marcado ningun Blog como interesante"
 
@@ -2166,8 +2162,8 @@ msgid ""
 "find your posting."
 msgstr ""
 "Las palabras clave comúnmente llamadas 'Etiquetas' son palabras que "
-"representan el post de weblog que acabas de crear. Esto simplificará la "
-"tarea de otros a la hora de buscar y encontrar tu post."
+"representan el artículo del blog que acabas de crear. Esto simplificará la "
+"tarea de otros a la hora de buscar y encontrar tu artículo."
 
 #: mod/blog/lib/weblogs_posts_add.php:43
 #: mod/blog/lib/weblogs_posts_edit.php:55 mod/file/lib/add_file.php:37
@@ -2189,9 +2185,8 @@ msgid ""
 msgstr ""
 
 #: mod/blog/lib/weblogs_posts_edit.php:50
-#, php-format
-msgid "Edit a %s"
-msgstr ""
+msgid "Edit a post"
+msgstr "Editar Artículo"
 
 #: mod/blog/lib/weblogs_posts_view.php:92
 #, php-format
@@ -2464,7 +2459,7 @@ msgstr "Comentarios"
 
 #: mod/commentwall/lib.php:296
 msgid "See all..."
-msgstr ""
+msgstr "Mirar todos..."
 
 #: mod/commentwall/lib.php:315
 msgid "No comments on this wall, why not be the first?"
@@ -2598,15 +2593,15 @@ msgstr "¡Error! El nombre de la comunidad no puede dejarse en blanco."
 
 #: mod/community/lib/communities_actions.php:45
 msgid "Your community was created and you were added as its first member."
-msgstr "Se creó tu comunidad y se te añadió como primer miembro."
+msgstr "Se creó la comunidad y se ha agregado como primer miembro."
 
 #: mod/community/lib/communities_actions.php:70
 msgid "Are you sure you want to delete this community?"
-msgstr ""
+msgstr "¿Está seguro de que quiere borrar esta comunidad?"
 
 #: mod/community/lib/communities_actions.php:75
 msgid "The community was deleted."
-msgstr ""
+msgstr "La comunidad ha sido borrada."
 
 #: mod/community/lib/communities_actions.php:77
 msgid "Error: the community could not be deleted."
@@ -2614,7 +2609,7 @@ msgstr "Error: La comunidad no puede ser eliminada"
 
 #: mod/community/lib/communities_actions.php:94
 msgid "Your post has been added to the community weblog."
-msgstr "Tu post se ha añadido al weblog de la comunidad."
+msgstr "El Artículo se ha añadido al Blog de la comunidad."
 
 #: mod/community/lib/communities_actions.php:110
 #, php-format
@@ -2750,7 +2745,7 @@ msgid ""
 "interested in by using the search function."
 msgstr ""
 "¡No tiene ninguna comunidad en lista! Para participar en una comunidad, "
-"haga click en el botón 'entrar' bajo el icono de una comunidad. Puedes encontrar "
+"haga click en el botón 'entrar' bajo el icono de una comunidad. Puede encontrar "
 "comunidades en las que esté interesado usando la función de búsqueda."
 
 #: mod/community/lib/communities_edit.php:63
@@ -2797,7 +2792,7 @@ msgstr "Esta comunidad no tiene actualmente ningún miembro."
 
 #: mod/community/lib/communities_moderator_of.php:41
 msgid "You don't own any communities. Why not create one?"
-msgstr "No has creado ninguna comunidad. ¿Por qué no crear una?"
+msgstr "No ha creado ninguna comunidad. Puede crear una en la parte de abajo."
 
 #: mod/community/lib/communities_moderator_of.php:43
 msgid "This user is not currently moderating any communities."
@@ -2838,8 +2833,7 @@ msgid ""
 "Membership of %s needs to be approved. Your request has been added to the "
 "list."
 msgstr ""
-"El ingreso de los miembros de  %s ha de ser aprobado. Se ha añadido tu "
-"solicitud al listado."
+"El ingreso de los miembros de %s ha de ser aprobado."
 
 #: mod/community/lib/community_member_add.php:39
 #, php-format
@@ -3002,7 +2996,7 @@ msgstr ""
 
 #: mod/community/lib/userdetails_edit.php:11
 msgid "Change your community name"
-msgstr "Cambiar nombre de tu comunidad"
+msgstr "Cambiar nombre de la comunidad"
 
 #: mod/community/lib/userdetails_edit.php:12
 #: mod/users/lib/userdetails_edit.php:12
@@ -3019,7 +3013,7 @@ msgstr "Restricción de ingreso como socio:"
 
 #: mod/community/lib/userdetails_edit.php:33
 msgid "This allows you to choose who can join this community."
-msgstr "Te permite elegir quién quieres que entre en esta comunidad."
+msgstr "Permite elegir quién entra en esta comunidad."
 
 #: mod/community/lib/userdetails_edit.php:50
 msgid "No moderation: anyone can join this community."
@@ -3027,7 +3021,7 @@ msgstr "No hay restricción: cualquiera puede entrar en esta comunidad."
 
 #: mod/community/lib/userdetails_edit.php:55
 msgid "Moderation: memberships must be approved by you."
-msgstr "Restricción: los miembros deben ser aprobados por ti."
+msgstr "Restricción: los miembros deben ser aprobados."
 
 #: mod/community/lib/userdetails_edit.php:60
 msgid "Private: nobody can join this community."
@@ -3046,8 +3040,8 @@ msgid ""
 "Type the username of the user who you want to own this community below. You "
 "cannot leave this blank, or specify a community or a user that doesn't exist."
 msgstr ""
-"Teclea el nombre del usuario que quieres que sea propietario de la siguiente "
-"comunidad. Debes indicar ese dato y especificar una comunidad y un usuario "
+"Teclea el nombre del usuario que desea que sea propietario de la siguiente "
+"comunidad. Debe indicar ese dato y especificar una comunidad y un usuario "
 "que exista."
 
 #: mod/community/lib/userdetails_edit.php:83
@@ -3132,7 +3126,7 @@ msgstr "Introducción"
 
 #: mod/community/profile.config.php:81 mod/profile/profile.config.php:88
 msgid "A short introduction to this community."
-msgstr "Una breve introducción para esta comunidad"
+msgstr "Introducción para la Comunidad"
 
 #: mod/community/profile.config.php:91
 #: mod/profile/lib/function_editfield_defaults.php:40
@@ -3144,7 +3138,7 @@ msgstr "Breve descripción"
 #: mod/profile/lib/function_editfield_defaults.php:40
 #: mod/profile/profile.config.php:102
 msgid "For use in your sidebar profile."
-msgstr "Para uso en su sidebar de perfil."
+msgstr "Para uso en el perfil."
 
 #: mod/community/profile.config.php:104
 #: mod/profile/lib/function_editfield_defaults.php:43
@@ -3286,7 +3280,7 @@ msgstr "Intereses"
 #: mod/profile/profile.config.php:311 mod/profile/profile.config.php:325
 #: mod/profile/profile.config.php:335 mod/profile/profile.config.php:459
 msgid "Separated with commas."
-msgstr "Separado/a(s) por comas."
+msgstr "Separados por comas."
 
 #: mod/community/profile.config.php:311
 #: mod/profile/lib/function_editfield_defaults.php:93
@@ -3412,19 +3406,21 @@ msgstr ""
 
 #: mod/contenttoolbar/contenttoolbar_video_wizard.php:27
 #: mod/contenttoolbar/lib.php:61
-#, fuzzy
 msgid ""
 "To embed videos from popular sites like Google Video and Youtube, obtain the "
 "embed HTML, paste it in the following form and configure your preferred size:"
 msgstr ""
 "Para insertar videos de los sitios web más populares como Google Video y "
-"Youtube, obtener el código HTML, pegarlo en el siguiente formulario y "
-"configurar el tamaño:"
+"Youtube, obtenga el código HTML, peguelo en el siguiente formulario y "
+"configure el tamaño:"
 
 #: mod/contenttoolbar/contenttoolbar_video_wizard.php:28
 #: mod/contenttoolbar/lib.php:62
 msgid "Video URL"
-msgstr "URL del vídeo"
+msgstr "URL del video"
+
+msgid "Video embed code"
+msgstr "Código del video"
 
 #: mod/contenttoolbar/contenttoolbar_video_wizard.php:29
 #: mod/contenttoolbar/lib.php:63
@@ -3503,7 +3499,7 @@ msgid "Displays a video of your choice."
 msgstr ""
 
 #: mod/contenttoolbar/lib.php:47
-msgid "Add External Video"
+msgid "Add External video"
 msgstr "Agregar Video Externo"
 
 #: mod/contenttoolbar/lib.php:64
@@ -4033,13 +4029,13 @@ msgstr "Editar carpeta"
 msgid "Keep this window open"
 msgstr ""
 
-#: mod/file/file_include_wizard.php:65 mod/file/file_include_wizard.php:68
+#: mod/file/file_include_wizard.php
 msgid "Root"
-msgstr "Raíz"
+msgstr "Principal"
 
 #: mod/file/file_include_wizard.php:84 mod/file/lib/files_actions.php:216
 msgid "Are you sure you want to permanently delete this file?"
-msgstr "¿Estás seguro de que quieres borrar este archivo definitivamente?"
+msgstr "¿Está seguro de que quiere borrar esta foto definitivamente?"
 
 #: mod/file/file_include_wizard.php:94
 msgid "Empty directory!"
@@ -4169,7 +4165,7 @@ msgstr "Al marcar esta casilla, usted esta afirmando que tiene el derecho legal 
 
 #: mod/file/lib/files_actions.php:31
 msgid "Your folder was created."
-msgstr "Se creó tu carpeta."
+msgstr "La carpeta ha sido creada."
 
 #: mod/file/lib/files_actions.php:34
 msgid "Could not create folder. Perhaps the folder name was blank?"
@@ -4186,11 +4182,11 @@ msgstr ""
 
 #: mod/file/lib/files_actions.php:142
 msgid "The file was updated."
-msgstr "Se actualizó el archivo."
+msgstr "Se actualizó la foto."
 
 #: mod/file/lib/files_actions.php:168
 msgid "The folder was edited."
-msgstr "Se editó la carpeta."
+msgstr "La carpeta se ha modificado."
 
 #: mod/file/lib/files_actions.php:180
 msgid "Error: a folder cannot be its own parent."
@@ -4198,15 +4194,15 @@ msgstr "Error: una carpeta no puede ser su propio padre."
 
 #: mod/file/lib/files_actions.php:189
 msgid "Are you sure you want to permanently delete this folder?"
-msgstr "¿Estás seguro de que quieres borrar  esta carpeta definitivamente?"
+msgstr "¿Está seguro de que quiere borrar esta carpeta definitivamente?"
 
 #: mod/file/lib/files_actions.php:208
 msgid "The folder was deleted."
-msgstr "Se borró la carpeta."
+msgstr "La carpeta se ha borrado."
 
 #: mod/file/lib/files_actions.php:236
 msgid "The file was deleted."
-msgstr "Se borró el archivo"
+msgstr "La foto se ha borrado."
 
 #: mod/file/lib/files_links_make.php:55
 msgid "You do not have permission to access this file"
@@ -4543,7 +4539,7 @@ msgstr ""
 
 #: mod/friend/lib/friends_actions.php:63
 msgid " was removed from your friends."
-msgstr " se quitó de tus amigos."
+msgstr " se eliminó de la lista de contactos."
 
 #: mod/friend/lib/friends_actions.php:67
 msgid " couldn't be removed from your friends."
@@ -4553,7 +4549,7 @@ msgstr " no pudo quitarse de tus amigos."
 #, php-format
 msgid "You approved the friendship request. %s now lists you as a friend."
 msgstr ""
-"Aprobaste la solicitud de contacto. %s aparece en el listado como contacto."
+"Ha aprobado la solicitud de contacto. %s aparece en la lista como contacto."
 
 #: mod/friend/lib/friends_actions.php:86
 #, php-format
@@ -4611,7 +4607,7 @@ msgstr "Se produjo un error: la solicitud de contacto no se pudo encontrar."
 msgid ""
 "You declined the friendship request. %s does not list you as a friend."
 msgstr ""
-"Denegaste la solicitud de contacto. %s no te tiene en su lista como contacto."
+"La solicitud de contacto de %s ha sido denegada."
 
 #: mod/friend/lib/friends_actions.php:111
 #, php-format
@@ -4721,13 +4717,15 @@ msgid ""
 "approval to do this (to change this setting, visit the 'account settings' "
 "page)."
 msgstr ""
-"Los siguientes usuarios quisieran añadirte como contacto. Necesitan tu "
-"aprobación para hacerlo (para cambiar esta configuración, visita la  página "
-"'configuraciones de cuenta')."
+"Los siguientes usuarios quieren añadirte como contacto. Necesita su "
+"aprobación para hacerlo."
 
 #: mod/friend/lib/user_friendship_requests.php:35
 msgid "Approve"
-msgstr ""
+msgstr "Aceptar"
+
+msgid "Decline"
+msgstr "Rechazar"
 
 #: mod/friend/lib/user_friendship_requests.php:51
 msgid "You have no pending friendship requests."
@@ -4741,23 +4739,23 @@ msgstr "Pantalla de contactos"
 #: mod/friend/lib/user_info_menu_text.php:26
 msgid "Are you sure you want to remove this user from your friends list?"
 msgstr ""
-"¿Estás seguro de que quieres quitar este usuario de tu lista de contactos?"
+"¿Está seguro de que quiere eliminar este usuario de la lista de contactos?"
 
 #: mod/friend/lib/user_info_menu.php:16
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #: mod/friend/lib/user_info_menu_text.php:19
 msgid "Are you sure you want to add this user as a friend?"
-msgstr "¿Estás seguro de que quieres añadir este usuario como contacto?"
+msgstr "¿Está seguro de que quiere agregar este usuario como contacto?"
 
 #: mod/friend/lib/user_info_menu_text.php:19
 msgid "Click here to add this user as a friend."
-msgstr "Pincha aquí para añadir este usuario como contacto."
+msgstr "Agregar usuario como contacto."
 
 #: mod/friend/lib/user_info_menu_text.php:26
 msgid "Click here to remove this user from your friends list."
-msgstr "Pincha aquí para quitar este usuario de tu lista de contactos."
+msgstr "Eliminar usuario de la lista de contactos."
 
 #: mod/generic_comments/comment_page.php:15
 msgid ""
@@ -4815,7 +4813,7 @@ msgid ""
 "Choose your preferred language for this site. The following languages are "
 "available on this system:"
 msgstr ""
-"Escoge el idioma que prefieras para este sitio. Los siguientes idiomas están "
+"Seleccione el idioma que prefiera para este sitio. Los siguientes idiomas están "
 "disponibles en este sistema:"
 
 #: mod/gettext/lib/library.php:460
@@ -5038,7 +5036,7 @@ msgstr "No por defecto:"
 
 #: mod/icons/lib/function_edit_icons.php:100
 msgid "You don't have any site pictures loaded yet."
-msgstr "Todavía no tiene ninguna foto de la página descargada."
+msgstr "Todavía no tiene ninguna foto."
 
 #: mod/invite/forgotten_password.php:14
 msgid "Generate a New Password"
@@ -5046,7 +5044,7 @@ msgstr "Generar una nueva contraseña"
 
 #: mod/invite/index.php:18
 msgid "Invite a Friend"
-msgstr "Invitar a un amigo"
+msgstr "Invitar a un nuevo contacto"
 
 #: mod/invite/join.php:12 mod/invite/register.php:13
 #, php-format
@@ -5062,7 +5060,7 @@ msgid ""
 "once they do so, a mutual friend connection will be created between their "
 "account and yours."
 msgstr ""
-"Si tiene un amigo o colega que quisiera que se uniera al sistema, puede "
+"Si tiene un contacto que quisiera invitar, puede "
 "introducir sus datos abajo. Recibirá un correo electrónico de invitación "
 "especial con un código que le permitirá crear una nueva cuenta."
 
@@ -5124,9 +5122,14 @@ msgstr ""
 #: mod/invite/lib/invite_actions.php:48
 #, php-format
 msgid ""
-"Your invitation was sent to %s at %s. It will be valid for seven days."
+"Your invitation was sent to %s at %s."
 msgstr ""
-"Tu invitación se envió a %s a las %s. Será válida durante siete días."
+"La invitación se envió a %s a %s."
+
+msgid ""
+"The email address is already in use. Invitation not sent."
+msgstr ""
+"El correo electrónico ya está en uso. Invitación no enviada."
 
 #: mod/invite/lib/invite_actions.php:55
 #, php-format
@@ -5332,7 +5335,7 @@ msgstr "Introducir una contraseña"
 
 #: mod/invite/lib/invite_join.php:75
 msgid "Your password again for verification purposes"
-msgstr "Tu contraseña otra vez con el propósito de verificar"
+msgstr "La contraseña otra vez con el propósito de verificar"
 
 #: mod/invite/lib/invite_join.php:99
 msgid ""
@@ -5434,7 +5437,7 @@ msgstr ""
 
 #: mod/invite/lib/join_noinvite.php:28
 msgid "Your email address"
-msgstr "Tu dirección de correo electrónico"
+msgstr "Correo electrónico"
 
 #: mod/invite/lib/join_noinvite.php:42
 msgid "Self-registration is currently disabled."
@@ -5472,7 +5475,7 @@ msgid ""
 "\n"
 "The %s Team"
 msgstr ""
-"Tu contraseña de %s ha sido reiniciada.\n"
+"La contraseña de %s ha sido reiniciada.\n"
 "\n"
 "Para tus datos, tu nueva contraseña es:\n"
 "\n"
@@ -6260,7 +6263,7 @@ msgstr ""
 
 #: mod/search/lib/search_suggest_users.php:28
 msgid "Matching users and communities:"
-msgstr ""
+msgstr "Usuarios y Comunidades:"
 
 #: mod/search/lib/search_user_info_menu.php:9
 msgid "Random tags"
@@ -6702,7 +6705,7 @@ msgid ""
 "Set this to 'yes' if you would like to use a visual (WYSIWYG) text editor "
 "for your posts and comments."
 msgstr ""
-"Indique 'sí' si quieres usar un editor de texto visual para sus "
+"Indique 'sí' si quiere usar un editor de texto visual para sus "
 "artículos y comentarios."
 
 #: mod/tinymce/tinymce_userdetails_edit.php:22
@@ -6807,19 +6810,19 @@ msgid ""
 "Password not changed: Your password is either too short or too long. It must "
 "be between 4 and 32 characters in length."
 msgstr ""
-"No se ha cambiado la contraseña: Tu contraseña es o demasiado corta o "
+"No se ha cambiado la contraseña: La contraseña es o demasiado corta o "
 "demasiado larga. Tiene que tener entre 4 y 32 caracteres."
 
 #: mod/users/lib/userdetails_actions.php:146
 msgid ""
 "Password not changed: Your password can only consist of letters or numbers."
 msgstr ""
-"No se ha cambiado la contraseña: Tu contraseña sólo puede contener letras o "
+"No se ha cambiado la contraseña: La contraseña sólo puede contener letras o "
 "números."
 
 #: mod/users/lib/userdetails_actions.php:148
 msgid "Your password was updated."
-msgstr "Se actualizó tu contraseña."
+msgstr "Se actualizó la contraseña."
 
 #: mod/users/lib/userdetails_actions.php:166
 msgid ""
@@ -6830,23 +6833,23 @@ msgstr ""
 
 #: mod/users/lib/userdetails_edit.php:11
 msgid "Change your full name:"
-msgstr "Cambiar tu nombre:"
+msgstr "Cambiar nombre:"
 
 #: mod/users/lib/userdetails_edit.php:28
 msgid "Your full name "
-msgstr "Tu nombre "
+msgstr "Nombre "
 
 #: mod/users/lib/userdetails_edit.php:33
 msgid "Your email address:"
-msgstr "Tu dirección de correo electrónico:"
+msgstr "Correo electrónico:"
 
 #: mod/users/lib/userdetails_edit.php:34
 msgid ""
 "This will not be displayed to other users; you can choose to make an email "
 "address available via the profile screen."
 msgstr ""
-"Esto no lo podrán ver otros usuarios; puedes escoger que una dirección de "
-"correo esté disponible a través de la pantalla de perfil."
+"Esto no lo podrán ver otros usuarios; puede escoger que una dirección de "
+"correo que esté disponible a través de la pantalla de perfil."
 
 #: mod/users/lib/userdetails_edit.php:48
 msgid "Your email address "
@@ -6888,9 +6891,9 @@ msgid ""
 "resources (by default only logged-in users can). Note that this may make you "
 "vulnerable to spam."
 msgstr ""
-"Indica 'sí' si quieres que cualquiera pueda hacer comentarios sobre tus "
-"recursos (por defecto sólo los usuarios conectados en la sesión pueden). Ten "
-"en cuenta que esto hará que seas más vulnerable al spam."
+"Indica 'sí' si quiere que cualquiera pueda hacer comentarios sobre sus "
+"recursos (por defecto sólo los usuarios conectados en la sesión pueden). Tenga "
+"en cuenta que esto hará que sea más vulnerable al spam."
 
 #: mod/users/lib/userdetails_edit.php:108
 #: mod/users/lib/userdetails_edit.php:115
@@ -6908,9 +6911,9 @@ msgid ""
 "as a friend and more. You can always view these online as part of your "
 "recent activity page."
 msgstr ""
-"Pon esto en 'sí' si quieres recibir copiar por email de cualquiera de los "
-"mensajes que recibas. Esto incluye comentarios del blog, notificaciones "
-"cuando alguien te añada como su amigo,...También puedes ver todo esto en tu "
+"Pon esto en 'sí' si quiere recibir copia por email de cualquiera de los "
+"mensajes que reciba. Esto incluye comentarios del blog, notificaciones "
+"cuando alguien lo agregue como contacto,...También puede ver todo esto en su "
 "página de actividad reciente."
 
 #: mod/users/lib/userdetails_edit.php:138
@@ -6920,15 +6923,15 @@ msgstr "Recivir notificaciones: "
 
 #: mod/users/lib/userdetails_edit.php:152
 msgid "Change your password:"
-msgstr "Cambiar tu contraseña:"
+msgstr "Cambiar contraseña:"
 
 #: mod/users/lib/userdetails_edit.php:153
 msgid "Leave this blank if you're happy to leave your password as it is."
-msgstr "Deja este espacio en blanco si deseas dejar tu contraseña tal cual."
+msgstr "Deje este espacio en blanco si desea dejar su contraseña actual."
 
 #: mod/users/lib/userdetails_edit.php:167
 msgid "Your password: "
-msgstr "Tu contraseña: "
+msgstr "Nueva contraseña: "
 
 #: mod/users/lib/userdetails_edit.php:174
 msgid "Again for verification purposes: "
@@ -7067,7 +7070,7 @@ msgstr "Mandar datos:"
 
 #: profile/profile.class.php:146
 msgid "Save your profile"
-msgstr "Guardar tu perfil"
+msgstr "Guardar perfil"
 
 #: profile/profile.class.php:164
 msgid "You can import some profile data by uploading a FOAF file here:"
@@ -7197,3 +7200,24 @@ msgstr "y la"
 
 msgid "Yes, I accept the Terms and Conditions and the Privacy Policy"
 msgstr "Sí, acepto los Términos y condiciones y la Política de Privacidad"
+
+#: mod/blog/lib/weblogs_actions.php
+msgid "Your post has been added."
+msgstr "El artículo ha sido publicado."
+
+#: lib/elgglib.php
+msgid "or"
+msgstr "o"
+
+#: mod/blog/lib/weblogs_friends_view.php:126
+msgid "Your friends currently don't have any Blog"
+msgstr "Sus contactos no tienen ningun Blog."
+
+#: mod/community/lib/userdetails_actions.php:126
+#: mod/users/lib/usersdetails_actions.php
+msgid "Changes succesfully."
+msgstr "Cambios realizados con éxito."
+
+#: mod/file/lib/files_actions.php
+msgid "The photo was successfully uploaded."
+msgstr "La foto fue subida con éxito."

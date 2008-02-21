@@ -142,7 +142,6 @@ END;
                 
             }
             
-            $submitMsg = __gettext("Submit details:");
             $saveProfile = __gettext("Save your profile");
             $body .= <<< END
                 
@@ -150,7 +149,6 @@ END;
                 
                 <p align="center">
                 <label>
-                $submitMsg
                 <input type="submit" name="submit" value="$saveProfile" />
                 </label>
                 <input type="hidden" name="action" value="profile:edit" />
@@ -161,14 +159,14 @@ END;
 END;
 
             $body .= "<p>&nbsp;</p><form action=\"".url . "profile/edit.php?profile_id=".$page_owner."\" method=\"post\" enctype=\"multipart/form-data\">";
-            $body .= "<p>" . __gettext("You can import some profile data by uploading a FOAF file here:") . "</p>";
+            /*$body .= "<p>" . __gettext("You can import some profile data by uploading a FOAF file here:") . "</p>";
             $body .=templates_draw(array(
                                                  'context' => 'databox',
                                                  'name' => __gettext("Upload a FOAF file:"),
                                                  'column1' => "<input name=\"foaf_file\" id=\"foaf_file\" type=\"file\" />",
                                                  'column2' => "<input type=\"submit\" value=\"".__gettext("Upload") . "\" />"
                                                  )
-                         );
+                         );*/
             $body .= <<<END
         
                 <input type="hidden" name="action" value="profile:foaf:upload" />

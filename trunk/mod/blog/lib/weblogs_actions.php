@@ -45,7 +45,7 @@ switch ($action) {
                 // redirect to post view 
                 define('redirect_url', url.user_info('username', $post->weblog)."/{$extensionContext}/{$post->ident}.html");
                 if (user_type($post->weblog) == "person") {
-                    $messages[] = sprintf(__gettext("Your %s has been added."),$type);
+                    $messages[] = sprintf(__gettext("Your post has been added."));
                 }
                 else{
                     $messages[] = sprintf(__gettext("Your %s has been added to the %s group."),$type,user_info("name",$post->weblog));                	

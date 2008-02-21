@@ -16,7 +16,7 @@
     // Whose files are we looking at?
 
         global $page_owner;
-        $title = user_info("name", page_owner()) . " :: " . gettext("Edit Folder");
+        $title = user_info("name", page_owner()) . " :: " . __gettext("Edit Folder");
 
         $body = run("content:folders:edit");
         $body .= run("files:folder:edit");

@@ -16,17 +16,17 @@ if (logged_on && user_flag_get("admin", $USER->ident) && $page_owner != $USER->i
     
     if ($user_details->username != "news") {
         
-        $run_result .= "<h3>" . __gettext("Change username:") . "</h3>";
+        /*$run_result .= "<h3>" . __gettext("Change username:") . "</h3>";
         $run_result .= templates_draw(array(
                                             'context' => 'databox',
                                             'name' => __gettext("New username: "),
                                             'column1' => "<input type=\"text\" name=\"change_username\" value=\"".$user_details->username."\" />"
                                             )
-                                      );
+                                      );*/
         
     }
     
-    $run_result .= "<h3>" . __gettext("Change file quota (in bytes):") . "</h3>";
+    /*$run_result .= "<h3>" . __gettext("Change file quota (in bytes):") . "</h3>";
     $run_result .= templates_draw(array(
                                         'context' => 'databox',
                                         'name' => __gettext("New file quota: "),
@@ -39,7 +39,7 @@ if (logged_on && user_flag_get("admin", $USER->ident) && $page_owner != $USER->i
                                         'name' => __gettext("New icon quota: "),
                                         'column1' => "<input type=\"text\" name=\"change_iconquota\" value=\"".$user_details->icon_quota."\" />"
                                         )
-                                  );
+                                  );*/
     
     if ($user_details->user_type == "person") {
         $run_result .= "<h3>" . __gettext("User flags:") . "</h3>";

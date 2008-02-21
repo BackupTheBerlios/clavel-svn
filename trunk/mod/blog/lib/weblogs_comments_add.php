@@ -55,7 +55,7 @@ END;
         
                                 'context' => 'databox1',
                                 'name' => '&nbsp;',
-                                'column1' => "<input type=\"submit\" value=\"".__gettext("Add comment")."\" />"
+                                'column1' => "<input type=\"submit\" align=\"center\" value=\"".__gettext("Add comment")."\" />"
         
                             )
                             );

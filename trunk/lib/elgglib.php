@@ -3556,6 +3556,7 @@ function require_confirm($message, $vars=null) {
         $title = __gettext('Please confirm your action');
 
         $sContinue = __gettext('Continue');
+	$or = __gettext('or');
         $sBack = __gettext('Back');
 
         // add form key
@@ -3570,7 +3571,7 @@ function require_confirm($message, $vars=null) {
 
         // add buttons
         //$inputs .= "<input type=\"button\" value=\"{$sBack}\" onclick=\"history.back()\" />\n";
-        $inputs .= "<a href=\"#\" onclick=\"history.back(); return false;\">{$sBack}</a> or ";
+        $inputs .= "<a href=\"#\" onclick=\"history.back(); return false;\">{$sBack}</a> $or ";
         $inputs .= "<input type=\"submit\" name=\"submit\" value=\"{$sContinue}\" />\n";
 
         $body = "<div id=\"confirm-form\">\n";

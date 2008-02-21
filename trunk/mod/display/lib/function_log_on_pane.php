@@ -41,7 +41,7 @@
                 <tr>
                     <td align="right"><p>
                         <input type="hidden" name="action" value="log_on" />
-                        <label>' . __gettext("Log on") . ':<input type="submit" name="submit" value="'.__gettext("Go").'" /></label><br /><br />
+                        <label>' . '<input type="submit" name="submit" value="'.__gettext("Login").'" /></label><br /><br />
                         <label><input type="checkbox" name="remember" />
                                 ' . __gettext("Remember Login") . '</label><br />
                         <small>

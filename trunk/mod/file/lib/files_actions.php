@@ -96,7 +96,7 @@ if (logged_on) {
                             plugin_hook("file","publish",$f);
                             $rssresult = run("files:rss:publish", array($page_owner, false));
                             $rssresult = run("profile:rss:publish", array($page_owner, false));
-                            $messages[] = __gettext("{$f->originalname} was successfully uploaded.");
+                            $messages[] = __gettext("The photo was successfully uploaded.");
                         }
                     }
                 }

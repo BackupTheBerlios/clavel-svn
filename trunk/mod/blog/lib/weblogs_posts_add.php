@@ -35,9 +35,9 @@
     $redirect = url . user_info('username', $page_owner) . "/$extensionContext/";
 
     $username = $_SESSION['username'];
-    $addPost = sprintf(__gettext("Add a new %s"),$contentType);
-    $postTitle = sprintf(__gettext("%s title:"),$contentType);
-    $postBody = sprintf(__gettext("%s body:"),$contentType);
+    $addPost = sprintf(__gettext("Add a new Post"));
+    $postTitle = sprintf(__gettext("Title:"));
+    $postBody = sprintf(__gettext("Body:"));
     $Keywords = __gettext("Keywords (Separated by commas):");
     $keywordDesc = __gettext("Keywords commonly referred to as 'Tags' are words that represent the weblog post you have just made. This will make it easier for others to search and find your posting.");
     $accessRes = __gettext("Access restrictions:"); // gettext variable
