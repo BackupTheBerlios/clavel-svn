@@ -6,7 +6,7 @@ global $page_owner;
 
 $action = optional_param('action');
 if ($action == "icons:edit" && logged_on && run("permissions:check", "uploadicons")) {
-
+    
     // Set a new default!
     $icondefault = optional_param('defaulticon',0,PARAM_INT);
     if ($icondefault == -1) {
@@ -22,7 +22,7 @@ if ($action == "icons:edit" && logged_on && run("permissions:check", "uploadicon
             set_field('users','icon',$icondefault,'ident',$page_owner);
         }
     }
-
+    
     // Change their descriptions!
     $description = optional_param('description',array());
     foreach($description as $iconid => $newdescription) {
@@ -34,7 +34,7 @@ if ($action == "icons:edit" && logged_on && run("permissions:check", "uploadicon
             }
         }
     }
-
+    
     // Delete them!
     $icons_delete = optional_param('icons_delete',array(),PARAM_INT);
     if (count($icons_delete) > 0) {
@@ -44,7 +44,7 @@ if ($action == "icons:edit" && logged_on && run("permissions:check", "uploadicon
                 set_field('weblog_posts', 'icon', -1, 'icon', $delete_icon, 'owner', $page_owner);
                 $ul_username = user_info('username', $page_owner);
                 $upload_folder = $textlib->substr($ul_username,0,1);
-                $filepath = $CFG->dataroot . "icons/" . $upload_folder . "/" . $ul_username . "/".$result->filename;
+                $filepath = $CFG->dataroot . "icons/" . $upload_folder . "/" . $ul_username . "/".$result->filename; 
                 @unlink($filepath);
                 if ($result->filename == $USER->icon) {
                     set_field('users','icon',-1,'ident',$page_owner);
@@ -62,7 +62,7 @@ if ($action == "icons:edit" && logged_on && run("permissions:check", "uploadicon
 if ($action == "icons:add" && logged_on && run("permissions:check", "uploadicons")) {
     $description = optional_param('icondescription');
     $icondefault = optional_param('icondefault');
-	//echo $icondefault;
+	echo $icondefault;
     // if (!empty($description)) {
         $ok = true;
         if ($ok == true) {
@@ -80,7 +80,13 @@ if ($action == "icons:add" && logged_on && run("permissions:check", "uploadicons
         $messages[] = __gettext("Attempting to upload icon file ...");
         $ul_username = user_info('username', $page_owner);
         $upload_folder = $textlib->substr($ul_username,0,1);
-        $dir = $CFG->dataroot . "icons/" . $upload_folder . "/" . $ul_username . "/";
+        $dir = $CFG->dataroot . "icons/" . $upload_folder . "/" . $ul_username . "/"; 
+        if ($ok = $um->process_file_uploads($dir)) {
+            if (!$imageattr = @getimagesize($um->get_new_filepath())) {
+                $ok = false;
+                $messages[] = __gettext("The uploaded icon file was invalid. Please ensure you are using JPEG, GIF or PNG files.");
+            }
+        }
         if ($ok == true) {
             if ($imageattr[0] > 100 || $imageattr[1] > 100) {
                 // $ok = false;
@@ -134,7 +140,7 @@ if ($action == "icons:add" && logged_on && run("permissions:check", "uploadicons
                 }
             }
             $messages[] = __gettext("Your icon was uploaded successfully.");
-
+            
         } else {
             $messages[] = __gettext("An unknown error occurred when saving your icon. If this problem persists, please let us know and we'll do all we can to fix it quickly.");
         }
