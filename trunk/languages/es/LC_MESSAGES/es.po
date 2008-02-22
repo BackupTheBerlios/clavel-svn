@@ -239,17 +239,6 @@ msgstr ""
 #~ "participar en %s, podría merecer la pena ponerte en contacto con la persona "
 #~ "que te invitó."
 
-#, php-format
-#~ msgid ""
-#~ "To generate a new password at %s!, enter your username below. We will send "
-#~ "the address of a unique verification page to you via email click on the link "
-#~ "in the body of the message and a new password will be sent to you."
-#~ msgstr ""
-#~ "Para generar una nueva contraseña en %s! introduce tu nombre de usuario "
-#~ "abajo. Te mandaremos la dirección de una única página de verificación por "
-#~ "correo electrónico. Pincha en el enlace, en el cuerpo del mensaje, y se te "
-#~ "enviará una nueva contraseña."
-
 #~ msgid "View your profile!"
 #~ msgstr "¡Visualizar tu perfil!"
 
@@ -1441,21 +1430,20 @@ msgid ""
 "\n"
 "The %s Team"
 msgstr ""
-"Has sido añadido a %s!\n"
+"Bienvenido. Ahora es usuario de %s!\n"
 "\n"
-"Para tus datos, tu nombre de usuario %s y contraseña es:\n"
+"El nombre de usuario y contraseña para ingresar a %s son:\n"
 "\n"
 "\tUsuario: %s\n"
 "\tContraseña: %s\n"
 "\n"
-"Puedes ingresar cualquier momento visitando %s e ingresando esta información "
-"en el formulario de ingreso.\n"
+"Puede entrar en cualquier momento visitando %s.\n"
 "\n"
-"Esperamos que disfrutes del sistema.\n"
+"Esperamos que sea de su agrado.\n"
 "\n"
 "Saludos,\n"
 "\n"
-"El equipo %s."
+"El equipo de %s."
 
 #: mod/admin/lib/admin_actions.php:189
 #, php-format
@@ -2463,7 +2451,7 @@ msgstr "Mirar todos..."
 
 #: mod/commentwall/lib.php:315
 msgid "No comments on this wall, why not be the first?"
-msgstr "No hay comentarios, ¿Porqué no ser el primero?"
+msgstr "No hay comentarios."
 
 #: mod/commentwall/post.php:27
 msgid "Post a comment"
@@ -2775,12 +2763,12 @@ msgstr "No tienes solicitudes de ingreso de miembros pendientes."
 #: mod/community/lib/communities_members.php:24
 #: mod/community/lib/user_info_menu.php:24
 msgid "Are you sure you want to separate this user from the community?"
-msgstr ""
+msgstr "¿Está seguro que quiere eliminar este usuario de la comunidad?"
 
 #: mod/community/lib/communities_members.php:25
 #: mod/community/lib/user_info_menu.php:25
 msgid "Separate"
-msgstr ""
+msgstr "Eliminar"
 
 #: mod/community/lib/communities_members.php:28
 msgid "Owner"
@@ -2868,18 +2856,18 @@ msgstr ""
 
 #: mod/community/lib/community_member_remove.php:35
 #, php-format
-msgid "%s was removed from your community"
-msgstr ""
+msgid "The user was removed from your community."
+msgstr "El usuario fue eliminado de la comunidad."
 
 #: mod/community/lib/community_member_remove.php:39
 #, php-format
 msgid "You coundn't left %s"
-msgstr ""
+msgstr "Usted no pudo dejar %s"
 
 #: mod/community/lib/community_member_remove.php:41
 #, php-format
-msgid "%s coundn't be removed from your community"
-msgstr ""
+msgid "The user coundn't be removed from your community."
+msgstr "El usuario no pudo ser eliminado de la comunidad."
 
 #: mod/community/lib/community_member_remove.php:47
 #, php-format
@@ -3085,7 +3073,7 @@ msgstr "¿Estás seguro de que quieres dejar esta comunidad?"
 
 #: mod/community/lib/user_info_menu_text.php:29
 msgid "Click here to leave this community."
-msgstr "Pincha aquí para dejar esta comunidad."
+msgstr "Click aquí para dejar esta comunidad."
 
 #: mod/community/profile.config.php:56 mod/profile/profile.config.php:62
 msgid "Profile photo"
@@ -4476,7 +4464,6 @@ msgstr ""
 "añadida a su cola de restricciones."
 
 #: mod/friend/lib/friends_actions.php:40
-#, php-format
 msgid ""
 "%s has requested to add you as a friend!\n"
 "\n"
@@ -4493,34 +4480,32 @@ msgid ""
 "\n"
 "The %s team."
 msgstr ""
-"%s ha pedido ser añadido como tu amigo!\n"
+"%s ha solicitado ser tu contacto!\n"
 "\n"
-"Para visitar el perfil del usuario, haz click en el siguiente enlace:\n"
+"Para visitar su perfil, haga click en el siguiente enlace:\n"
 "\n"
 "\t%s\n"
 "\n"
-"Para ver todos los pedidos de tus amigos y aprovar o denegar este usuario, "
-"haz click aqui:\n"
+"Para ver todas las solicitudes de contacto y aprovar o denegar este usuario, "
+"haga click aqui:\n"
 "\n"
 "\t%s\n"
 "\n"
 "Saludos,\n"
 "\n"
-"El equipo %s."
+"El equipo de %s."
 
 #: mod/friend/lib/friends_actions.php:41
-#, php-format
 msgid "New %s friend request"
 msgstr "Nueva %s petición de amistad"
 
 #: mod/friend/lib/friends_actions.php:46
-#, php-format
 msgid ""
 "%s has elected to moderate friendship requests, but your friend request "
 "couldn't be added to their moderation queue."
 msgstr ""
 "%s ha decidido restringir las solicitudes de contacto, pero la solicitud de "
-"tu nuevo  contacto no pudo añadirse a su cola de restricciones."
+"tu nuevo contacto no pudo añadirse a su cola de restricciones."
 
 #: mod/friend/lib/friends_actions.php:50
 #, php-format
@@ -4552,7 +4537,6 @@ msgstr ""
 "Ha aprobado la solicitud de contacto. %s aparece en la lista como contacto."
 
 #: mod/friend/lib/friends_actions.php:86
-#, php-format
 msgid ""
 "%s has approved your friendship request!\n"
 "\n"
@@ -4568,19 +4552,19 @@ msgid ""
 "\n"
 "The %s team."
 msgstr ""
-"%s ha aprovado tu pedido de amistad!\n"
+"%s ha aprovado la solicitud de contacto!\n"
 "\n"
-"Para visitar el perfil de este usuario, haz click en el siguiente enlace:\n"
+"Para visitar el perfil de este usuario, haga click en el siguiente enlace:\n"
 "\n"
 "\t%s\n"
 "\n"
-"Para ver todos tus amigos, haz click aqui:\n"
+"Para ver todos los contactos, haga click aquí:\n"
 "\n"
 "\t%s\n"
 "\n"
 "Saludos,\n"
 "\n"
-"El equipo %s."
+"El equipo de %s."
 
 #: mod/friend/lib/friends_actions.php:87
 #, php-format
@@ -4638,7 +4622,7 @@ msgstr ""
 "\n"
 "Saludos,\n"
 "\n"
-"El equipo %s."
+"El equipo de %s."
 
 #: mod/friend/lib/friends_edit.php:38
 msgid ""
@@ -5040,7 +5024,7 @@ msgstr "Todavía no tiene ninguna foto."
 
 #: mod/invite/forgotten_password.php:14
 msgid "Generate a New Password"
-msgstr "Generar una nueva contraseña"
+msgstr "Crear una nueva contraseña"
 
 #: mod/invite/index.php:18
 msgid "Invite a Friend"
@@ -5117,7 +5101,7 @@ msgstr ""
 "\n"
 "Saludos,\n"
 "\n"
-"El equipo %s."
+"El equipo de %s."
 
 #: mod/invite/lib/invite_actions.php:48
 #, php-format
@@ -5190,9 +5174,10 @@ msgid ""
 "you supplied. You have been sent an email containing these details for "
 "reference purposes."
 msgstr ""
-"¡Tu cuenta fue creada! Puedes iniciar la sesión utilizando el nombre de "
-"usuario y contraseña que proporcionaste. Se te ha enviado un correo "
-"electrónico con estos datos para fines de referencia."
+"¡Su cuenta se ha creado! Para iniciar sesión, primero debe activar su cuenta "
+"por medio del enlace enviado a "
+"su correo electrónico. Luego puede ingresar utilizando el nombre de "
+"usuario y contraseña. "
 
 #: mod/invite/lib/invite_actions.php:162 mod/invite/lib/invite_actions.php:169
 #, php-format
@@ -5210,8 +5195,7 @@ msgid ""
 "A request has been received to generate your account at %s a new password.\n"
 "\n"
 msgstr ""
-"Se ha recibido una solicitud para generar tu cuenta a las %s una nueva "
-"contraseña.\n"
+"Se ha recibido una solicitud para generar una nueva contraseña para la cuenta de %s.\n"
 "\n"
 
 #: mod/invite/lib/invite_actions.php:224
@@ -5238,11 +5222,11 @@ msgid ""
 "\n"
 "The %s Team"
 msgstr ""
-"Te rogamos nos indiques si tienes problemas adicionales. \n"
+"Por favor informenos si tiene algun problema. \n"
 "\n"
 "Atentamente,\n"
 "\n"
-"El %s Equipo"
+"El Equipo de %s"
 
 #: mod/invite/lib/invite_actions.php:227
 msgid "Your verification email was sent. Please check your inbox."
@@ -5269,6 +5253,9 @@ msgid ""
 "\n"
 "."
 msgstr ""
+"Gracias por unirse a %s!\n"
+"\n"
+"."
 
 #: mod/invite/lib/invite_join_mailwithoutpass.php:15
 #, php-format
@@ -5288,11 +5275,11 @@ msgid ""
 "\n"
 "The %s Team"
 msgstr ""
-"Esperamos que sigas disfrutando del uso del sistema.\n"
+"Esperamos que disfrute la red.\n"
 "\n"
 "Atentamente,\n"
 "\n"
-"El %s Equipo"
+"El Equipo de %s"
 
 #: mod/invite/lib/invite_join_mailwithpass.php:15
 #, php-format
@@ -5303,23 +5290,24 @@ msgid ""
 "\n"
 "\t"
 msgstr ""
+"Gracias por unirse a %s!\n"
+"\n"
+"Sus nombre de usuario y contraseña de %s son:\n"
+"\n"
+"\t"
 
 #: mod/invite/lib/invite_join_mailwithpass.php:16
-#, php-format
+
 msgid ""
 "Username: %s\n"
 "\tPassword: %s\n"
 "\n"
-"You can log in at any time by visiting %s and entering these details into "
-"the login form.\n"
-"\n"
+"To active your acount, please visit the following url: %s"
 msgstr ""
 "Nombre de usuario: %s\n"
 "\tContraseña: %s\n"
 "\n"
-"Puedes iniciar la sesión cuando quieras visitando %s e introduciendo estos "
-"datos en el formulario de entrada.\n"
-"\n"
+"Para activar su cuenta, por favor visite: %s"
 
 #: mod/invite/lib/invite_join.php:25
 msgid "register page"
@@ -5475,20 +5463,17 @@ msgid ""
 "\n"
 "The %s Team"
 msgstr ""
-"La contraseña de %s ha sido reiniciada.\n"
+"La contraseña de %s ha sido renovada.\n"
 "\n"
-"Para tus datos, tu nueva contraseña es:\n"
+"La nueva contraseña es:\n"
 "\n"
 "\tContraseña: %s\n"
 "\n"
-"Por favor considere cambiar su contraseña tan pronto haya ingresado al "
-"sistema por motivos de seguridad.\n"
-"\n"
-"Esperamos que continúe disfrutando del sistema.\n"
+"Esperamos que continúe disfrutando de la red.\n"
 "\n"
 "Saludos,\n"
 "\n"
-"El equipo %s."
+"El equipo de %s."
 
 #: mod/invite/lib/new_password.php:37 mod/invite/lib/new_password.php:49
 msgid ""
@@ -7221,3 +7206,32 @@ msgstr "Cambios realizados con éxito."
 #: mod/file/lib/files_actions.php
 msgid "The photo was successfully uploaded."
 msgstr "La foto fue subida con éxito."
+
+#: mod/invite/join.php
+msgid "Account Activated"
+msgstr "Cuenta activada"
+
+#: mod/invite/lib/activate.php
+msgid "Thank you for check your Email Address. Now your acount is active.\n\nYou can loged in %s"
+msgstr "Gracias por comprobar su correo. Ahora su cuenta esta activada. \n\nPuede ingresar en %s"
+
+#: mod/invite/lib/password_request.php
+msgid ""
+"To generate a new password at %s!, enter your username below. We will send "
+"the address of a unique verification page to you via email click on the link "
+"in the body of the message and a new password will be sent to you."
+msgstr ""
+"Para crear una nueva contraseña en %s! ingrese el correo electrónico "
+"abajo. Se le enviará un enlace para que pueda crear la nueva contraseña."
+
+#: mod/invite/new_password.php
+msgid "Create new password"
+msgstr "Crear una nueva contraseña"
+
+#: mod/invite/lib/create_new_password.php
+msgid "Please, enter a new Password:"
+msgstr "Por favor, ingrese una nueva contraseña:"
+
+#: mod/invite/lib/invite_actions.php
+msgid "Your password has been changed. Check your email."
+msgstr "Su contraseña ha sido cambiada. Verifique su correo electrónico."

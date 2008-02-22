@@ -129,15 +129,15 @@ msgstr "¡El ID del mensaje no es válido!."
 
 #: messages_actions.php:148
 msgid "You have received a message from %s."
-msgstr "Has recibido un mensaje de %s."
+msgstr "Ha recibido un mensaje de %s."
 
 #: messages_actions.php:150
 msgid "To reply, click here: %s"
-msgstr "Para responder, presiona aquí: %s"
+msgstr "Para responder, haga click aquí: %s"
 
 #: messages_actions.php:155
 msgid "You cannot reply to this message by email."
-msgstr "No puedes responder este mensaje por email."
+msgstr "No puede responder este mensaje por email."
 
 #: messages_actions.php:156
 msgid "Failed to send email. An unknown error occurred."
@@ -149,15 +149,15 @@ msgstr "Tu mensaje ha sido enviado"
 
 #: messages_actions.php:168
 msgid "You can't send an empty message!"
-msgstr "¡No puedes enviar un mensaje vacío!"
+msgstr "¡No puede enviar un mensaje vacío!"
 
 #: messages_actions.php:171
 msgid "You must specify the sender a recipient!"
-msgstr "¡Debes especificar un destinatario!"
+msgstr "¡Debe especificar un destinatario!"
 
 #: messages_init.php:26
 msgid "You may view only your own messages"
-msgstr "Sólo puedes ver tus propios mensajes"
+msgstr "Sólo puede ver sus propios mensajes"
 
 #: messages_message_detailedview.php:42
 msgid "Reply"
@@ -165,7 +165,7 @@ msgstr "Responder"
 
 #: messages_message_detailedview.php:43
 msgid "Are you sure you want to permanently delete this message?"
-msgstr "¿Estás seguro que quieres borrar permanentemente este mensaje?"
+msgstr "¿Está seguro que quiere borrar permanentemente este mensaje?"
 
 #: messages_message_detailedview.php:44
 msgid "Delete"
@@ -177,7 +177,7 @@ msgstr "(Grupo)"
 
 #: messages_new.php:38
 msgid "No friends on your friends list to send to!"
-msgstr "¡No hay conexiones en tu listado de conexiones para enviarles!"
+msgstr "¡La lista de contactos está vacia!"
 
 #: messages_new.php:63
 msgid "New message"

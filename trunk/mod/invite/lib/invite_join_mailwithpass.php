@@ -4,7 +4,7 @@
  *
  * Created on Apr 19, 2007
  *
- * @author Diego Andrés Ramírez Aragón <diego@somosmas.org>
+ * @author Diego Andrï¿½s Ramï¿½rez Aragï¿½n <diego@somosmas.org>
  */
 if(is_array($parameter)){
   $sitename = $parameter[0];
@@ -16,7 +16,6 @@ if(is_array($parameter)){
   $run_result= sprintf(__gettext("Thanks for joining %s!\n\nFor your records, your username and password in %s are:\n\n\t")
                                         .__gettext("Username: %s\n\tPassword: %s\n\n")
 										.__gettext("To active your acount, please visit the following url: %s")
-										.__gettext("\n\nYou can log in at any time by visiting %s and entering these details into the login form.\n\n")
                                         .__gettext("We hope you enjoy using the system.\n\nRegards,\n\nThe %s Team")
                                 ,$sitename,$sitename,$username,$displaypassword,$urlactivate,$url,$sitename);
 

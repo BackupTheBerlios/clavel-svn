@@ -6,8 +6,8 @@
  *
  * Created on May 7, 2007
  *
- * @author Diego Andrés Ramírez Aragón <diego@somosmas.org>
- * @copyright Corporación Somos más - 2007
+ * @author Diego Andrï¿½s Ramï¿½rez Aragï¿½n <diego@somosmas.org>
+ * @copyright Corporaciï¿½n Somos mï¿½s - 2007
  */
 global $USER;
 global $CFG;
@@ -23,7 +23,7 @@ if (isset ($parameter)) {
     switch ($action) {
       case "leave" :
       case "separate" :
-        $community_name= user_info('username', $user_id);
+        $community_name= user_info('name', $user_id);
         error_log("Eliminando owner = $friend_id friend=$user_id");
         if (delete_records("friends", "owner", $friend_id, "friend", $user_id)) {
           if ($action == "leave") {
@@ -32,18 +32,18 @@ if (isset ($parameter)) {
             header("Location: " . $CFG->wwwroot . user_info('username', $user_id) . "/");
             exit;
           } else {
-            $run_result[]= sprintf(__gettext("%s was removed from your community"), $community_name);
+            $run_result[]= sprintf(__gettext("The user was removed from your community."));
           }
         } else {
           if ($action == "leave") {
             $run_result[]= sprintf(__gettext("You coundn't left %s"), $community_name);
           } else {
-            $run_result[]= sprintf(__gettext("%s coundn't be removed from your community"), $community_name);
+            $run_result[]= sprintf(__gettext("The user coundn't be removed from your community."));
           }
         }
         break;
       default :
-        $community_name= user_info('username', $friend_id);
+        $community_name= user_info('name', $friend_id);
         $run_result[]= sprintf(__gettext("You left %s."), $community_name);
     }
   }

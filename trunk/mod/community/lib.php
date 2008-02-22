@@ -93,7 +93,7 @@ function community_pagesetup() {
 
         if (defined("context") && context == "profile") {
 
-            if (run("permissions:check", "profile")) {
+            /*if (run("permissions:check", "profile")) {
 
                 if (!empty($CFG->uses_YUI)) {
                     $PAGE->menu_sub[] = array( 'name' => 'profile:widget:manage',
@@ -106,7 +106,7 @@ function community_pagesetup() {
 
             }
 
-            }
+            }*/
         }
     } else if ($usertype == "person") {
 
