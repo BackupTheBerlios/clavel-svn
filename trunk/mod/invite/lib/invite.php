@@ -27,7 +27,7 @@ END;
                             )
                             );
 
-        $run_result .="<p><input type=\"submit\" value=\"".__gettext("Invite")."\" /></p>";
+        $run_result .="<p align='center'><input type=\"submit\" value=\"".__gettext("Invite")."\" /></p>";
 
 
         $run_result .= <<< END

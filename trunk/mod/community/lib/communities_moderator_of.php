@@ -22,7 +22,7 @@ if (isset($parameter[0])) {
                 $friends_menu .= "<a href=\"{$CFG->wwwroot}mod/community/index.php?community_id=".$info->ident."&amp;action=community:delete\">$deletecommunity</a>";
             }
             $friends_icon = user_icon_html($info->ident,COMMUNITY_ICON_SIZE);
-            $link = $CFG->wwwroot.$info->username."/";
+            $link = $CFG->wwwroot."mod/community/community_showdetails.php?profile_id=".$info->ident;
 
             $body .= templates_draw(array(
                                         'context' => 'community_member',

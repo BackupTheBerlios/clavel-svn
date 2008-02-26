@@ -49,72 +49,42 @@ function community_pagesetup() {
 
     if ($usertype == "community") {
 
-        if (defined("context") && context == "profile") {
-
-            if (run("permissions:check", "profile")) {
-
-                // Edit community functions
-                $PAGE->menu_sub[] = array( 'name' => 'profile:edit',
+      /*$PAGE->menu_sub[] = array( 'name' => 'profile:edit',
                                        'html' => '<a href="'.$CFG->wwwroot.'profile/edit.php?profile_id='.$page_owner.'">'
-                                       . __gettext("Edit community profile") . '</a>');
+                                       . __gettext("Edit community profile") . '</a>');*/
 
-                $PAGE->menu_sub[] = array( 'name' => 'community:pic',
+      $PAGE->menu_sub[] = array( 'name' => 'community:pic',
                                            'html' => a_href("{$CFG->wwwroot}_icons/?context=profile&amp;profile_id=$page_owner" ,
-                                                              __gettext("Community site picture")));
+                                        __gettext("Community site picture")));
 
-                $PAGE->menu_sub[] = array( 'name' => 'community:edit',
+      $PAGE->menu_sub[] = array( 'name' => 'community:edit',
                                            'html' => a_href("{$CFG->wwwroot}_userdetails/?context=profile&amp;profile_id=$page_owner" ,
-                                                             __gettext("Edit community details")));
-            }
+                                        __gettext("Edit community details")));
 
-        }
-
-        if (defined("context") && (context == "profile" || context == COMMUNITY_CONTEXT)) {
-          if (run("permissions:check", "profile")) {
-              if(context == COMMUNITY_CONTEXT){
-              $PAGE->menu_sub[] = array( 'name' => 'profile:view',
+	  /*$PAGE->menu_sub[] = array( 'name' => 'profile:view',
                                          'html' => a_href("{$CFG->wwwroot}{$username}/profile",
-                                         __gettext("Return to community profile")));
-              }
+                                         __gettext("Return to community profile")));*/
 
-              $PAGE->menu_sub[] = array( 'name' => 'community:adminmembers',
+
+      $PAGE->menu_sub[] = array( 'name' => 'community:adminmembers',
                                          'html' => a_href("{$CFG->wwwroot}{$username}/community/members",
                                          __gettext("Edit members")));
 
-              $PAGE->menu_sub[] = array( 'name' => 'community:requests',
+      $PAGE->menu_sub[] = array( 'name' => 'community:requests',
                                          'html' => a_href("{$CFG->wwwroot}{$username}/community/requests",
                                                            __gettext("View membership requests")));
 
-              $PAGE->menu_sub[] = array( 'name' => 'community:invite',
+      $PAGE->menu_sub[] = array( 'name' => 'community:invite',
                                          'html' => a_href("{$CFG->wwwroot}{$username}/community/invite",
                                                            __gettext("Invite people")));
-              }
-        }
 
-        if (defined("context") && context == "profile") {
-
-            /*if (run("permissions:check", "profile")) {
-
-                if (!empty($CFG->uses_YUI)) {
-                    $PAGE->menu_sub[] = array( 'name' => 'profile:widget:manage',
-                        'html' => '<a href="'.$CFG->wwwroot.'mod/widget/manage_widgets.php?owner='.$page_owner.'">'
-                        . __gettext("Manage widgets") . '</a>');
-                } else {
-                    $PAGE->menu_sub[] = array( 'name' => 'profile:widget:add',
-                        'html' => '<a href="'.$CFG->wwwroot.'mod/profile/add.php?owner='.$page_owner.'">'
-                        . __gettext("Add widget") . '</a>');
-
-            }
-
-            }*/
-        }
     } else if ($usertype == "person") {
 
         if (defined("context") && context == COMMUNITY_CONTEXT) {
           if(COMMUNITY_COMPACT_VIEW){
             $PAGE->menu_sub[] = array( 'name' => 'community',
                                      'html' => a_href("{$CFG->wwwroot}{$username}/communities" ,
-                                                        __gettext("Communities")));
+                                                        __gettext("My Communities")));
 
             if (logged_on && $page_owner == $_SESSION['userid'] &&
                 ($CFG->community_create_flag == "" || user_flag_get($CFG->community_create_flag, $USER->ident))) {
@@ -126,12 +96,17 @@ function community_pagesetup() {
           else{
             $PAGE->menu_sub[] = array( 'name' => 'community',
                                      'html' => a_href("{$CFG->wwwroot}{$username}/communities" ,
-                                                        __gettext("Communities")));
+                                                        __gettext("My Communities")));
 
             if ($CFG->community_create_flag == "" || user_flag_get($CFG->community_create_flag, $USER->ident)) {
               $PAGE->menu_sub[] = array( 'name' => 'community:owned',
                                      'html' => a_href("{$CFG->wwwroot}{$username}/communities/owned" ,
                                                         __gettext("Owned Communities")));
+            }
+            if ($CFG->community_create_flag == "" || user_flag_get($CFG->community_create_flag, $USER->ident)) {
+              $PAGE->menu_sub[] = array( 'name' => 'community:owned',
+                                     'html' => a_href("{$CFG->wwwroot}{$username}/communities/create" ,
+                                                        __gettext("Create a Community")));
             }
           }
         }
@@ -175,8 +150,11 @@ function community_init() {
         $function['communities:edit'][] = $CFG->dirroot . "mod/community/lib/communities_edit.php";
         $function['communities:members'][] = $CFG->dirroot . "mod/community/lib/communities_members.php";
         $function['communities:owned'][] = $CFG->dirroot . "mod/community/lib/communities_moderator_of.php";
-        $function['communities:owned'][] = $CFG->dirroot . "mod/community/lib/communities_create.php";
+        //$function['communities:owned'][] = $CFG->dirroot . "mod/community/lib/communities_create.php";
         $function['communities:create'][] = $CFG->dirroot . "mod/community/lib/communities_create.php";
+
+	//Show community details
+		$function['communities:showdetails'][] = $CFG->dirroot . "mod/community/lib/community_showdetails.php";
 
     // Membership requests
         $function['communities:requests:view'][] = $CFG->dirroot . "mod/community/lib/communities_membership_requests.php";

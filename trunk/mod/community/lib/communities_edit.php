@@ -14,11 +14,12 @@ if (isset($parameter[0])) {
         $owned = array();
         $member = array();
         foreach($result as $key => $info) {
+            $community_ident = $info->ident;
             $friends_name = user_name($info->ident);
             $info->icon = run("icons:get",$info->ident);
             $friends_menu = run("community:infobox:menu",array($info));
             $friends_icon = user_icon_html($info->ident,COMMUNITY_ICON_SIZE);
-            $link = $CFG->wwwroot.$info->username."/";
+            $link = $CFG->wwwroot."mod/community/community_showdetails.php?profile_id=".$community_ident;
             if ($info->owner == $user_id) {
               $_body = & $owned;
             } else {

@@ -1,7 +1,7 @@
 <?php
 
     global $page_owner, $CFG;
-        
+
     // If this is someone else's portfolio, display the user's icon
         if ($page_owner != -1) {
             $run_result .= run("profile:user:info");
@@ -21,11 +21,11 @@
         $basedomain = substr($CFG->wwwroot,0,strlen($CFG->wwwroot) - 1);
         $subdir = str_replace($_SERVER['SERVER_NAME'],"",substr($basedomain,strpos($basedomain,"://") + 3,strlen($basedomain) - 3));
         $passthru = $basedomain . str_replace($subdir,"",$_SERVER['REQUEST_URI']);
-        
+
         $body .= templates_draw(array(
                         'template' => -1,
                         'context' => 'sidebarholder',
-                        'title' => __gettext("Log On"),
+                        //'title' => __gettext("Log On"),
                         'submenu' => '',
                         'body' => '
             <table>
@@ -50,7 +50,7 @@
                         </small></p>
                     </td>
                 </tr>
-            
+
             </table>
 
 '
@@ -59,7 +59,7 @@
         $body .= "</form></li>";
 
         $run_result .= $body;
-            
+
     }
 
 ?>

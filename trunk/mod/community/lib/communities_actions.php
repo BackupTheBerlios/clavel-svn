@@ -16,26 +16,34 @@ if (isloggedin()) {
         // Create a new community
         case "community:create":
             $comm_name = optional_param('comm_name');
-            //$comm_username = optional_param('comm_username');
+            $comm_description = optional_param('comm_description');
+            $comm_email = optional_param('comm_email');
+            $comm_city = optional_param('comm_city');
+            if (trim($comm_name) == "") {
+                    $messages[] = __gettext("Error! The community name cannot be blank.");
+                }
+            if (trim($comm_description) == "") {
+                    $messages[] = __gettext("Error! The community description cannot be blank.");
+                }
             if (logged_on && !empty($comm_name) &&
                 ($CFG->community_create_flag == "" || user_flag_get($CFG->community_create_flag, $USER->ident))) {
-                /*if (!validate_username($comm_username)) {
-                    $messages[] = __gettext("Error! The community username must contain letters and numbers only, cannot be blank, and must be between 3 and 12 characters in length.");
-                } else if (trim($comm_name) == "") {
-                    $messages[] = __gettext("Error! The community name cannot be blank.");
-                } else {
-                    $comm_username = strtolower(trim($comm_username));
-                    if (!username_is_available($comm_username)) {
-                        $messages[] = sprintf(__gettext("The username %s is already taken by another user. You will need to pick a different one."), $comm_username);
-                    } else {*/
                         $name = trim($comm_name);
                         $c = new StdClass;
                         $c->name = $name;
-                        $c->username = 'community'.substr(base_convert(md5(time() . $comm_name), 16, 36), 0, 7);;
+                        $c->username = 'comm'.substr(base_convert(md5(time() . $comm_name), 16, 36), 0, 15);
                         $c->user_type = 'community';
                         $c->owner = $USER->ident;
                         $cid = insert_record('users',$c);
                         $c->ident = $cid;
+
+                        //Create a details of community
+
+                        $cd = new StdClass;
+                        $cd->owner = $cid;
+                        $cd->description = $comm_description;
+                        $cd->email = $comm_email;
+                        $cd->city = $comm_city;
+                        $communnity_details = insert_record('community_details',$cd);
 
                         $rssresult = run("weblogs:rss:publish", array($cid, false));
                         $rssresult = run("files:rss:publish", array($cid, false));
@@ -44,7 +52,8 @@ if (isloggedin()) {
                         plugin_hook("community","publish",$c);
                         $messages[] = __gettext("Your community was created and you were added as its first member.");
                         $_SESSION['messages'] = $messages;
-                        header("Location: " . $CFG->wwwroot."profile/edit.php?profile_id=".$cid);
+                        //header("Location: " . $CFG->wwwroot."profile/edit.php?profile_id=".$cid);
+                        header("Location: " . $CFG->wwwroot.$USER->username.'/communities/owned');
                         exit;
                     //}
                 //}

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 /** Set the display object method for a given module.
@@ -65,7 +65,7 @@ function display_run_displayobjectannotations($object, $object_type, $view = 'fu
 	if (isset($CFG->displayobjectannotationfunctions[$object_type]))
 	{
 		foreach ($CFG->displayobjectannotationfunctions[$object_type] as $function)
-		{ 
+		{
 			if (is_callable($function))
 			{
 				$result .= $function($object, $object_type, $view);
@@ -80,20 +80,20 @@ function display_run_displayobjectannotations($object, $object_type, $view = 'fu
 /* function RTESafe($strText) {
     //returns safe code for preloading in the RTE
     $tmpString = trim($strText);
-    
+
     //convert all types of single quotes
     $tmpString = str_replace(chr(145), chr(39), $tmpString);
     $tmpString = str_replace(chr(146), chr(39), $tmpString);
     $tmpString = str_replace("'", "&#39;", $tmpString);
-    
+
     //convert all types of double quotes
     $tmpString = str_replace(chr(147), chr(34), $tmpString);
     $tmpString = str_replace(chr(148), chr(34), $tmpString);
-    
+
     //replace carriage returns & line feeds
     $tmpString = str_replace(chr(10), " ", $tmpString);
     $tmpString = str_replace(chr(13), " ", $tmpString);
-    
+
     return $tmpString;
 } */
 
@@ -101,33 +101,33 @@ function display_input_field ($parameter) {
     // Displays different HTML depending on input field type
 
     /*
-    
+
     $parameter(
-        
+
                         0 => input name to display (for forms etc)
                         1 => data
                         2 => type of input field
                         3 => reference name (for tag fields and so on)
                         4 => ID number (if any)
                         5 => Owner
-        
+
                     )
-    
+
     */
 
     global $CFG;
     $run_result = '';
 
     if (isset($parameter) && sizeof($parameter) > 2) {
-            
+
         if (!isset($parameter[4])) {
             $parameter[4] = -1;
         }
-            
+
         if (!isset($parameter[5])) {
             $parameter[5] = $_SESSION['userid'];
         }
-            
+
         $cleanid = $parameter[0];
         if (!ereg("^[A-Za-z][A-Za-z0-9_:\\.-]*$", $cleanid)) {
             if (!ereg("^[A-Za-z]", $cleanid)) {
@@ -135,9 +135,9 @@ function display_input_field ($parameter) {
             }
             $cleanid = ereg_replace("[^A-Za-z0-9_:\\.-]", "__", $cleanid);
         }
-         
+
         switch($parameter[2]) {
-                
+
         case "text":
             $run_result .= "<input type=\"text\" name=\"".$parameter[0]."\" value=\"".htmlspecialchars(stripslashes($parameter[1]), ENT_COMPAT, 'utf-8')."\" style=\"width: 95%\" id=\"".$cleanid."\" />";
             break;
@@ -198,7 +198,7 @@ function display_input_field ($parameter) {
                     updateRTE('<?php echo $parameter[0]; ?>');
                     //updateRTEs();
                     //alert("rte1 = " + document.elggform.<?php echo $parameter[0]; ?>.value);
-                                
+
                     //change the following line to true to submit form
                     return true;
                 }
@@ -239,9 +239,9 @@ END;
             }
             break;
         }
-            
+
     }
-    
+
     return $run_result;
 }
 
@@ -257,9 +257,9 @@ function log_on_pane () {
     global $data;
 
     global $page_owner;
-    
+
     global $CFG;
-        
+
     // If this is someone else's portfolio, display the user's icon
     if ($page_owner != -1) {
         $run_result .= run("profile:user:info");
@@ -292,7 +292,7 @@ function log_on_pane () {
                 <tr>
                     <td align="right"><p>
                         <input type="hidden" name="action" value="log_on" />
-                        <label>' . __gettext("Log on") . ':<input type="submit" name="submit" value="'.__gettext("Go").'" /></label><br /><br />
+                        <!--label>' . __gettext("Log on") . ':<input type="submit" name="submit" value="'.__gettext("Go").'" /></label--><br /><br />
                         <label><input type="checkbox" name="remember" checked="checked" />
                                 ' . __gettext("Remember Login") . '</label><br />
                         <small>
@@ -301,7 +301,7 @@ function log_on_pane () {
                         </small></p>
                     </td>
                 </tr>
-            
+
             </table>
 
 '
@@ -310,7 +310,7 @@ function log_on_pane () {
         $body .= "</form>";
 
         $run_result .= $body;
-            
+
     }
 
     return $run_result;
@@ -320,28 +320,28 @@ function display_output_field ($parameter) {
     // Displays different HTML depending on input field type
 
     /*
-    
+
     $parameter(
-        
+
                         0 => input name to display (for forms etc)
                         1 => data
                         2 => type of input field
                         3 => reference name (for tag fields and so on)
                         4 => ID number (if any)
                         5 => Owner (if not specified, current $page_owner is assumed)
-        
+
                     )
-    
+
     */
-    
+
     global $db;
     global $page_owner;
     global $CFG;
 
     $run_result = '';
-    
+
     if (isset($parameter) && sizeof($parameter) > 1) {
-        
+
         if (!isset($parameter[4])) {
             $parameter[4] = -1;
         }
@@ -352,9 +352,9 @@ function display_output_field ($parameter) {
                 $parameter[5] = -1;
             }
         }
-        
+
         switch($parameter[1]) {
-                
+
         case "icq":
             $run_result = "<img src=\"http://web.icq.com/whitepages/online?icq=".htmlspecialchars(stripslashes($parameter[0]), ENT_COMPAT, 'utf-8')."&amp;img=5\" height=\"18\" width=\"18\" />  <b>".htmlspecialchars(stripslashes($parameter[0]), ENT_COMPAT, 'utf-8')."</b> (<a href=\"http://wwp.icq.com/scripts/search.dll?to=".htmlspecialchars(stripslashes($parameter[0]), ENT_COMPAT, 'utf-8')."\">" . __gettext("Add User") . "</a>, <a href=\"http://wwp.icq.com/scripts/contact.dll?msgto=".htmlspecialchars(stripslashes($parameter[0]), ENT_COMPAT, 'utf-8')."\">". __gettext("Send Message") ."</a>)";
             break;
@@ -373,7 +373,7 @@ function display_output_field ($parameter) {
             $run_result = nl2br(stripslashes($parameter[0]));
             break;
         case "keywords":
-            /* 
+            /*
             $keywords = stripslashes($parameter[0]);
             preg_match_all("/\[\[([A-Za-z0-9 ]+)\]\]/i",$keywords,$keyword_list);
             $keyword_list = $keyword_list[1];
@@ -395,7 +395,7 @@ function display_output_field ($parameter) {
                     }
                 }
             }
-            $run_result = $keywords; 
+            $run_result = $keywords;
             */
             $where = run("users:access_level_sql_where",$_SESSION['userid']);
             $keywords = "";
@@ -446,13 +446,13 @@ function displaymenu_top () {
     global $PAGE;
 
     if (logged_on == 1) {
-        
+
         return templates_draw(array(
                                     'context' => 'topmenu',
                                     'menuitems' => menu_join('', $PAGE->menu_top)
                                     )
                               );
-        
+
     }
 
     return '';
@@ -477,13 +477,13 @@ function displaymenu_sub () {
     global $PAGE;
 
     if (logged_on == 1) {
-        
+
         return templates_draw(array(
                                     'context' => 'submenu',
                                     'menuitems' => menu_join('', $PAGE->menu_sub)
                                     )
                               );
-        
+
     }
 
     return '';
@@ -492,13 +492,13 @@ function displaymenu_sub () {
 function displaymenu_user () {
 
     if (logged_on == 1) {
-        
+
         return templates_draw(array(
                                     'context' => 'menu',
                                     'menuitems' => menu_join('', $PAGE->menu_user)
                                     )
                               );
-        
+
     }
 
     return '';
@@ -515,7 +515,7 @@ function main () {
     global $messages;
     global $data;
 
-            
+
     // Log on pane
     $function['display:log_on_pane'][] = path . "units/display/function_log_on_pane.php";
     //$function['display:sidebar'][] = path . "units/display/function_log_on_pane.php";

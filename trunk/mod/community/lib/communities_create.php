@@ -16,25 +16,53 @@
 
     $title = __gettext("Create a new community"); // gettext variable
     $communityName = __gettext("Community name:"); // gettext variable
-    $communityUsername = __gettext("Username for community (forms part of the community website address):"); // gettext variable
     $buttonValue = __gettext("Create"); // gettext variable
+    $description = __gettext("Description:"); // gettext variable
+    $email = __gettext("Email:"); // gettext variable
+    $city = __gettext("City:"); // gettext variable
 
-    $fields = templates_draw(array('context' => 'databox1',
+    /*$fields = templates_draw(array('context' => 'databox1',
                                    'name' => $communityName,
                                    'column1' => "<input type=\"text\" name=\"comm_name\" value=\"$comm_name\" size=\"50\"/>"
                                    )
-                            );
-    /*$fields.= templates_draw(array('context' => 'databox1',
-                                   'name' => $communityUsername,
-                                   'column1' => "<input type=\"text\" name=\"comm_username\" value=\"$comm_username\" maxlength=\"12\"/>"
-                                   )
                             );*/
+
+
+	$fields .= templates_draw(array(
+                                   'context' => 'databox1',
+                                   'name' => $communityName,
+                                   'column1' => display_input_field(array("comm_name","","text"))
+                            )
+                            );
+
+    $fields .= templates_draw(array(
+                                   'context' => 'databox1',
+                                   'name' => $description,
+                                   'column1' => display_input_field(array("comm_description","","mediumtext"))
+                            )
+                            );
+
+	$fields .= templates_draw(array(
+                                   'context' => 'databox1',
+                                   'name' => $email,
+                                   'column1' => display_input_field(array("comm_email","","text"))
+                            )
+                            );
+
+	$fields .= templates_draw(array(
+                                   'context' => 'databox1',
+                                   'name' => $city,
+                                   'column1' => display_input_field(array("comm_city","","text"))
+                            )
+                            );
+
     $run_result .= templates_draw(array('context'=>"community_create",
                                         'title'=> $title,
                                         'form_fields'=> $fields,
                                         'button' => $buttonValue
                                         )
                                 );
+
     }
 
 ?>

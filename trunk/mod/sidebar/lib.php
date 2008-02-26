@@ -122,7 +122,7 @@ function sidebar_add($weight, $id, $body, $userdetails=false, $label=null, $clas
     global $PAGE;
 
     if (isset($PAGE->sidebar_locked) && !in_array($id, $PAGE->sidebar_locked)) {
-        return; // no add anything 
+        return; // no add anything
     }
 
     if (!isset($PAGE->sidebar[$weight])) {
@@ -149,7 +149,7 @@ function sidebar_add($weight, $id, $body, $userdetails=false, $label=null, $clas
  * Removes a block or blocks from sidebar
  *
  * @param mixed $id block identificator to remove, string or array of id's
- * @param bool $overrideall if all blocks will be removed except provided $id 
+ * @param bool $overrideall if all blocks will be removed except provided $id
  */
 function sidebar_remove($id, $overrideall=false) {
     global $PAGE;
@@ -205,7 +205,7 @@ function sidebar_remove($id, $overrideall=false) {
             foreach ($PAGE->sidebar as $w => $blocks) {
                 if (!isset($sidebar[$w])) {
                     $sidebar[$w] = array();
-                } 
+                }
 
                 foreach ($blocks as $block) {
                     if ($block['id'] == $id) {
@@ -229,7 +229,7 @@ function sidebar_remove($id, $overrideall=false) {
 /**
  * Get all blocks registered
  *
- * @return mixed 
+ * @return mixed
  */
 function sidebar_get_blocks() {
     global $PAGE;
@@ -279,7 +279,7 @@ function sidebar_display() {
                         'context' => 'sidebar:block',
                         'id' => $block['id'],
                         'class' => $block['class'],
-                        'body' => $block_body, 
+                        'body' => $block_body,
                         ));
                 }
             }

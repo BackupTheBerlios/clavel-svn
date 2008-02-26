@@ -37,17 +37,13 @@
 		</div><!-- close content-holder inner -->
 	</div><!-- close content-holder div -->
 
-
-</div><!-- close container div -->
-
-
 <div id="footer"><!-- start footer -->
 	<div id="footer-inner">
 		 <a href="{{url}}content/terms.php">Terminos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Politica de Privacidad</a>&nbsp;|&nbsp;<a href="{{url}}content/About">Acerca de {{sitename}}</a>
 		{{perf}}
 	</div>
 </div><!-- end footer -->
-
+</div><!-- close container div -->
 
 </body>
 </html>

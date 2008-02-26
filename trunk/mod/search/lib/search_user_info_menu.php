@@ -7,7 +7,7 @@
     $title = __gettext("Search");
 
     $randomTags = __gettext("Random tags"); // gettext variable
-    
+
     $body = <<< END
         <form id="searchform" name="searchform" action="{$CFG->wwwroot}search/all.php">
             <script language="JavaScript" type="text/javascript">

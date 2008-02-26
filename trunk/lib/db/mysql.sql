@@ -323,6 +323,22 @@ INSERT INTO `prefix_users` VALUES (0, 'news', '5f4dcc3b5aa765d61d8327deb882cf99'
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `community_details`
+--
+
+CREATE TABLE `prefix_community_details` (
+  `ident` int(10) unsigned NOT NULL auto_increment,
+  `owner` int(11) NOT NULL default '-1' COMMENT '-> community owner',
+  `description` text NOT NULL,
+  `email` varchar(128) NOT NULL default '',
+  `city` varchar(128) NOT NULL default '' COMMENT 'city',
+  PRIMARY KEY (`ident`),
+  KEY `owner` (`owner`)
+) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `weblog_comments`
 --
 
