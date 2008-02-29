@@ -113,7 +113,7 @@ msgstr "Ver Mensajes"
 
 #: lib.php:45
 msgid "Compose"
-msgstr "Redactar mensaje"
+msgstr "Redactar Mensaje"
 
 #: lib.php:50
 msgid "Sent Messages"

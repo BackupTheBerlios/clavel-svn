@@ -18,8 +18,8 @@
     $communityName = __gettext("Community name:"); // gettext variable
     $buttonValue = __gettext("Create"); // gettext variable
     $description = __gettext("Description:"); // gettext variable
-    $email = __gettext("Email:"); // gettext variable
-    $city = __gettext("City:"); // gettext variable
+    $email = __gettext("Email -- Opcional:"); // gettext variable
+    $city = __gettext("City -- Opcional:"); // gettext variable
 
     /*$fields = templates_draw(array('context' => 'databox1',
                                    'name' => $communityName,

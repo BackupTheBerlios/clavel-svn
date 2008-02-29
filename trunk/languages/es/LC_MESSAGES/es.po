@@ -510,6 +510,7 @@ msgstr "Entrar"
 #: mod/admin/lib/admin_banned_users.php:18 mod/admin/lib/admin_main.php:84
 #: mod/admin/lib/admin_users_add.php:20 mod/admin/lib/admin_users.php:68
 #: mod/display/lib/function_log_on_pane.php:34 mod/toolbar/lib.php:41
+#: mod/community/invite.php:59
 msgid "Username"
 msgstr "Nombre de usuario"
 
@@ -1710,11 +1711,9 @@ msgstr "Contenido inapropidado"
 
 #: mod/admin/lib/display_content_flag_form.php:24
 msgid ""
-"To mark this content as obscene or inappropriate, click the 'Flag' button "
-"and an administrator will view it in due course."
+"To mark this content as obscene or inappropriate, click the 'Flag' button and an administrator will view it in due course."
 msgstr ""
-"Para marcar este contenido como obsceno o inapropiado, haga click en el botÛn "
-"'Reportar' y un administrador lo ver√° cuando corresponda."
+"Para marcar este contenido como obsceno o inapropiado, haga click en el bot√≥n 'Reportar' y un administrador lo ver√° cuando corresponda."
 
 #: mod/admin/lib/display_content_flag_form.php:25
 msgid "Flag"
@@ -1814,14 +1813,14 @@ msgstr "Quitar bandera interesante"
 
 #: mod/blog/lib/display_interesting_post_form.php:25
 msgid "Keep track of this post"
-msgstr "ArtÌculos interesantes"
+msgstr "Art√≠-culos interesantes"
 
 #: mod/blog/lib/display_interesting_post_form.php:26
 msgid ""
 "Click the 'Mark interesting' button to monitor new comments on your 'recent "
 "activity' page."
 msgstr ""
-"Haga click en el botÛn 'Interante' si desea para estar pendiente de nuevos commentarios."
+"Haga click en el bot√≥n 'Interante' si desea para estar pendiente de nuevos commentarios."
 
 #: mod/blog/lib/display_interesting_post_form.php:27
 msgid "Mark interesting"
@@ -1961,7 +1960,7 @@ msgstr ""
 msgid ""
 "Your post wasn't added to the blog. This was probably because it was empty, "
 "or you don't currently have permission to post in this blog."
-msgstr "El artÌculo no pudo ser publicado. Esto es probablemente porque est· vacio o no tiene permiso para publicar nuevos artÌculos."
+msgstr "El art√≠culo no pudo ser publicado. Esto es probablemente porque est√° vacio o no tiene permiso para publicar nuevos art√≠culos."
 
 #: mod/blog/lib/weblogs_actions.php:95
 msgid "The weblog post has been modified."
@@ -2338,10 +2337,6 @@ msgstr "Filtro"
 msgid "Name"
 msgstr "Nombre"
 
-#: mod/community/invite.php:59
-msgid "Username"
-msgstr "Nombre"
-
 #: mod/browser/index.php:139
 msgid "Description"
 msgstr "Descripci√≥n"
@@ -2715,15 +2710,15 @@ msgstr "Nombre de la comunidad:"
 
 #: mod/community/lib/communities_create.php:18
 msgid "Description:"
-msgstr "DescripciÛn:"
+msgstr "Descripci√≥n:"
 
 #: mod/community/lib/communities_create.php:18
 msgid "Email -- Opcional:"
-msgstr "Correo electrÛnico:"
+msgstr "Correo electr√≥nico -- Opcional:"
 
 #: mod/community/lib/communities_create.php:18
 msgid "City -- Opcional:"
-msgstr "Ciudad:"
+msgstr "Ciudad -- Opcional:"
 
 #: mod/community/lib/communities_create.php:19
 msgid "Username for community (forms part of the community website address):"
@@ -2968,6 +2963,14 @@ msgstr ""
 msgid "Owned Communities"
 msgstr "Comunidades propias"
 
+#: mod/community/lib.php:134 
+msgid "My Communities"
+msgstr "Mis comunidades"
+
+#: mod/community/lib.php:134 
+msgid "Create a Community"
+msgstr "Crear comunidad"
+
 #: mod/community/lib.php:289
 #, php-format
 msgid "Community %s was returned to the news user."
@@ -3124,7 +3127,7 @@ msgstr "¬øQui√©n soy?"
 #: mod/profile/lib/function_editfield_defaults.php:37
 #: mod/profile/profile.config.php:77
 msgid "A short introduction for you."
-msgstr "Una breve introducci√≥n para ti."
+msgstr "Una breve introducci√≥n."
 
 #: mod/community/profile.config.php:78 mod/profile/profile.config.php:85
 msgid "Introduction"
@@ -3150,7 +3153,7 @@ msgstr "Para uso en el perfil."
 #: mod/profile/lib/function_editfield_defaults.php:43
 #: mod/profile/profile.config.php:112
 msgid "Street address"
-msgstr "DirecciÛn"
+msgstr "Direcci√≥n"
 
 #: mod/community/profile.config.php:108 mod/community/profile.config.php:120
 #: mod/community/profile.config.php:133 mod/community/profile.config.php:145
@@ -3313,7 +3316,7 @@ msgstr "Ocupaci√≥n"
 #: mod/profile/profile.config.php:367 mod/profile/profile.config.php:380
 #: mod/profile/profile.config.php:390 mod/profile/profile.config.php:410
 msgid "Employment"
-msgstr "OcupaciÛn"
+msgstr "Ocupaci√≥n"
 
 #: mod/community/profile.config.php:341
 #: mod/profile/lib/function_editfield_defaults.php:96
@@ -3347,7 +3350,7 @@ msgstr "Me gustar√≠a..."
 
 #: mod/community/profile.config.php:388 mod/profile/profile.config.php:399
 msgid "Your goals, separated with commas."
-msgstr "Tus objetivos, separados por comas."
+msgstr "Sus objetivos, separados por comas."
 
 #: mod/community/profile.config.php:395
 #: mod/profile/lib/function_editfield_defaults.php:104
@@ -5113,7 +5116,7 @@ msgstr ""
 "\n"
 "\t%s\n"
 "\n"
-"Su direcciÛn de correo electrÛnico no fue dada a terceras parte.\n"
+"Su direcci√≥n de correo electr√≥nico no fue dada a terceras parte.\n"
 "\n"
 "Saludos,\n"
 "\n"
@@ -6903,7 +6906,7 @@ msgstr "Comentarios p√∫blicos: "
 
 #: mod/users/lib/userdetails_edit.php:122
 msgid "Receive email notifications"
-msgstr "Recibir notificaciones al correo electrÛnico"
+msgstr "Recibir notificaciones al correo electr√≥nico"
 
 #: mod/users/lib/userdetails_edit.php:123
 msgid ""
