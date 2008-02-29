@@ -16,7 +16,7 @@ if (logged_on) {
         $f = new StdClass;
         $f->name = trim(optional_param('new_folder_name'));
         $f->access = trim(optional_param('new_folder_access'));
-        if (!empty($f->access) && !empty($folder) && permissions_check("files",$page_owner)) {
+        if (!empty($f->name) && !empty($f->access) && !empty($folder) && permissions_check("files",$page_owner)) {
             $f->parent = $folder;
             $f->files_owner = $page_owner;
             $f->owner = $USER->ident;
@@ -28,11 +28,13 @@ if (logged_on) {
                 $value = trim(optional_param('new_folder_keywords'));
                 insert_tags_from_string ($value, 'folder', $insert_id, $f->access, $f->owner);
                 plugin_hook("folder","publish",$f);
+                //$redirect_url = $CFG->wwwroot . $ul_username . "/files/";
                 $messages[] = __gettext("Your folder was created.");
             }
         } else {
             $messages[] = __gettext("Could not create folder. Perhaps the folder name was blank?");
         }
+        header("Location: " . $CFG->wwwroot.$USER->username.'/files/');
         break;
 
         // Upload a new file
@@ -96,10 +98,11 @@ if (logged_on) {
                             plugin_hook("file","publish",$f);
                             $rssresult = run("files:rss:publish", array($page_owner, false));
                             $rssresult = run("profile:rss:publish", array($page_owner, false));
-                            $messages[] = __gettext("The photo was successfully uploaded.");
+                            //$messages[] = __gettext("The photo was successfully uploaded.");
                         }
                     }
                 }
+                $messages[] = __gettext("The photo was successfully uploaded.");
             } else {
                 $messages[] = $um->get_errors();
             }

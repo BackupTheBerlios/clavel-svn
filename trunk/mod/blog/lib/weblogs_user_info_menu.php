@@ -7,7 +7,7 @@ $sitename = sitename;
 
 if (logged_on && $page_owner == $_SESSION['userid']) {
 
-    $title = __gettext("Recent Activity");
+    /*$title = __gettext("Recent Activity");
     $body = "<ul><li>";
     $body .= "<a href=\"".url."_activity/\">".__gettext("View your activity") . "</a></li></ul>";
 
@@ -18,7 +18,7 @@ if (logged_on && $page_owner == $_SESSION['userid']) {
                                         'body' => $body,
                                         )
                                   );
-            $run_result .= "</li>";
+            $run_result .= "</li>";*/
 
 } else {
 

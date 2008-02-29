@@ -269,7 +269,7 @@ msgstr ""
 #~ "éstos pinchando en <a href=\""
 
 #~ msgid "_activity/\">view your activity</a>."
-#~ msgstr "_actividad/\">visualizar tu actividad</a>."
+#~ msgstr "_actividad/\">visualizar actividades</a>."
 
 #~ msgid "Receive messages: "
 #~ msgstr "Recibir mensajes: "
@@ -523,7 +523,7 @@ msgid "Log on"
 msgstr "Entrar"
 
 #: mod/toolbar/lib.php
-#: lib/displaylib.php:295 
+#: lib/displaylib.php:295
 #: mod/display/lib/function_log_on_pane.php:44
 msgid "Go"
 msgstr "Buscar"
@@ -706,7 +706,7 @@ msgstr ""
 
 #: lib/templates.php:71 mod/template/lib.php:15
 msgid "Change theme"
-msgstr "Cambiar tema"
+msgstr "Cambiar apariencia"
 
 #: lib/templates.php:97 mod/admin/index.php:46
 #: mod/elggadmin/lib/elggadmin.inc.php:38
@@ -1121,7 +1121,7 @@ msgid ""
 "may not have activated your account."
 msgstr ""
 "Contraseña o nombre de usuario no reconocidos. El sistema no pudo iniciar su "
-"sesión o puede que no hayas activado tu cuenta."
+"sesión o puede que no haya activado tu cuenta."
 
 #: lib/userlib.php:27 login/index.php:51 mod/invite/wrongpassword.php:51
 msgid ""
@@ -1706,19 +1706,19 @@ msgstr ""
 
 #: mod/admin/lib/display_content_flag_form.php:23
 msgid "Flag content"
-msgstr "Contenido de bandera"
+msgstr "Contenido inapropidado"
 
 #: mod/admin/lib/display_content_flag_form.php:24
 msgid ""
 "To mark this content as obscene or inappropriate, click the 'Flag' button "
 "and an administrator will view it in due course."
 msgstr ""
-"Para marcar este contenido como obsceno o inapropiado, pincha el botón de "
-"'Bandera' y un administrador lo verá cuando corresponda."
+"Para marcar este contenido como obsceno o inapropiado, haga click en el bot�n "
+"'Reportar' y un administrador lo verá cuando corresponda."
 
 #: mod/admin/lib/display_content_flag_form.php:25
 msgid "Flag"
-msgstr "Bandera"
+msgstr "Reportar"
 
 #: mod/admin/lib.php:22 mod/users/index.php:18
 msgid "Edit user details"
@@ -1814,19 +1814,18 @@ msgstr "Quitar bandera interesante"
 
 #: mod/blog/lib/display_interesting_post_form.php:25
 msgid "Keep track of this post"
-msgstr "Hacer un seguimiento de este post"
+msgstr "Art�culos interesantes"
 
 #: mod/blog/lib/display_interesting_post_form.php:26
 msgid ""
 "Click the 'Mark interesting' button to monitor new comments on your 'recent "
 "activity' page."
 msgstr ""
-"Pincha el botón 'Señalar como interesante' para monitorizar los nuevos "
-"comentarios en tu página de 'actividad reciente'."
+"Haga click en el bot�n 'Interante' si desea para estar pendiente de nuevos commentarios."
 
 #: mod/blog/lib/display_interesting_post_form.php:27
 msgid "Mark interesting"
-msgstr "Señalar como interesante"
+msgstr "Interesante"
 
 #: mod/blog/lib/function_rss_publish.php:35 mod/blog/lib.php:366
 msgid "Weblog"
@@ -1875,7 +1874,7 @@ msgstr "Visualizar Blog"
 
 #: mod/blog/lib.php:97
 msgid "Archive"
-msgstr "Archivo"
+msgstr "Historial"
 
 #: mod/blog/lib.php:101
 msgid "Friends' blogs"
@@ -1962,7 +1961,7 @@ msgstr ""
 msgid ""
 "Your post wasn't added to the blog. This was probably because it was empty, "
 "or you don't currently have permission to post in this blog."
-msgstr ""
+msgstr "El art�culo no pudo ser publicado. Esto es probablemente porque est� vacio o no tiene permiso para publicar nuevos art�culos."
 
 #: mod/blog/lib/weblogs_actions.php:95
 msgid "The weblog post has been modified."
@@ -2149,9 +2148,8 @@ msgid ""
 "post you have just made. This will make it easier for others to search and "
 "find your posting."
 msgstr ""
-"Las palabras clave comúnmente llamadas 'Etiquetas' son palabras que "
-"representan el artículo del blog que acabas de crear. Esto simplificará la "
-"tarea de otros a la hora de buscar y encontrar tu artículo."
+"Son palabras que representan el artículo del blog que acaba de crear. Esto simplificará la "
+"tarea de otros a la hora de buscar y encontrar el artículo."
 
 #: mod/blog/lib/weblogs_posts_add.php:43
 #: mod/blog/lib/weblogs_posts_edit.php:55 mod/file/lib/add_file.php:37
@@ -2204,7 +2202,7 @@ msgstr "Actividad reciente"
 
 #: mod/blog/lib/weblogs_user_info_menu.php:12
 msgid "View your activity"
-msgstr "Ver tu actividad"
+msgstr "Ver actividad"
 
 #: mod/blog/lib/weblogs_user_info_menu.php:36
 msgid "Personal blog"
@@ -2338,6 +2336,10 @@ msgstr "Filtro"
 
 #: mod/browser/index.php:138 mod/community/invite.php:59
 msgid "Name"
+msgstr "Nombre"
+
+#: mod/community/invite.php:59
+msgid "Username"
 msgstr "Nombre"
 
 #: mod/browser/index.php:139
@@ -2540,7 +2542,11 @@ msgid "Invite people to this community."
 msgstr "Invita a participar en esta Comunidad."
 
 msgid "Name or username: "
-msgstr "Nombre o Nombre de Usuario: "
+msgstr "Nombre de Usuario: "
+
+#: mod/community/lib.php:90
+msgid "Back to communities"
+msgstr "Volver a comunidades"
 
 #: mod/community/invite.php:30 mod/search/lib/search_user_info_menu.php:7
 #: mod/toolbar/lib.php:63
@@ -2565,7 +2571,7 @@ msgstr ""
 
 #: mod/community/invite.php:100
 msgid "The user has been invited."
-msgstr ""
+msgstr "El usuario ha sido invitado."
 
 #: mod/community/lib/communities_actions.php:23
 msgid ""
@@ -2707,6 +2713,18 @@ msgstr "Crear una nueva comunidad"
 msgid "Community name:"
 msgstr "Nombre de la comunidad:"
 
+#: mod/community/lib/communities_create.php:18
+msgid "Description:"
+msgstr "Descripci�n:"
+
+#: mod/community/lib/communities_create.php:18
+msgid "Email -- Opcional:"
+msgstr "Correo electr�nico:"
+
+#: mod/community/lib/communities_create.php:18
+msgid "City -- Opcional:"
+msgstr "Ciudad:"
+
 #: mod/community/lib/communities_create.php:19
 msgid "Username for community (forms part of the community website address):"
 msgstr "Nombre de Usuario para la Comunidad (Forma parte de la dirección Web de la Comunidad):"
@@ -2732,7 +2750,7 @@ msgid ""
 "button underneath a community's icon. You can find communities you're "
 "interested in by using the search function."
 msgstr ""
-"¡No tiene ninguna comunidad en lista! Para participar en una comunidad, "
+"No tiene ninguna comunidad en lista. Para participar en una comunidad, "
 "haga click en el botón 'entrar' bajo el icono de una comunidad. Puede encontrar "
 "comunidades en las que esté interesado usando la función de búsqueda."
 
@@ -3132,7 +3150,7 @@ msgstr "Para uso en el perfil."
 #: mod/profile/lib/function_editfield_defaults.php:43
 #: mod/profile/profile.config.php:112
 msgid "Street address"
-msgstr "Dirección postal"
+msgstr "Direcci�n"
 
 #: mod/community/profile.config.php:108 mod/community/profile.config.php:120
 #: mod/community/profile.config.php:133 mod/community/profile.config.php:145
@@ -3202,13 +3220,13 @@ msgstr "Teléfono móvil"
 #: mod/profile/lib/function_editfield_defaults.php:69
 #: mod/profile/profile.config.php:222
 msgid "Official website address"
-msgstr "Dirección oficial de la página web"
+msgstr "Dirección de la página web"
 
 #: mod/community/profile.config.php:215
 #: mod/profile/lib/function_editfield_defaults.php:69
 #: mod/profile/profile.config.php:225
 msgid "The URL to your official website, if you have one."
-msgstr "La URL a tu página web oficial, si la tienes."
+msgstr "La URL a su página web oficial."
 
 #: mod/community/profile.config.php:225
 #: mod/profile/lib/function_editfield_defaults.php:72
@@ -3295,7 +3313,7 @@ msgstr "Ocupación"
 #: mod/profile/profile.config.php:367 mod/profile/profile.config.php:380
 #: mod/profile/profile.config.php:390 mod/profile/profile.config.php:410
 msgid "Employment"
-msgstr "Empleo"
+msgstr "Ocupaci�n"
 
 #: mod/community/profile.config.php:341
 #: mod/profile/lib/function_editfield_defaults.php:96
@@ -4460,8 +4478,7 @@ msgid ""
 "%s has elected to moderate friendship requests. Your request has been added "
 "to their moderation queue."
 msgstr ""
-"%s ha decidido restringir las solicitudes de contacto. Tu solicitud ha sido "
-"añadida a su cola de restricciones."
+"Su solicitud de contacto ha sido enviada a %s."
 
 #: mod/friend/lib/friends_actions.php:40
 msgid ""
@@ -4669,15 +4686,15 @@ msgstr "Tu red"
 
 #: mod/friend/lib.php:36 mod/friend/lib/profile_friends.php:19
 #: mod/profile/lib.php:348
-msgid "Friends"
-msgstr "Contactos"
+msgid "My friends"
+msgstr "Mis contactos"
 
 #: mod/friend/lib.php:40
 msgid "Friend of"
 msgstr "Amigo de"
 
 #: mod/friend/lib/user_friendship_requests.php
-#: mod/friend/lib.php:45 
+#: mod/friend/lib.php:45
 #: mod/friend/requests.php:22
 msgid "Friendship requests"
 msgstr "Solicitudes de contacto"
@@ -4693,7 +4710,7 @@ msgstr "Ver todos los Contactos"
 
 #: mod/friend/lib/profile_friends.php:28 mod/friend/lib/user_friends.php:14
 msgid "Your Friends"
-msgstr "Tus Contactos"
+msgstr "Contactos"
 
 #: mod/friend/lib/user_friendship_requests.php:16
 msgid ""
@@ -4916,7 +4933,7 @@ msgstr "Controles de acceso"
 
 #: mod/icons/index.php:20
 msgid "Manage user icons"
-msgstr "Gestionar iconos de usuario"
+msgstr "Gestionar iconos"
 
 #: mod/icons/lib/function_actions.php:57
 msgid "Your selected icons were deleted."
@@ -5060,15 +5077,15 @@ msgstr "%s cuenta de verificación"
 
 #: mod/invite/lib/invite_actions.php:40
 msgid "They included the following message:"
-msgstr "Incluyen el siguiente mensaje:"
+msgstr "Incluye el siguiente mensaje:"
 
 #: mod/invite/lib/invite_actions.php:42 mod/invite/lib/invite_actions.php:43
 msgid "has invited you to join"
-msgstr "te ha invitado a participar"
+msgstr "lo ha invitado a participar"
 
 #: mod/invite/lib/invite_actions.php:42
 msgid "a learning landscape system."
-msgstr "un sistema de entorno de aprendizaje."
+msgstr "una Red Social."
 
 #: mod/invite/lib/invite_actions.php:46
 #, php-format
@@ -5096,8 +5113,7 @@ msgstr ""
 "\n"
 "\t%s\n"
 "\n"
-"Tu dirección email no fue dada a ningúna tercera parte, y será removida de "
-"nuestro sistema en siete días.\n"
+"Su direcci�n de correo electr�nico no fue dada a terceras parte.\n"
 "\n"
 "Saludos,\n"
 "\n"
@@ -5174,7 +5190,7 @@ msgid ""
 "you supplied. You have been sent an email containing these details for "
 "reference purposes."
 msgstr ""
-"¡Su cuenta se ha creado! Para iniciar sesión, primero debe activar su cuenta "
+"Su cuenta se ha creado. Para iniciar sesión, primero debe activar su cuenta "
 "por medio del enlace enviado a "
 "su correo electrónico. Luego puede ingresar utilizando el nombre de "
 "usuario y contraseña. "
@@ -5292,22 +5308,23 @@ msgid ""
 msgstr ""
 "Gracias por unirse a %s!\n"
 "\n"
-"Sus nombre de usuario y contraseña de %s son:\n"
+"Su nombre de usuario y contraseña de %s son:\n"
 "\n"
 "\t"
 
 #: mod/invite/lib/invite_join_mailwithpass.php:16
+msgid "Username: %s\n"
+msgstr "Nombre de usuario: %s\n"
 
-msgid ""
-"Username: %s\n"
-"\tPassword: %s\n"
-"\n"
-"To active your acount, please visit the following url: %s"
-msgstr ""
-"Nombre de usuario: %s\n"
-"\tContraseña: %s\n"
-"\n"
-"Para activar su cuenta, por favor visite: %s"
+#: mod/invite/lib/invite_join_mailwithpass.php:16
+
+msgid "\tPassword: %s\n"
+msgstr "Nombre de usuario: %s\n"
+
+#: mod/invite/lib/invite_join_mailwithpass.php:16
+
+msgid "To active your acount, please visit the following url: %s \n\n"
+msgstr "Para activar su cuenta, por favor visite: %s \n\n"
 
 #: mod/invite/lib/invite_join.php:25
 msgid "register page"
@@ -6877,8 +6894,7 @@ msgid ""
 "vulnerable to spam."
 msgstr ""
 "Indica 'sí' si quiere que cualquiera pueda hacer comentarios sobre sus "
-"recursos (por defecto sólo los usuarios conectados en la sesión pueden). Tenga "
-"en cuenta que esto hará que sea más vulnerable al spam."
+"recursos (por defecto sólo los usuarios conectados en la sesión pueden)."
 
 #: mod/users/lib/userdetails_edit.php:108
 #: mod/users/lib/userdetails_edit.php:115
@@ -6887,7 +6903,7 @@ msgstr "Comentarios públicos: "
 
 #: mod/users/lib/userdetails_edit.php:122
 msgid "Receive email notifications"
-msgstr "Recibir notificaciones por email"
+msgstr "Recibir notificaciones al correo electr�nico"
 
 #: mod/users/lib/userdetails_edit.php:123
 msgid ""
@@ -6896,10 +6912,9 @@ msgid ""
 "as a friend and more. You can always view these online as part of your "
 "recent activity page."
 msgstr ""
-"Pon esto en 'sí' si quiere recibir copia por email de cualquiera de los "
+"Activelo si quiere recibir copia por email de cualquiera de los "
 "mensajes que reciba. Esto incluye comentarios del blog, notificaciones "
-"cuando alguien lo agregue como contacto,...También puede ver todo esto en su "
-"página de actividad reciente."
+"y cuando alguien lo agregue como contacto."
 
 #: mod/users/lib/userdetails_edit.php:138
 #: mod/users/lib/userdetails_edit.php:145
@@ -7213,7 +7228,7 @@ msgstr "Cuenta activada"
 
 #: mod/invite/lib/activate.php
 msgid "Thank you for check your Email Address. Now your acount is active.\n\nYou can loged in %s"
-msgstr "Gracias por comprobar su correo. Ahora su cuenta esta activada. \n\nPuede ingresar en %s"
+msgstr "Gracias por comprobar su correo. Ahora su cuenta esta activada. \n\nPuede ingresar a %s"
 
 #: mod/invite/lib/password_request.php
 msgid ""

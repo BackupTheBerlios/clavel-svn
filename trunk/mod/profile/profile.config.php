@@ -5,7 +5,7 @@
         // Initial profile data
 
         /* Profile info WAS of the format:
-    
+
         $data['profile:details'][] = array(
                                                 Description,
                                                 Short / unique internal name,
@@ -16,9 +16,9 @@
                                             )
         e.g.
         $data['profile:details'][] = array(__gettext("Interests"),"interests","keywords",__gettext("Separated with commas."));
-        
+
         It is NOW of the format:
-        
+
         $obj = new stdClass;
 	$obj->name              // Description
 	$obj->internal_name     // Short / unique internal name
@@ -38,12 +38,12 @@
         $data['profile:details'][] = $obj;
 
         Additions to this data structure will input/output a corresponding FOAF field
-        
+
         $data['foaf:profile'][] = array(
                                             Short / unique internal name,
                                             Corresponding FOAF schema field
                                             "collated" or "individual" -     whether multiple data elements (eg interests)
-                                                                            should be in separate tags ("individual") or 
+                                                                            should be in separate tags ("individual") or
                                                                             in the same tag separated by commas
                                                                             (collated = default)
                                             "resource" or "enclosed" -         whether the data is an rdf:resource="" attribute
@@ -52,7 +52,7 @@
                                         )
         e.g.
         $data['foaf:profile'][] = array("interests","foaf:interest");
-        
+
         Also present is $data['vcard:profile:adr'][] for VCard ADR elements within the FOAF file
         e.g.
         $data['vcard:profile:adr'][] = array("streetaddress","vCard:Street","collated");
@@ -69,7 +69,7 @@
                                                                     "required" => false,
                                                                     "user_type" => "",
                                                                     ));*/
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Who am I?"),
                                                                     "internal_name" => "biography",
@@ -157,7 +157,7 @@
                                                                     "user_type" => "",
                                                                     ));
         $data['vcard:profile:adr'][] = array("postcode","vCard:Pcode","collated","enclosed");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Country"),
                                                                     "internal_name" => "country",
@@ -169,7 +169,7 @@
                                                                     "user_type" => "",
                                                                     ));
         $data['vcard:profile:adr'][] = array("country","vCard:Country","collated","enclosed");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Email address"),
                                                                     "internal_name" => "emailaddress",
@@ -180,7 +180,7 @@
                                                                     "required" => false,
                                                                     "user_type" => "",
                                                                     ));
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Work telephone"),
                                                                     "internal_name" => "workphone",
@@ -192,7 +192,7 @@
                                                                     "user_type" => "",
                                                                     ));
         $data['foaf:profile'][] = array("workphone","foaf:phone","individual","resource");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Home telephone"),
                                                                     "internal_name" => "homephone",
@@ -205,7 +205,7 @@
 								    "default_access" => 'PRIVATE',
                                                                     ));
         $data['foaf:profile'][] = array("homephone","foaf:phone","individual","resource");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Mobile telephone"),
                                                                     "internal_name" => "mobphone",
@@ -217,7 +217,7 @@
                                                                     "user_type" => "",
                                                                     ));
         $data['foaf:profile'][] = array("mobphone","foaf:phone","individual","resource");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Official website address"),
                                                                     "internal_name" => "workweb",
@@ -231,8 +231,8 @@
 								    "default_access" => 'PRIVATE',
                                                                     ));
         $data['foaf:profile'][] = array("workweb","foaf:workplaceHomepage","individual","resource");
-        
-        $data['profile:details'][] = (object)(array(
+
+        /*$data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Personal website address"),
                                                                     "internal_name" => "personalweb",
                                                                     "field_type" => "web",
@@ -242,10 +242,10 @@
                                                                     "required" => false,
                                                                     "col2" => true,
                                                                     "user_type" => "",
-                                                                    ));
+                                                                    ));*/
         $data['foaf:profile'][] = array("personalweb","foaf:homepage","individual","resource");
-        
-        $data['profile:details'][] = (object)(array(
+
+        /*$data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("ICQ number"),
                                                                     "internal_name" => "icq",
                                                                     "field_type" => "icq",
@@ -254,9 +254,9 @@
                                                                     "invisible" => false,
                                                                     "required" => false,
                                                                     "user_type" => "",
-                                                                    ));
+                                                                    ));*/
         $data['foaf:profile'][] = array("icq","foaf:icqChatID","individual","enclosed");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("MSN chat"),
                                                                     "internal_name" => "msn",
@@ -268,8 +268,8 @@
                                                                     "user_type" => "",
                                                                     ));
         $data['foaf:profile'][] = array("msn","foaf:msnChatID","individual","enclosed");
-        
-        $data['profile:details'][] = (object)(array(
+
+        /*$data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("AIM screenname"),
                                                                     "internal_name" => "aim",
                                                                     "field_type" => "aim",
@@ -278,9 +278,9 @@
                                                                     "invisible" => false,
                                                                     "required" => false,
                                                                     "user_type" => "",
-                                                                    ));
+                                                                    ));*/
         $data['foaf:profile'][] = array("aim","foaf:aimChatID","individual","enclosed");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Skype username"),
                                                                     "internal_name" => "skype",
@@ -291,8 +291,8 @@
                                                                     "required" => false,
                                                                     "user_type" => "",
                                                                     ));
-        
-        $data['profile:details'][] = (object)(array(
+
+        /*$data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Jabber username"),
                                                                     "internal_name" => "jabber",
                                                                     "field_type" => "text",
@@ -301,9 +301,9 @@
                                                                     "invisible" => false,
                                                                     "required" => false,
                                                                     "user_type" => "",
-                                                                    ));
+                                                                    ));*/
         $data['foaf:profile'][] = array("jabber","foaf:jabberChatID","individual","enclosed");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Interests"),
                                                                     "internal_name" => "interests",
@@ -317,7 +317,7 @@
                                                                     ));
         $data['foaf:profile'][] = array("interests","foaf:interest","individual","resource");
         // $data['foaf:profile'][] = array("interests","bio:keywords","collated","enclosed");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Likes"),
                                                                     "internal_name" => "likes",
@@ -348,7 +348,7 @@
                                                                     "required" => false,
                                                                     "user_type" => "",
                                                                     ));
-        $data['profile:details'][] = (object)(array(
+        /*$data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Industry"),
                                                                     "internal_name" => "industry",
                                                                     "field_type" => "keywords",
@@ -357,8 +357,8 @@
                                                                     "invisible" => false,
                                                                     "required" => false,
                                                                     "user_type" => "",
-                                                                    ));
-        
+                                                                    ));*/
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Company / Institution"),
                                                                     "internal_name" => "organisation",
@@ -371,7 +371,7 @@
                                                                     "user_type" => "",
                                                                     ));
         $data['foaf:profile'][] = array("organisation","foaf:organization","collated","enclosed");
-        
+
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Job Title"),
                                                                     "internal_name" => "jobtitle",
@@ -442,7 +442,7 @@
                                                                     "required" => false,
                                                                     "user_type" => "",
                                                                     ));
-        $data['profile:details'][] = (object)(array(
+        /*$data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Degree"),
                                                                     "internal_name" => "universitydegree",
                                                                     "field_type" => "text",
@@ -451,7 +451,7 @@
                                                                     "invisible" => false,
                                                                     "required" => false,
                                                                     "user_type" => "",
-                                                                    ));
+                                                                    ));*/
         $data['profile:details'][] = (object)(array(
                                                                     "name" => __gettext("Main Skills"),
                                                                     "internal_name" => "skills",

@@ -31,7 +31,7 @@ $p = optional_param('password');
 if (!empty($l) && !empty($p)) {
     $ok = authenticate_account($l, $p);
     if ($ok) {
-        $messages[] = __gettext("You have been logged on.");
+        //$messages[] = __gettext("You have been logged on. =P");
         if (md5($p) == md5("password")) {
             $messages[] = __gettext("The password for this account is extremely insecure and represents a major security risk. You should change it immediately.");
         }

@@ -15,7 +15,7 @@ if(is_array($parameter)){
 
   $run_result= sprintf(__gettext("Thanks for joining %s!\n\nFor your records, your username and password in %s are:\n\n\t")
                                         .__gettext("Username: %s\n\tPassword: %s\n\n")
-										.__gettext("To active your acount, please visit the following url: %s")
+										.__gettext("To active your acount, please visit the following url: %s \n\n")
                                         .__gettext("We hope you enjoy using the system.\n\nRegards,\n\nThe %s Team")
                                 ,$sitename,$sitename,$username,$displaypassword,$urlactivate,$url,$sitename);
 

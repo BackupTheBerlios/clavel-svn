@@ -78,6 +78,10 @@ function community_pagesetup() {
                                          'html' => a_href("{$CFG->wwwroot}{$username}/community/invite",
                                                            __gettext("Invite people")));
 
+      $PAGE->menu_sub[] = array( 'name' => 'community:invite',
+                                         'html' => a_href("{$CFG->wwwroot}{$USER->username}/communities",
+                                                           __gettext("Back to communities")));
+
     } else if ($usertype == "person") {
 
         if (defined("context") && context == COMMUNITY_CONTEXT) {

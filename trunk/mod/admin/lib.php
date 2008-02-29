@@ -15,14 +15,14 @@ function admin_pagesetup() {
                                     //                "Administration"));
                                     'html' => "<li><a href=\"" . $CFG->wwwroot . "mod/admin/\">" . __gettext("Administration") . "</a></li>");
     }
-*/	
+*/
 	if (defined("context") && context == "account") {
 		$PAGE->menu_sub[] = array (
 			'name' => 'user:edit',
 			'html' => a_href("{$CFG->wwwroot}_userdetails/",__gettext("Edit user details")));
-		$PAGE->menu_sub[] = array (
+		/*$PAGE->menu_sub[] = array (
 			'name' => 'user:icon',
-			'html' => a_href("{$CFG->wwwroot}_icons/",__gettext("Your site picture")));
+			'html' => a_href("{$CFG->wwwroot}_icons/",__gettext("Your site picture")));*/
 	}
 
 	if (defined("context") && context == "admin" && isloggedin() && user_flag_get("admin", $_SESSION['userid'])) {

@@ -17,7 +17,7 @@
 
     // Whose friends are we looking at?
     global $page_owner,$profile_id;
-    
+
     // You must be logged on to view this!
     //    protect(1);
 
@@ -26,15 +26,15 @@
     $invitepeople =  __gettext("Invite people");
     $invite = <<< END
 	<h3>$invitepeople</h3>
-	<p>$invitetocommunity</p>
+	<!--p>$invitetocommunity</p-->
 END;
 
     $body  = $invite;
     $body .= '<form action="" method="post">';
-    
+
     $submit_search_label = __gettext("Search");
     $nameorusername = __gettext("Name or username: ");
-    
+
     $invite_search = <<< END
 	<p>
 		$nameorusername <input type="text" name="invite_name"/><br/>
@@ -45,16 +45,16 @@ END;
     $invite_name    = optional_param('invite_name');
     $profile_name   = optional_param('profile_name');
     $invite_ident   = optional_param('invite_ident');
-    
+
     if (empty($invite_name)) {
-        $body .= $invite_search;        
+        $body .= $invite_search;
     } else {
-        $search_sql = "SELECT ident, name, username FROM {$CFG->prefix}users WHERE username LIKE '%{$invite_name}%' OR name LIKE '%{$invite_name}%'";
+        $search_sql = "SELECT ident, name, lastname, username FROM {$CFG->prefix}users WHERE username LIKE '%{$invite_name}%' OR name LIKE '%{$invite_name}%'";
         $users = get_records_sql($search_sql);
 
         if (empty($users)) {
             global $messages;
-            
+
             $messages[] = __gettext('No results found matching your search criteria.');
             $body .= $invite_search;
         } else {
@@ -62,7 +62,7 @@ END;
             $body .= templates_draw(array(
                                         'context' => 'adminTable',
                                         'name' => "<h3>" . __gettext("Invite") . "</h3>",
-                                        'column1' => "<h3>" . __gettext("Name") . "</h3>",
+                                        'column1' => "<h3>" . __gettext("Username") . "</h3>",
                                         'column2' => "<h3>" . __gettext("Full name") . "</h3>"
                                         )
                                   );
@@ -74,8 +74,8 @@ $block = <<< END
     <table width="100%">
 	<tr>
 		<td width="25%" valign="top"><input type="checkbox" name="invite_ident" value="$user->ident"/></td>
-		<td width="45%" valign="top">$user->username</td>
-		<td width="30%" valign="top">$user->name</td>
+		<td width="35%" valign="top">$user->username</td>
+		<td width="40%" valign="top">$user->name $user->lastname</td>
 	</tr>
     </table>
 </div>
@@ -102,13 +102,13 @@ END;
 	        $x->friend = $invite_ident;
 
 	        insert_record('friends_requests', $x);
-	        
+
 	        $messages[] = __gettext("The user has been invited.");
 	    }
     }
-    
+
     $body .= '</form>';
-    
+
     echo templates_page_draw( array(
             $title, templates_draw(array(
                 'context' => 'contentholder',

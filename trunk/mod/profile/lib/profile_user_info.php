@@ -2,14 +2,14 @@
 global $CFG,$USER;
 global $page_owner;
 $textlib = textlib_get_instance();
-    
+
 // If this is someone else's portfolio, display the user's icon
 $run_result .= "<li id=\"sidebar_user\">";
 
 $info = get_record('users','ident',$page_owner);
 
 if (!$tagline = get_field_sql('SELECT value FROM '.$CFG->prefix.'profile_data
-                               WHERE owner = '.$page_owner." AND name = 'minibio' 
+                               WHERE owner = '.$page_owner." AND name = 'minibio'
                                AND (".run("users:access_level_sql_where",$USER->ident).")")) {
     $tagline = "&nbsp;";
 }
@@ -19,7 +19,7 @@ $ul_username = user_info('username', $page_owner);
 $info->icon = run("icons:get", $page_owner);
 
 $icon = user_icon_html($info->ident,67);
-$name = stripslashes(user_name($info->ident)); 
+$name = stripslashes(user_name($info->ident));
 //$name = run("profile:display:name");
 $url = url . $info->username . "/";
 
@@ -52,7 +52,7 @@ $body = templates_draw(array(
                              'usermenu' => run("users:infobox:menu:text",array($page_owner))
                              )
                        );
-                       
+
 if ($page_owner != -1) {
     if ($page_owner != $_SESSION['userid']) {
         $title = __gettext("Profile Owner");
@@ -63,7 +63,7 @@ if ($page_owner != -1) {
 
 $run_result .= templates_draw(array(
                                     'context' => 'sidebarholder',
-                                    'title' => $title,
+                                    'title' => null,
                                     'body' => $body
                                     )
                               );

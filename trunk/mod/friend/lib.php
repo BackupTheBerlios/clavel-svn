@@ -33,7 +33,7 @@ function friend_pagesetup() {
 
             $PAGE->menu_sub[] = array( 'name' => 'friend',
                                        'html' => a_href("{$CFG->wwwroot}{$friends_username}/friends/" ,
-                                                          __gettext("Friends")));
+                                                          __gettext("My friends")));
 
             /*$PAGE->menu_sub[] = array( 'name' => 'friend:of',
                                        'html' => a_href( "{$CFG->wwwroot}{$friends_username}/friendsof/",

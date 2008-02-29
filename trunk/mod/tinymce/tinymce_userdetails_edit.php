@@ -2,8 +2,8 @@
 
     global $page_owner;
 
-    $visualEditor = __gettext("Visual text editing");
-    $visualEditorRules = __gettext("Set this to 'yes' if you would like to use a visual (WYSIWYG) text editor for your posts and comments.");
+    //$visualEditor = __gettext("Visual text editing");
+    //$visualEditorRules = __gettext("Set this to 'yes' if you would like to use a visual (WYSIWYG) text editor for your posts and comments.");
 
     $body = <<< END
 
@@ -16,7 +16,7 @@ END;
 
     $editor = run('userdetails:editor', $page_owner);
 
-    if ($editor == "yes") {
+    /*if ($editor == "yes") {
             $body .= templates_draw( array(
                     'context' => 'databox',
                     'name' => __gettext("Enable visual editor: "),
@@ -33,6 +33,6 @@ END;
     }
 
 
-    $run_result .= $body;
+    $run_result .= $body;*/
 
 ?>
