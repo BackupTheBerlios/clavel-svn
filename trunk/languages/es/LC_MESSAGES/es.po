@@ -1813,7 +1813,7 @@ msgstr "Quitar bandera interesante"
 
 #: mod/blog/lib/display_interesting_post_form.php:25
 msgid "Keep track of this post"
-msgstr "Artí-culos interesantes"
+msgstr "Artículos interesantes"
 
 #: mod/blog/lib/display_interesting_post_form.php:26
 msgid ""
@@ -5316,8 +5316,8 @@ msgstr ""
 "\t"
 
 #: mod/invite/lib/invite_join_mailwithpass.php:16
-msgid "Username: %s\n"
-msgstr "Nombre de usuario: %s\n"
+msgid "Username: %s\n\tPassword: %s\n\n"
+msgstr "Nombre de usuario: %s\n\tContraseña: %s\n\n"
 
 #: mod/invite/lib/invite_join_mailwithpass.php:16
 
