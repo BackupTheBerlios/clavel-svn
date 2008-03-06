@@ -1,0 +1,36 @@
+<div id="content-holder-inner-down">
+
+		<div id="tabla_registro" align="left">
+            <table>
+                    <td>
+
+						<IMG SRC="{{url}}mod/template/templates/Default_Template/images/n686409185_541867_625.jpg" width="307"  height="230">
+
+                    </td>
+                    <td>
+                    	<p align="justify">
+    							Lo invitamos a que participe en cada una de las tem&aacute;ticas que <a href="{{url}}">Pol&iacute;tica.com.co</a>
+    							tiene a su disposici&oacute;n.	Todas las opiniones son valiosas y respetadas.
+    							<br>
+    							<br>
+    							Usted cuenta con los servicios de edici&oacute;n del perfil, creaci&oacute;n de blogs y  participaci&oacute;n activa con
+    							la comunidad.
+								<br>
+    							<br>
+    							Encontrar&aacute; las opciones de subir, clasificar y compartir fotos, videos y documentos con la comunidad.
+
+						</p>
+                    </td>
+
+			 </table>
+			 <table>
+			        <tr>
+                    <tr>
+    						<br>
+    							Si necesita m&aacute;s informaci&oacute;n sobre la comunidad virtual, comun&iacute;quese con info@politica.com.co.
+    							Gracias por participar en la comunidad m&aacute;s democr&aacute;tica de Colombia.
+                    </tr>
+
+            </table>
+    	</div><!-- close tabla_registro div -->
+</div><!-- close content-holder-inner-down div -->

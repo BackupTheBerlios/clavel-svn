@@ -1,0 +1,39 @@
+<div id="content-holder-inner-down">
+
+		<div id="tabla_registro" align="left">
+            <table>
+                    <td>
+
+						<IMG SRC="{{url}}mod/template/templates/Default_Template/images/n686409185_541860_8889.jpg" width="307"  height="230">
+
+                    </td>
+                    <td>
+                    	<p align="justify">
+    							La democracia es el primer paso para construir una naci&oacute;n, la palabra transformada
+    							en acci&oacute;n forja el camino hacia un pa&iacute;s libre. El hombre en la sociedad ser&aacute; el
+    							encargado de trasformar el presente.
+    							<br>
+    							<br>
+    							<a href="{{url}}">Pol&iacute;tica.com.co</a>, es una comunidad virtual para que la sociedad
+    							genere contenidos que contribuyan al conocimiento pol&iacute;tico, facilitando procesos democr&aacute;ticos
+    							en Colombia. El	objetivo es implementar nuevos caminos de comunicaci&oacute;n entre el estado
+    							y la pol&iacute;tica.
+						</p>
+                    </td>
+			 </table>
+			 <table>
+
+                    <td width=660 align="center">
+						<br>
+						<h3>Lo invitamos a que participe en <a href="{{url}}">Pol&iacute;tica.com.co</a> y nos permita conocer
+						su opini&oacute;n sobre la democracia de Colombia.	Reg&iacute;strate ahora y haz parte de la comunidad m&aacute;s
+						democr&aacute;tica en Colombia.</h3>
+							<p>
+								<br>
+    							<a href="{{url}}mod/invite/register.php"><IMG SRC="{{url}}mod/template/templates/Default_Template/images/registrarse.jpg"></a>
+							</p>
+
+                    </td>
+            </table>
+    	</div><!-- close tabla_registro div -->
+</div><!-- close content-holder-inner-down div -->

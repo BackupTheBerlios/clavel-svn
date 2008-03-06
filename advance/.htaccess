@@ -1,0 +1,237 @@
+<IfModule !mod_rewrite.c>
+    # ugly ugly hack to detect missing mod_rewrite
+    # RedirectMatch must be to an absolute destination, so forces 500 error...
+    ErrorDocument 500 "Elgg error: Apache does not have mod_rewrite loaded. Please check your apache setup."
+    RedirectMatch 302 .* index.php
+</IfModule>
+
+<Files "htaccess-dist">
+    order allow,deny
+    deny from all
+</Files>
+
+# Don't listing directory
+Options -Indexes
+
+# Follow symbolic links
+Options +FollowSymLinks
+
+# Default handler
+DirectoryIndex index.php
+
+# php 4, apache 1.x
+<IfModule mod_php4.c>
+	# default memory limit to 16Mb
+	php_value memory_limit 16777216
+	# to make sure register global is off
+	php_value register_globals 0
+	# max post size to 8Mb
+	php_value post_max_size 8388608
+	# upload size limit to 5Mb
+	php_value upload_max_filesize 5242880
+	# hide errors, enable only if debug enabled
+	php_value display_errors 0
+</IfModule>
+
+# php 4, apache 2
+<IfModule sapi_apache2.c>
+	# default memory limit to 16Mb
+	php_value memory_limit 16777216
+	# to make sure register global is off
+	php_value register_globals 0
+	# max post size to 8Mb
+	php_value post_max_size 8388608
+	# upload size limit to 5Mb
+	php_value upload_max_filesize 5242880
+	# hide errors, enable only if debug enabled
+	php_value display_errors 0
+</IfModule>
+
+# php 5, apache 1 and 2
+<IfModule mod_php5.c>
+	# default memory limit to 16Mb
+	php_value memory_limit 16777216
+	# to make sure register global is off
+	php_value register_globals 0
+	# max post size to 8Mb
+	php_value post_max_size 8388608
+	# upload size limit to 5Mb
+	php_value upload_max_filesize 5242880
+	# hide errors, enable only if debug enabled
+	php_value display_errors 0
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+
+# If Elgg is in a subdirectory on your site, you might need to add a RewriteBase line
+# containing the path from your site root to elgg's root. e.g. If your site is
+# http://example.com/ and Elgg is in http://example.com/sites/elgg/, you might need
+#
+#RewriteBase /sites/elgg/
+#
+# here, only without the # in front.
+#
+# If you're not running Elgg in a subdirectory on your site, but still getting lots
+# of 404 errors beyond the front page, you could instead try:
+#
+#RewriteBase /
+
+# Pages
+###########
+RewriteRule ^content\/?(.*)?$ mod/pages/index.php?owner=-1&page=$1 [QSA,L]
+RewriteRule ^([A-Za-z0-9]+)\/content\/(.*)?$ mod/pages/index.php?profile_name=$1&page=$2  [QSA,L]
+
+RewriteRule ^_templates(\/)?$ mod/template/index.php?%{QUERY_STRING}
+RewriteRule ^_templates\/edit.php$ mod/template/edit.php?%{QUERY_STRING}
+RewriteRule ^_templates\/preview.php$ mod/template/preview.php?%{QUERY_STRING}
+RewriteRule ^_templates/css/(.+)$ mod/template/css.php?template=$1
+
+RewriteRule ^(.+)\/rssstyles.xsl$ mod/newsclient/styles.php?rssurl=$1&url=$1
+
+RewriteRule ^([A-Za-z0-9]+)\/dashboard(\/)?$ mod/adash/index.php?user=$1
+
+RewriteRule ^([A-Za-z0-9]+)\/profile(\/)?$ profile/index.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/tags(\/)?$ search/personaltags.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/rss\/(.+)\/?$ profile/rss2.php?profile_name=$1&tag=$2
+
+# Invite
+#########
+RewriteRule ^invite\/$ mod/invite/index.php
+ReWriteRule ^invite\/join\/([A-Za-z0-9]+)$ mod/invite/join.php?invitecode=$1
+ReWriteRule ^register$ mod/invite/register.php
+RewriteRule ^forgottenpassword$ mod/invite/forgotten_password.php
+RewriteRule ^newpassword\/([A-Za-z0-9]+)$ mod/invite/new_password.php?passwordcode=$1
+
+RewriteRule ^([A-Za-z0-9]+)(\/)?$ profile/index.php?profile_name=$1
+
+# Activity
+###########
+RewriteRule ^_activity\/$ mod/activity/index.php
+RewriteRule ^_activity\/index.php$ mod/activity/index.php?%{QUERY_STRING}
+
+# Communities
+##############
+RewriteRule ^([A-Za-z0-9]+)\/communities\/?$ mod/community/index.php?friends_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/communities\/owned$ mod/community/owned.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/communities\/new$ mod/community/new.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/community\/delete$ mod/community/index.php?profile_name=$1&action=community:delete
+RewriteRule ^([A-Za-z0-9]+)\/community\/requests$ mod/community/requests.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/community\/requests\/aprove\/([0-9]+)$ mod/community/requests.php?profile_name=$1&action=community:approve:request&request_id=$2
+RewriteRule ^([A-Za-z0-9]+)\/community\/requests\/decline\/([0-9]+)$ mod/community/requests.php?profile_name=$1&action=community:decline:request&request_id=$2
+RewriteRule ^([A-Za-z0-9]+)\/community\/members$ mod/community/members.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/community\/add\/([0-9]+)$ mod/community/index.php?friends_name=$1&friend_id=$2&action=friend
+RewriteRule ^([A-Za-z0-9]+)\/community\/leave\/([0-9]+)$ mod/community/index.php?profile_name=$1&friend_id=$2&action=leave
+RewriteRule ^([A-Za-z0-9]+)\/community\/separate\/([0-9]+)$ mod/community/members.php?profile_name=$1&friend_id=$2&action=separate
+RewriteRule ^community\/([0-9]+)\/?$ mod/communities/community.php?community_id=$1
+RewriteRule ^([A-Za-z0-9]+)\/community\/invite$ mod/community/invite.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/communities\/invitations$ mod/community/user_community_invitations.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/communities\/create$ mod/community/create_community.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/communities\/show_details$ mod/community/lib/community_showdetails.php?profile_name=$1
+
+# Files
+########
+RewriteRule ^([A-Za-z0-9]+)\/files\/?$ mod/file/index.php?files_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/files\/([0-9]+)\/?$ mod/file/folderphotos.php?files_name=$1&folder=$2
+RewriteRule ^([A-Za-z0-9]+)\/files\/([0-9\-]+)\/([0-9]+)\/(.+)$ mod/file/download.php?files_name=$1&folder=$2&filename=$4&id=$3
+RewriteRule ^(([A-Za-z0-9])[A-Za-z0-9]+)\/files\/rss\/?$ mod/newsclient/static.php?username=$1&userref=$2&type=files
+RewriteRule ^([A-Za-z0-9]+)\/files\/rss\/(.+)\/?$ mod/file/rss2.php?files_name=$1&tag=$2
+RewriteRule ^_icon\/file/([-0-9]+)$ mod/file/icon.php?id=$1
+RewriteRule ^_files\/icon.php$ mod/file/icon.php?%{QUERY_STRING}
+RewriteRule ^(([A-Za-z0-9])[A-Za-z0-9]+)\/files\/addphoto\/?$ mod/file/photoaddnew.php
+RewriteRule ^(([A-Za-z0-9])[A-Za-z0-9]+)\/files\/addfolder\/?$ mod/file/folderaddnew.php
+
+# Pictures
+########
+RewriteRule ^([A-Za-z0-9]+)\/pictures\/?$ mod/pictures/index.php?files_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/pictures\/([0-9]+)\/?$ mod/pictures/index.php?files_name=$1&folder=$2
+RewriteRule ^([A-Za-z0-9]+)\/pictures\/([0-9\-]+)\/([0-9]+)\/(.+)$ mod/pictures/download.php?files_name=$1&folder=$2&filename=$4&id=$3
+RewriteRule ^(([A-Za-z0-9])[A-Za-z0-9]+)\/pictures\/rss\/?$ mod/newsclient/static.php?username=$1&userref=$2&type=files
+RewriteRule ^([A-Za-z0-9]+)\/files\/rss\/(.+)\/?$ mod/pictures/rss2.php?files_name=$1&tag=$2
+RewriteRule ^_icon\/file/([-0-9]+)$ mod/pictures/icon.php?id=$1
+RewriteRule ^_files\/icon.php$ mod/pictures/icon.php?%{QUERY_STRING}
+
+
+# Friends
+##########
+RewriteRule ^([A-Za-z0-9]+)\/friends\/?$ mod/friend/index.php?friends_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/friendsof\/?$ mod/friend/friendsof.php?friends_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/friends\/requests?$ mod/friend/requests.php?friends_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/foaf\/?$ mod/friend/foaf.php?friends_name=$1
+
+# Icons
+########
+RewriteRule ^_icons\/$ mod/icons/index.php
+RewriteRule ^_icon\/user/([-0-9]+)$ mod/icons/icon.php?id=$1
+RewriteRule ^_icon\/user/([-0-9]+)\/([A-Za-z])\/([0-9]+)$ mod/icons/icon.php?id=$1&constraint1=$2&size1=$3
+RewriteRule ^_icon\/user/([-0-9]+)\/([A-Za-z])\/([0-9]+)\/([A-Za-z])\/([0-9]+)$ mod/icons/icon.php?id=$1&constraint1=$2&size1=$3&constraint2=$4&size2=$5
+
+# Newsclient
+############
+RewriteRule ^(([A-Za-z0-9])[A-Za-z0-9]+)\/rss\/?$ mod/newsclient/static.php?username=$1&userref=$2&type=profile
+RewriteRule ^([A-Za-z0-9]+)\/newsclient\/?$ mod/newsclient/subscriptions.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/newsclient\/all\/?$ mod/newsclient/index.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/newsclient\/all\/skip=([0-9]+)$ mod/newsclient/index.php?profile_name=$1&feed_offset=$2
+RewriteRule ^([A-Za-z0-9]+)\/feeds\/?$ mod/newsclient/subscriptions.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/feeds\/all\/?$ mod/newsclient/index.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/feeds\/all\/skip=([0-9]+)$ mod/newsclient/index.php?profile_name=$1&feed_offset=$2
+RewriteRule ^_rss\/([A-Za-z_]+).php$ mod/newsclient/$1.php?%{QUERY_STRING}
+
+# Users
+########
+RewriteRule ^_userdetails\/$ mod/users/index.php?%{QUERY_STRING}
+RewriteRule ^_userdetails\/index.php$ mod/users/index.php?%{QUERY_STRING}
+
+# Weblog
+########
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/?$ mod/blog/index.php?weblog_name=$1
+ReWriteRule ^([A-Za-z0-9]+)\/weblog\/skip=([0-9]+)$ mod/blog/index.php?weblog_name=$1&weblog_offset=$2
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/edit$ mod/blog/edit.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/edit\/([0-9]+)$ mod/blog/edit.php?profile_name=$1&weblog_post_id=$2&action=edit
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/archive\/?$ mod/blog/archive.php?weblog_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/archive\/([0-9]+)\/([0-9]+)\/?$ mod/blog/archive_month.php?weblog_name=$1&year=$2&month=$3
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/friends\/?$ mod/blog/friends.php?weblog_name=$1
+ReWriteRule ^([A-Za-z0-9]+)\/weblog\/friends\/skip=([0-9]+)$ mod/blog/friends.php?weblog_name=$1&weblog_offset=$2
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/interesting\/?$ mod/blog/interesting.php?weblog_name=$1
+ReWriteRule ^([A-Za-z0-9]+)\/weblog\/interesting\/skip=([0-9]+)$ mod/blog/interesting.php?weblog_name=$1&weblog_offset=$2
+RewriteRule ^[A-Za-z0-9]+\/weblog\/([0-9]+)\.html$ mod/blog/view_post.php?post=$1
+RewriteRule ^[A-Za-z0-9]+\/weblog\/([0-9]+)\.html.([0-9]+)$ mod/log/view_post.php?post=$1&commentpage=$2
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/rss\/(.+)\/?$ mod/blog/rss2.php?weblog_name=$1&tag=$2&modifier=is
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/rssnot\/(.+)\/?$ mod/blog/rss2.php?weblog_name=$1&tag=$2&modifier=not
+RewriteRule ^(([A-Za-z0-9])[A-Za-z0-9]+)\/weblog\/rss\/?$ mod/newsclient/static.php?username=$1&userref=$2&type=weblog
+RewriteRule ^([A-Za-z0-9]+)\/weblog\/category\/([^\/]+)\/?$ mod/blog/index.php?weblog_name=$1&filter=$2
+ReWriteRule ^([A-Za-z0-9]+)\/weblog\/category\/([^\/]+)\/skip=([0-9]+)$ mod/blog/index.php?weblog_name=$1&filter=$2&weblog_offset=$3
+ReWriteRule ^weblog\/everyone$ mod/blog/everyone.php
+ReWriteRule ^weblog\/everyone\/(people|communities|commented|uncommented)$ mod/blog/everyone.php?filter=$1
+ReWriteRule ^weblog\/everyone\/skip/([0-9]+)$ mod/blog/everyone.php?weblog_offset=$1
+
+
+# Messages Module
+##################
+RewriteRule ^([A-Za-z0-9]+)\/messages/$ mod/messages/index.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/messages\/msg_offset/([0-9]+)$ mod/messages/index.php?profile_name=$1&msg_offset=$2
+RewriteRule ^([A-Za-z0-9]+)\/messages\/sent$ mod/messages/index.php?profile_name=$1&sent=1
+RewriteRule ^([A-Za-z0-9]+)\/messages\/sent\/msg_offset/([0-9]+)$ mod/messages/index.php?profile_name=$1&sent=1&msg_offset=$2
+RewriteRule ^([A-Za-z0-9]+)\/messages\/compose$ mod/messages/compose.php?profile_name=$1
+RewriteRule ^([A-Za-z0-9]+)\/messages\/view\/([0-9]+)\/([0-1])$ mod/messages/view.php?profile_name=$1&message=$2&sent=$3
+
+
+###########
+
+RewriteRule ^tag\/(.+)\/?$ search/all.php?tag=$1
+RewriteRule ^rsstag\/(.+)\/?$ search/rss.php?tag=$1
+RewriteRule ^tag\/(.+)/ecl\/?$ search/ecl.php?tag=$1
+
+# Some blogging clients probe Wordpress or MoveableType endpoints,
+# redirect them to the Elgg xml-rpc endpoint
+#
+RewriteRule xml-rpc.php _rpc/RPC2.php
+RewriteRule mt/mt-xmlrpc.cgi _rpc/RPC2.php
+
+# Rewrite rules for rpc transition to mod/ in v0.9+ so we don't break things
+#
+RewriteRule ^_rpc/RPC2.php$ mod/rpc/RPC2.php
+RewriteRule ^_rpc/rsd.php$ mod/rpc/rsd.php?%{QUERY_STRING}
+
+</IfModule>

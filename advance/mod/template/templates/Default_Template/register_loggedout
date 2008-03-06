@@ -1,0 +1,9 @@
+<br>
+<h1>Registrate Ahora !!!!</h1>
+<p>
+    Lo invitamos a que pertenezca a esta Red Social: 
+    <a href="{{url}}_invite/register.php">BOTON AQUI<a>
+	<div align="center"> <a href="{{url}}_invite/register.php">
+	<img src="{{url}}mod/template/templates/Default_Template/images/registrateaqui.png" border="0"></a>
+	</div> 
+</p>
