@@ -1,0 +1,2 @@
+Version 3.0
+	Add AJAX functionality trough the YUI API
