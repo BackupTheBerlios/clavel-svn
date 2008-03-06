@@ -2219,7 +2219,7 @@ msgstr "Blogs de Contactos"
 #: mod/blog/lib/weblogs_view.php:111
 #, php-format
 msgid "You currently don't have any %s"
-msgstr ""
+msgstr "Actualmente no tiene ningún artículo."
 
 #: mod/blog/rss2.php:51
 #, php-format
@@ -2801,7 +2801,7 @@ msgstr "Este usuario no modera actualmente ninguna comunidad."
 
 #: mod/community/lib/communities_owned.php:18
 msgid "Owned communities"
-msgstr "Comunidades en propiedad"
+msgstr "Mis comunidades"
 
 #: mod/community/lib/community_member_add.php:28
 #, php-format
@@ -2961,13 +2961,13 @@ msgstr ""
 #: mod/community/lib.php:134 mod/community/new.php:21
 #: mod/community/owned.php:25
 msgid "Owned Communities"
-msgstr "Comunidades propias"
-
-#: mod/community/lib.php:134 
-msgid "My Communities"
 msgstr "Mis comunidades"
 
-#: mod/community/lib.php:134 
+#: mod/community/lib.php:134
+msgid "My Communities"
+msgstr "Lista de comunidades"
+
+#: mod/community/lib.php:134
 msgid "Create a Community"
 msgstr "Crear comunidad"
 
@@ -5201,7 +5201,7 @@ msgstr ""
 #: mod/invite/lib/invite_actions.php:162 mod/invite/lib/invite_actions.php:169
 #, php-format
 msgid "Your %s account"
-msgstr "Tu %s cuenta"
+msgstr "Tu cuenta de %s"
 
 #: mod/invite/lib/invite_actions.php:222
 #, php-format

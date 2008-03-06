@@ -98,6 +98,10 @@ function community_pagesetup() {
             }
           }
           else{
+          	if ($CFG->community_create_flag == "" || user_flag_get($CFG->community_create_flag, $USER->ident)) {
+              $PAGE->menu_sub[] = array( 'name' => 'community:owned',
+                                     'html' => a_href("{$CFG->wwwroot}{$username}/communities/create" ,
+                                                        __gettext("Create a Community")));
             $PAGE->menu_sub[] = array( 'name' => 'community',
                                      'html' => a_href("{$CFG->wwwroot}{$username}/communities" ,
                                                         __gettext("My Communities")));
@@ -107,10 +111,7 @@ function community_pagesetup() {
                                      'html' => a_href("{$CFG->wwwroot}{$username}/communities/owned" ,
                                                         __gettext("Owned Communities")));
             }
-            if ($CFG->community_create_flag == "" || user_flag_get($CFG->community_create_flag, $USER->ident)) {
-              $PAGE->menu_sub[] = array( 'name' => 'community:owned',
-                                     'html' => a_href("{$CFG->wwwroot}{$username}/communities/create" ,
-                                                        __gettext("Create a Community")));
+
             }
           }
         }

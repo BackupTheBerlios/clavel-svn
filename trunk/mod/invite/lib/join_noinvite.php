@@ -45,7 +45,7 @@ END;
                                                 'contents' => display_input_field(array("join_username","","text"))
                     )
                     );
-					
+
 				$run_result .= templates_draw(array(
                                             'context' => 'databoxvertical',
                                             'name' => __gettext("Password"),
@@ -58,9 +58,9 @@ END;
                                             'contents' => display_input_field(array("join_password2","","password"))
                     )
                     );
-				
-				
-				
+
+
+
             $buttonValue = __gettext("Register");
 			$terms = __gettext("Terms and Conditions"); // gettext variable
             $privacy = __gettext("Privacy Policy"); // gettext variable
@@ -69,7 +69,7 @@ END;
 			$and = __gettext("and");
             $run_result .= <<< END
 			<ul>
-				<li> $termsandconditions <a href="{$CFG->wwwroot}content/terms.php" target="_blank"> $terms</a> $and <a href="{$CFG->wwwroot}content/privacy.php" target="_blank">$privacy</a></li>
+				<li> $termsandconditions <a href="{$CFG->wwwroot}content/terms_es.php" target="_blank"> $terms</a> $and <a href="{$CFG->wwwroot}content/privacy_es.php" target="_blank">$privacy</a></li>
 			</ul>
 			<p align="center">
                 <label for="acceptcheckbox"><input type="checkbox" id="acceptcheckbox" name="accept" value="yes" /> <strong>$checkterms</strong></label>
