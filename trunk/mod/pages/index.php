@@ -42,7 +42,7 @@ if (!pages_enabled()) {
         $page = pages_edit_page($page_id, page_owner());
     } else {
         $page = pages_get_page($page_id, page_owner());
-    }   
+    }
 }
 
 
@@ -52,7 +52,6 @@ if (!empty($page->ident)) {
 } else {
     $title = $page->title;
 }
-
 templates_page_output($title, $page->content);
 
 ?>

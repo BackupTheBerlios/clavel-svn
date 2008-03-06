@@ -123,6 +123,6 @@ END;
 }
 else{
   $type =(isset($extraType))?$extraType:$extensionContext;
-  $run_result = "<p>".sprintf(__gettext("Your friends currently don't have any Blog"))."</p>";  
+  $run_result = "<p>".sprintf(__gettext("Your friends currently don't have any Blog"))."</p>";
 }
 ?>

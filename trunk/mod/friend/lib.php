@@ -65,6 +65,7 @@ function friend_pagesetup() {
 
         // Get list of friends
             $function['friends:get'][] = $CFG->dirroot . "mod/friend/lib/get_friends.php";
+            $function['friendsof:get'][] = $CFG->dirroot . "mod/friend/lib/get_friends.php";
 
         // 'Friends' aspect to user profiles
             $function['users:infobox:delete'][] = $CFG->dirroot . "mod/friend/lib/user_info_menu.php";
