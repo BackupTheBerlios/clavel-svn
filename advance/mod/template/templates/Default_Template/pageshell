@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{{title}}</title>
+{{metatags}}
+</head>
+<body>
+
+<div id="container"><!-- div container -->
+
+	<div id="header"><!-- div header-->
+
+		<div id="header_left"><!-- div cabezote_izquierda-->
+			<h1>Advance <span class="red">Care Net</span></h1>
+			<h2>Salud !!  hic !!</h2>
+		</div><!-- END div cabezote_izquierda-->
+
+		<div id="header_right"><!-- div cabezote_derecha-->
+  			{{sidebar}}
+		</div><!-- END div cabezote_derecha-->
+
+	</div><!-- END div header-->
+
+
+
+	<div id="izquierda"><!-- div izquierda-->
+
+		<h4><span class="menu_first_letter">Menu Principal</span></h4>
+
+		<div id="navcontainer"><!-- div navcontainer-->
+			<ul id="navlist">
+			<li id="active"><a href="#" id="current">Inicio</a></li>
+			<li class="green"><a href="#">Saludo</a></li>
+			<li><a href="#">Tendencias</a></li>
+			<li><a href="#">Comunidad</a></li>
+			<li><a href="#">Acerca de</a></li>
+			<li><a href="#">Contactenos</a></li>
+			</ul>
+		</div><!-- END div navcontainer-->
+
+
+
+		<h4>Links de Interes</h4>
+
+
+
+		<a href="http://www.treszero.com">Tres Zero</a></div><!-- div izquierda-->
+
+	<div id="derecha"><!-- div derecha-->
+
+			{{searchbox}}
+		<div class="date_box"><!-- div date_box-->
+			<div class="date_box_month">Jan</div>
+			<div class="date_box_day">18</div>
+		</div><!-- END div date_box-->
+
+		<h3>Red Social de la Salud  </h3>
+
+
+  		<p><img src="{{url}}mod/template/templates/Advance_Care_Net/images/demo_img.jpg" alt="Kiwi" width="159" height="140" class="float_right" />Contenido</p>
+
+  		<p>Bienvenidos. La Red Social de la Salud contiene las principales temáticas de salud.</p>
+
+  		<p class="read_more"><a href="#"><img src="images/arrow.png" alt="read more" width="16" height="12" />Leer más</a> </p>
+
+
+  		<div class="date_box"><!-- div date_box-->
+		<div class="date_box_month">Jan</div>
+		<div class="date_box_day">12</div>
+		</div><!-- END div date_box-->
+
+
+		<h3>Temáticas</h3>
+
+  		<blockquote><p class="quote">Nutrición. Consejos. Dietas. Tratamientos. Clinicas. Doctores</p></blockquote>
+
+  		<p>Puede participar activamente  fdsfdsafasdf dasfasdf
+  		adsfadsdfadsf asdfasdf sadf asdfsd fasdf asdfas dfasdf asdf asdf asdfadsf asdf adsfasd fadsfasdf asdf asdf adsfasd fadsf adsfadsf</p>
+
+    		<p class="read_more"><a href="#"><img src="images/arrow.png" alt="read more" width="16" height="12" />Leer más</a> </p>
+
+
+
+
+	</div><!-- div derecha-->
+
+
+
+	<div id="final"><!-- start footer -->
+	Advance Care Net -- Tres Zero 2008 | <a href="http://www.treszero.com">www.treszero.com</a>
+	<br>
+		 <a href="{{url}}content/terms.php">Terminos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Politica de Privacidad</a>&nbsp;|&nbsp;<a href="{{url}}content/About">Acerca de {{sitename}}</a>
+		{{perf}}
+
+	</div><!-- end footer -->
+
+</div>
+
+
+
+</body>
+</html>

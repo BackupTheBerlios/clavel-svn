@@ -1,0 +1,869 @@
+/*
+	GLOBALS: used to set all the general elements
+*/
+
+/*
+	Diseño  del Logged IN
+*/
+
+#contenedor {
+	background-image: url({{url}}mod/template/templates/advance_care_net/images/container_bg.jpg);
+	background-repeat: no-repeat;
+	height: 465px;
+	width: 931px;
+	font-size: 1.2em;
+	margin: 4px;
+	border-top: 1px solid white;
+}
+
+#cabezera {
+	height: 205px;
+	padding-top: 20px;
+	margin-left: 365px;
+}
+
+
+#cabezote_izquierda {
+	float: left;
+	width: 326px;
+	height: 206px;
+}
+
+
+#cabezote_derecha {
+    height: 206px;
+	margin-left: 330px;
+	margin-right: 20px;
+}
+
+#content-holder {
+	padding:5px;
+	margin:0;
+	width:974px;
+	min-height:500px;
+	position:relative;
+	clear:both;
+}
+
+div#content-holder a:hover {
+	text-decoration:underline;
+}
+
+div#content-holder h1 {
+	font-size:150%;
+	border-bottom:1px solid #ccc;
+	margin:0;
+	padding:0;
+}
+
+div#content-holder h2 {
+	border:0;
+	border-bottom:1px solid #eee;
+	padding:0;
+	margin:0 0 10px 0;
+	color:#666;
+	font-size:1.1em;
+}
+/*
+	SIDEBAR: THIS IS ONLY PRESENT WHEN SPLITPANE-CONTENT IS IN USE
+*/
+
+div#splitpane-sidebar {
+	width: 300px;
+	margin:20px 10px 20px 0;
+	padding:0;
+	float: left;
+	background:white no-repeat top;
+}
+
+div#sidebar-contents {
+    padding:10px;
+}
+
+div#sidebar-bottom {
+   background:white no-repeat bottom;
+   height:9px;
+   width:250px;
+   margin:0;
+}
+
+/*
+	THE SIDEBAR CONTENTS
+*/
+
+div#splitpane-sidebar td {
+	width: 200px;
+	margin:0 0 0 20px;
+}
+
+div#splitpane-sidebar {
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+
+div#splitpane-sidebar ul li {
+	margin:10px 0;
+	padding-left: 5px;
+}
+
+div#splitpane-sidebar ul li ul li a {
+	padding:0 0 0 5px;
+}
+
+div#splitpane-sidebar h2 {
+	text-align:left;
+	border-bottom:1px solid #ccc;
+	color:#777;
+	font-size:0.9em;
+	width:220px;
+}
+
+#footer {
+	clear: both;
+	margin-left: 340px;
+	margin-right: 50px;
+	margin-top: 40px;
+	padding: 20px;
+	text-align: center;
+	border-top: 1px dotted #CCCCCC;
+	background-color: #F9F7EA;
+}
+
+
+/*
+	SYSTEM MESSAGES
+*/
+
+div#system-message{
+	border:1px solid #006633;
+	background:#CCFFCC;
+	color:#000;
+	padding:3px 50px;
+	margin:20px 20px 0 20px;
+}
+
+div#system-message p{
+	padding:0px;
+	margin:2px;
+}
+
+/*
+	CLEAR BOTH
+*/
+
+.clearing {
+	clear:both;
+}
+
+/*
+	THIS IS THE END OF THE MAIN PAGE COMPONENTS - EVERYTHING BELOW THIS IS ASSOCIATED WITH VARIOUS ELEMENTS
+	WITHIN ELGG, THIS INCLUDES THE BLOG CLASSESS, PROFILE, FILES, SIDEBAR WIDGETS, PROFILE WIDGETS ETC.
+*/
+
+/*
+	BLOGGING ENGINE
+*/
+
+.weblog-post {
+	margin:20px 0 10px 0;
+}
+
+.user {
+	float:left;
+	margin:5px 10px 10px 0;
+	width:105px;
+}
+
+.user img {
+	border:1px solid #eee;
+	padding:2px;
+}
+
+.weblog-keywords p a {
+	margin:20px 0 0 0;
+	padding:0;
+	clear:both;
+}
+
+.weblog-title {
+	margin:10px 0 10px 115px;
+}
+
+.post {
+	margin:10px 0 10px 115px;
+}
+
+.info {
+	border-top:1px solid #ccc;
+	margin:10px 0 10px 115px;
+	clear:both;
+}
+
+.info p {
+	padding:0 0 0 10px;
+	margin:0;
+}
+
+.info p a {
+	font-size:0.9em;
+	color:#555;
+}
+
+/* this is the thin line between the actual post and comments */
+
+#comments-divide {
+	height:1px;
+	background:#ccc;
+}
+
+.comment-owner {
+	border:1px solid #eee;
+	background:#f2f7fb;
+	padding:5px;
+	margin:20px 0 5px 0;
+	height:50px;
+	width:550px;
+}
+
+.comment-owner img {
+	margin:0px 5px 0px 0px;
+	text-align:left;
+}
+
+.comment-owner a {
+	background:#f2f7fb;
+}
+
+.comment-owner p {
+	padding:0;
+	margin:0;
+}
+
+/* END OF BLOGGING ENGINE */
+
+/*
+	SUB MENU OPTIONS: THESE WILL BE MOVED TO THE NEW SIDEBAR SHORTLY
+*/
+
+div#sub-menu p {
+	margin:0 0 10px 0;
+	padding:0;
+	/*background:#efefef;*/
+	border:0px solid #ccc;
+}
+
+div#sub-menu a {
+   padding:3px;
+}
+
+/* END OF SUB-MENU DIV */
+
+/*
+	INFOHOLDER: this holds profile data, account settings and administration content
+*/
+
+.infoholder {
+	margin:5px 0 10px 0;
+}
+
+.infoholder p {
+	padding:5px 0 5px 10px;
+}
+
+/* the end of INFOHOLDER */
+
+#tagcloud {
+	padding: 15px;
+	border: solid 1px #eee;
+	background: #f5f5f5;
+	line-height:2.9em;
+}
+
+#tagcloud a {
+	text-decoration: none;
+}
+
+/*
+ PROFILE WIDGETS STUFF
+*/
+
+img.profile-photo {
+   border:1px solid #eee;
+   padding:2px;
+}
+
+.profile_main p {
+   color:#000;
+}
+
+.profile_main p a {
+	text-decoration: underline;
+}
+
+.profile_main_bottom {
+	clear: both;
+}
+
+.profile_primary {
+	float: left;
+	width: 270px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.profile_secondary {
+	float: right;
+	width: 360px;
+	margin: 10px 0 0 0;
+	color:#000;
+}
+
+.profile_bio {
+	padding-top: 10px;
+	background:#efefef;
+}
+
+.profile_widgets {
+	clear: both;
+    width: 760px;
+	/*background: #004995;*/
+}
+
+.profile_icon img {
+	border:1px solid #eee;
+	padding:2px 2px 2px 2px;
+}
+
+.profile_widgets_left {
+	float: left;
+	width: 330px;
+}
+
+.profile_widgets_right {
+	float: right;
+	width: 330px
+}
+
+/* profile - widgets */
+
+#profile_widgets {
+   position:relative;
+}
+
+.profile_bio {
+   width:244px;
+   padding:2px;
+}
+
+.widgets_even {
+   float:left;
+   width:340px;
+   margin:0;
+   padding:0;
+}
+
+.widgets_odd {
+   float:right;
+   width:340px;
+   margin:0;
+   padding:0;
+}
+
+.widget {
+    border: 1px solid #BBDCE9; /*#95BDCD;*/
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.widget .widget_content {
+    padding: 4px 10px 4px 10px;
+}
+
+.widget .widget_content h3 {
+    padding:0;
+    margin:0;
+}
+
+.widget .widget_bottom {
+     display: block;
+     background-color: #E2F0F6; /*#CBE5EF;*/
+     margin: 0px;
+     padding-left: 10px;
+     border-top: 1px solid #BBDCE9;
+     font-size:0.8em;
+}
+
+.widget .widget_menu ul {
+    margin:0 0 0 5px;
+	padding:0;
+}
+
+.widget .widget_menu ul li {
+     list-style:none;
+}
+
+.widget .widget_menu ul li a {
+     text-decoration:underline;
+}
+
+.widget .widget_admin_menu {
+    background-color: #E2F0F6;
+    padding:2px 0 0 5px;
+}
+
+#hidden3, #hidden2, #hidden4, #hidden5 {
+  height:20px;
+}
+
+.widget .widget_title {
+          border:0;
+          border-bottom:1px solid #cdcdcd; /*#BBDCE9;*/
+          padding:0 2px 0 2px;
+          margin:0 0 10px 0;
+          color:#000;
+	      font-size:1.2em;
+	     font-weight:bold;
+}
+
+.widget  .widget_content h2 a {
+    background:url({{url}}mod/template/images/icons/arrow.gif) no-repeat left;
+    padding:0 0 0 10px;
+    font-weight:normal;
+}
+
+/*
+  COMMENT WALL STUFF
+*/
+
+#commentwall {
+   background:#fff;
+   width:98%;
+   padding:5px;
+   margin:5px 0 10px 0;
+}
+
+.commentwall_img {
+   float:left;
+   margin:3px;
+   background:#fff;
+   border:1px solid #ccc;
+}
+
+#commentwall_form_-1 {
+   Background:#eee;
+   margin:0 0 5px 0;
+   padding:4px;
+}
+
+#commentwall_form_-1 textarea {
+   width:98%;
+   margin:5px 0 5px 0;
+}
+
+#commentwall_title {
+   background:#efefef;
+   border-top:1px solid #ccc; /*#4E730C;*/
+   width:99%;
+   height:20px;
+   padding:2px;
+   font-size:12px;
+}
+.commentwall_date {
+    font-style:italic;
+    font-size:0.8em;
+    margin:0 0 10px 0;
+    background:#efefef;
+    border-bottom:1px solid #D8DFEA;
+}
+
+#commentwall #commentwall_title h2 {
+   margin:0;
+   padding:0;
+   font-size:11px;
+}
+
+.commentwall_name {
+   font-weight:bold;
+   /*border-top:1px solid #4E730C;*/
+}
+
+.commentwall_details {
+   border-top:1px solid #ccc;
+   margin-left:70px;
+}
+
+.commentwall_name {
+   background:#efefef;
+}
+
+
+#commentwall_more {
+    text-align:right;
+    padding:4px;
+    color:#000;
+    font-size:10px;
+}
+
+#commentwall_more a {
+   color:#000;
+   text-decoration:underline;
+}
+
+
+.commentwall_replybar {
+   border-bottom:1px solid #ccc;
+   font-size:11px;
+   margin:10px 0 10px 0;
+   padding:2px;
+   background:#fff;
+   text-align:right;
+   cursor:pointer;
+   color:#b85b5a;
+}
+
+.commentwall_replybar p {
+   padding:0;
+   margin:0 10px 0 0;
+}
+
+.commentwall_replybar a {
+   padding:0;
+   margin:0;
+}
+
+#confirm-form {
+	width: 70%;
+	margin: 30px auto;
+	text-align: center;
+	font-size: 1.2em;
+	border: 1px #eee solid;
+	background: #f8f8f8;
+}
+
+#confirm-form h3 {
+	font-size: 1.2em;
+	padding: 10px;
+	padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+    -----------------------------------------     DISEÑO DEL INDEX LOGGEDOUT         --------------------------------------
+*/
+
+body {
+	font-family: Georgia, "Corbel", Times, serif;
+	font-size: 72.5%;
+}
+
+#container {
+	background-image: url({{url}}mod/template/templates/advance_care_net/images/container_bg.jpg);
+	background-repeat: no-repeat;
+	height: 465px;
+	width: 931px;
+	font-size: 1.2em;
+	margin: 4px;
+	border-top: 1px solid white;
+}
+
+
+#header {
+	height: 205px;
+	padding-top: 20px;
+	margin-left: 365px;
+}
+
+
+#header_left {
+	float: left;
+	width: 326px;
+	height: 206px;
+}
+
+
+#header_right {
+    height: 206px;
+	margin-left: 330px;
+	margin-right: 20px;
+}
+
+#izquierda {
+	float:left;
+	width: 225px;
+	margin-left: 45px;
+	margin-top: 120px;
+}
+
+#derecha {
+	margin-left: 340px;
+	margin-top: 70px;
+	margin-right: 50px;
+}
+
+#final {
+	clear: both;
+	margin-left: 340px;
+	margin-right: 50px;
+	margin-top: 40px;
+	padding: 20px;
+	text-align: center;
+	border-top: 1px dotted #CCCCCC;
+	background-color: #F9F7EA;
+}
+
+
+
+.date_box {
+	background-color: #FFFFFF;
+	background-image: url({{url}}mod/template/templates/Advance_Care_Net/images/date.jpg);
+	height: 51px;
+	width: 52px;
+	float: left;
+}
+
+.date_box_month {
+	padding-top: 6px;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 3px;
+	text-align: center;
+	color: #75a006;
+}
+
+.date_box_day {
+	font-size: 22px;
+	font-weight: bold;
+	padding-left: 3px;
+	text-align: center;
+	font-style: italic;
+	color: #654040;
+}
+
+/******************************* Text and image formatting *******************************/
+
+p {margin-bottom: 15px;
+   margin-top: 15px;
+}
+
+p.quote:first-letter
+{
+	color: #6F9800;
+	font-size:xx-large;
+	margin-top: 20px;
+	font-size: 2.5em;
+    padding-right: 2px;
+
+}
+
+h1 {
+	color: #87a448;
+	margin-top: 85px;
+	margin-left: 40px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	font-size: 2.6em;
+}
+
+.red {color: #614240;}
+
+h2 {
+	color: #bf8a44;
+	margin-left: 120px;
+	font-size: 1.6em;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+}
+
+h3 {
+	height: 31px;
+	background-color: #FFFFFF;
+	padding-top: 20px;
+	padding-left: 75px;
+	font-size: 1.6em;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	color: #84A54A;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+h4 {
+	width: 210px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: #F5F9EB;
+	padding: 5px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: dotted;
+	border-bottom-style: dotted;
+	border-top-color: #CEAC86;
+	border-bottom-color: #CEAC86;
+	font-size: 1.2em;
+	color: #A6BB7A;
+}
+
+blockquote {
+	background-color: #F4F7F0;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top: 30px;
+	padding-bottom:30px;
+	border: 1px dotted #EBE2B7;
+	background-image: url({{url}}mod/template/templates/Advance_Care_Net/images/blockquote.png);
+	background-repeat: no-repeat;
+	font-style: italic;
+}
+
+.read_more {
+	background-color: #FFFFFF;
+	padding: 3px;
+	text-align: right;
+	font-weight: bold;
+	font-style: italic;
+}
+
+img {border: none;}
+
+
+.float_left {float: left;
+              margin-right: 10px;}
+
+.float_right {float: right;
+              margin-left: 10px;}
+
+a:link {color: #557C2B; text-decoration: none;}     /* unvisited link */
+a:visited {color: #83A956; text-decoration: none;}  /* visited link */
+a:hover {color: #821115; text-decoration: none;}   /* mouse over link */
+a:active {color: #577E2D; text-decoration: none;}   /* selected link */
+
+/********************************* Navigation **********************************/
+
+#navcontainer { }
+
+#navcontainer ul
+{
+	list-style-type: none;
+	font-weight: bold;
+	color: #990000;
+}
+
+#navcontainer a
+{
+	display: block;
+	padding-top: 17px;
+	padding-left: 37px;
+	width: 182px;
+	background-color: #DCE3ED;
+	border-bottom: 1px solid #eee;
+	background-image: url({{url}}mod/template/templates/Advance_Care_Net/images/menu.png);
+	background-repeat: repeat-x;
+	height: 27px;
+}
+
+
+#navcontainer a:link, #navlist a:visited
+{
+color: #93B26E;
+text-decoration: none;
+}
+
+#navcontainer a:hover
+{
+	background: url({{url}}mod/template/templates/Advance_Care_Net/images/menu.png); 0 -45px;
+	color: #562930;
+}
+
+/**************************************** Elementos del login ****************************/
+
+
+p.welcome {
+	font-size: 0.8em;
+	text-align: left;
+	margin-right: 30px;
+	margin-left: 35px;
+	margin-bottom: 0px;
+	margin-top: 25px;
+	color: #6B383D;
+}
+
+form {
+	margin-top: 15px;
+	margin-left: 35px;
+}
+
+input.fields {display: block;
+        width: 140px;
+        background: url(images/input_bg.png);
+		border-top: 1px solid #E3E4E9;
+		border-left: 1px solid #E3E4E9;
+		border-bottom: 1px solid white;
+		border-right: 1px solid white;
+		margin-top: 3px;
+	    margin-bottom: 3px;}
+
+label {
+	color: #A5BB73;
+	font-style: italic;
+}
+
+.submit_button {
+	margin-top: 15px;
+	padding: 2px;
+	background-color: #EAF4D9;
+	float: right;
+	margin-right: 40px;
+	border-top: 2px solid white;
+	border-left: 2px solid white;
+	border-bottom: 2px solid #E3E4E9;
+	border-right: 2px solid #E3E4E9;
+}
+
+/**************************************** extra classes: contact us ****************************/
+
+form.contact_us {
+	width: 190px;
+	margin-top: 15px;
+	margin-left: 0px;
+	padding: 15px;
+	background-color: #FBF9F4;
+	background-image: url(images/form_bg.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+input.fields_contact_us {display: block;
+        width: 185px;
+        background: url(images/input_bg.png);
+		border-top: 1px solid #E3E4E9;
+		border-left: 1px solid #E3E4E9;
+		border-bottom: 1px solid white;
+		border-right: 1px solid white;
+		margin-top: 3px;
+	    margin-bottom: 3px;}
+
+textarea {width: 185px;
+          background: url(images/input_bg.png);
+          border-top: 1px solid #E3E4E9;
+		  border-left: 1px solid #E3E4E9;
+		  border-bottom: 1px solid white;
+		  border-right: 1px solid white;
+
+          margin-top: 3px;}
+
+.submit_button_contact {
+	margin-top: 15px;
+	padding: 2px;
+	background-color: #EAF4D9;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{{title}}</title>
+{{metatags}}
+</head>
+<body>
+
+<div id="contenedor"><!-- open container which wraps the header, maincontent and sidebar -->
+
+	<div id="cabezera"><!-- div header-->
+
+		<div id="cabezote_izquierda"><!-- div cabezote_izquierda-->
+			<h1>Advance <span class="red">Care Net</span></h1>
+			<h2>Salud !!  hic !!</h2>
+		</div><!-- END div cabezote_izquierda-->
+
+		<div id="cabezote_derecha"><!-- div cabezote_derecha-->
+  			{{searchbox}}
+		</div><!-- END div cabezote_derecha-->
+	</div><!-- END div header-->
+
+{{toolbar}}
+	<div id="content-holder"><!-- open content-holder div -->
+		<div id="content-holder-inner">
+			<div id="splitpane-sidebar"><!-- open splitpane-sidebar div -->
+		    		<div id="sidebar-contents">
+						{{sidebar}}
+					</div>
+					<div id="sidebar-bottom">
+					</div><!-- used to provide the rounded bottom -->
+			</div><!-- close splitpane-sidebar div -->
+
+			<div id="splitpane-content"><!-- open splitpane-content div -->
+				{{messageshell}}
+				{{mainbody}}
+			</div><!-- close open splitpane-content div -->
+		</div><!-- close content-holder inner -->
+	</div><!-- close content-holder div -->
+
+
+	<div id="footer"><!-- start footer -->
+	<div id="footer-inner">
+	Advance Care Net -- Tres Zero 2008 | <a href="http://www.treszero.com">www.treszero.com</a>
+	<br>
+		 <a href="{{url}}content/terms.php">Terminos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Politica de Privacidad</a>&nbsp;|&nbsp;<a href="{{url}}content/About">Acerca de {{sitename}}</a>
+		{{perf}}
+	</div>
+</div><!-- end footer -->
+
+</div>
+
+
+</body>
+</html>
+

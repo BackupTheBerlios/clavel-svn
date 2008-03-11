@@ -1,0 +1,38 @@
+Version 0.2.3
+	Translations to fi (Thanks to Pasi Havia)
+	Fixes for work with the 0.9 series (not backward compatibility)
+	Added a property for allow/disallow community messages
+Version 0.2.1
+  Translations to nl (Thanks to Daniel Dubbeldam)
+  Translations to pt_BR (Thanks to Renato)
+  Sidebar links display improvements
+  Fixed but with the delete of system messages that didn't be read
+  Added the CONTRIBUTORS.txt file
+  Added the lib/messages_config.php for configuration options
+Version 0.2
+  Bug fixes
+  Added the sidebar link to allow send messages to every user (Thanks to Renato [http://elgg.org/renato/])
+  Added the {{contact}} keyword to be used in templates
+Version 0.1.4
+  Added the messages counter in the toolbar string
+  Code refactor
+  Spanish translations
+Version 0.1.3
+  Fix a problem with the css
+  Fix a problem with the redirect when you delete a message
+  Changes in the rewrite rules
+Version 0.1.2
+  Fix some language issues
+  Added the LICENSE file
+  Added a file in po format with the strings used in this plug-in
+Version 0.1.1
+  A depedence with the display_input_field function was fixed.
+  A code standard fix withe the <? <?php thing
+Version 0.1
+  Initial release
+  - List messages
+  - List sent messages
+  - Send messages to friends
+  - Send messages to communities
+  - Delete messages
+  - Mark messages as ( read | unread )

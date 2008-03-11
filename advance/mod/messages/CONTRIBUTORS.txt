@@ -1,0 +1,13 @@
+Author:
+  Diego Andrés Ramírez Aragón <diego@somosmas.org>
+Contributors:
+  Renato Coutinho (http://elgg.org/renato/)
+    Sidebar links
+    Translations to pt_BR
+  Heath Moser (http://elgg.org/heathm/)
+    Sidebar links display fix
+  Daniel Dubbeldam
+    Translations to nl
+  Pasi Havia (http://www.elgg.org/encore)
+  	Translations to fi
+  	Some 0.9 compatibility bug fixes
