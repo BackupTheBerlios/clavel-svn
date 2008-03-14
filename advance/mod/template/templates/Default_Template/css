@@ -10,10 +10,11 @@
 	background-image: url({{url}}mod/template/templates/advance_care_net/images/container_bg.jpg);
 	background-repeat: no-repeat;
 	height: 465px;
-	width: 931px;
 	font-size: 1.2em;
-	margin: 4px;
 	border-top: 1px solid white;
+	width:970px;
+	margin:0 auto;
+	padding:0;
 }
 
 #cabezera {
@@ -569,10 +570,11 @@ body {
 	background-image: url({{url}}mod/template/templates/advance_care_net/images/container_bg.jpg);
 	background-repeat: no-repeat;
 	height: 465px;
-	width: 931px;
 	font-size: 1.2em;
-	margin: 4px;
 	border-top: 1px solid white;
+	width:930px;
+	margin:0 auto;
+	padding:0;
 }
 
 
@@ -600,7 +602,7 @@ body {
 	float:left;
 	width: 225px;
 	margin-left: 45px;
-	margin-top: 120px;
+	margin-top: 20px;
 }
 
 #derecha {

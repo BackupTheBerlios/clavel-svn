@@ -2803,6 +2803,9 @@ msgstr "Este usuario no modera actualmente ninguna comunidad."
 msgid "Owned communities"
 msgstr "Mis comunidades"
 
+msgid "All community"
+msgstr "Todas las comunidades"
+
 #: mod/community/lib/community_member_add.php:28
 #, php-format
 msgid "You joined %s."

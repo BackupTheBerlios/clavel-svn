@@ -9,8 +9,8 @@
 
     if ((!defined("logged_on") || logged_on == 0) && $page_owner == -1) {
 
-        $body = '<li>';
-        $body .= '<form action="'.url.'login/index.php" method="post">';
+        //$body = '<li>';
+        $body = '<form action="'.url.'login/index.php" method="post">';
 
         if ($CFG->publicreg == true && ($CFG->maxusers == 0 || (count_users('person') < $CFG->maxusers))) {
             $reg_link = '<a href="' . url . 'mod/invite/register.php">'. __gettext("Register") .'</a> |';
@@ -56,7 +56,7 @@
 '
                     )
                     );
-        $body .= "</form></li>";
+        $body .= "</form>";
 
         $run_result .= $body;
 

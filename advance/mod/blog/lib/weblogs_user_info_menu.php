@@ -30,34 +30,34 @@ if (logged_on && $page_owner == $_SESSION['userid']) {
 
         $weblog_username = user_info('username', $profile_id);
         $body = <<< END
-            <ul>
+
 END;
         if (user_type($page_owner) == "person") {
             $personalWeblog = __gettext("Personal blog");
             $body .= <<< END
-                <li><a href="{$CFG->wwwroot}{$weblog_username}/weblog/">$personalWeblog</a> <a href="{$CFG->wwwroot}{$weblog_username}/weblog/rss"><img src="{$CFG->wwwroot}mod/template/icons/rss.png" alt="RSS" border="0" /></a></li>
+                <a href="{$CFG->wwwroot}{$weblog_username}/weblog/">$personalWeblog</a> <a href="{$CFG->wwwroot}{$weblog_username}/weblog/rss"><img src="{$CFG->wwwroot}mod/template/icons/rss.png" alt="RSS" border="0" /><br></a>
 END;
         } else if (user_type($page_owner) == "community") {
             $communityWeblog = __gettext("Community blog");
             $body .= <<< END
-                <li><a href="{$CFG->wwwroot}{$weblog_username}/weblog/">$communityWeblog</a> <a href="{$CFG->wwwroot}{$weblog_username}/weblog/rss"><img src="{$CFG->wwwroot}mod/template/icons/rss.png" alt="RSS" border="0" /></a></li>
+                <a href="{$CFG->wwwroot}{$weblog_username}/weblog/">$communityWeblog</a> <a href="{$CFG->wwwroot}{$weblog_username}/weblog/rss"><img src="{$CFG->wwwroot}mod/template/icons/rss.png" alt="RSS" border="0" /><br></a>
 END;
         }
         $blogArchive = __gettext("Weblog Archive");
         $friendWeblog = __gettext("Friends blog");
         $body .= <<< END
-                <li><a href="{$CFG->wwwroot}{$weblog_username}/weblog/archive/">$blogArchive</a></li>
-                <li><a href="{$CFG->wwwroot}{$weblog_username}/weblog/friends/">$friendWeblog</a></li>
+                <a href="{$CFG->wwwroot}{$weblog_username}/weblog/archive/">$blogArchive<br></a>
+                <a href="{$CFG->wwwroot}{$weblog_username}/weblog/friends/">$friendWeblog<br><br></a>
 END;
 
-        $run_result .= "<li id=\"sidebar_weblog\">";
+        //$run_result .= "<li id=\"sidebar_weblog\">";
         $run_result .= templates_draw(array(
                                             'context' => 'sidebarholder',
                                             'title' => $title,
                                             'body' => $body,
                                             )
                                       );
-        $run_result .= "</ul></li>";
+        //$run_result .= "</ul></li>";
     }
 }
 

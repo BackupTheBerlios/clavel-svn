@@ -16,12 +16,13 @@
 		</div><!-- END div cabezote_izquierda-->
 
 		<div id="header_right"><!-- div cabezote_derecha-->
+  			{{searchbox}}
   			{{sidebar}}
 		</div><!-- END div cabezote_derecha-->
 
 	</div><!-- END div header-->
 
-
+	<div id = "content-holder"><!-- Comienzo del contenido -->
 
 	<div id="izquierda"><!-- div izquierda-->
 
@@ -37,18 +38,16 @@
 			<li><a href="#">Contactenos</a></li>
 			</ul>
 		</div><!-- END div navcontainer-->
-
-
-
 		<h4>Links de Interes</h4>
-
-
 
 		<a href="http://www.treszero.com">Tres Zero</a></div><!-- div izquierda-->
 
 	<div id="derecha"><!-- div derecha-->
+	{{messageshell}}
+	{{mainbody}}
+	<!--div id="derecha"><!-- div derecha-->
 
-			{{searchbox}}
+
 		<div class="date_box"><!-- div date_box-->
 			<div class="date_box_month">Jan</div>
 			<div class="date_box_day">18</div>
@@ -82,9 +81,10 @@
 
 
 
+	</div--><!-- div derecha-->
 	</div><!-- div derecha-->
 
-
+	</div><!-- Finalización del contenido -->
 
 	<div id="final"><!-- start footer -->
 	Advance Care Net -- Tres Zero 2008 | <a href="http://www.treszero.com">www.treszero.com</a>
@@ -94,7 +94,7 @@
 
 	</div><!-- end footer -->
 
-</div>
+</div><!-- end container -->
 
 
 

@@ -4,7 +4,7 @@ global $page_owner;
 $textlib = textlib_get_instance();
 
 // If this is someone else's portfolio, display the user's icon
-$run_result .= "<li id=\"sidebar_user\">";
+//$run_result .= "<li id=\"sidebar_user\">";
 
 $info = get_record('users','ident',$page_owner);
 
@@ -67,6 +67,6 @@ $run_result .= templates_draw(array(
                                     'body' => $body
                                     )
                               );
-$run_result .= "</li>";
+//$run_result .= "</li>";
 
 ?>
