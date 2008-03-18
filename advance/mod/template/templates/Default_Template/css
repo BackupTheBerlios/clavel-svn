@@ -12,7 +12,7 @@
 	height: 465px;
 	font-size: 1.2em;
 	border-top: 1px solid white;
-	width:970px;
+	width:930px;
 	margin:0 auto;
 	padding:0;
 }
@@ -33,7 +33,7 @@
 
 #cabezote_derecha {
     height: 206px;
-	margin-left: 330px;
+	margin-left: 200px;
 	margin-right: 20px;
 }
 
@@ -577,9 +577,16 @@ body {
 	padding:0;
 }
 
+#content-holder {
+	height: 300px;
+	border-top: 1px solid white;
+	width:930px;
+	margin:0 auto;
+	padding:0;
+}
 
 #header {
-	height: 205px;
+	height: 180px;
 	padding-top: 20px;
 	margin-left: 365px;
 }
@@ -594,26 +601,26 @@ body {
 
 #header_right {
     height: 206px;
-	margin-left: 330px;
+	margin-left: 200px;
 	margin-right: 20px;
 }
 
 #izquierda {
 	float:left;
 	width: 225px;
-	margin-left: 45px;
-	margin-top: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
 }
 
 #derecha {
 	margin-left: 340px;
 	margin-top: 70px;
-	margin-right: 50px;
+	margin-right: 20px;
 }
 
 #final {
 	clear: both;
-	margin-left: 340px;
+	margin-left: 100px;
 	margin-right: 50px;
 	margin-top: 40px;
 	padding: 20px;
@@ -667,7 +674,7 @@ p.quote:first-letter
 }
 
 h1 {
-	color: #87a448;
+	color: #005588;
 	margin-top: 85px;
 	margin-left: 40px;
 	font-family: "Times New Roman", Times, serif;
@@ -699,7 +706,7 @@ h3 {
 }
 
 h4 {
-	width: 210px;
+	width: 150px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	background-color: #F5F9EB;
@@ -711,7 +718,7 @@ h4 {
 	border-top-color: #CEAC86;
 	border-bottom-color: #CEAC86;
 	font-size: 1.2em;
-	color: #A6BB7A;
+	color: #005588;
 }
 
 blockquote {
@@ -745,10 +752,10 @@ img {border: none;}
 .float_right {float: right;
               margin-left: 10px;}
 
-a:link {color: #557C2B; text-decoration: none;}     /* unvisited link */
-a:visited {color: #83A956; text-decoration: none;}  /* visited link */
+a:link {color: #005588; text-decoration: none;}     /* unvisited link */
+a:visited {color: #0000FF; text-decoration: none;}  /* visited link */
 a:hover {color: #821115; text-decoration: none;}   /* mouse over link */
-a:active {color: #577E2D; text-decoration: none;}   /* selected link */
+a:active {color: #0000FF; text-decoration: none;}   /* selected link */
 
 /********************************* Navigation **********************************/
 
@@ -765,8 +772,8 @@ a:active {color: #577E2D; text-decoration: none;}   /* selected link */
 {
 	display: block;
 	padding-top: 17px;
-	padding-left: 37px;
-	width: 182px;
+	padding-left: 35px;
+	width: 150px;
 	background-color: #DCE3ED;
 	border-bottom: 1px solid #eee;
 	background-image: url({{url}}mod/template/templates/Advance_Care_Net/images/menu.png);
@@ -777,8 +784,9 @@ a:active {color: #577E2D; text-decoration: none;}   /* selected link */
 
 #navcontainer a:link, #navlist a:visited
 {
-color: #93B26E;
+color: #005588;
 text-decoration: none;
+font-weight: bold;
 }
 
 #navcontainer a:hover
@@ -816,7 +824,7 @@ input.fields {display: block;
 	    margin-bottom: 3px;}
 
 label {
-	color: #A5BB73;
+	color: #005588;
 	font-style: italic;
 }
 

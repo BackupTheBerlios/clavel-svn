@@ -11,13 +11,13 @@
 	<div id="header"><!-- div header-->
 
 		<div id="header_left"><!-- div cabezote_izquierda-->
-			<h1>Advance <span class="red">Care Net</span></h1>
-			<h2>Salud !!  hic !!</h2>
+			<!--h1>Advance <span class="red">Care Net</span></h1-->
+			<!--h2>Salud !!  hic !!</h2-->
 		</div><!-- END div cabezote_izquierda-->
 
 		<div id="header_right"><!-- div cabezote_derecha-->
   			{{searchbox}}
-  			{{sidebar}}
+
 		</div><!-- END div cabezote_derecha-->
 
 	</div><!-- END div header-->
@@ -29,22 +29,29 @@
 		<h4><span class="menu_first_letter">Menu Principal</span></h4>
 
 		<div id="navcontainer"><!-- div navcontainer-->
-			<ul id="navlist">
-			<li id="active"><a href="#" id="current">Inicio</a></li>
-			<li class="green"><a href="#">Saludo</a></li>
-			<li><a href="#">Tendencias</a></li>
-			<li><a href="#">Comunidad</a></li>
-			<li><a href="#">Acerca de</a></li>
-			<li><a href="#">Contactenos</a></li>
-			</ul>
+			<div id="navlist">
+			<!--li id="active"><a href="#" id="current">Inicio</a></li-->
+			<!--li class="green"><a href="#">Saludo</a></li-->
+			<a href="#" id="current">Inicio</a>
+			<a href="#">Saludo</a>
+			<a href="#">Tendencias</a>
+			<a href="#">Comunidad</a>
+			<a href="#">Acerca de</a>
+			<a href="#">Contactenos</a>
+			</div>
 		</div><!-- END div navcontainer-->
 		<h4>Links de Interes</h4>
-
-		<a href="http://www.treszero.com">Tres Zero</a></div><!-- div izquierda-->
-
+			<div id="navlist">
+			<a href="http://www.treszero.com">Tres Zero</a></div><!-- div izquierda-->
+			</div>
+	<div/><!-- div izquierda-->
 	<div id="derecha"><!-- div derecha-->
-	{{messageshell}}
-	{{mainbody}}
+		<div id="principal"><!-- div derecha-->
+			{{messageshell}}
+			{{mainbody}}
+			{{sidebar}}
+		<div/>
+	</div><!-- div derecha-->
 	<!--div id="derecha"><!-- div derecha-->
 
 
@@ -82,7 +89,7 @@
 
 
 	</div--><!-- div derecha-->
-	</div><!-- div derecha-->
+
 
 	</div><!-- Finalización del contenido -->
 
