@@ -1,12 +1,19 @@
-<p align=justify>
-Salud y Tecnolog&iacute;a un Cluster enfocado al desarrollo e implementaci&oacute;n
-de soluciones tecnol&oacute;gicas integrales en el sector salud.  Est&aacute;
-conformada por empresas especializadas en: gesti&oacute;n documental,
-gesti&oacute;n de conocimiento, control de activos mediante tecnolog&iacute;a
-de identificaci&oacute;n por radiofrecuencia, inteligencia de negocios,
-herramientas y soluciones Web 2.0 y marketing relacional.
-Las empresas se integran bajo un proceso formal de gesti&oacute;n de proyectos de
-implementaci&oacute;n de soluciones de tecnolog&iacute;a inform&aacute;tica.
-</p>
-<p>
-</p>
+<table>
+	<td>
+		<p>
+			<img src="{{url}}mod/template/templates/advance_care_net/images/tecnol.jpg" width=200 height=172/>
+		</p>
+	</td>
+	<td>
+		<p align=justify>
+			Salud y Tecnolog&iacute;a es un Cluster enfocado al desarrollo e implementaci&oacute;n
+			de soluciones tecnol&oacute;gicas integrales en el sector salud.  Est&aacute;
+			conformada por empresas especializadas en: gesti&oacute;n documental,
+			gesti&oacute;n de conocimiento, control de activos mediante tecnolog&iacute;a
+			de identificaci&oacute;n por radiofrecuencia, inteligencia de negocios,
+			herramientas y soluciones Web 2.0 y marketing relacional.
+			Las empresas se integran bajo un proceso formal de gesti&oacute;n de proyectos de
+			implementaci&oacute;n de soluciones de tecnolog&iacute;a inform&aacute;tica.
+		</p>
+	</td>
+</table>

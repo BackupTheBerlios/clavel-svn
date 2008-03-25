@@ -136,7 +136,7 @@ div#splitpane-sidebar h2 {
 	clear: both;
 	margin-left: 0px;
 	margin-right: 0px;
-	margin-top: 60px;
+	margin-top: 0px;
 	padding: 10px;
 	text-align: center;
 	/*border-top: 1px dotted #CCCCCC;*/
@@ -151,7 +151,7 @@ div#splitpane-sidebar h2 {
 */
 
 div#system-message{
-	border:1px solid #005588;;
+	border:1px solid #005588;
 	background:#99CCFF;
 	color:#000;
 	padding:3px 50px;
@@ -757,17 +757,17 @@ h3 {
 }
 
 h4 {
-	width: 150px;
+	width: 167px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	background-color: #99CCFF;
+	/*background-color: #99CCFF;*/
 	padding: 5px;
 	/*border-top-width: 1px;*/
 	border-bottom-width: 1px;
 	/*border-top-style: dotted;*/
 	border-bottom-style: dotted;
-	border-top-color: #CEAC86;
-	border-bottom-color: #CEAC86;
+	/*border-top-color: #CEAC86;
+	border-bottom-color: #CEAC86;*/
 	font-size: 1.2em;
 	color: #005588;
 }

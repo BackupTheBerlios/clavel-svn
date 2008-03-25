@@ -43,10 +43,10 @@
 			<a href="#">Tendencias</a>
 			<a href="#">Comunidad</a>
 			<a href="#">Acerca de</a>
-			<a href="#">Contactenos</a>
+			<a href="#">Cont&aacute;ctenos</a>
 			</div>
 		</div><!-- END div navcontainer-->
-		<h4>Links de Interes</h4>
+		<h4>Enlaces de Inter&eacute;s</h4>
 			<div id="navlist">
 			<a href="http://www.treszero.com">Tres Zero</a></div><!-- div izquierda-->
 			</div>
@@ -102,7 +102,7 @@
 	</div><!-- Finalización del contenido -->
 
 	<div id="final"><!-- start footer -->
-	Advance Care Net -- Tres Zero 2008 | <a href="http://www.treszero.com">www.treszero.com</a>
+	Salud y Tecnolog&iacute;a -- Tres Zero 2008 | <a href="http://www.treszero.com">www.treszero.com</a>
 	<br>
 		 <a href="{{url}}content/terms.php">Terminos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Politica de Privacidad</a>&nbsp;|&nbsp;<a href="{{url}}content/About">Acerca de {{sitename}}</a>
 		{{perf}}
