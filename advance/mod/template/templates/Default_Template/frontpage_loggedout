@@ -1,34 +1,38 @@
-Contenido
-<br>
------
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
------
-
-<br>
-<br>
-<br>
-
-
-Again
 <div id="content-holder-inner-down">
 
 		<div id="tabla_registro" align="left">
             <table>
-                    <td width=660 align="center">
-						<br>
-						<h1>Registrate Ahora !!!!</h1>
-							<p>
-    							Lo invitamos a que pertenezca a esta Red Social:
-    							<a href="{{url}}mod/invite/register.php">BOTON AQUI<a>
+                    <tr>
+                    	<td>
+                    		<p align=justify>
+							Los procedimientos tradicionales en relaci&oacute;n con la prestaci&oacute;n de servicios
+							hospitalarios en las &uacute;ltimas d&eacute;cadas, ha generado la vinculaci&oacute;n de la tecnolog&iacute;a
+							para el mejoramiento de la relaci&oacute;n cl&iacute;nica - paciente. Siendo est&eacute; un elemento
+							se adecua en diferentes etapas, el cluster  Advance Care NET ofrece un
+							servicio integral en salud, en aspectos como: la gesti&oacute;n, el control y el
+							mejoramiento del manejo de la informaci&oacute;n y los recursos. Con un completo
+							an&aacute;lisis sobre los factores m&aacute;s determinantes a la hora de ofrecer un servicio
+							a los diferentes pacientes y miembros administrativos de cada cl&iacute;nica.
 							</p>
-
+                    	</td>
+                    	<td>
+                    		<!--img src="{{url}}mod/template/templates/advance_care_net/images/control.jpg" width=200 height=172/-->
+                    	</td>
+                    </tr>
+                   	<td>
+						<br>
+							<p align=justify>
+    							Desea m&aacute;s informaci&oacute;n, lo invitamos a que se vincule Tecnolog&iacute;a
+    							y Salud y conozca todas las actividades y l&iacute;neas de negocio, orientados
+    							a determinar el estado administrativo, operativo y comercial dentro del
+    							sector salud.
+							</p>
+							<p align=center>
+								<br>
+    							<a href="{{url}}mod/invite/register.php"><img src="{{url}}mod/template/templates/advance_care_net/images/registrarse.png"/><a>
+							</p>
                     </td>
+
             </table>
     	</div><!-- close tabla_registro div -->
 </div><!-- close content-holder-inner-down div -->

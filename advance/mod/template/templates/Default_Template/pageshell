@@ -11,8 +11,14 @@
 	<div id="header"><!-- div header-->
 
 		<div id="header_left"><!-- div cabezote_izquierda-->
-			<!--h1>Advance <span class="red">Care Net</span></h1-->
-			<!--h2>Salud !!  hic !!</h2-->
+			<div id="logo">
+				<a href="{{url}}"><img src="{{url}}mod/template/templates/Advance_Care_Net/images/logo.png"/></a>
+			</div>
+			<div id="nombre">
+				<a href="{{url}}"><img src="{{url}}mod/template/templates/Advance_Care_Net/images/nombre.png"/></a>
+			</div>
+				<!--h1>Salud y Tecnolog&iacute;a</h1-->
+				<!--h2>Salud !!  hic !!</h2-->
 		</div><!-- END div cabezote_izquierda-->
 
 		<div id="header_right"><!-- div cabezote_derecha-->
@@ -32,7 +38,7 @@
 			<div id="navlist">
 			<!--li id="active"><a href="#" id="current">Inicio</a></li-->
 			<!--li class="green"><a href="#">Saludo</a></li-->
-			<a href="#" id="current">Inicio</a>
+			<a href="{{url}}" id="current">Inicio</a>
 			<a href="#">Saludo</a>
 			<a href="#">Tendencias</a>
 			<a href="#">Comunidad</a>
@@ -46,11 +52,13 @@
 			</div>
 	<div/><!-- div izquierda-->
 	<div id="derecha"><!-- div derecha-->
-		<div id="principal"><!-- div derecha-->
-			{{messageshell}}
-			{{mainbody}}
-			{{sidebar}}
-		<div/>
+			<div id="principal-logedout"><!-- div principal-->
+				{{messageshell}}
+				{{mainbody}}
+			</div><!-- div principal-->
+			<div id="sidebar-logedout"><!-- div sidebar-->
+				{{sidebar}}
+			</div><!-- div sidebar-->
 	</div><!-- div derecha-->
 	<!--div id="derecha"><!-- div derecha-->
 

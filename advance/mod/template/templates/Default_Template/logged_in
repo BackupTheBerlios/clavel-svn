@@ -11,8 +11,12 @@
 	<div id="cabezera"><!-- div header-->
 
 		<div id="cabezote_izquierda"><!-- div cabezote_izquierda-->
-			<h1>Advance <span class="red">Care Net</span></h1>
-			<h2>Salud !!  hic !!</h2>
+			<div id="logo">
+				<a href="{{url}}"><img src="{{url}}mod/template/templates/Advance_Care_Net/images/logo.png"/></a>
+			</div>
+			<div id="nombre">
+				<a href="{{url}}"><img src="{{url}}mod/template/templates/Advance_Care_Net/images/nombre.png"/></a>
+			</div>
 		</div><!-- END div cabezote_izquierda-->
 
 		<div id="cabezote_derecha"><!-- div cabezote_derecha-->

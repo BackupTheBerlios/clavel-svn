@@ -89,7 +89,7 @@ div#elggtoolbar #global-menuoptions img {
 
 div#elggtoolbar #navigation {
 	height: 19px;
-	margin: 3px 0 0 4px;
+	margin: 10px 0 0 2px;
 	padding:0;
 	text-align:left;
 	float:left;
@@ -106,7 +106,7 @@ div#elggtoolbar #navigation li {
 }
 
 div#elggtoolbar #navigation a {
-	margin-top: 15px;
+	margin-top: 4px;
 	padding: 2px;
 	background-color: #EAF4D9;
 	margin-right: 20px;
