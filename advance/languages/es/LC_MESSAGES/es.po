@@ -7249,9 +7249,7 @@ msgstr "Gracias por comprobar su correo. Ahora su cuenta esta activada. \n\nPued
 
 #: mod/invite/lib/password_request.php
 msgid ""
-"To generate a new password at %s!, enter your username below. We will send "
-"the address of a unique verification page to you via email click on the link "
-"in the body of the message and a new password will be sent to you."
+"To generate a new password at %s!, enter your email or email below. We will send the address of a unique verification page to you via email click on the link in the body of the message and a new password will be sent to you."
 msgstr ""
 "Para crear una nueva contraseña en %s! ingrese el correo electrónico "
 "abajo. Se le enviará un enlace para que pueda crear la nueva contraseña."

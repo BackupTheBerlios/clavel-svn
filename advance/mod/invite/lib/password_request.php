@@ -19,9 +19,9 @@ if (!empty($CFG->disable_passwordchanging)) {
     <p>
         $desc
     </p>
-    <p>
+    <!--p>
         $thismethod
-    </p>
+    </p-->
     <form action="" method="post">
 
 END;
