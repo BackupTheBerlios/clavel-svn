@@ -36,7 +36,7 @@
         }
         $querystring = $CFG->wwwroot . "search/index.php?" . $querystring;
         
-        $body = "<p>" . __gettext("Search for results from:") . " ";
+        /*$body = "<p>" . __gettext("Search for results from:") . " ";
         
         if ($PAGE->search_type  == "''") {
             $body .= "<b class=\"selected_search_type\">";
@@ -57,7 +57,7 @@
                 }
             }
         }
-        $body .= "</p>";
+        $body .= "</p>";*/
         
         
         
@@ -76,7 +76,7 @@
         }
         $querystring = $CFG->wwwroot . "search/index.php?" . $querystring;
         
-        $body .= "<p>" . __gettext("Filter by content type:") . " ";
+        /*$body .= "<p>" . __gettext("Filter by content type:") . " ";
         if (empty($PAGE->returned_items)) {
             $body .= "<b class=\"search_displaying_type\">";
         }
@@ -97,7 +97,7 @@
         $body .= "<a href=\"$querystring&returned_items=resources\">" . __gettext("Resources") . "</a> ";
         if ($PAGE->returned_items == 'resources') {
             $body .= "</b>";
-        }
+        }*/
         
         
         $body .= run("search:display");

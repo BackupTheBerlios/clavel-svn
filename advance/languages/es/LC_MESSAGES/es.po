@@ -674,7 +674,7 @@ msgstr "Atrás"
 #: lib/elgglib.php:4362 mod/commentwall/lib/commentwall_settings.php:21
 #: mod/users/lib/function_default_access_levels.php:7
 msgid "Logged in users"
-msgstr "Usuarios conectados"
+msgstr "Usuarios registrados"
 
 #: lib/elgglib.php:4364 mod/commentwall/lib/commentwall_settings.php:22
 #: mod/users/lib/function_default_access_levels.php:5
@@ -716,7 +716,7 @@ msgstr "Administración"
 
 #: lib/templates.php:105
 msgid "Account settings"
-msgstr "Configuración de la cuenta"
+msgstr "Opciones"
 
 #: lib/templates.php:111
 msgid "Log off"
@@ -1787,7 +1787,7 @@ msgstr "Intereses"
 #: mod/blog/lib/archives_view.php:53
 #: mod/blog/lib/weblogs_user_info_menu.php:46
 msgid "Weblog Archive"
-msgstr "Archivo de Blog"
+msgstr "Historial"
 
 #: mod/blog/lib/archives_view.php:95
 #, php-format
@@ -2209,10 +2209,10 @@ msgstr "Blog personal"
 
 #: mod/blog/lib/weblogs_user_info_menu.php:41
 msgid "Community blog"
-msgstr "Blog comunitario"
+msgstr "Blog del grupo"
 
 #: mod/blog/lib/weblogs_user_info_menu.php:47
-#, fuzzy
+#: mod/blog/lib/weblogs_user_info_menu.php:46
 msgid "Friends blog"
 msgstr "Blogs de Contactos"
 
@@ -2319,7 +2319,7 @@ msgstr "Navegador Web"
 #: mod/community/lib/communities_edit_wrapper.php:5 mod/community/lib.php:117
 #: mod/community/lib.php:129 mod/community/lib.php:140 mod/toolbar/lib.php:60
 msgid "Communities"
-msgstr "Comunidades"
+msgstr "Grupos"
 
 #: mod/browser/index.php:93
 msgid "Users"
@@ -2541,7 +2541,7 @@ msgstr "Nombre de Usuario: "
 
 #: mod/community/lib.php:90
 msgid "Back to communities"
-msgstr "Volver a comunidades"
+msgstr "Volver a Grupos"
 
 #: mod/community/invite.php:30 mod/search/lib/search_user_info_menu.php:7
 #: mod/toolbar/lib.php:63
@@ -2573,40 +2573,40 @@ msgid ""
 "Error! The community username must contain letters and numbers only, cannot "
 "be blank, and must be between 3 and 12 characters in length."
 msgstr ""
-"¡Error! El nombre de la comunidad puede contener sólo letras y números, no "
+"¡Error! El nombre del grupo puede contener sólo letras y números, no "
 "debe dejarse en blanco, y tiene que oscilar entre 3 y 12 caracteres."
 
 #: mod/community/lib/communities_actions.php:25
 msgid "Error! The community name cannot be blank."
-msgstr "¡Error! El nombre de la comunidad no puede dejarse en blanco."
+msgstr "¡Error! El nombre del grupo no puede dejarse en blanco."
 
 #: mod/community/lib/communities_actions.php:45
 msgid "Your community was created and you were added as its first member."
-msgstr "Se creó la comunidad y se ha agregado como primer miembro."
+msgstr "Se creó el grupo y se ha agregado como primer miembro."
 
 #: mod/community/lib/communities_actions.php:70
 msgid "Are you sure you want to delete this community?"
-msgstr "¿Está seguro de que quiere borrar esta comunidad?"
+msgstr "¿Está seguro de que quiere borrar este grupo?"
 
 #: mod/community/lib/communities_actions.php:75
 msgid "The community was deleted."
-msgstr "La comunidad ha sido borrada."
+msgstr "El grupo ha sido borrado."
 
 #: mod/community/lib/communities_actions.php:77
 msgid "Error: the community could not be deleted."
-msgstr "Error: La comunidad no puede ser eliminada"
+msgstr "Error: El grupo no puede ser eliminado"
 
 #: mod/community/lib/communities_actions.php:94
 msgid "Your post has been added to the community weblog."
-msgstr "El Artículo se ha añadido al Blog de la comunidad."
+msgstr "El Artículo se ha añadido al Blog del grupo."
 
 #: mod/community/lib/communities_actions.php:110
 #, php-format
 msgid ""
 "You approved the membership request. %s is now a member of this community."
 msgstr ""
-"Aprobaste la solicitud de ingreso como miembro. %s ya es miembro de esta "
-"comunidad."
+"Aprobó la solicitud de ingreso como miembro. %s ya es miembro de esta "
+"grupo."
 
 #: mod/community/lib/communities_actions.php:112
 msgid "An error occurred: the membership request could not be approved."
@@ -2632,7 +2632,7 @@ msgstr ""
 msgid ""
 "You declined the membership request. %s is not a member of this community."
 msgstr ""
-"Denegaste la solicitud de miembro. %s  no es miembro de esta comunidad."
+"Denegaste la solicitud de miembro. %s  no es miembro de este grupo."
 
 #: mod/community/lib/communities_actions.php:155
 #, php-format
@@ -2702,23 +2702,33 @@ msgstr ""
 
 #: mod/community/lib/communities_create.php:17
 msgid "Create a new community"
-msgstr "Crear una nueva comunidad"
+msgstr "Crear un nuevo grupo"
 
 #: mod/community/lib/communities_create.php:18
 msgid "Community name:"
-msgstr "Nombre de la comunidad:"
+msgstr "Nombre del grupo:"
 
 #: mod/community/lib/communities_create.php:18
 msgid "Description:"
 msgstr "Descripción:"
 
 #: mod/community/lib/communities_create.php:18
-msgid "Email -- Opcional:"
+msgid "Email -- Optional:"
 msgstr "Correo electrónico -- Opcional:"
 
 #: mod/community/lib/communities_create.php:18
-msgid "City -- Opcional:"
+msgid "City -- Optional:"
 msgstr "Ciudad -- Opcional:"
+
+#: mod/community/lib/community_showdetails.php
+msgid "Community Name"
+msgstr "Nombre del grupo"
+
+msgid "Email"
+msgstr "Correo electrónico"
+
+msgid "City"
+msgstr "Ciudad"
 
 #: mod/community/lib/communities_create.php:19
 msgid "Username for community (forms part of the community website address):"
@@ -2732,7 +2742,7 @@ msgstr "Crear"
 #: mod/community/lib/communities_edit.php:43
 #, php-format
 msgid "Communities were %s belongs"
-msgstr "Comunidades a las cuales %s pertenece"
+msgstr "Grupos a los cuales %s pertenece"
 
 #: mod/community/lib/communities_edit.php:45
 #, php-format
@@ -2745,13 +2755,13 @@ msgid ""
 "button underneath a community's icon. You can find communities you're "
 "interested in by using the search function."
 msgstr ""
-"No tiene ninguna comunidad en lista. Para participar en una comunidad, "
-"haga click en el botón 'entrar' bajo el icono de una comunidad. Puede encontrar "
-"comunidades en las que esté interesado usando la función de búsqueda."
+"No tiene ningún grupo en lista. Para participar en un grupo, "
+"haga click en el botón 'entrar' bajo el icono de una grupo. Puede encontrar "
+"grupos en los que esté interesado usando la función de búsqueda."
 
 #: mod/community/lib/communities_edit.php:63
 msgid "This user is not currently a member of any communities."
-msgstr "Este usuario no es actualmente miembro de ninguna comunidad."
+msgstr "Este usuario no es actualmente miembro de ningún grupo."
 
 #: mod/community/lib/communities_membership_requests.php:16
 msgid ""
@@ -2759,9 +2769,9 @@ msgid ""
 "approval to do this (to change this setting, visit the 'community settings' "
 "page)."
 msgstr ""
-"Los siguientes usuarios quisieran entrar en esta comunidad. Necesitan tu "
-"aprobación para hacerlo (para cambiar esta configuración, visita la página "
-"'configuraciones de comunidad')."
+"Los siguientes usuarios quisieran entrar en este grupo. Necesitan su "
+"aprobación para hacerlo (para cambiar esta configuración, visite la página "
+"'configuraciones de grupo')."
 
 #: mod/community/lib/communities_membership_requests.php:33
 #: mod/community/lib/community_membership_invitations.php:33
@@ -2776,7 +2786,7 @@ msgstr "No tienes solicitudes de ingreso de miembros pendientes."
 #: mod/community/lib/communities_members.php:24
 #: mod/community/lib/user_info_menu.php:24
 msgid "Are you sure you want to separate this user from the community?"
-msgstr "¿Está seguro que quiere eliminar este usuario de la comunidad?"
+msgstr "¿Está seguro que quiere eliminar este usuario del grupo?"
 
 #: mod/community/lib/communities_members.php:25
 #: mod/community/lib/user_info_menu.php:25
@@ -2789,22 +2799,22 @@ msgstr "Propietario"
 
 #: mod/community/lib/communities_members.php:46
 msgid "This community doesn't currently have any members."
-msgstr "Esta comunidad no tiene actualmente ningún miembro."
+msgstr "Este grupo no tiene actualmente ningún miembro."
 
 #: mod/community/lib/communities_moderator_of.php:41
 msgid "You don't own any communities. Why not create one?"
-msgstr "No ha creado ninguna comunidad. Puede crear una en la parte de abajo."
+msgstr "No ha creado ningún grupo. Puede crear una en la parte de abajo."
 
 #: mod/community/lib/communities_moderator_of.php:43
 msgid "This user is not currently moderating any communities."
-msgstr "Este usuario no modera actualmente ninguna comunidad."
+msgstr "Este usuario no modera actualmente ningún grupo."
 
 #: mod/community/lib/communities_owned.php:18
 msgid "Owned communities"
-msgstr "Mis comunidades"
+msgstr "Mis grupos"
 
 msgid "All community"
-msgstr "Todas las comunidades"
+msgstr "Todos los grupos"
 
 #: mod/community/lib/community_member_add.php:28
 #, php-format
@@ -2862,7 +2872,7 @@ msgstr "Nueva %s petición de miembro"
 #, php-format
 msgid "%s is a private community. Your membership request has been declined."
 msgstr ""
-"%s es una comunidad privada. Tu solicitud de ingreso como miembro ha sido "
+"%s es un grupo privado. Tu solicitud de ingreso como miembro ha sido "
 "denegada."
 
 #: mod/community/lib/community_member_remove.php:30
@@ -2873,7 +2883,7 @@ msgstr ""
 #: mod/community/lib/community_member_remove.php:35
 #, php-format
 msgid "The user was removed from your community."
-msgstr "El usuario fue eliminado de la comunidad."
+msgstr "El usuario fue eliminado del grupo."
 
 #: mod/community/lib/community_member_remove.php:39
 #, php-format
@@ -2883,7 +2893,7 @@ msgstr "Usted no pudo dejar %s"
 #: mod/community/lib/community_member_remove.php:41
 #, php-format
 msgid "The user coundn't be removed from your community."
-msgstr "El usuario no pudo ser eliminado de la comunidad."
+msgstr "El usuario no pudo ser eliminado del grupo."
 
 #: mod/community/lib/community_member_remove.php:47
 #, php-format
@@ -2893,7 +2903,7 @@ msgstr "Dejaste %s."
 #: mod/community/lib/community_membership_invitations.php:11
 #: mod/community/lib.php:147
 msgid "Community invitations"
-msgstr "Invitaciones de Comunidades"
+msgstr "Invitaciones"
 
 #: mod/community/lib/community_membership_invitations.php:16
 msgid "The following comunities would like to invite you to become a member."
@@ -2905,11 +2915,11 @@ msgstr ""
 
 #: mod/community/lib/community_membership_invitations.php:51
 msgid "You have no pending community membership invitations."
-msgstr "No tiene pendiente ninguna invitación a comunidades."
+msgstr "No tiene pendiente ninguna invitación a algún grupos."
 
 #: mod/community/lib/community_memberships.php:17
 msgid "Community memberships"
-msgstr "Miembros de la comunidad"
+msgstr "Miembros del grupo"
 
 #: mod/community/lib/community_memberships.php:36
 #: mod/community/lib/community_memberships.php:38
@@ -2919,7 +2929,7 @@ msgstr "Miembros"
 
 #: mod/community/lib.php:42
 msgid "Your Communities"
-msgstr "Tus Comunidades"
+msgstr "Sus grupos"
 
 #: mod/community/lib.php:42
 msgid "Contacts"
@@ -2927,19 +2937,19 @@ msgstr "Contactos"
 
 #: mod/community/lib.php:59
 msgid "Edit community profile"
-msgstr "Modificar perfil de la comunidad"
+msgstr "Modificar perfil del grupo"
 
 #: mod/community/lib.php:63
 msgid "Community site picture"
-msgstr "Foto de la comunidad"
+msgstr "Foto del grupo"
 
 #: mod/community/lib.php:67
 msgid "Edit community details"
-msgstr "Editar detalles de la comunidad"
+msgstr "Editar detalles del grupo"
 
 #: mod/community/lib.php:77
 msgid "Return to community profile"
-msgstr "Volver al perfil de la comunidad"
+msgstr "Volver al perfil del grupo"
 
 #: mod/community/lib.php:82
 msgid "Edit members"
@@ -2961,18 +2971,19 @@ msgstr ""
 msgid "New Community"
 msgstr ""
 
-#: mod/community/lib.php:134 mod/community/new.php:21
+#: mod/community/new.php:21
 #: mod/community/owned.php:25
+#: mod/community/lib.php:134
 msgid "Owned Communities"
-msgstr "Mis comunidades"
+msgstr "Grupos moderados"
 
 #: mod/community/lib.php:134
 msgid "My Communities"
-msgstr "Lista de comunidades"
+msgstr "Mis grupos"
 
 #: mod/community/lib.php:134
 msgid "Create a Community"
-msgstr "Crear comunidad"
+msgstr "Crear"
 
 #: mod/community/lib.php:289
 #, php-format
@@ -3069,7 +3080,7 @@ msgstr ""
 
 #: mod/community/lib/userdetails_edit.php:108
 msgid "Delete community"
-msgstr "Eliminar Comunidad"
+msgstr "Eliminar grupo"
 
 #: mod/community/lib/user_info_menu.php:21
 msgid "Administrate"
@@ -3081,11 +3092,11 @@ msgstr "¿Estás seguro de que quieres entrar en esta comunidad?"
 
 #: mod/community/lib/user_info_menu_text.php:19
 msgid "Click here to join this community."
-msgstr "Pincha aquí para entrar en esta comunidad."
+msgstr "Entrar a este grupo."
 
 #: mod/community/lib/user_info_menu_text.php:22
 msgid "Are you sure you want to apply to join this community?"
-msgstr "¿Estás seguro de que quieres solicitar entrar en esta comunidad?"
+msgstr "¿Está seguro de que quiere solicitar entrar en este grupo?"
 
 #: mod/community/lib/user_info_menu_text.php:22
 msgid "Click here to apply to join this community."
@@ -3093,11 +3104,11 @@ msgstr "Pincha aquí para solicitar entrar en esta comunidad."
 
 #: mod/community/lib/user_info_menu_text.php:29
 msgid "Are you sure you want to leave this community?"
-msgstr "¿Estás seguro de que quieres dejar esta comunidad?"
+msgstr "¿Está seguro de que quiere dejar esta grupo?"
 
 #: mod/community/lib/user_info_menu_text.php:29
 msgid "Click here to leave this community."
-msgstr "Click aquí para dejar esta comunidad."
+msgstr "Dejar este grupo."
 
 #: mod/community/profile.config.php:56 mod/profile/profile.config.php:62
 msgid "Profile photo"
@@ -6271,7 +6282,7 @@ msgstr ""
 
 #: mod/search/lib/search_suggest_users.php:28
 msgid "Matching users and communities:"
-msgstr "Usuarios y Comunidades:"
+msgstr "Usuarios y Grupos:"
 
 #: mod/search/lib/search_user_info_menu.php:9
 msgid "Random tags"

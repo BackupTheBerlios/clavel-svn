@@ -46,8 +46,8 @@ END;
         $blogArchive = __gettext("Weblog Archive");
         $friendWeblog = __gettext("Friends blog");
         $body .= <<< END
-                <a href="{$CFG->wwwroot}{$weblog_username}/weblog/archive/">$blogArchive<br></a>
-                <a href="{$CFG->wwwroot}{$weblog_username}/weblog/friends/">$friendWeblog<br><br></a>
+                <a href="{$CFG->wwwroot}{$weblog_username}/weblog/archive/">$blogArchive<br></a><br>
+                <!--a href="{$CFG->wwwroot}{$weblog_username}/weblog/friends/">$friendWeblog<br><br></a-->
 END;
 
         //$run_result .= "<li id=\"sidebar_weblog\">";
