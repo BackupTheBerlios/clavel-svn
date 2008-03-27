@@ -1805,7 +1805,7 @@ msgid ""
 msgstr ""
 "Has seleccionado este post como interesante; todos los comentarios "
 "aparecerán en tu página de 'actividad reciente'. Si quieres quitar esta "
-"bandera, pincha aquí."
+"bandera, haga click aquí."
 
 #: mod/blog/lib/display_interesting_post_form.php:23
 msgid "Remove interesting flag"
@@ -2803,7 +2803,7 @@ msgstr "Este grupo no tiene actualmente ningún miembro."
 
 #: mod/community/lib/communities_moderator_of.php:41
 msgid "You don't own any communities. Why not create one?"
-msgstr "No ha creado ningún grupo. Puede crear una en la parte de abajo."
+msgstr "No ha creado ningún grupo."
 
 #: mod/community/lib/communities_moderator_of.php:43
 msgid "This user is not currently moderating any communities."
@@ -3100,7 +3100,7 @@ msgstr "¿Está seguro de que quiere solicitar entrar en este grupo?"
 
 #: mod/community/lib/user_info_menu_text.php:22
 msgid "Click here to apply to join this community."
-msgstr "Pincha aquí para solicitar entrar en esta comunidad."
+msgstr "Entrar en este grupo."
 
 #: mod/community/lib/user_info_menu_text.php:29
 msgid "Are you sure you want to leave this community?"
@@ -5241,7 +5241,7 @@ msgid ""
 "\n"
 msgstr ""
 "Para confirmar esta solicitud y recibir una nueva contraseña por correo "
-"electrónico, pincha en el siguiente enlace:\n"
+"electrónico, haga click en el siguiente enlace:\n"
 "\n"
 "\t%s\n"
 "\n"
@@ -6143,7 +6143,7 @@ msgstr ""
 
 #: mod/profile/lib/edit_link.php:8 profile/profile.class.php:48
 msgid "Click here to edit this profile."
-msgstr "Pincha aquí para editar este perfil."
+msgstr "Editar este perfil."
 
 #: mod/profile/lib/function_editfield_display.php:40
 #: profile/profile.class.php:278
@@ -6274,11 +6274,11 @@ msgstr "Sugerencia de etiqueta automática:"
 
 #: mod/search/lib/search_suggest_users.php:24
 msgid "Matching users:"
-msgstr "Emparejando usuarios:"
+msgstr "Usuarios encontrados:"
 
 #: mod/search/lib/search_suggest_users.php:26
 msgid "Matching communities:"
-msgstr ""
+msgstr "Grupos encontrados:"
 
 #: mod/search/lib/search_suggest_users.php:28
 msgid "Matching users and communities:"
@@ -7265,3 +7265,11 @@ msgstr "Por favor, ingrese una nueva contraseña:"
 #: mod/invite/lib/invite_actions.php
 msgid "Your password has been changed. Check your email."
 msgstr "Su contraseña ha sido cambiada. Verifique su correo electrónico."
+
+#: mod/contacts/index.php
+msgid "Contact us"
+msgstr "Contáctenos"
+
+#: mod/communities/allcommunities.php
+msgid "All Communities"
+msgstr "Todos los grupos"
