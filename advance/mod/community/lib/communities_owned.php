@@ -10,7 +10,7 @@ if ($page_owner != -1) {
             //$body = "<ul>";
             foreach($result as $row) {
                     $row->name = run("profile:display:name",$row->ident);
-                    $body = "<a href=\"" . url . $row->username . "/\">" . $row->name . "<br></a>";
+                    $body = "<a href=\"" . url ."mod/community/community_showdetails.php?profile_id=". $row->ident . "\">" . $row->name . "<br></a>";
             }
             $body .= "<a href=\"" . url . $USER->username."/communities" . "\"><br>"."[" . __gettext("All community") ."]". "<br><br></a>";;
             //$body .= "</ul>";

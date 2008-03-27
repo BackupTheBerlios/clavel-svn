@@ -35,6 +35,8 @@ function community_pagesetup() {
 
     $username= user_info('username', $page_owner);
 
+    $owner = user_info('owner', $page_owner);
+
     if (isloggedin()) {
         if(COMMUNITY_CONTEXT!="network"){
           if (defined("context") && context == COMMUNITY_CONTEXT /*&& $page_owner == $_SESSION['userid']*/) {
@@ -45,9 +47,11 @@ function community_pagesetup() {
                                        'html' => "<li><a href=\"{$CFG->wwwroot}{$_SESSION['username']}/communities\" >" .__gettext("Communities").'</a></li>');
           }
         }
-    }
+    //}
 
     if ($usertype == "community") {
+
+	if($USER->ident == $owner){
 
       /*$PAGE->menu_sub[] = array( 'name' => 'profile:edit',
                                        'html' => '<a href="'.$CFG->wwwroot.'profile/edit.php?profile_id='.$page_owner.'">'
@@ -81,6 +85,8 @@ function community_pagesetup() {
       $PAGE->menu_sub[] = array( 'name' => 'community:invite',
                                          'html' => a_href("{$CFG->wwwroot}{$USER->username}/communities",
                                                            __gettext("Back to communities")));
+
+    }
 
     } else if ($usertype == "person") {
 
@@ -116,7 +122,7 @@ function community_pagesetup() {
           }
         }
     }
-
+}
     $PAGE->search_menu[] = array( 'name' => __gettext("Communities"),
                                   'user_type' => 'community');
 
@@ -130,6 +136,9 @@ function community_pagesetup() {
 
 function community_init() {
         global $CFG,$function;
+
+	//Ver todas las comunides
+		$function['allcommunities:out'][] = $CFG->dirroot . "mod/community/lib/allcommunities.php";
 
     // Add communities to access levels
         $function['init'][] = $CFG->dirroot . "mod/community/lib/communities_access_levels.php";

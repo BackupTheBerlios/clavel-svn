@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="shortcut icon" href="{{url}}mod/template/templates/advance_care_net/images/favicon.ico" type="image/x-icon" />
 <title>{{title}}</title>
 {{metatags}}
 </head>
@@ -39,15 +40,17 @@
 			<!--li id="active"><a href="#" id="current">Inicio</a></li-->
 			<!--li class="green"><a href="#">Saludo</a></li-->
 			<a href="{{url}}" id="current">Inicio</a>
-			<a href="#">Saludo</a>
-			<a href="#">Tendencias</a>
-			<a href="#">Comunidad</a>
-			<a href="#">Acerca de</a>
-			<a href="#">Cont&aacute;ctenos</a>
+			<!--a href="#">Saludo</a-->
+			<!--a href="#">Tendencias</a-->
+			<a href="{{url}}mod/community/allcommunities.php">Grupos</a>
+			<a href="{{url}}content/acercade">Acerca de</a>
+			<a href="{{url}}mod/contacts/index.php">Cont&aacute;ctenos</a>
 			</div>
 		</div><!-- END div navcontainer-->
 		<h4>Enlaces de Inter&eacute;s</h4>
 			<div id="navlist">
+			<a href="http://www.epymesoluciones.com">E-Pyme Soluciones</a><br>
+			<a href="http://www.radarik.com">Radar</a><br>
 			<a href="http://www.treszero.com">Tres Zero</a></div><!-- div izquierda-->
 			</div>
 	<div/><!-- div izquierda-->
@@ -104,7 +107,7 @@
 	<div id="final"><!-- start footer -->
 	Salud y Tecnolog&iacute;a -- Tres Zero 2008 | <a href="http://www.treszero.com">www.treszero.com</a>
 	<br>
-		 <a href="{{url}}content/terms.php">Terminos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy.php">Politica de Privacidad</a>&nbsp;|&nbsp;<a href="{{url}}content/About">Acerca de {{sitename}}</a>
+		 <a href="{{url}}content/terms_es.php">Terminos y Condiciones</a>&nbsp;|&nbsp;<a href="{{url}}content/privacy_es.php">Politica de Privacidad</a>&nbsp;|&nbsp;<a href="{{url}}content/acercade">Acerca de {{sitename}}</a>
 		{{perf}}
 
 	</div><!-- end footer -->

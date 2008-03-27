@@ -25,6 +25,6 @@ if (isset ($parameter) && is_object($parameter[0])) {
       $functions[] = "<a href=\"" . $CFG->wwwroot . $info->username . "/community/separate/" . $profile_id . "\" $msg>" . __gettext("Separate") . "</a>";
     }
   }
-  $run_result .= implode("\n", array_map(create_function('$entry', "return \"<li>\$entry</li>\";"), $functions));
+  $run_result .= implode("\n", array_map(create_function('$entry', "return \"\$entry\";"), $functions));
 }
 ?>
