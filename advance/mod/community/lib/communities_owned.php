@@ -12,7 +12,7 @@ if ($page_owner != -1) {
                     $row->name = run("profile:display:name",$row->ident);
                     $body = "<a href=\"" . url ."mod/community/community_showdetails.php?profile_id=". $row->ident . "\">" . $row->name . "<br></a>";
             }
-            $body .= "<a href=\"" . url . $USER->username."/communities" . "\"><br>"."[" . __gettext("All community") ."]". "<br><br></a>";;
+            $body .= "<a href=\"" . url . "mod/community/allcommunities.php" . "\"><br>"."[" . __gettext("All community") ."]". "<br><br></a>";;
             //$body .= "</ul>";
             // $run_result .= $body;
             //$run_result .= "<li id=\"community_owned\">";

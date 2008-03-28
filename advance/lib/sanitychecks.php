@@ -1,11 +1,11 @@
 <?php
 
     // Sanity checks - conditions under which Elgg will refuse to run
-    
+
     global $CFG;
-    
+
     $diemessages = array();
-    
+
     if ($CFG->dirroot == "") {
         $diemessages[] = 'Configuration problem: The <code>$CFG->dirroot</code> setting in config.php is empty.';
     } elseif (substr($CFG->dirroot, -1) != "/") {
@@ -16,19 +16,19 @@
     } elseif (!is_dir($CFG->dirroot)) {
         $diemessages[] = 'Configuration problem: The <code>$CFG->dirroot</code> setting in config.php points to a location that is not a directory.';
     }
-    
+
     if (!preg_match('#^https?://.+#', $CFG->wwwroot)) {
         $diemessages[] = 'Configuration problem: The <code>$CFG->wwwroot</code> setting in config.php is empty or not a valid URL.';
     } elseif (substr($CFG->wwwroot, -1) != "/") {
         $diemessages[] = 'Configuration problem: The <code>$CFG->wwwroot</code> setting in config.php must end with a forward slash (/).';
     }
-    
+
     if ($CFG->dataroot == "") {
         $diemessages[] = 'Configuration problem: The <code>$CFG->dataroot</code> setting in config.php is empty.';
     } elseif (substr($CFG->dataroot, -1) != "/") {
         $diemessages[] = 'Configuration problem: The <code>$CFG->dataroot</code> setting in config.php must end with a forward slash (/).';
     }
-    
+
     if (ini_get('register_globals')) {
         // this shouldn't be needed due to the htaccess file, but just in case...
         $diemessages[] = "
@@ -37,8 +37,8 @@
             If the line is present but has a # at the start, remove the # character.
         ";
     }
-    
-    
+
+
     switch ($CFG->dbtype) {
         case 'mysql':
             $funcheck = 'mysql_query';
@@ -55,8 +55,8 @@
             Please check your PHP installation.
         ";
     }
-    
-    
+
+
     if (count($diemessages)) {
         $diebody  = '<html><body><h1>Elgg isn\'t ready to run. :(</h1><ul>';
         $diebody .= '<li>' . implode("</li><li>", $diemessages) . '</li>';
@@ -67,8 +67,8 @@
     } else {
         unset($diemessages);
     }
-    
-    
-    
-    
+
+
+
+
 ?>

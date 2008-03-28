@@ -19,6 +19,8 @@ Options +FollowSymLinks
 # Default handler
 DirectoryIndex index.php
 
+#php_flag register_globals off
+
 # php 4, apache 1.x
 <IfModule mod_php4.c>
 	# default memory limit to 16Mb

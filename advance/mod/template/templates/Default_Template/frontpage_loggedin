@@ -1,10 +1,13 @@
 <table>
-	<td>
+	<tr>
+	<td COLSPAN="2">
 		<p>
-			<img src="{{url}}mod/template/templates/advance_care_net/images/control.jpg" width=200 height=172/>
+			<img src="{{url}}mod/template/templates/advance_care_net/images/raton.jpg" width=250 height=200/>
 		</p>
 	</td>
-	<td>
+	<td width="10">&nbsp;</td>
+                    	<td>
+	<td COLSPAN="3">
 		<p align=justify>
 			Salud y Tecnolog&iacute;a es un Cluster enfocado al desarrollo e implementaci&oacute;n
 			de soluciones tecnol&oacute;gicas integrales en el sector salud.  Est&aacute;
@@ -16,4 +19,5 @@
 			implementaci&oacute;n de soluciones de tecnolog&iacute;a inform&aacute;tica.
 		</p>
 	</td>
+	</tr>
 </table>

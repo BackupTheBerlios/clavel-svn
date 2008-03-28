@@ -24,7 +24,7 @@ init_performance_info();
 /// http://www.google.com/webmasters/faq.html#prefetchblock
 
 if (!empty($_SERVER['HTTP_X_moz']) && $_SERVER['HTTP_X_moz'] === 'prefetch'){
-    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Prefetch Forbidden');        
+    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Prefetch Forbidden');
     trigger_error('Prefetch request forbidden.');
     exit;
 }
@@ -135,9 +135,9 @@ if (is_array($CFG->dbhost)) {
 if (! $dbconnected) {
     // In the name of protocol correctness, monitoring and performance
     // profiling, set the appropriate error headers for machine consumption
-    if (isset($_SERVER['SERVER_PROTOCOL'])) { 
+    if (isset($_SERVER['SERVER_PROTOCOL'])) {
         // Avoid it with cron.php. Note that we assume it's HTTP/1.x
-        header($_SERVER['SERVER_PROTOCOL'] . ' 503 Service Unavailable');        
+        header($_SERVER['SERVER_PROTOCOL'] . ' 503 Service Unavailable');
     }
     // and then for human consumption...
     echo '<html><body>';
@@ -204,34 +204,34 @@ if (!is_writable($CFG->dataroot)) {
 /// Set up session handling
 if(empty($CFG->respectsessionsettings)) {
     if (empty($CFG->dbsessions)) {   /// File-based sessions
-        
+
         // Some distros disable GC by setting probability to 0
         // overriding the PHP default of 1
         // (gc_probability is divided by gc_divisor, which defaults to 1000)
         if (ini_get('session.gc_probability') == 0) {
             ini_set('session.gc_probability', 1);
         }
-        
+
         if (!empty($CFG->sessiontimeout)) {
             ini_set('session.gc_maxlifetime', $CFG->sessiontimeout);
         }
-        
+
         if (!file_exists($CFG->dataroot .'sessions')) {
             require_once($CFG->dirroot . 'lib/uploadlib.php');
             make_upload_directory('sessions');
         }
         ini_set('session.save_path', $CFG->dataroot .'sessions');
-        
+
     } else {                         /// Database sessions
         ini_set('session.save_handler', 'user');
-        
+
         $ADODB_SESSION_DRIVER  = $CFG->dbtype;
         $ADODB_SESSION_CONNECT = $CFG->dbhost;
         $ADODB_SESSION_USER    = $CFG->dbuser;
         $ADODB_SESSION_PWD     = $CFG->dbpass;
         $ADODB_SESSION_DB      = $CFG->dbname;
         $ADODB_SESSION_TBL     = $CFG->prefix.'sessions';
-        
+
         require_once($CFG->libdir. '/adodb/session/adodb-session.php');
     }
 }
@@ -263,7 +263,7 @@ if (ini_get_bool('register_globals')) {
 // we want everything to be stripslashed
 // rather than addslashed.
 if (ini_get_bool('magic_quotes_gpc') ) {
-    
+
     //do keys as well, cos array_map ignores them
     function stripslashes_arraykeys($array) {
         if (is_array($array)) {
@@ -280,7 +280,7 @@ if (ini_get_bool('magic_quotes_gpc') ) {
             return $array;
         }
     }
-    
+
     function stripslashes_deep($value) {
         if (is_array($value)) {
             $value = stripslashes_arraykeys($value);
@@ -290,12 +290,12 @@ if (ini_get_bool('magic_quotes_gpc') ) {
         }
         return $value;
     }
-    
+
     $_POST = stripslashes_arraykeys($_POST);
     $_GET = stripslashes_arraykeys($_GET);
     $_COOKIE = stripslashes_arraykeys($_COOKIE);
     $_REQUEST = stripslashes_arraykeys($_REQUEST);
-    
+
     $_POST = array_map('stripslashes_deep', $_POST);
     $_GET = array_map('stripslashes_deep', $_GET);
     $_COOKIE = array_map('stripslashes_deep', $_COOKIE);
@@ -318,7 +318,7 @@ if (ini_get_bool('magic_quotes_gpc') ) {
     if (!empty($_SERVER['PATH_TRANSLATED'])) {
         $_SERVER['PATH_TRANSLATED'] = stripslashes($_SERVER['PATH_TRANSLATED']);
     }
-    
+
 }
 
 // wtf? $noelggcookie is never set - Sven
@@ -338,7 +338,7 @@ if (!isset($noelggcookie)) {
     if (! isset($_SESSION['USER']))    {
         $_SESSION['USER']    = new StdClass;
     }
-    
+
     $SESSION = &$_SESSION['SESSION'];   // Makes them easier to reference
     $USER    = &$_SESSION['USER'];
 }
@@ -422,7 +422,7 @@ if (!isset($PAGE->menu_bottom)) { $PAGE->menu_bottom = array();}
 
 // TODO : set up a modules table so we can do get_records('modules')
 //        to fetch the enabled ones (instead of all the available modules)
-//        we can also track db version with it. 
+//        we can also track db version with it.
 if ($allmods = get_list_of_plugins('mod') ) {
     foreach ($allmods as $mod) {
         $modfile = $CFG->dirroot . 'mod/'.$mod .'/lib.php';
@@ -442,16 +442,16 @@ if ($USER && function_exists('apache_note')) {
     $apachelog_username = clean_filename($USER->username);
     // $apachelog_name     = clean_filename($USER->firstname. " ".$USER->lastname);
     // $apachelog_userid   = $USER->ident;
-    /* Enable this commented out section ONLY if Elgg can do 
+    /* Enable this commented out section ONLY if Elgg can do
        user masquerading...
     if (isset($USER->realuser)) {
         if ($realuser = get_record('users', 'ident', $USER->realuser)) {
-            $apachelog_username = clean_filename($realuser->username." as ".$apachelog_username);            
+            $apachelog_username = clean_filename($realuser->username." as ".$apachelog_username);
             // $apachelog_name = clean_filename($realuser->firstname." ".$realuser->lastname ." as ".$apachelog_name);
             // $apachelog_userid = clean_filename($realuser->id." as ".$apachelog_userid);
         }
     }
-    */ 
+    */
     apache_note('ELGGUSER', $apachelog_username);
 }
 
@@ -476,7 +476,7 @@ if (empty($CFG->default_access)) {
 define("default_access",$CFG->default_access);
 
 // figure out a noreply address if we don't have one.
-if (empty($CFG->noreplyaddress)) { 
+if (empty($CFG->noreplyaddress)) {
     $CFG->noreplyaddress = 'noreply@'.preg_replace('/([a-zA-z]*:\/\/)([a-zA-Z0-9-.]*)([:0-9]*)(\/*.*)/','$2',$CFG->wwwroot);
 }
 
@@ -485,10 +485,10 @@ if (empty($CFG->noreplyaddress)) {
  *** init_performance_info() {
  ***
  *** Initializes our performance info early.
- *** 
+ ***
  *** Pairs up with get_performance_info() which is actually
- *** in moodlelib.php. This function is here so that we can 
- *** call it before all the libs are pulled in. 
+ *** in moodlelib.php. This function is here so that we can
+ *** call it before all the libs are pulled in.
  ***
  **/
 function init_performance_info() {
@@ -496,7 +496,7 @@ function init_performance_info() {
     global $PERF;
 
     $PERF = new StdClass;
-    $PERF->dbqueries = 0;   
+    $PERF->dbqueries = 0;
     $PERF->logwrites = 0;
     if (function_exists('microtime')) {
         $PERF->starttime = microtime();
@@ -505,7 +505,7 @@ function init_performance_info() {
         $PERF->startmemory = memory_get_usage();
     }
     if (function_exists('posix_times')) {
-        $PERF->startposixtimes = posix_times();  
+        $PERF->startposixtimes = posix_times();
     }
 }
 
@@ -560,7 +560,7 @@ function elgg_error_handler($errno, $errmsg, $errfile, $errline, $errcontext) {
             }
             error_log(strip_tags($msg));
             // halt
-            die; 
+            die;
             break;
         default:
             break;

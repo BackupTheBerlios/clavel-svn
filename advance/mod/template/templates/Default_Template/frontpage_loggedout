@@ -6,34 +6,22 @@
                     	<td>
                     		<img src="{{url}}mod/template/templates/advance_care_net/images/tecnol.jpg" width=200 height=172/>
                     	</td>
+                    	<td width="10">&nbsp;</td>
                     	<td>
                     		<p align=justify>
 							Los procedimientos tradicionales en relaci&oacute;n con la prestaci&oacute;n de servicios
-							hospitalarios en las &uacute;ltimas d&eacute;cadas, ha generado la vinculaci&oacute;n de la tecnolog&iacute;a
-							para el mejoramiento de la relaci&oacute;n cl&iacute;nica - paciente.
+							hospitalarios en las &uacute;ltimas d&eacute;cadas, ha generado la vinculaci&oacute;n de la tecnolog&iacute;a.
+							</p>
+							<p align=justify>
+    							Lo invitamos a que se vincule a esta comunidad orientada
+    							a determinar el estado tecnol&oacute;gico en las &aacute;reas administrativa, operativa y comercial del
+    							sector salud.
 							</p>
                     	</td>
                     </tr>
                     <tr>
-                    	<TD COLSPAN="2">
-                    	<p align=justify>
-                    		Siendo est&eacute; un elemento
-							se adecua en diferentes etapas, el cluster  Tecnolog&iacute;a y Salud ofrece un
-							servicio integral en salud, en aspectos como: la gesti&oacute;n, el control y el
-							mejoramiento del manejo de la informaci&oacute;n y los recursos. Con un completo
-							an&aacute;lisis sobre los factores m&aacute;s determinantes a la hora de ofrecer un servicio
-							a los diferentes pacientes y miembros administrativos de cada cl&iacute;nica.
-                    	</p>
-                    	</TD>
-                    </tr>
-                   	<tr>
-                   		<TD COLSPAN="2">
-							<p align=justify>
-    							Desea m&aacute;s informaci&oacute;n, lo invitamos a que se vincule Tecnolog&iacute;a
-    							y Salud y conozca todas las actividades y l&iacute;neas de negocio, orientados
-    							a determinar el estado administrativo, operativo y comercial dentro del
-    							sector salud.
-							</p>
+                   		<TD COLSPAN="3">
+
 							<p align=center>
 								<br>
     							<a href="{{url}}mod/invite/register.php"><img src="{{url}}mod/template/templates/advance_care_net/images/registrarse.png"/><a>
